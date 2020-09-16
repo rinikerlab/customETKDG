@@ -49,12 +49,13 @@ bmat = get_noe_restraint_bmat(mol, df)
         
 params = AllChem.ETKDG()        # don't explicitly specify v3 bc to be run in Docker
 params.useRandomCoords = False
+#params.SetBoundsMat(bmat)      not available on Docker, see below
 params.randomSeed = 42
-params.SetBoundsMat(bmat)
 params.verbose = False
 params.numThreads = 0           # use parallelism
 
-AllChem.EmbedMultipleConfs(mol, num_conf, params)
+#AllChem.EmbedMultipleConfs(mol, num_conf, params)
+AllChem.EmbedMultipleConfs(mol, num_conf, params, boundsMatrix = bmat)  # for Docker
 Chem.MolToPDBFile(mol, "{}_numconf{}.pdb".format(sys.argv[1][:-4], num_conf))
 
 runtime = time.time() - t
