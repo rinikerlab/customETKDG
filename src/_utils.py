@@ -9,7 +9,7 @@ import os
 
 def assign_hydrogen_pdbinfo(mol):
     """
-    assumes all heavy atoms has complete PDB information
+    assumes all heavy atoms have complete PDB information
     """
     for idx,atm in enumerate(mol.GetAtoms()):
         if atm.GetPDBResidueInfo() is None and atm.GetAtomicNum() == 1:
@@ -47,7 +47,7 @@ def map_mol_with_noe(mol, df, verbose = True):
 
     noe_atom_pair2upper_distance = {}
     for _, row in df.iterrows():
-        tup = ("{}".format(row["Residue_index_1"]) , "{}".format(row["Residue_name_1"]))
+        tup = ("{}".format(row["Residue_index_1"]), "{}".format(row["Residue_name_1"]))
         #look for the atom name in the mol object that most resemble the given row's noe atom name
         key = difflib.get_close_matches(tup[1], [j[1] for j in mol_atom_names2noe_atom_names if j[0] == tup[0]], 1)[0]
         key = (tup[0], key) #add back the index
@@ -93,6 +93,7 @@ def get_noe_restraint_bmat(mol, df):
     mol_atom_names2atom_index, noe_atom_names2mol_atom_names, noe_atom_pair2upper_distance = map_mol_with_noe(mol, df)
 
     bmat = AllChem.GetMoleculeBoundsMatrix(mol)
+    print("mol_atom_names2atom_index:")
     print(mol_atom_names2atom_index)
     for key, val in noe_atom_pair2upper_distance.items():
         a = mol_atom_names2atom_index[noe_atom_names2mol_atom_names[key[0]]]
@@ -102,7 +103,7 @@ def get_noe_restraint_bmat(mol, df):
                 # print(bmat[max(item), min(item)] , val)
                 bmat[max(item), min(item)] = val
             # print(item, bmat[min(item), max(item)], val)
-            bmat[min(item), max(item)] = val
+            bmat[min(item), max(item)] = val # upper bound?
     
     return bmat
 
