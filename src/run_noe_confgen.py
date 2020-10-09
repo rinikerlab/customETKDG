@@ -47,9 +47,10 @@ df = pd.read_csv(sys.argv[1], sep = "\s", comment = "#")
 
 bmat = get_noe_restraint_bmat(mol, df)        
         
-params = AllChem.ETKDG()        # don't explicitly specify v3 bc to be run in Docker
+params = AllChem.ETKDG()  # don't explicitly specify v3 bc to be run in Docker
+#params = AllChem.ETKDGv3()
 params.useRandomCoords = False
-#params.SetBoundsMat(bmat)      not available on Docker, see below
+#params.SetBoundsMat(bmat)     # not available on Docker, see below
 params.randomSeed = 42
 params.verbose = False
 params.numThreads = 0           # use parallelism
