@@ -1,0 +1,42 @@
+Snippets:
+
+Docker:
+docker run -it --rm rdkit:latest
+docker cp src/ ContID:/
+
+python run_noe_confgen.py CsE/CsE_ccl4_noebounds.csv 10
+python run_baseline_confgen.py CsE/baseline 40
+
+python run_noe_confgen.py CsE/CsE_dmso_corr_noebounds.csv 5400 WITH TOLERANCE = 1.25
+Took 19521 s to generate 5400 conformers.
+
+
+run_noe_confgen.py CsE/CsE_ccl4_corr_noebounds.csv 5400
+Took 14064 s to generate 5400 conformers.
+
+
+baseline
+[16:54:22] WARNING: More than one matching pattern found - picking one
+Took 9017 s to generate 5400 conformers.
+
+noe
+Took 23256 s to generate 5400 conformers.
+
+
+OMEGA
+python -m openeye.examples.omega.macrocycle -in CsA/ref.smi -out test.pdb -maxconfs 5400 (-mpi_np 4)
+python -m openeye.examples.omega.macrocycle -in Ref/ref.pdb -out frompdb_10.pdb -maxconfs 10
+https://docs.eyesopen.com/toolkits/python/omegatk/omegatheory.html
+
+Euler
+sshfs kkajo@euler.ethz.ch:/cluster/home/kkajo ~/Euler/
+bsub -R "rusage[scratch=2000]" -W 24:00 -n 4 -J wat_1 -e ./wat_1.err -o ./wat_1.out ./wat_1.run
+
+LibreOffice
+=COUNT(B2:B295)-COUNTIF(B2:B295,0)
+=COUNT(B2:B5401)-COUNTIF(B2:B5401,0)
+
+Jupyter notebooks
+jupyter notebook --no-browser --port=7777
+ssh -N -f -L localhost:7777:localhost:7777 kkajo@slovenia.ethz.ch
+open localhost:7777 in browser
