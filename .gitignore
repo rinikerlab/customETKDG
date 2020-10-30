@@ -128,4 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# exclude tmp folder contents
 /data/99_tmp/*
+!/data/99_tmp/.gitkeep
