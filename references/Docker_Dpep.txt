@@ -1,0 +1,32 @@
+Generate conformers in Docker:
+
+open terminal window
+docker run -it --rm --name DPep1_bl rdkit:latest
+
+
+detach with ctrl+p, ctrl+q
+docker attach DPep1_bl 
+
+
+in new window (Linux)
+cd Workspace/MacrocycleConfGenNOE/
+docker cp data/12_DPep2/ DPep2_bl:/
+docker cp src/d00_utils/utils.py DPep2_bl:/12_DPep2/
+docker cp src/d02_ETKDG_confgen/run_baseline_confgen.py DPep2_bl:/12_DPep2/
+docker cp src/d02_ETKDG_confgen/run_noe_confgen.py DPep2_bl:/12_DPep2/
+
+in docker:
+cd ../11_DPep1
+python run_noe_confgen.py 10_DPep1_chcl3_noebounds.csv 5400
+python run_baseline_confgen.py 10_DPep1_chcl3_noebounds.csv 5400
+detach with ctrl+p, ctrl+q
+docker attach DPep1_bl 
+ls --> note file name
+
+
+Linux:
+docker cp DPep1_bl:/11_DPep1/FILENAME ~/Workspace
+
+
+
+

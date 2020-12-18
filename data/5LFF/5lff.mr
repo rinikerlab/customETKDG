@@ -1,0 +1,705 @@
+*HEADER    CYTOKINE                                01-JUL-16   5LFF              
+*TITLE     NMR STRUCTURE OF PEPTIDE 2 TARGETING CXCR4                            
+*COMPND    MOL_ID: 1;                                                            
+*COMPND   2 MOLECULE: ARG-ALA-CYS-ARG-PHE-PHE-CYS;                               
+*COMPND   3 CHAIN: A;                                                            
+*COMPND   4 ENGINEERED: YES                                                      
+*SOURCE    MOL_ID: 1;                                                            
+*SOURCE   2 SYNTHETIC: YES;                                                      
+*SOURCE   3 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+*SOURCE   4 ORGANISM_COMMON: HUMAN;                                              
+*SOURCE   5 ORGANISM_TAXID: 9606                                                 
+*KEYWDS    CXCR4, CXCL12, CXCR4 ANTAGONISTS, CANCER, MOLECULAR INVASION, DRUG    
+*KEYWDS   2 DESIGN, CHEMOKINE, CYTOKINE                                          
+*EXPDTA    SOLUTION NMR                                                          
+*NUMMDL    10                                                                    
+*AUTHOR    S.DI MARO,A.M.TROTTA,D.BRANCACCIO,F.S.DI LEVA,V.LA PIETRA,C.IERANO,   
+*AUTHOR   2 M.NAPOLITANO,L.PORTELLA,C.D'ALTERIO,R.A.SICILIANO,D.SEMENTA,         
+*AUTHOR   3 S.TOMASSI,A.CAROTENUTO,E.NOVELLINO,S.SCALA,L.MARINELLI               
+*REVDAT   1   07-SEP-16 5LFF    0                                                
+# Restraints file 1: Peptide_R_upl.txt
+  1 ARG+ HA      1 ARG+ HB2     2.92    
+  1 ARG+ HA      1 ARG+ HB3     2.92    
+  1 ARG+ HA      2 ALA  HN      2.56    
+  1 ARG+ HA      2 ALA  QB      6.03    
+  1 ARG+ HA      3 CYSS HN      4.60    
+  1 ARG+ HB2     1 ARG+ HE      5.00    
+  1 ARG+ HB2     2 ALA  HN      3.48    
+  1 ARG+ HB2     3 CYSS HN      4.36    
+  1 ARG+ HB3     1 ARG+ HE      5.00    
+  1 ARG+ HB3     2 ALA  HN      3.48    
+  1 ARG+ HB3     3 CYSS HN      4.36    
+  1 ARG+ QB      2 ALA  HN      2.91    
+  1 ARG+ QB      3 CYSS HN      3.83    
+  1 ARG+ HG2     2 ALA  HN      5.00    
+  1 ARG+ HG2     3 CYSS HN      5.00    
+  1 ARG+ HG3     2 ALA  HN      5.00    
+  1 ARG+ HG3     3 CYSS HN      5.00    
+  1 ARG+ QG      3 CYSS HA      4.87    
+  1 ARG+ QD      2 ALA  HN      5.88    
+  2 ALA  HN      3 CYSS HN      3.32    
+  2 ALA  HA      3 CYSS HN      2.60    
+  2 ALA  HA      3 CYSS HB2     4.52    
+  2 ALA  HA      3 CYSS HB3     4.52    
+  2 ALA  QB      3 CYSS HN      6.03    
+  3 CYSS HN      3 CYSS HA      2.68    
+  3 CYSS HN      3 CYSS HB2     3.16    
+  3 CYSS HN      3 CYSS HB3     3.16    
+  3 CYSS HA      3 CYSS HB2     3.00    
+  3 CYSS HA      3 CYSS HB3     3.00    
+  3 CYSS HA      4 ARG+ HN      2.64    
+  3 CYSS HB2     4 ARG+ HN      3.72    
+  3 CYSS HB2     5 PHE  HN      4.36    
+  3 CYSS HB3     4 ARG+ HN      3.72    
+  3 CYSS HB3     5 PHE  HN      4.36    
+  3 CYSS QB      4 ARG+ HN      3.24    
+  3 CYSS QB      5 PHE  HN      3.77    
+  4 ARG+ HN      4 ARG+ HB2     3.20    
+  4 ARG+ HN      4 ARG+ HB3     3.20    
+  4 ARG+ HN      4 ARG+ QB      2.73    
+  4 ARG+ HN      4 ARG+ HG2     5.00    
+  4 ARG+ HN      4 ARG+ HG3     5.00    
+  4 ARG+ HN      4 ARG+ QD      5.88    
+  4 ARG+ HN      5 PHE  HN      2.76    
+  4 ARG+ HN      5 PHE  QB      5.88    
+  4 ARG+ HN      5 PHE  QD      7.12    
+  4 ARG+ HN      6 PHE  HN      3.92    
+  4 ARG+ HA      4 ARG+ HB2     3.00    
+  4 ARG+ HA      4 ARG+ HB3     3.00    
+  4 ARG+ HA      5 PHE  HN      3.36    
+  4 ARG+ HA      5 PHE  QD      7.12    
+  4 ARG+ HA      6 PHE  HN      4.96    
+  4 ARG+ HB2     4 ARG+ HE      5.00    
+  4 ARG+ HB2     5 PHE  HN      3.20    
+  4 ARG+ HB2     5 PHE  QB      5.88    
+  4 ARG+ HB2     5 PHE  QD      7.12    
+  4 ARG+ HB2     5 PHE  QE      7.12    
+  4 ARG+ HB2     6 PHE  HN      4.92    
+  4 ARG+ HB3     4 ARG+ HE      5.00    
+  4 ARG+ HB3     5 PHE  HN      3.20    
+  4 ARG+ HB3     5 PHE  QB      5.88    
+  4 ARG+ HB3     5 PHE  QD      7.12    
+  4 ARG+ HB3     5 PHE  QE      7.12    
+  4 ARG+ HB3     6 PHE  HN      4.92    
+  4 ARG+ QB      6 PHE  HN      4.29    
+  4 ARG+ HG2     5 PHE  HN      5.00    
+  4 ARG+ HG2     5 PHE  QD      7.12    
+  4 ARG+ HG2     5 PHE  QE      7.12    
+  4 ARG+ HG3     5 PHE  HN      5.00    
+  4 ARG+ HG3     5 PHE  QD      7.12    
+  4 ARG+ HG3     5 PHE  QE      7.12    
+  4 ARG+ QD      5 PHE  HN      5.88    
+  4 ARG+ QD      5 PHE  QE      8.00    
+  4 ARG+ HE      5 PHE  HN      5.00    
+  5 PHE  HN      5 PHE  QB      4.16    
+  5 PHE  HN      5 PHE  QD      7.12    
+  5 PHE  HN      6 PHE  HN      2.92    
+  5 PHE  HN      6 PHE  QD      7.12    
+  5 PHE  HA      5 PHE  QD      7.12    
+  5 PHE  HA      6 PHE  HN      3.00    
+  5 PHE  QB      6 PHE  HN      4.16    
+  5 PHE  QB      6 PHE  QB      5.70    
+  5 PHE  QB      6 PHE  QD      8.00    
+  5 PHE  QD      6 PHE  HN      7.12    
+  6 PHE  HN      6 PHE  HA      2.88    
+  6 PHE  HN      6 PHE  HB2     3.44    
+  6 PHE  HN      6 PHE  HB3     3.44    
+  6 PHE  HN      6 PHE  QB      2.85    
+  6 PHE  HN      6 PHE  QD      7.12    
+  6 PHE  HA      6 PHE  QD      7.12    
+  6 PHE  HA      7 CYSS HN      2.80    
+  7 CYSS HN      7 CYSS HA      2.88    
+  7 CYSS HN      7 CYSS HB2     3.12    
+  7 CYSS HN      7 CYSS HB3     3.12    
+  7 CYSS HN      7 CYSS QB      2.68    
+  Entry H atom name         Submitted Coord H atom name
+  Start of MODEL    1
+    1    H2   ARG   1          2H        ARG   1   1.869 -10.460  -1.054
+    2    H    ARG   1          1H        ARG   1   0.892 -10.525   0.313
+    3    HA   ARG   1           HA       ARG   1   0.330  -8.909  -1.545
+    4    HB2  ARG   1          1HB       ARG   1  -0.731  -9.107   0.766
+    5    HB3  ARG   1          2HB       ARG   1   0.448  -7.965   1.393
+    6    HG2  ARG   1          1HG       ARG   1  -0.433  -6.232  -0.299
+    7    HG3  ARG   1          2HG       ARG   1  -1.653  -7.380  -0.815
+    8    HD2  ARG   1          1HD       ARG   1  -1.341  -6.248   2.051
+    9    HD3  ARG   1          2HD       ARG   1  -2.448  -5.620   0.824
+   10    HE   ARG   1           HE       ARG   1  -3.060  -8.448   1.131
+   11   HH11  ARG   1          1HH1      ARG   1  -5.403  -8.144   3.598
+   12   HH12  ARG   1          2HH1      ARG   1  -4.644  -9.164   2.280
+   13   HH21  ARG   1          1HH2      ARG   1  -4.694  -6.187   4.011
+   14   HH22  ARG   1          2HH2      ARG   1  -3.302  -5.485   3.046
+   15    H    ALA   2           H        ALA   2   1.130  -7.279  -2.705
+   16    HA   ALA   2           HA       ALA   2   3.689  -5.818  -1.904
+   17    HB1  ALA   2          1HB       ALA   2   2.103  -5.773  -4.549
+   18    HB2  ALA   2          2HB       ALA   2   3.656  -4.966  -4.238
+   19    HB3  ALA   2          3HB       ALA   2   3.563  -6.739  -4.208
+   20    H    CYS   3           H        CYS   3   2.478  -4.876  -0.078
+   21    HA   CYS   3           HA       CYS   3   1.596  -3.049   1.049
+   22    HB2  CYS   3          1HB       CYS   3   3.301  -1.863  -0.449
+   23    HB3  CYS   3          2HB       CYS   3   1.975  -1.413  -1.530
+   24    H    ARG   4           H        ARG   4  -0.119  -1.379   1.183
+   25    HA   ARG   4           HA       ARG   4  -2.760  -1.974  -0.167
+   26    HB2  ARG   4          1HB       ARG   4  -1.779   0.086   1.876
+   27    HB3  ARG   4          2HB       ARG   4  -3.125   0.544   0.870
+   28    HG2  ARG   4          1HG       ARG   4  -4.573  -1.186   1.646
+   29    HG3  ARG   4          2HG       ARG   4  -3.266  -2.112   2.363
+   30    HD2  ARG   4          1HD       ARG   4  -4.633  -1.000   4.098
+   31    HD3  ARG   4          2HD       ARG   4  -2.940  -0.507   4.169
+   32    HE   ARG   4           HE       ARG   4  -4.315   1.503   2.588
+   33   HH11  ARG   4          1HH1      ARG   4  -4.836   3.664   5.182
+   34   HH12  ARG   4          2HH1      ARG   4  -4.684   3.401   3.375
+   35   HH21  ARG   4          1HH2      ARG   4  -4.637   2.055   6.547
+   36   HH22  ARG   4          2HH2      ARG   4  -4.303   0.360   5.936
+   37    H    PHE   5           H        PHE   5  -0.515   0.819  -0.203
+   38    HA   PHE   5           HA       PHE   5  -0.358   0.940  -3.118
+   39    HB2  PHE   5          1HB       PHE   5  -1.365   3.218  -3.530
+   40    HB3  PHE   5          2HB       PHE   5  -2.453   1.884  -3.373
+   41    HD1  PHE   5          1HD       PHE   5  -4.073   1.727  -1.502
+   42    HD2  PHE   5          2HD       PHE   5  -1.360   5.057  -1.752
+   43    HE1  PHE   5          1HE       PHE   5  -5.394   2.938   0.179
+   44    HE2  PHE   5          2HE       PHE   5  -2.688   6.252  -0.060
+   45    HZ   PHE   5           HZ       PHE   5  -4.703   5.197   0.911
+   46    H    PHE   6           H        PHE   6  -0.137   3.240  -0.362
+   47    HA   PHE   6           HA       PHE   6   2.764   3.835  -1.169
+   48    HB2  PHE   6          1HB       PHE   6   1.228   5.775  -1.165
+   49    HB3  PHE   6          2HB       PHE   6   0.734   5.460   0.478
+   50    HD1  PHE   6          1HD       PHE   6   3.762   6.355  -1.618
+   51    HD2  PHE   6          2HD       PHE   6   1.999   6.415   2.308
+   52    HE1  PHE   6          1HE       PHE   6   5.587   7.795  -0.807
+   53    HE2  PHE   6          2HE       PHE   6   3.828   7.858   3.098
+   54    HZ   PHE   6           HZ       PHE   6   5.624   8.550   1.547
+   55    H    CYS   7           H        CYS   7   4.124   2.611  -0.079
+   56    HA   CYS   7           HA       CYS   7   3.847   2.270   2.968
+   57    HB2  CYS   7          1HB       CYS   7   4.999   0.203   0.977
+   58    HB3  CYS   7          2HB       CYS   7   5.268   0.166   2.724
+  Start of MODEL    2
+    1    H2   ARG   1          2H        ARG   1   2.188 -10.388  -0.812
+    2    H    ARG   1          1H        ARG   1   0.669 -10.860  -0.321
+    3    HA   ARG   1           HA       ARG   1   0.249  -8.948  -1.632
+    4    HB2  ARG   1          1HB       ARG   1  -0.879  -9.285   0.614
+    5    HB3  ARG   1          2HB       ARG   1   0.310  -8.226   1.356
+    6    HG2  ARG   1          1HG       ARG   1  -0.539  -6.228   0.109
+    7    HG3  ARG   1          2HG       ARG   1  -1.625  -7.238  -0.864
+    8    HD2  ARG   1          1HD       ARG   1  -1.766  -6.860   2.223
+    9    HD3  ARG   1          2HD       ARG   1  -2.763  -5.985   1.059
+   10    HE   ARG   1           HE       ARG   1  -3.244  -8.778   0.454
+   11   HH11  ARG   1          1HH1      ARG   1  -5.721  -9.472   2.609
+   12   HH12  ARG   1          2HH1      ARG   1  -4.838  -9.921   1.104
+   13   HH21  ARG   1          1HH2      ARG   1  -5.216  -7.660   3.704
+   14   HH22  ARG   1          2HH2      ARG   1  -3.822  -6.638   3.107
+   15    H    ALA   2           H        ALA   2   1.406  -7.485  -2.782
+   16    HA   ALA   2           HA       ALA   2   3.762  -6.033  -1.620
+   17    HB1  ALA   2          1HB       ALA   2   2.500  -6.003  -4.464
+   18    HB2  ALA   2          2HB       ALA   2   3.987  -5.179  -3.968
+   19    HB3  ALA   2          3HB       ALA   2   3.921  -6.945  -3.949
+   20    H    CYS   3           H        CYS   3   2.550  -4.927   0.011
+   21    HA   CYS   3           HA       CYS   3   1.675  -2.992   1.017
+   22    HB2  CYS   3          1HB       CYS   3   3.501  -1.985  -0.597
+   23    HB3  CYS   3          2HB       CYS   3   2.177  -1.623  -1.734
+   24    H    ARG   4           H        ARG   4  -0.059  -1.199   0.862
+   25    HA   ARG   4           HA       ARG   4  -2.545  -2.200  -0.620
+   26    HB2  ARG   4          1HB       ARG   4  -2.477  -0.068   1.591
+   27    HB3  ARG   4          2HB       ARG   4  -3.879  -0.425   0.519
+   28    HG2  ARG   4          1HG       ARG   4  -3.926  -2.845   1.315
+   29    HG3  ARG   4          2HG       ARG   4  -2.627  -2.506   2.472
+   30    HD2  ARG   4          1HD       ARG   4  -4.652  -2.333   3.757
+   31    HD3  ARG   4          2HD       ARG   4  -4.113  -0.678   3.548
+   32    HE   ARG   4           HE       ARG   4  -6.312  -1.968   1.766
+   33   HH11  ARG   4          1HH1      ARG   4  -8.121   0.919   1.652
+   34   HH12  ARG   4          2HH1      ARG   4  -7.913  -0.801   1.135
+   35   HH21  ARG   4          1HH2      ARG   4  -6.687   1.834   2.906
+   36   HH22  ARG   4          2HH2      ARG   4  -5.294   0.886   3.619
+   37    H    PHE   5           H        PHE   5  -0.721   0.908  -0.135
+   38    HA   PHE   5           HA       PHE   5  -0.800   1.302  -3.034
+   39    HB2  PHE   5          1HB       PHE   5  -1.887   3.400  -3.268
+   40    HB3  PHE   5          2HB       PHE   5  -3.009   2.284  -2.528
+   41    HD1  PHE   5          1HD       PHE   5  -3.500   2.539   0.105
+   42    HD2  PHE   5          2HD       PHE   5  -1.554   5.570  -2.291
+   43    HE1  PHE   5          1HE       PHE   5  -3.887   4.269   1.876
+   44    HE2  PHE   5          2HE       PHE   5  -1.979   7.222  -0.498
+   45    HZ   PHE   5           HZ       PHE   5  -3.075   6.560   1.566
+   46    H    PHE   6           H        PHE   6  -0.143   3.432  -0.215
+   47    HA   PHE   6           HA       PHE   6   2.771   3.665  -1.228
+   48    HB2  PHE   6          1HB       PHE   6   1.324   5.748  -1.316
+   49    HB3  PHE   6          2HB       PHE   6   1.168   5.720   0.378
+   50    HD1  PHE   6          1HD       PHE   6   3.602   6.122  -2.427
+   51    HD2  PHE   6          2HD       PHE   6   3.071   6.466   1.837
+   52    HE1  PHE   6          1HE       PHE   6   5.786   7.243  -2.235
+   53    HE2  PHE   6          2HE       PHE   6   5.129   7.750   1.967
+   54    HZ   PHE   6           HZ       PHE   6   6.576   8.064  -0.014
+   55    H    CYS   7           H        CYS   7   4.010   2.360  -0.107
+   56    HA   CYS   7           HA       CYS   7   3.945   2.382   2.991
+   57    HB2  CYS   7          1HB       CYS   7   5.079   0.184   1.094
+   58    HB3  CYS   7          2HB       CYS   7   5.124   0.228   2.839
+  Start of MODEL    3
+    1    H2   ARG   1          2H        ARG   1   1.986 -10.098  -1.878
+    2    H    ARG   1          1H        ARG   1   0.654 -10.829  -1.329
+    3    HA   ARG   1           HA       ARG   1  -0.036  -8.613  -1.492
+    4    HB2  ARG   1          1HB       ARG   1  -0.558  -9.839   0.648
+    5    HB3  ARG   1          2HB       ARG   1   0.900  -9.181   1.365
+    6    HG2  ARG   1          1HG       ARG   1  -0.111  -6.848   1.282
+    7    HG3  ARG   1          2HG       ARG   1  -1.508  -7.442   0.347
+    8    HD2  ARG   1          1HD       ARG   1  -0.733  -8.128   3.266
+    9    HD3  ARG   1          2HD       ARG   1  -1.934  -6.919   2.847
+   10    HE   ARG   1           HE       ARG   1  -2.647  -9.523   1.619
+   11   HH11  ARG   1          1HH1      ARG   1  -4.591 -10.730   4.115
+   12   HH12  ARG   1          2HH1      ARG   1  -4.029 -10.858   2.398
+   13   HH21  ARG   1          1HH2      ARG   1  -3.770  -9.239   5.424
+   14   HH22  ARG   1          2HH2      ARG   1  -2.624  -8.009   4.744
+   15    H    ALA   2           H        ALA   2   1.347  -7.330  -2.769
+   16    HA   ALA   2           HA       ALA   2   3.721  -5.927  -1.628
+   17    HB1  ALA   2          1HB       ALA   2   2.249  -5.470  -4.270
+   18    HB2  ALA   2          2HB       ALA   2   3.816  -4.791  -3.794
+   19    HB3  ALA   2          3HB       ALA   2   3.647  -6.535  -4.041
+   20    H    CYS   3           H        CYS   3   2.528  -5.193   0.246
+   21    HA   CYS   3           HA       CYS   3   1.761  -3.333   1.501
+   22    HB2  CYS   3          1HB       CYS   3   3.611  -2.213   0.330
+   23    HB3  CYS   3          2HB       CYS   3   2.506  -1.678  -0.956
+   24    H    ARG   4           H        ARG   4   0.328  -1.019   0.199
+   25    HA   ARG   4           HA       ARG   4  -2.335  -2.257  -0.711
+   26    HB2  ARG   4          1HB       ARG   4  -2.132  -0.237   1.602
+   27    HB3  ARG   4          2HB       ARG   4  -3.601  -0.428   0.660
+   28    HG2  ARG   4          1HG       ARG   4  -3.654  -2.918   1.261
+   29    HG3  ARG   4          2HG       ARG   4  -2.213  -2.665   2.299
+   30    HD2  ARG   4          1HD       ARG   4  -4.100  -2.556   3.791
+   31    HD3  ARG   4          2HD       ARG   4  -3.462  -0.908   3.653
+   32    HE   ARG   4           HE       ARG   4  -5.648  -1.357   1.622
+   33   HH11  ARG   4          1HH1      ARG   4  -8.074   0.144   3.413
+   34   HH12  ARG   4          2HH1      ARG   4  -7.506  -0.665   1.873
+   35   HH21  ARG   4          1HH2      ARG   4  -6.851   0.066   5.110
+   36   HH22  ARG   4          2HH2      ARG   4  -5.162  -0.660   5.013
+   37    H    PHE   5           H        PHE   5  -1.086   1.038  -0.054
+   38    HA   PHE   5           HA       PHE   5  -1.208   1.592  -3.060
+   39    HB2  PHE   5          1HB       PHE   5  -1.985   3.999  -2.648
+   40    HB3  PHE   5          2HB       PHE   5  -3.122   2.691  -2.560
+   41    HD1  PHE   5          1HD       PHE   5  -4.160   2.034  -0.313
+   42    HD2  PHE   5          2HD       PHE   5  -1.403   5.305  -0.573
+   43    HE1  PHE   5          1HE       PHE   5  -4.970   2.946   1.861
+   44    HE2  PHE   5          2HE       PHE   5  -2.262   6.191   1.568
+   45    HZ   PHE   5           HZ       PHE   5  -4.071   5.031   2.768
+   46    H    PHE   6           H        PHE   6   0.117   3.262  -0.152
+   47    HA   PHE   6           HA       PHE   6   2.873   3.027  -1.471
+   48    HB2  PHE   6          1HB       PHE   6   1.925   5.250  -2.094
+   49    HB3  PHE   6          2HB       PHE   6   1.674   5.655  -0.414
+   50    HD1  PHE   6          1HD       PHE   6   4.470   4.543  -2.756
+   51    HD2  PHE   6          2HD       PHE   6   3.398   6.882   0.692
+   52    HE1  PHE   6          1HE       PHE   6   6.802   5.317  -2.506
+   53    HE2  PHE   6          2HE       PHE   6   5.677   7.716   0.850
+   54    HZ   PHE   6           HZ       PHE   6   7.413   6.933  -0.759
+   55    H    CYS   7           H        CYS   7   3.967   1.856  -0.024
+   56    HA   CYS   7           HA       CYS   7   3.743   2.338   2.949
+   57    HB2  CYS   7          1HB       CYS   7   5.373   0.384   1.216
+   58    HB3  CYS   7          2HB       CYS   7   5.680   0.565   2.926
+  Start of MODEL    4
+    1    H2   ARG   1          2H        ARG   1   2.228 -10.284  -1.214
+    2    H    ARG   1          1H        ARG   1   0.880 -10.773  -0.395
+    3    HA   ARG   1           HA       ARG   1   0.351  -8.830  -1.676
+    4    HB2  ARG   1          1HB       ARG   1  -0.724  -9.450   0.497
+    5    HB3  ARG   1          2HB       ARG   1   0.395  -8.380   1.397
+    6    HG2  ARG   1          1HG       ARG   1  -0.487  -6.434  -0.003
+    7    HG3  ARG   1          2HG       ARG   1  -1.746  -7.446  -0.628
+    8    HD2  ARG   1          1HD       ARG   1  -1.335  -6.679   2.326
+    9    HD3  ARG   1          2HD       ARG   1  -2.613  -6.106   1.243
+   10    HE   ARG   1           HE       ARG   1  -2.789  -9.046   1.422
+   11   HH11  ARG   1          1HH1      ARG   1  -5.011  -9.144   3.996
+   12   HH12  ARG   1          2HH1      ARG   1  -4.150 -10.026   2.657
+   13   HH21  ARG   1          1HH2      ARG   1  -4.698  -7.098   4.365
+   14   HH22  ARG   1          2HH2      ARG   1  -3.491  -6.193   3.291
+   15    H    ALA   2           H        ALA   2   1.354  -7.275  -2.839
+   16    HA   ALA   2           HA       ALA   2   3.781  -5.747  -1.736
+   17    HB1  ALA   2          1HB       ALA   2   2.293  -5.561  -4.443
+   18    HB2  ALA   2          2HB       ALA   2   3.776  -4.739  -3.958
+   19    HB3  ALA   2          3HB       ALA   2   3.790  -6.505  -4.085
+   20    H    CYS   3           H        CYS   3   2.502  -5.004   0.082
+   21    HA   CYS   3           HA       CYS   3   1.660  -3.257   1.398
+   22    HB2  CYS   3          1HB       CYS   3   3.453  -2.112   0.095
+   23    HB3  CYS   3          2HB       CYS   3   2.237  -1.458  -1.022
+   24    H    ARG   4           H        ARG   4   0.188  -0.931  -0.045
+   25    HA   ARG   4           HA       ARG   4  -2.490  -2.253  -0.678
+   26    HB2  ARG   4          1HB       ARG   4  -2.254  -0.114   1.537
+   27    HB3  ARG   4          2HB       ARG   4  -3.729  -0.417   0.662
+   28    HG2  ARG   4          1HG       ARG   4  -3.888  -2.731   1.436
+   29    HG3  ARG   4          2HG       ARG   4  -2.326  -2.597   2.285
+   30    HD2  ARG   4          1HD       ARG   4  -3.921  -2.334   4.024
+   31    HD3  ARG   4          2HD       ARG   4  -3.281  -0.733   3.749
+   32    HE   ARG   4           HE       ARG   4  -5.749  -1.036   2.150
+   33   HH11  ARG   4          1HH1      ARG   4  -7.818   0.611   4.338
+   34   HH12  ARG   4          2HH1      ARG   4  -7.568  -0.204   2.704
+   35   HH21  ARG   4          1HH2      ARG   4  -6.302   0.556   5.765
+   36   HH22  ARG   4          2HH2      ARG   4  -4.729  -0.367   5.435
+   37    H    PHE   5           H        PHE   5  -1.024   0.997  -0.160
+   38    HA   PHE   5           HA       PHE   5  -1.081   1.439  -3.140
+   39    HB2  PHE   5          1HB       PHE   5  -2.193   3.327  -3.418
+   40    HB3  PHE   5          2HB       PHE   5  -3.185   2.548  -2.214
+   41    HD1  PHE   5          1HD       PHE   5  -3.017   3.401   0.234
+   42    HD2  PHE   5          2HD       PHE   5  -1.173   5.435  -2.999
+   43    HE1  PHE   5          1HE       PHE   5  -2.769   5.450   1.658
+   44    HE2  PHE   5          2HE       PHE   5  -0.993   7.472  -1.660
+   45    HZ   PHE   5           HZ       PHE   5  -1.791   7.486   0.706
+   46    H    PHE   6           H        PHE   6   0.004   3.226  -0.259
+   47    HA   PHE   6           HA       PHE   6   2.862   3.071  -1.390
+   48    HB2  PHE   6          1HB       PHE   6   1.769   5.227  -1.877
+   49    HB3  PHE   6          2HB       PHE   6   1.306   5.483  -0.216
+   50    HD1  PHE   6          1HD       PHE   6   4.181   5.561  -2.649
+   51    HD2  PHE   6          2HD       PHE   6   2.869   6.390   1.380
+   52    HE1  PHE   6          1HE       PHE   6   6.257   6.779  -2.227
+   53    HE2  PHE   6          2HE       PHE   6   4.920   7.740   1.759
+   54    HZ   PHE   6           HZ       PHE   6   6.691   7.803   0.007
+   55    H    CYS   7           H        CYS   7   4.061   1.880  -0.054
+   56    HA   CYS   7           HA       CYS   7   3.910   2.216   3.005
+   57    HB2  CYS   7          1HB       CYS   7   5.368   0.122   1.193
+   58    HB3  CYS   7          2HB       CYS   7   5.666   0.334   2.925
+  Start of MODEL    5
+    1    H2   ARG   1          2H        ARG   1   1.797 -10.280  -1.765
+    2    H    ARG   1          1H        ARG   1   0.460 -10.892  -1.071
+    3    HA   ARG   1           HA       ARG   1   0.076  -8.646  -1.776
+    4    HB2  ARG   1          1HB       ARG   1  -0.965  -9.679   0.386
+    5    HB3  ARG   1          2HB       ARG   1   0.270  -8.904   1.301
+    6    HG2  ARG   1          1HG       ARG   1  -0.534  -6.630   0.313
+    7    HG3  ARG   1          2HG       ARG   1  -1.833  -7.490  -0.511
+    8    HD2  ARG   1          1HD       ARG   1  -1.429  -7.507   2.561
+    9    HD3  ARG   1          2HD       ARG   1  -2.519  -6.359   1.610
+   10    HE   ARG   1           HE       ARG   1  -3.296  -9.052   0.843
+   11   HH11  ARG   1          1HH1      ARG   1  -5.742  -9.560   3.096
+   12   HH12  ARG   1          2HH1      ARG   1  -4.966 -10.047   1.533
+   13   HH21  ARG   1          1HH2      ARG   1  -4.986  -8.017   4.283
+   14   HH22  ARG   1          2HH2      ARG   1  -3.503  -7.093   3.734
+   15    H    ALA   2           H        ALA   2   1.513  -7.288  -2.743
+   16    HA   ALA   2           HA       ALA   2   3.867  -6.141  -1.225
+   17    HB1  ALA   2          1HB       ALA   2   2.987  -5.761  -4.205
+   18    HB2  ALA   2          2HB       ALA   2   4.476  -5.207  -3.408
+   19    HB3  ALA   2          3HB       ALA   2   4.167  -6.947  -3.584
+   20    H    CYS   3           H        CYS   3   2.553  -4.918   0.294
+   21    HA   CYS   3           HA       CYS   3   1.749  -2.930   1.242
+   22    HB2  CYS   3          1HB       CYS   3   3.433  -1.854  -0.430
+   23    HB3  CYS   3          2HB       CYS   3   2.078  -1.531  -1.470
+   24    H    ARG   4           H        ARG   4   0.182  -1.061   0.617
+   25    HA   ARG   4           HA       ARG   4  -2.481  -2.189  -0.488
+   26    HB2  ARG   4          1HB       ARG   4  -2.110   0.011   1.593
+   27    HB3  ARG   4          2HB       ARG   4  -3.618  -0.271   0.755
+   28    HG2  ARG   4          1HG       ARG   4  -3.902  -2.447   1.687
+   29    HG3  ARG   4          2HG       ARG   4  -2.286  -2.486   2.427
+   30    HD2  ARG   4          1HD       ARG   4  -3.821  -2.072   4.198
+   31    HD3  ARG   4          2HD       ARG   4  -3.015  -0.487   3.901
+   32    HE   ARG   4           HE       ARG   4  -5.481  -0.600   2.274
+   33   HH11  ARG   4          1HH1      ARG   4  -7.509   1.027   4.504
+   34   HH12  ARG   4          2HH1      ARG   4  -7.204   0.396   2.819
+   35   HH21  ARG   4          1HH2      ARG   4  -5.996   0.658   6.042
+   36   HH22  ARG   4          2HH2      ARG   4  -4.500  -0.282   5.593
+   37    H    PHE   5           H        PHE   5  -0.793   0.987  -0.158
+   38    HA   PHE   5           HA       PHE   5  -1.048   1.454  -3.114
+   39    HB2  PHE   5          1HB       PHE   5  -2.117   3.756  -2.902
+   40    HB3  PHE   5          2HB       PHE   5  -3.148   2.380  -2.437
+   41    HD1  PHE   5          1HD       PHE   5  -3.820   1.975  -0.077
+   42    HD2  PHE   5          2HD       PHE   5  -1.632   5.505  -1.222
+   43    HE1  PHE   5          1HE       PHE   5  -4.339   3.028   2.133
+   44    HE2  PHE   5          2HE       PHE   5  -2.225   6.546   0.942
+   45    HZ   PHE   5           HZ       PHE   5  -3.554   5.304   2.578
+   46    H    PHE   6           H        PHE   6  -0.185   3.587  -0.356
+   47    HA   PHE   6           HA       PHE   6   2.698   3.699  -1.348
+   48    HB2  PHE   6          1HB       PHE   6   1.373   5.731  -1.278
+   49    HB3  PHE   6          2HB       PHE   6   1.098   5.598   0.443
+   50    HD1  PHE   6          1HD       PHE   6   3.690   6.455  -2.162
+   51    HD2  PHE   6          2HD       PHE   6   2.972   5.933   2.053
+   52    HE1  PHE   6          1HE       PHE   6   5.836   7.545  -1.652
+   53    HE2  PHE   6          2HE       PHE   6   5.092   7.055   2.547
+   54    HZ   PHE   6           HZ       PHE   6   6.529   7.905   0.728
+   55    H    CYS   7           H        CYS   7   4.290   2.918  -0.124
+   56    HA   CYS   7           HA       CYS   7   3.917   2.325   2.835
+   57    HB2  CYS   7          1HB       CYS   7   5.183   0.358   0.817
+   58    HB3  CYS   7          2HB       CYS   7   5.541   0.333   2.603
+  Start of MODEL    6
+    1    H2   ARG   1          2H        ARG   1   1.852 -10.071  -1.894
+    2    H    ARG   1          1H        ARG   1   0.675 -10.800  -1.050
+    3    HA   ARG   1           HA       ARG   1   0.080  -8.571  -1.731
+    4    HB2  ARG   1          1HB       ARG   1  -0.823  -9.696   0.350
+    5    HB3  ARG   1          2HB       ARG   1   0.335  -8.858   1.334
+    6    HG2  ARG   1          1HG       ARG   1  -0.531  -6.619   0.642
+    7    HG3  ARG   1          2HG       ARG   1  -1.653  -7.309  -0.502
+    8    HD2  ARG   1          1HD       ARG   1  -1.603  -7.831   2.601
+    9    HD3  ARG   1          2HD       ARG   1  -2.579  -6.561   1.794
+   10    HE   ARG   1           HE       ARG   1  -3.211  -9.151   0.586
+   11   HH11  ARG   1          1HH1      ARG   1  -5.918  -9.870   2.468
+   12   HH12  ARG   1          2HH1      ARG   1  -4.912 -10.272   1.002
+   13   HH21  ARG   1          1HH2      ARG   1  -5.359  -8.451   3.836
+   14   HH22  ARG   1          2HH2      ARG   1  -3.848  -7.426   3.569
+   15    H    ALA   2           H        ALA   2   1.672  -7.378  -2.795
+   16    HA   ALA   2           HA       ALA   2   3.846  -5.896  -1.376
+   17    HB1  ALA   2          1HB       ALA   2   2.797  -5.804  -4.306
+   18    HB2  ALA   2          2HB       ALA   2   4.267  -5.037  -3.723
+   19    HB3  ALA   2          3HB       ALA   2   4.114  -6.825  -3.688
+   20    H    CYS   3           H        CYS   3   2.273  -5.025   0.255
+   21    HA   CYS   3           HA       CYS   3   1.460  -3.148   1.312
+   22    HB2  CYS   3          1HB       CYS   3   3.403  -1.925   0.026
+   23    HB3  CYS   3          2HB       CYS   3   2.154  -1.355  -1.115
+   24    H    ARG   4           H        ARG   4  -0.023  -1.161   0.968
+   25    HA   ARG   4           HA       ARG   4  -2.713  -2.036  -0.259
+   26    HB2  ARG   4          1HB       ARG   4  -2.054   0.216   1.722
+   27    HB3  ARG   4          2HB       ARG   4  -3.585   0.090   0.875
+   28    HG2  ARG   4          1HG       ARG   4  -3.886  -2.278   1.953
+   29    HG3  ARG   4          2HG       ARG   4  -2.356  -2.006   2.797
+   30    HD2  ARG   4          1HD       ARG   4  -4.194  -1.488   4.309
+   31    HD3  ARG   4          2HD       ARG   4  -3.331  -0.023   3.997
+   32    HE   ARG   4           HE       ARG   4  -5.566  -0.207   2.062
+   33   HH11  ARG   4          1HH1      ARG   4  -7.860   1.561   3.625
+   34   HH12  ARG   4          2HH1      ARG   4  -7.235   0.769   2.156
+   35   HH21  ARG   4          1HH2      ARG   4  -6.708   1.352   5.501
+   36   HH22  ARG   4          2HH2      ARG   4  -5.128   0.390   5.463
+   37    H    PHE   5           H        PHE   5  -0.825   0.973  -0.155
+   38    HA   PHE   5           HA       PHE   5  -0.830   1.188  -3.152
+   39    HB2  PHE   5          1HB       PHE   5  -1.842   3.326  -3.393
+   40    HB3  PHE   5          2HB       PHE   5  -2.953   2.152  -2.800
+   41    HD1  PHE   5          1HD       PHE   5  -3.799   2.216  -0.470
+   42    HD2  PHE   5          2HD       PHE   5  -1.387   5.357  -2.101
+   43    HE1  PHE   5          1HE       PHE   5  -4.588   3.720   1.370
+   44    HE2  PHE   5          2HE       PHE   5  -2.198   6.905  -0.300
+   45    HZ   PHE   5           HZ       PHE   5  -3.799   6.076   1.397
+   46    H    PHE   6           H        PHE   6  -0.050   3.189  -0.300
+   47    HA   PHE   6           HA       PHE   6   2.828   3.422  -1.352
+   48    HB2  PHE   6          1HB       PHE   6   1.644   5.516  -1.513
+   49    HB3  PHE   6          2HB       PHE   6   1.269   5.517   0.172
+   50    HD1  PHE   6          1HD       PHE   6   3.986   5.848  -2.398
+   51    HD2  PHE   6          2HD       PHE   6   3.195   6.041   1.824
+   52    HE1  PHE   6          1HE       PHE   6   6.147   6.872  -2.093
+   53    HE2  PHE   6          2HE       PHE   6   5.434   6.968   2.179
+   54    HZ   PHE   6           HZ       PHE   6   6.930   7.396   0.222
+   55    H    CYS   7           H        CYS   7   4.283   2.638  -0.134
+   56    HA   CYS   7           HA       CYS   7   3.901   2.350   2.914
+   57    HB2  CYS   7          1HB       CYS   7   5.175   0.281   1.030
+   58    HB3  CYS   7          2HB       CYS   7   5.574   0.390   2.708
+  Start of MODEL    7
+    1    H2   ARG   1          2H        ARG   1   2.424 -10.250  -1.139
+    2    H    ARG   1          1H        ARG   1   1.153 -11.021  -0.451
+    3    HA   ARG   1           HA       ARG   1   0.375  -9.132  -1.488
+    4    HB2  ARG   1          1HB       ARG   1  -0.629  -9.830   0.699
+    5    HB3  ARG   1          2HB       ARG   1   0.445  -8.741   1.572
+    6    HG2  ARG   1          1HG       ARG   1  -0.622  -6.767   0.259
+    7    HG3  ARG   1          2HG       ARG   1  -1.576  -7.875  -0.711
+    8    HD2  ARG   1          1HD       ARG   1  -1.820  -7.640   2.361
+    9    HD3  ARG   1          2HD       ARG   1  -2.805  -6.712   1.267
+   10    HE   ARG   1           HE       ARG   1  -2.978  -9.656   0.684
+   11   HH11  ARG   1          1HH1      ARG   1  -5.991 -10.036   2.212
+   12   HH12  ARG   1          2HH1      ARG   1  -4.743 -10.673   1.044
+   13   HH21  ARG   1          1HH2      ARG   1  -5.772  -8.166   3.181
+   14   HH22  ARG   1          2HH2      ARG   1  -4.235  -7.223   2.976
+   15    H    ALA   2           H        ALA   2   1.315  -7.578  -2.641
+   16    HA   ALA   2           HA       ALA   2   3.673  -6.044  -1.571
+   17    HB1  ALA   2          1HB       ALA   2   2.518  -6.118  -4.398
+   18    HB2  ALA   2          2HB       ALA   2   4.036  -5.400  -3.913
+   19    HB3  ALA   2          3HB       ALA   2   3.832  -7.186  -3.851
+   20    H    CYS   3           H        CYS   3   2.358  -4.942  -0.061
+   21    HA   CYS   3           HA       CYS   3   1.566  -2.973   0.836
+   22    HB2  CYS   3          1HB       CYS   3   3.412  -2.051  -0.585
+   23    HB3  CYS   3          2HB       CYS   3   2.253  -1.711  -1.853
+   24    H    ARG   4           H        ARG   4  -0.107  -1.577   1.079
+   25    HA   ARG   4           HA       ARG   4  -2.739  -1.983  -0.394
+   26    HB2  ARG   4          1HB       ARG   4  -1.865  -0.012   1.818
+   27    HB3  ARG   4          2HB       ARG   4  -3.430   0.189   1.048
+   28    HG2  ARG   4          1HG       ARG   4  -4.001  -2.260   1.827
+   29    HG3  ARG   4          2HG       ARG   4  -2.449  -2.273   2.631
+   30    HD2  ARG   4          1HD       ARG   4  -4.002  -1.726   4.369
+   31    HD3  ARG   4          2HD       ARG   4  -3.082  -0.244   4.031
+   32    HE   ARG   4           HE       ARG   4  -5.514  -0.246   2.361
+   33   HH11  ARG   4          1HH1      ARG   4  -7.053   2.122   4.344
+   34   HH12  ARG   4          2HH1      ARG   4  -6.955   1.273   2.724
+   35   HH21  ARG   4          1HH2      ARG   4  -5.795   1.488   5.948
+   36   HH22  ARG   4          2HH2      ARG   4  -4.555   0.171   5.686
+   37    H    PHE   5           H        PHE   5  -0.713   0.924  -0.062
+   38    HA   PHE   5           HA       PHE   5  -0.775   1.319  -3.020
+   39    HB2  PHE   5          1HB       PHE   5  -1.886   3.371  -3.324
+   40    HB3  PHE   5          2HB       PHE   5  -2.972   2.378  -2.432
+   41    HD1  PHE   5          1HD       PHE   5  -3.288   2.769   0.111
+   42    HD2  PHE   5          2HD       PHE   5  -1.464   5.630  -2.461
+   43    HE1  PHE   5          1HE       PHE   5  -3.658   4.514   1.837
+   44    HE2  PHE   5          2HE       PHE   5  -1.787   7.406  -0.741
+   45    HZ   PHE   5           HZ       PHE   5  -2.847   6.832   1.383
+   46    H    PHE   6           H        PHE   6  -0.047   3.476  -0.176
+   47    HA   PHE   6           HA       PHE   6   2.819   3.760  -1.281
+   48    HB2  PHE   6          1HB       PHE   6   1.351   5.870  -1.319
+   49    HB3  PHE   6          2HB       PHE   6   1.219   5.791   0.400
+   50    HD1  PHE   6          1HD       PHE   6   3.542   6.412  -2.433
+   51    HD2  PHE   6          2HD       PHE   6   3.143   6.473   1.836
+   52    HE1  PHE   6          1HE       PHE   6   5.699   7.561  -2.264
+   53    HE2  PHE   6          2HE       PHE   6   5.310   7.599   1.983
+   54    HZ   PHE   6           HZ       PHE   6   6.577   8.210  -0.069
+   55    H    CYS   7           H        CYS   7   4.243   2.650  -0.061
+   56    HA   CYS   7           HA       CYS   7   3.894   2.385   2.995
+   57    HB2  CYS   7          1HB       CYS   7   4.923   0.201   0.988
+   58    HB3  CYS   7          2HB       CYS   7   4.942   0.063   2.742
+  Start of MODEL    8
+    1    H2   ARG   1          2H        ARG   1   2.122 -10.181  -1.296
+    2    H    ARG   1          1H        ARG   1   0.859 -10.763  -0.493
+    3    HA   ARG   1           HA       ARG   1   0.252  -8.844  -1.714
+    4    HB2  ARG   1          1HB       ARG   1  -0.862  -9.335   0.433
+    5    HB3  ARG   1          2HB       ARG   1   0.303  -8.355   1.343
+    6    HG2  ARG   1          1HG       ARG   1  -0.392  -6.295   0.197
+    7    HG3  ARG   1          2HG       ARG   1  -1.544  -7.104  -0.845
+    8    HD2  ARG   1          1HD       ARG   1  -1.695  -7.011   2.285
+    9    HD3  ARG   1          2HD       ARG   1  -2.590  -5.962   1.196
+   10    HE   ARG   1           HE       ARG   1  -3.235  -8.687   0.388
+   11   HH11  ARG   1          1HH1      ARG   1  -5.951  -9.158   2.320
+   12   HH12  ARG   1          2HH1      ARG   1  -4.941  -9.670   0.871
+   13   HH21  ARG   1          1HH2      ARG   1  -5.355  -7.622   3.576
+   14   HH22  ARG   1          2HH2      ARG   1  -3.839  -6.693   3.214
+   15    H    ALA   2           H        ALA   2   1.327  -7.203  -2.801
+   16    HA   ALA   2           HA       ALA   2   3.780  -5.823  -1.695
+   17    HB1  ALA   2          1HB       ALA   2   2.368  -5.728  -4.418
+   18    HB2  ALA   2          2HB       ALA   2   3.856  -4.896  -4.054
+   19    HB3  ALA   2          3HB       ALA   2   3.852  -6.646  -4.022
+   20    H    CYS   3           H        CYS   3   2.502  -4.858   0.053
+   21    HA   CYS   3           HA       CYS   3   1.592  -2.994   1.173
+   22    HB2  CYS   3          1HB       CYS   3   3.375  -1.814  -0.362
+   23    HB3  CYS   3          2HB       CYS   3   2.069  -1.411  -1.431
+   24    H    ARG   4           H        ARG   4  -0.126  -1.216   1.118
+   25    HA   ARG   4           HA       ARG   4  -2.729  -2.121  -0.246
+   26    HB2  ARG   4          1HB       ARG   4  -2.354   0.224   1.619
+   27    HB3  ARG   4          2HB       ARG   4  -3.817  -0.132   0.774
+   28    HG2  ARG   4          1HG       ARG   4  -3.992  -2.373   1.981
+   29    HG3  ARG   4          2HG       ARG   4  -2.483  -2.105   2.761
+   30    HD2  ARG   4          1HD       ARG   4  -4.034  -1.567   4.449
+   31    HD3  ARG   4          2HD       ARG   4  -3.291  -0.057   3.907
+   32    HE   ARG   4           HE       ARG   4  -5.824  -0.620   2.443
+   33   HH11  ARG   4          1HH1      ARG   4  -7.726   1.613   4.246
+   34   HH12  ARG   4          2HH1      ARG   4  -7.544   0.512   2.803
+   35   HH21  ARG   4          1HH2      ARG   4  -6.053   1.826   5.597
+   36   HH22  ARG   4          2HH2      ARG   4  -4.543   0.881   5.306
+   37    H    PHE   5           H        PHE   5  -0.634   0.771  -0.207
+   38    HA   PHE   5           HA       PHE   5  -0.579   0.931  -3.145
+   39    HB2  PHE   5          1HB       PHE   5  -1.497   3.216  -3.554
+   40    HB3  PHE   5          2HB       PHE   5  -2.689   2.023  -3.170
+   41    HD1  PHE   5          1HD       PHE   5  -3.892   2.224  -0.865
+   42    HD2  PHE   5          2HD       PHE   5  -1.123   5.166  -2.257
+   43    HE1  PHE   5          1HE       PHE   5  -4.641   3.813   0.926
+   44    HE2  PHE   5          2HE       PHE   5  -1.881   6.714  -0.494
+   45    HZ   PHE   5           HZ       PHE   5  -3.551   5.987   1.133
+   46    H    PHE   6           H        PHE   6  -0.065   3.250  -0.412
+   47    HA   PHE   6           HA       PHE   6   2.831   3.465  -1.339
+   48    HB2  PHE   6          1HB       PHE   6   1.412   5.479  -1.575
+   49    HB3  PHE   6          2HB       PHE   6   1.141   5.537   0.151
+   50    HD1  PHE   6          1HD       PHE   6   3.674   5.799  -2.615
+   51    HD2  PHE   6          2HD       PHE   6   3.002   6.401   1.569
+   52    HE1  PHE   6          1HE       PHE   6   5.867   6.910  -2.419
+   53    HE2  PHE   6          2HE       PHE   6   5.245   7.335   1.803
+   54    HZ   PHE   6           HZ       PHE   6   6.703   7.609  -0.221
+   55    H    CYS   7           H        CYS   7   4.137   2.368  -0.116
+   56    HA   CYS   7           HA       CYS   7   3.814   2.424   2.952
+   57    HB2  CYS   7          1HB       CYS   7   4.944   0.253   1.021
+   58    HB3  CYS   7          2HB       CYS   7   5.228   0.191   2.773
+  Start of MODEL    9
+    1    H2   ARG   1          2H        ARG   1   1.949 -10.166  -1.286
+    2    H    ARG   1          1H        ARG   1   0.573 -10.749  -0.621
+    3    HA   ARG   1           HA       ARG   1   0.071  -8.728  -1.741
+    4    HB2  ARG   1          1HB       ARG   1  -1.169  -9.378   0.295
+    5    HB3  ARG   1          2HB       ARG   1  -0.006  -8.519   1.322
+    6    HG2  ARG   1          1HG       ARG   1  -0.743  -6.328   0.377
+    7    HG3  ARG   1          2HG       ARG   1  -1.728  -7.078  -0.892
+    8    HD2  ARG   1          1HD       ARG   1  -2.326  -7.288   2.169
+    9    HD3  ARG   1          2HD       ARG   1  -3.050  -6.165   1.048
+   10    HE   ARG   1           HE       ARG   1  -3.679  -8.471  -0.241
+   11   HH11  ARG   1          1HH1      ARG   1  -6.173  -9.926   1.603
+   12   HH12  ARG   1          2HH1      ARG   1  -5.358  -9.815  -0.006
+   13   HH21  ARG   1          1HH2      ARG   1  -5.535  -8.770   3.253
+   14   HH22  ARG   1          2HH2      ARG   1  -4.235  -7.520   3.019
+   15    H    ALA   2           H        ALA   2   1.501  -7.474  -2.799
+   16    HA   ALA   2           HA       ALA   2   3.754  -6.042  -1.407
+   17    HB1  ALA   2          1HB       ALA   2   2.821  -5.867  -4.408
+   18    HB2  ALA   2          2HB       ALA   2   4.309  -5.150  -3.736
+   19    HB3  ALA   2          3HB       ALA   2   4.107  -6.909  -3.758
+   20    H    CYS   3           H        CYS   3   2.357  -4.965   0.053
+   21    HA   CYS   3           HA       CYS   3   1.807  -2.979   1.042
+   22    HB2  CYS   3          1HB       CYS   3   3.436  -1.783  -0.578
+   23    HB3  CYS   3          2HB       CYS   3   2.044  -1.451  -1.647
+   24    H    ARG   4           H        ARG   4   0.008  -1.278   1.004
+   25    HA   ARG   4           HA       ARG   4  -2.582  -2.231  -0.318
+   26    HB2  ARG   4          1HB       ARG   4  -2.137   0.175   1.576
+   27    HB3  ARG   4          2HB       ARG   4  -3.606  -0.186   0.755
+   28    HG2  ARG   4          1HG       ARG   4  -3.789  -2.422   1.950
+   29    HG3  ARG   4          2HG       ARG   4  -2.324  -2.031   2.807
+   30    HD2  ARG   4          1HD       ARG   4  -4.064  -1.576   4.305
+   31    HD3  ARG   4          2HD       ARG   4  -3.597   0.057   3.810
+   32    HE   ARG   4           HE       ARG   4  -5.711  -0.919   2.016
+   33   HH11  ARG   4          1HH1      ARG   4  -8.378   0.405   3.590
+   34   HH12  ARG   4          2HH1      ARG   4  -7.592  -0.318   2.065
+   35   HH21  ARG   4          1HH2      ARG   4  -7.163   0.680   5.369
+   36   HH22  ARG   4          2HH2      ARG   4  -5.412   0.181   5.270
+   37    H    PHE   5           H        PHE   5  -0.591   0.758  -0.166
+   38    HA   PHE   5           HA       PHE   5  -0.546   1.059  -3.071
+   39    HB2  PHE   5          1HB       PHE   5  -1.725   3.116  -3.516
+   40    HB3  PHE   5          2HB       PHE   5  -2.808   1.858  -2.965
+   41    HD1  PHE   5          1HD       PHE   5  -3.777   1.950  -0.617
+   42    HD2  PHE   5          2HD       PHE   5  -1.399   5.156  -2.084
+   43    HE1  PHE   5          1HE       PHE   5  -4.654   3.424   1.185
+   44    HE2  PHE   5          2HE       PHE   5  -2.252   6.659  -0.322
+   45    HZ   PHE   5           HZ       PHE   5  -4.003   5.767   1.274
+   46    H    PHE   6           H        PHE   6  -0.162   3.162  -0.272
+   47    HA   PHE   6           HA       PHE   6   2.696   3.731  -1.236
+   48    HB2  PHE   6          1HB       PHE   6   1.106   5.737  -1.230
+   49    HB3  PHE   6          2HB       PHE   6   0.992   5.645   0.500
+   50    HD1  PHE   6          1HD       PHE   6   3.353   6.231  -2.335
+   51    HD2  PHE   6          2HD       PHE   6   2.926   6.421   1.965
+   52    HE1  PHE   6          1HE       PHE   6   5.464   7.480  -2.130
+   53    HE2  PHE   6          2HE       PHE   6   5.057   7.613   2.149
+   54    HZ   PHE   6           HZ       PHE   6   6.343   8.066   0.104
+   55    H    CYS   7           H        CYS   7   4.028   2.536  -0.138
+   56    HA   CYS   7           HA       CYS   7   3.816   2.296   2.957
+   57    HB2  CYS   7          1HB       CYS   7   5.005   0.354   0.854
+   58    HB3  CYS   7          2HB       CYS   7   5.248   0.224   2.579
+  Start of MODEL   10
+    1    H2   ARG   1          2H        ARG   1   2.570 -10.313  -0.765
+    2    H    ARG   1          1H        ARG   1   1.168 -10.956  -0.136
+    3    HA   ARG   1           HA       ARG   1   0.588  -9.196  -1.645
+    4    HB2  ARG   1          1HB       ARG   1  -0.662  -9.586   0.530
+    5    HB3  ARG   1          2HB       ARG   1   0.248  -8.332   1.326
+    6    HG2  ARG   1          1HG       ARG   1  -0.710  -6.643  -0.358
+    7    HG3  ARG   1          2HG       ARG   1  -1.643  -7.906  -1.155
+    8    HD2  ARG   1          1HD       ARG   1  -1.980  -7.114   1.874
+    9    HD3  ARG   1          2HD       ARG   1  -2.922  -6.352   0.512
+   10    HE   ARG   1           HE       ARG   1  -3.131  -9.311   0.258
+   11   HH11  ARG   1          1HH1      ARG   1  -5.943  -9.719   2.067
+   12   HH12  ARG   1          2HH1      ARG   1  -4.824 -10.316   0.730
+   13   HH21  ARG   1          1HH2      ARG   1  -5.682  -7.789   2.902
+   14   HH22  ARG   1          2HH2      ARG   1  -4.227  -6.803   2.426
+   15    H    ALA   2           H        ALA   2   1.492  -7.591  -2.745
+   16    HA   ALA   2           HA       ALA   2   3.773  -5.838  -1.722
+   17    HB1  ALA   2          1HB       ALA   2   2.447  -5.985  -4.528
+   18    HB2  ALA   2          2HB       ALA   2   3.928  -5.127  -4.084
+   19    HB3  ALA   2          3HB       ALA   2   3.907  -6.852  -3.997
+   20    H    CYS   3           H        CYS   3   2.271  -4.932  -0.105
+   21    HA   CYS   3           HA       CYS   3   1.614  -3.029   0.912
+   22    HB2  CYS   3          1HB       CYS   3   3.316  -1.921  -0.505
+   23    HB3  CYS   3          2HB       CYS   3   2.114  -1.479  -1.705
+   24    H    ARG   4           H        ARG   4  -0.071  -1.346   1.139
+   25    HA   ARG   4           HA       ARG   4  -2.767  -1.917  -0.104
+   26    HB2  ARG   4          1HB       ARG   4  -1.955   0.391   1.806
+   27    HB3  ARG   4          2HB       ARG   4  -3.532   0.155   1.084
+   28    HG2  ARG   4          1HG       ARG   4  -3.904  -2.017   2.255
+   29    HG3  ARG   4          2HG       ARG   4  -2.293  -1.957   2.910
+   30    HD2  ARG   4          1HD       ARG   4  -3.806  -1.110   4.622
+   31    HD3  ARG   4          2HD       ARG   4  -2.894   0.282   4.046
+   32    HE   ARG   4           HE       ARG   4  -5.532  -0.108   2.634
+   33   HH11  ARG   4          1HH1      ARG   4  -7.276   2.221   4.397
+   34   HH12  ARG   4          2HH1      ARG   4  -7.143   1.125   2.951
+   35   HH21  ARG   4          1HH2      ARG   4  -5.678   2.286   5.812
+   36   HH22  ARG   4          2HH2      ARG   4  -4.193   1.284   5.578
+   37    H    PHE   5           H        PHE   5  -0.496   0.846  -0.169
+   38    HA   PHE   5           HA       PHE   5  -0.690   1.199  -3.023
+   39    HB2  PHE   5          1HB       PHE   5  -1.723   3.434  -3.346
+   40    HB3  PHE   5          2HB       PHE   5  -2.890   2.354  -2.683
+   41    HD1  PHE   5          1HD       PHE   5  -3.235   2.552   0.018
+   42    HD2  PHE   5          2HD       PHE   5  -1.497   5.630  -2.416
+   43    HE1  PHE   5          1HE       PHE   5  -3.877   4.282   1.714
+   44    HE2  PHE   5          2HE       PHE   5  -2.158   7.334  -0.735
+   45    HZ   PHE   5           HZ       PHE   5  -3.308   6.625   1.321
+   46    H    PHE   6           H        PHE   6   0.022   3.647  -0.495
+   47    HA   PHE   6           HA       PHE   6   2.982   3.481  -1.342
+   48    HB2  PHE   6          1HB       PHE   6   1.797   5.642  -1.710
+   49    HB3  PHE   6          2HB       PHE   6   1.359   5.682   0.007
+   50    HD1  PHE   6          1HD       PHE   6   4.337   5.764  -2.390
+   51    HD2  PHE   6          2HD       PHE   6   2.916   6.610   1.617
+   52    HE1  PHE   6          1HE       PHE   6   6.442   6.879  -1.857
+   53    HE2  PHE   6          2HE       PHE   6   4.985   7.869   2.079
+   54    HZ   PHE   6           HZ       PHE   6   6.748   7.977   0.360
+   55    H    CYS   7           H        CYS   7   3.926   2.061  -0.120
+   56    HA   CYS   7           HA       CYS   7   3.677   2.196   2.931
+   57    HB2  CYS   7          1HB       CYS   7   4.982   0.016   1.122
+   58    HB3  CYS   7          2HB       CYS   7   5.100   0.056   2.871

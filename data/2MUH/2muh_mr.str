@@ -1,0 +1,659 @@
+data_wwPDB_remediated_restraints_file_for_PDB_entry_2muh
+
+# This wwPDB archive file contains, for PDB entry 2muh:
+#
+# - Sequence information from the PDB mmCIF file
+# - NMR restraints from the PDB MR file
+#
+# In this file, the NMR restraints share the same atom names as in the coordinate 
+# file, and in this way can differ from the data deposited at the wwPDB. To achieve
+# this aim, the NMR restraints were parsed from their original format files, and
+# the coordinates and NMR restraints information were subsequently harmonized.
+#
+# Due to the complexity of this harmonization process, minor modifications could
+# have occurred to the NMR restraints information, or data could have been lost
+# because of parsing or conversion errors. The PDB file remains the
+# authoritative reference for the atomic coordinates and the originally deposited
+# restraints files remain the primary reference for these data.
+#
+# This file is generated as part of the wwPDB at the BioMagResBank (BMRB) in
+# collaboration with the PDBe (formerly MSD) group at the European
+# Bioinformatics Institute (EBI) and the CMBI/IMM group at the Radboud
+# University of Nijmegen.
+#
+# Several software packages were used to produce this file:
+#
+# - Wattos (BMRB and CMBI/IMM).
+# - FormatConverter and NMRStarExport (PDBe).
+# - CCPN framework (http://www.ccpn.ac.uk/).
+#
+# More information about this process can be found in the references below.
+# Please cite the original reference for this PDB entry.
+#
+# JF Doreleijers, A Nederveen, W Vranken, J Lin, AM Bonvin, R Kaptein, JL
+# Markley, and EL Ulrich (2005). BioMagResBank databases DOCR and FRED
+# containing converted and filtered sets of experimental NMR restraints and
+# coordinates from over 500 protein PDB structures. J. Biomol. NMR 32, 1-12.
+#
+# WF Vranken, W Boucher, TJ Stevens, RH Fogh, A Pajon, M Llinas, EL Ulrich, JL
+# Markley, J Ionides, ED Laue (2005). The CCPN data model for NMR spectroscopy:
+# development of a software pipeline. Proteins 59, 687-696.
+#
+# JF Doreleijers, WF Vranken, C Schulte, J Lin, JR Wedell, CJ Penkett, GW Vuister, 
+# G Vriend, JL Markley, and EL Ulrich (2009). The NMR Restraints Grid at BMRB for 
+# 5,266 Protein and Nucleic Acid PDB Entries. J Biomol. NMR 45, 389-396.
+
+#######################
+#  Entry information  #
+#######################
+
+save_entry_information
+   _Entry.Sf_category                  entry_information
+   _Entry.Sf_framecode                 entry_information
+   _Entry.ID                           rr_2muh
+   _Entry.Title                        'wwPDB remediated NMR restraints for PDB entry 2muh'
+   _Entry.Version_type                 original
+   _Entry.NMR_STAR_version             3.1.0.8
+   _Entry.Experimental_method          NMR
+   _Entry.Experimental_method_subtype  solution
+   _Entry.Details                      'Contains the remediated restraint lists and coordinates for PDB entry 2muh'
+   _Entry.PDB_coordinate_file_version  3.20
+
+   loop_
+      _Related_entries.Database_name
+      _Related_entries.Database_accession_code
+      _Related_entries.Relationship
+      _Related_entries.Entry_ID
+
+     PDB   2muh   'Master copy'   rr_2muh    
+
+   stop_
+
+save_
+
+#############################################
+#  Molecular system (assembly) description  #
+#############################################
+
+save_assembly
+   _Assembly.Sf_category           assembly
+   _Assembly.Sf_framecode          assembly
+   _Assembly.Entry_ID              rr_2muh
+   _Assembly.ID                    1
+   _Assembly.Name                  2muh
+   _Assembly.Number_of_components  1
+   _Assembly.Organic_ligands       0
+   _Assembly.Metal_ions            0
+   _Assembly.Non_standard_bonds    no
+   _Assembly.Paramagnetic          no
+   _Assembly.Thiol_state           'all free'
+   _Assembly.Molecular_mass        1948.3913
+
+   loop_
+      _Entity_assembly.ID
+      _Entity_assembly.Entity_assembly_name
+      _Entity_assembly.Entity_ID
+      _Entity_assembly.Entity_label
+      _Entity_assembly.Asym_ID
+      _Entity_assembly.PDB_chain_ID
+      _Entity_assembly.Experimental_data_reported
+      _Entity_assembly.Physical_state
+      _Entity_assembly.Conformational_isomer
+      _Entity_assembly.Chemical_exchange_state
+      _Entity_assembly.Magnetic_equivalence_group_code
+      _Entity_assembly.Role
+      _Entity_assembly.Details
+      _Entity_assembly.Entry_ID
+      _Entity_assembly.Assembly_ID
+
+     1   'Protegrin 2'   1   $Protegrin_2   A   .   no   .   .   .   .   .   .   rr_2muh   1    
+
+   stop_
+
+save_
+
+    ####################################
+    #  Biological polymers and ligands #
+    ####################################
+
+save_Protegrin_2
+   _Entity.Sf_category                      entity
+   _Entity.Sf_framecode                     Protegrin_2
+   _Entity.Entry_ID                         rr_2muh
+   _Entity.ID                               1
+   _Entity.Name                             Protegrin_2
+   _Entity.Type                             polymer
+   _Entity.Polymer_type                     polypeptide(L)
+   _Entity.Polymer_strand_ID                A
+   _Entity.Polymer_seq_one_letter_code      RGGRLCYCRRRFCVCV
+   _Entity.Ambiguous_conformational_states  no
+   _Entity.Ambiguous_chem_comp_sites        no
+   _Entity.Nstd_monomer                     no
+   _Entity.Nstd_chirality                   no
+   _Entity.Nstd_linkage                     no
+   _Entity.Number_of_monomers               16
+   _Entity.Paramagnetic                     no
+   _Entity.Thiol_state                      'all free'
+   _Entity.Parent_entity_ID                 1
+   _Entity.Formula_weight                   1948.3913
+
+   loop_
+      _Entity_comp_index.ID
+      _Entity_comp_index.Auth_seq_ID
+      _Entity_comp_index.Comp_ID
+      _Entity_comp_index.Comp_label
+      _Entity_comp_index.Entry_ID
+      _Entity_comp_index.Entity_ID
+
+     1    .   ARG   .   rr_2muh   1    
+     2    .   GLY   .   rr_2muh   1    
+     3    .   GLY   .   rr_2muh   1    
+     4    .   ARG   .   rr_2muh   1    
+     5    .   LEU   .   rr_2muh   1    
+     6    .   CYS   .   rr_2muh   1    
+     7    .   TYR   .   rr_2muh   1    
+     8    .   CYS   .   rr_2muh   1    
+     9    .   ARG   .   rr_2muh   1    
+     10   .   ARG   .   rr_2muh   1    
+     11   .   ARG   .   rr_2muh   1    
+     12   .   PHE   .   rr_2muh   1    
+     13   .   CYS   .   rr_2muh   1    
+     14   .   VAL   .   rr_2muh   1    
+     15   .   CYS   .   rr_2muh   1    
+     16   .   VAL   .   rr_2muh   1    
+
+   stop_
+
+   loop_
+      _Entity_poly_seq.Hetero
+      _Entity_poly_seq.Mon_ID
+      _Entity_poly_seq.Num
+      _Entity_poly_seq.Comp_index_ID
+      _Entity_poly_seq.Entry_ID
+      _Entity_poly_seq.Entity_ID
+
+     .   ARG   1    1    rr_2muh   1    
+     .   GLY   2    2    rr_2muh   1    
+     .   GLY   3    3    rr_2muh   1    
+     .   ARG   4    4    rr_2muh   1    
+     .   LEU   5    5    rr_2muh   1    
+     .   CYS   6    6    rr_2muh   1    
+     .   TYR   7    7    rr_2muh   1    
+     .   CYS   8    8    rr_2muh   1    
+     .   ARG   9    9    rr_2muh   1    
+     .   ARG   10   10   rr_2muh   1    
+     .   ARG   11   11   rr_2muh   1    
+     .   PHE   12   12   rr_2muh   1    
+     .   CYS   13   13   rr_2muh   1    
+     .   VAL   14   14   rr_2muh   1    
+     .   CYS   15   15   rr_2muh   1    
+     .   VAL   16   16   rr_2muh   1    
+
+   stop_
+
+save_
+
+
+##############################
+#  Structure determinations  #
+##############################
+
+    ##########################
+    #  Conformer statistics  #
+    ##########################
+
+save_conformer_statistics
+   _Conformer_stat_list.Sf_category                    conformer_statistics
+   _Conformer_stat_list.Sf_framecode                   conformer_statistics
+   _Conformer_stat_list.Entry_ID                       rr_2muh
+   _Conformer_stat_list.ID                             1
+   _Conformer_stat_list.Conf_family_coord_set_ID       1
+   _Conformer_stat_list.Conf_family_coord_set_label    $Original_constraints_and_structures
+   _Conformer_stat_list.Conformer_submitted_total_num  20
+
+save_
+
+###########################
+#  Constraint Statistics  #
+###########################
+
+save_constraint_statistics
+   _Constraint_stat_list.Sf_framecode  constraint_statistics
+   _Constraint_stat_list.Sf_category   constraint_statistics
+   _Constraint_stat_list.Entry_ID      rr_2muh
+   _Constraint_stat_list.ID            1
+
+   loop_
+      _Constraint_file.ID
+      _Constraint_file.Constraint_filename
+      _Constraint_file.Software_ID
+      _Constraint_file.Software_label
+      _Constraint_file.Software_name
+      _Constraint_file.Block_ID
+      _Constraint_file.Constraint_type
+      _Constraint_file.Constraint_subtype
+      _Constraint_file.Constraint_subsubtype
+      _Constraint_file.Constraint_number
+      _Constraint_file.Entry_ID
+      _Constraint_file.Constraint_stat_list_ID
+
+     1   2muh.mr   .   .   'MR format'   1   comment                  'Not applicable'   'Not applicable'   0     rr_2muh   1    
+     1   2muh.mr   .   .   XPLOR/CNS     2   distance                 NOE                simple             174   rr_2muh   1    
+     1   2muh.mr   .   .   'MR format'   3   'nomenclature mapping'   'Not applicable'   'Not applicable'   0     rr_2muh   1    
+
+   stop_
+
+save_
+
+save_CNS/XPLOR_distance_constraints_2
+   _Gen_dist_constraint_list.Sf_category         general_distance_constraints
+   _Gen_dist_constraint_list.Sf_framecode        CNS/XPLOR_distance_constraints_2
+   _Gen_dist_constraint_list.Entry_ID            rr_2muh
+   _Gen_dist_constraint_list.ID                  1
+   _Gen_dist_constraint_list.Constraint_type     NOE
+   _Gen_dist_constraint_list.Details             'Generated by Wattos'
+   _Gen_dist_constraint_list.Constraint_file_ID  1
+   _Gen_dist_constraint_list.Block_ID            2
+
+   loop_
+      _Gen_dist_constraint_software.Software_ID
+      _Gen_dist_constraint_software.Software_label
+      _Gen_dist_constraint_software.Method_ID
+      _Gen_dist_constraint_software.Method_label
+      _Gen_dist_constraint_software.Entry_ID
+      _Gen_dist_constraint_software.Gen_dist_constraint_list_ID
+
+     .   .   .   .   rr_2muh   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint.ID
+      _Gen_dist_constraint.Member_ID
+      _Gen_dist_constraint.Member_logic_code
+      _Gen_dist_constraint.Assembly_atom_ID_1
+      _Gen_dist_constraint.Entity_assembly_ID_1
+      _Gen_dist_constraint.Entity_ID_1
+      _Gen_dist_constraint.Comp_index_ID_1
+      _Gen_dist_constraint.Seq_ID_1
+      _Gen_dist_constraint.Comp_ID_1
+      _Gen_dist_constraint.Atom_ID_1
+      _Gen_dist_constraint.Atom_type_1
+      _Gen_dist_constraint.Atom_isotope_number_1
+      _Gen_dist_constraint.Resonance_ID_1
+      _Gen_dist_constraint.Assembly_atom_ID_2
+      _Gen_dist_constraint.Entity_assembly_ID_2
+      _Gen_dist_constraint.Entity_ID_2
+      _Gen_dist_constraint.Comp_index_ID_2
+      _Gen_dist_constraint.Seq_ID_2
+      _Gen_dist_constraint.Comp_ID_2
+      _Gen_dist_constraint.Atom_ID_2
+      _Gen_dist_constraint.Atom_type_2
+      _Gen_dist_constraint.Atom_isotope_number_2
+      _Gen_dist_constraint.Resonance_ID_2
+      _Gen_dist_constraint.Intensity_val
+      _Gen_dist_constraint.Intensity_lower_val_err
+      _Gen_dist_constraint.Intensity_upper_val_err
+      _Gen_dist_constraint.Distance_val
+      _Gen_dist_constraint.Distance_lower_bound_val
+      _Gen_dist_constraint.Distance_upper_bound_val
+      _Gen_dist_constraint.Contribution_fractional_val
+      _Gen_dist_constraint.Spectral_peak_ID
+      _Gen_dist_constraint.Spectral_peak_list_ID
+      _Gen_dist_constraint.PDB_record_ID_1
+      _Gen_dist_constraint.PDB_model_num_1
+      _Gen_dist_constraint.PDB_strand_ID_1
+      _Gen_dist_constraint.PDB_ins_code_1
+      _Gen_dist_constraint.PDB_residue_no_1
+      _Gen_dist_constraint.PDB_residue_name_1
+      _Gen_dist_constraint.PDB_atom_name_1
+      _Gen_dist_constraint.PDB_record_ID_2
+      _Gen_dist_constraint.PDB_model_num_2
+      _Gen_dist_constraint.PDB_strand_ID_2
+      _Gen_dist_constraint.PDB_ins_code_2
+      _Gen_dist_constraint.PDB_residue_no_2
+      _Gen_dist_constraint.PDB_residue_name_2
+      _Gen_dist_constraint.PDB_atom_name_2
+      _Gen_dist_constraint.Auth_entity_assembly_ID_1
+      _Gen_dist_constraint.Auth_asym_ID_1
+      _Gen_dist_constraint.Auth_chain_ID_1
+      _Gen_dist_constraint.Auth_seq_ID_1
+      _Gen_dist_constraint.Auth_comp_ID_1
+      _Gen_dist_constraint.Auth_atom_ID_1
+      _Gen_dist_constraint.Auth_alt_ID_1
+      _Gen_dist_constraint.Auth_atom_name_1
+      _Gen_dist_constraint.Auth_entity_assembly_ID_2
+      _Gen_dist_constraint.Auth_asym_ID_2
+      _Gen_dist_constraint.Auth_chain_ID_2
+      _Gen_dist_constraint.Auth_seq_ID_2
+      _Gen_dist_constraint.Auth_comp_ID_2
+      _Gen_dist_constraint.Auth_atom_ID_2
+      _Gen_dist_constraint.Auth_alt_ID_2
+      _Gen_dist_constraint.Auth_atom_name_2
+      _Gen_dist_constraint.Entry_ID
+      _Gen_dist_constraint.Gen_dist_constraint_list_ID
+
+     1     1   .    .   1   1   1    1    ARG   HA    H   .   .   .   1   1   2    2    GLY   H     H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   1    ARG   HA    .   .   A   .   2    GLY   H     .   .   .   1    .   HA    .   .   .   .   .   2    .   HN    .   .   rr_2muh   1    
+     2     1   OR   .   1   1   3    3    GLY   H     H   .   .   .   1   1   2    2    GLY   HA2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   3    GLY   H     .   .   A   .   2    GLY   HA2   .   .   .   3    .   HN    .   .   .   .   .   2    .   HA#   .   .   rr_2muh   1    
+     2     2   OR   .   1   1   2    2    GLY   HA3   H   .   .   .   1   1   3    3    GLY   H     H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   2    GLY   HA3   .   .   A   .   3    GLY   H     .   .   .   2    .   HA#   .   .   .   .   .   3    .   HN    .   .   rr_2muh   1    
+     3     1   OR   .   1   1   4    4    ARG   H     H   .   .   .   1   1   3    3    GLY   HA2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   4    ARG   H     .   .   A   .   3    GLY   HA2   .   .   .   4    .   HN    .   .   .   .   .   3    .   HA#   .   .   rr_2muh   1    
+     3     2   OR   .   1   1   3    3    GLY   HA3   H   .   .   .   1   1   4    4    ARG   H     H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   3    GLY   HA3   .   .   A   .   4    ARG   H     .   .   .   3    .   HA#   .   .   .   .   .   4    .   HN    .   .   rr_2muh   1    
+     4     1   .    .   1   1   4    4    ARG   HA    H   .   .   .   1   1   5    5    LEU   H     H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   4    ARG   HA    .   .   A   .   5    LEU   H     .   .   .   4    .   HA    .   .   .   .   .   5    .   HN    .   .   rr_2muh   1    
+     5     1   .    .   1   1   5    5    LEU   HA    H   .   .   .   1   1   6    6    CYS   H     H   .   .   .   .   .   2.5   2.0   3.0   .   .   .   .   .   A   .   5    LEU   HA    .   .   A   .   6    CYS   H     .   .   .   5    .   HA    .   .   .   .   .   6    .   HN    .   .   rr_2muh   1    
+     6     1   .    .   1   1   6    6    CYS   HA    H   .   .   .   1   1   7    7    TYR   H     H   .   .   .   .   .   2.5   2.0   3.0   .   .   .   .   .   A   .   6    CYS   HA    .   .   A   .   7    TYR   H     .   .   .   6    .   HA    .   .   .   .   .   7    .   HN    .   .   rr_2muh   1    
+     7     1   .    .   1   1   7    7    TYR   HA    H   .   .   .   1   1   8    8    CYS   H     H   .   .   .   .   .   4.0   0.0   4.0   .   .   .   .   .   A   .   7    TYR   HA    .   .   A   .   8    CYS   H     .   .   .   7    .   HA    .   .   .   .   .   8    .   HN    .   .   rr_2muh   1    
+     8     1   .    .   1   1   7    7    TYR   H     H   .   .   .   1   1   8    8    CYS   HA    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   7    TYR   H     .   .   A   .   8    CYS   HA    .   .   .   7    .   HN    .   .   .   .   .   8    .   HA    .   .   rr_2muh   1    
+     9     1   .    .   1   1   11   11   ARG   HA    H   .   .   .   1   1   12   12   PHE   H     H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   12   PHE   H     .   .   .   11   .   HA    .   .   .   .   .   12   .   HN    .   .   rr_2muh   1    
+     10    1   .    .   1   1   13   13   CYS   HA    H   .   .   .   1   1   14   14   VAL   H     H   .   .   .   .   .   2.5   2.0   3.0   .   .   .   .   .   A   .   13   CYS   HA    .   .   A   .   14   VAL   H     .   .   .   13   .   HA    .   .   .   .   .   14   .   HN    .   .   rr_2muh   1    
+     11    1   .    .   1   1   14   14   VAL   HA    H   .   .   .   1   1   15   15   CYS   H     H   .   .   .   .   .   2.5   2.0   3.0   .   .   .   .   .   A   .   14   VAL   HA    .   .   A   .   15   CYS   H     .   .   .   14   .   HA    .   .   .   .   .   15   .   HN    .   .   rr_2muh   1    
+     12    1   .    .   1   1   8    8    CYS   HA    H   .   .   .   1   1   14   14   VAL   H     H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   8    CYS   HA    .   .   A   .   14   VAL   H     .   .   .   8    .   HA    .   .   .   .   .   14   .   HN    .   .   rr_2muh   1    
+     13    1   .    .   1   1   14   14   VAL   H     H   .   .   .   1   1   15   15   CYS   HA    H   .   .   .   .   .   5.0   0.0   5.0   .   .   .   .   .   A   .   14   VAL   H     .   .   A   .   15   CYS   HA    .   .   .   14   .   HN    .   .   .   .   .   15   .   HA    .   .   rr_2muh   1    
+     14    1   .    .   1   1   2    2    GLY   H     H   .   .   .   1   1   3    3    GLY   H     H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   2    GLY   H     .   .   A   .   3    GLY   H     .   .   .   2    .   HN    .   .   .   .   .   3    .   HN    .   .   rr_2muh   1    
+     15    1   .    .   1   1   5    5    LEU   H     H   .   .   .   1   1   16   16   VAL   H     H   .   .   .   .   .   2.5   2.0   3.0   .   .   .   .   .   A   .   5    LEU   H     .   .   A   .   16   VAL   H     .   .   .   5    .   HN    .   .   .   .   .   16   .   HN    .   .   rr_2muh   1    
+     16    1   .    .   1   1   7    7    TYR   H     H   .   .   .   1   1   14   14   VAL   H     H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   7    TYR   H     .   .   A   .   14   VAL   H     .   .   .   7    .   HN    .   .   .   .   .   14   .   HN    .   .   rr_2muh   1    
+     17    1   .    .   1   1   12   12   PHE   H     H   .   .   .   1   1   13   13   CYS   H     H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   12   PHE   H     .   .   A   .   13   CYS   H     .   .   .   12   .   HN    .   .   .   .   .   13   .   HN    .   .   rr_2muh   1    
+     18    1   OR   .   1   1   2    2    GLY   H     H   .   .   .   1   1   1    1    ARG   HB2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   2    GLY   H     .   .   A   .   1    ARG   HB2   .   .   .   2    .   HN    .   .   .   .   .   1    .   HB#   .   .   rr_2muh   1    
+     18    2   OR   .   1   1   2    2    GLY   H     H   .   .   .   1   1   1    1    ARG   HB3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   2    GLY   H     .   .   A   .   1    ARG   HB3   .   .   .   2    .   HN    .   .   .   .   .   1    .   HB#   .   .   rr_2muh   1    
+     19    1   .    .   1   1   7    7    TYR   H     H   .   .   .   1   1   6    6    CYS   HB2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   H     .   .   A   .   6    CYS   HB2   .   .   .   7    .   HN    .   .   .   .   .   6    .   HB2   .   .   rr_2muh   1    
+     20    1   .    .   1   1   12   12   PHE   H     H   .   .   .   1   1   11   11   ARG   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   12   PHE   H     .   .   A   .   11   ARG   HB3   .   .   .   12   .   HN    .   .   .   .   .   11   .   HB1   .   .   rr_2muh   1    
+     21    1   .    .   1   1   14   14   VAL   H     H   .   .   .   1   1   6    6    CYS   HB3   H   .   .   .   .   .   5.0   0.0   5.0   .   .   .   .   .   A   .   14   VAL   H     .   .   A   .   6    CYS   HB3   .   .   .   14   .   HN    .   .   .   .   .   6    .   HB1   .   .   rr_2muh   1    
+     22    1   .    .   1   1   14   14   VAL   H     H   .   .   .   1   1   6    6    CYS   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   14   VAL   H     .   .   A   .   6    CYS   HB2   .   .   .   14   .   HN    .   .   .   .   .   6    .   HB2   .   .   rr_2muh   1    
+     23    1   OR   .   1   1   2    2    GLY   H     H   .   .   .   1   1   1    1    ARG   HG2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   2    GLY   H     .   .   A   .   1    ARG   HG2   .   .   .   2    .   HN    .   .   .   .   .   1    .   HG#   .   .   rr_2muh   1    
+     23    2   OR   .   1   1   2    2    GLY   H     H   .   .   .   1   1   1    1    ARG   HG3   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   2    GLY   H     .   .   A   .   1    ARG   HG3   .   .   .   2    .   HN    .   .   .   .   .   1    .   HG#   .   .   rr_2muh   1    
+     24    1   .    .   1   1   3    3    GLY   H     H   .   .   .   1   1   4    4    ARG   HE    H   .   .   .   .   .   5.0   0.0   5.0   .   .   .   .   .   A   .   3    GLY   H     .   .   A   .   4    ARG   HE    .   .   .   3    .   HN    .   .   .   .   .   4    .   HE    .   .   rr_2muh   1    
+     25    1   OR   .   1   1   3    3    GLY   H     H   .   .   .   1   1   4    4    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   3    GLY   H     .   .   A   .   4    ARG   HD2   .   .   .   3    .   HN    .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     25    2   OR   .   1   1   3    3    GLY   H     H   .   .   .   1   1   4    4    ARG   HD3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   3    GLY   H     .   .   A   .   4    ARG   HD3   .   .   .   3    .   HN    .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     26    1   OR   .   1   1   5    5    LEU   H     H   .   .   .   1   1   16   16   VAL   MG1   H   .   .   .   .   .   5.0   0.0   5.0   .   .   .   .   .   A   .   5    LEU   H     .   .   A   .   16   VAL   MG1   .   .   .   5    .   HN    .   .   .   .   .   16   .   HG#   .   .   rr_2muh   1    
+     26    2   OR   .   1   1   5    5    LEU   H     H   .   .   .   1   1   16   16   VAL   MG2   H   .   .   .   .   .   5.0   0.0   5.0   .   .   .   .   .   A   .   5    LEU   H     .   .   A   .   16   VAL   MG2   .   .   .   5    .   HN    .   .   .   .   .   16   .   HG#   .   .   rr_2muh   1    
+     27    1   .    .   1   1   8    8    CYS   H     H   .   .   .   1   1   7    7    TYR   QD    H   .   .   .   .   .   5.0   0.0   5.0   .   .   .   .   .   A   .   8    CYS   H     .   .   A   .   7    TYR   QD    .   .   .   8    .   HN    .   .   .   .   .   7    .   HD#   .   .   rr_2muh   1    
+     28    1   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   10   10   ARG   HG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   10   ARG   HG2   .   .   .   11   .   HN    .   .   .   .   .   10   .   HG#   .   .   rr_2muh   1    
+     28    2   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   10   10   ARG   HG3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   10   ARG   HG3   .   .   .   11   .   HN    .   .   .   .   .   10   .   HG#   .   .   rr_2muh   1    
+     29    1   OR   .   1   1   12   12   PHE   H     H   .   .   .   1   1   14   14   VAL   MG1   H   .   .   .   .   .   5.0   0.0   5.0   .   .   .   .   .   A   .   12   PHE   H     .   .   A   .   14   VAL   MG1   .   .   .   12   .   HN    .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     29    2   OR   .   1   1   12   12   PHE   H     H   .   .   .   1   1   14   14   VAL   MG2   H   .   .   .   .   .   5.0   0.0   5.0   .   .   .   .   .   A   .   12   PHE   H     .   .   A   .   14   VAL   MG2   .   .   .   12   .   HN    .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     30    1   .    .   1   1   16   16   VAL   H     H   .   .   .   1   1   5    5    LEU   HG    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   16   VAL   H     .   .   A   .   5    LEU   HG    .   .   .   16   .   HN    .   .   .   .   .   5    .   HG#   .   .   rr_2muh   1    
+     31    1   OR   .   1   1   3    3    GLY   HA3   H   .   .   .   1   1   4    4    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   3    GLY   HA3   .   .   A   .   4    ARG   HD2   .   .   .   3    .   HA#   .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     31    2   OR   .   1   1   3    3    GLY   HA2   H   .   .   .   1   1   4    4    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   3    GLY   HA2   .   .   A   .   4    ARG   HD2   .   .   .   3    .   HA#   .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     31    3   OR   .   1   1   4    4    ARG   HD3   H   .   .   .   1   1   3    3    GLY   HA2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HD3   .   .   A   .   3    GLY   HA2   .   .   .   4    .   HD#   .   .   .   .   .   3    .   HA#   .   .   rr_2muh   1    
+     31    4   OR   .   1   1   3    3    GLY   HA3   H   .   .   .   1   1   4    4    ARG   HD3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   3    GLY   HA3   .   .   A   .   4    ARG   HD3   .   .   .   3    .   HA#   .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     32    1   OR   .   1   1   7    7    TYR   QE    H   .   .   .   1   1   5    5    LEU   MD1   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   7    TYR   QE    .   .   A   .   5    LEU   MD1   .   .   .   7    .   HE#   .   .   .   .   .   5    .   HD#   .   .   rr_2muh   1    
+     32    2   OR   .   1   1   5    5    LEU   MD2   H   .   .   .   1   1   7    7    TYR   QE    H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   5    LEU   MD2   .   .   A   .   7    TYR   QE    .   .   .   5    .   HD#   .   .   .   .   .   7    .   HE#   .   .   rr_2muh   1    
+     33    1   .    .   1   1   7    7    TYR   QD    H   .   .   .   1   1   5    5    LEU   HG    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   QD    .   .   A   .   5    LEU   HG    .   .   .   7    .   HD#   .   .   .   .   .   5    .   HG#   .   .   rr_2muh   1    
+     34    1   .    .   1   1   7    7    TYR   QE    H   .   .   .   1   1   5    5    LEU   HG    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   QE    .   .   A   .   5    LEU   HG    .   .   .   7    .   HE#   .   .   .   .   .   5    .   HG#   .   .   rr_2muh   1    
+     35    1   OR   .   1   1   12   12   PHE   HB2   H   .   .   .   1   1   14   14   VAL   MG1   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   12   PHE   HB2   .   .   A   .   14   VAL   MG1   .   .   .   12   .   HB#   .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     35    2   OR   .   1   1   12   12   PHE   HB3   H   .   .   .   1   1   14   14   VAL   MG1   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   12   PHE   HB3   .   .   A   .   14   VAL   MG1   .   .   .   12   .   HB#   .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     35    3   OR   .   1   1   14   14   VAL   MG2   H   .   .   .   1   1   12   12   PHE   HB3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   14   VAL   MG2   .   .   A   .   12   PHE   HB3   .   .   .   14   .   HG#   .   .   .   .   .   12   .   HB#   .   .   rr_2muh   1    
+     35    4   OR   .   1   1   14   14   VAL   MG2   H   .   .   .   1   1   12   12   PHE   HB2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   14   VAL   MG2   .   .   A   .   12   PHE   HB2   .   .   .   14   .   HG#   .   .   .   .   .   12   .   HB#   .   .   rr_2muh   1    
+     36    1   OR   .   1   1   7    7    TYR   HB2   H   .   .   .   1   1   14   14   VAL   MG1   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   HB2   .   .   A   .   14   VAL   MG1   .   .   .   7    .   HB#   .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     36    2   OR   .   1   1   7    7    TYR   HB3   H   .   .   .   1   1   14   14   VAL   MG1   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   HB3   .   .   A   .   14   VAL   MG1   .   .   .   7    .   HB#   .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     36    3   OR   .   1   1   14   14   VAL   MG2   H   .   .   .   1   1   7    7    TYR   HB2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   14   VAL   MG2   .   .   A   .   7    TYR   HB2   .   .   .   14   .   HG#   .   .   .   .   .   7    .   HB#   .   .   rr_2muh   1    
+     36    4   OR   .   1   1   14   14   VAL   MG2   H   .   .   .   1   1   7    7    TYR   HB3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   14   VAL   MG2   .   .   A   .   7    TYR   HB3   .   .   .   14   .   HG#   .   .   .   .   .   7    .   HB#   .   .   rr_2muh   1    
+     37    1   OR   .   1   1   7    7    TYR   HA    H   .   .   .   1   1   6    6    CYS   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   7    TYR   HA    .   .   A   .   6    CYS   HB3   .   .   .   7    .   HA    .   .   .   .   .   6    .   HB#   .   .   rr_2muh   1    
+     37    2   OR   .   1   1   7    7    TYR   HA    H   .   .   .   1   1   6    6    CYS   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   7    TYR   HA    .   .   A   .   6    CYS   HB2   .   .   .   7    .   HA    .   .   .   .   .   6    .   HB#   .   .   rr_2muh   1    
+     38    1   .    .   1   1   6    6    CYS   HA    H   .   .   .   1   1   7    7    TYR   QD    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   6    CYS   HA    .   .   A   .   7    TYR   QD    .   .   .   6    .   HA    .   .   .   .   .   7    .   HD#   .   .   rr_2muh   1    
+     39    1   .    .   1   1   7    7    TYR   QE    H   .   .   .   1   1   16   16   VAL   HA    H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   7    TYR   QE    .   .   A   .   16   VAL   HA    .   .   .   7    .   HE#   .   .   .   .   .   16   .   HA    .   .   rr_2muh   1    
+     40    1   OR   .   1   1   7    7    TYR   QE    H   .   .   .   1   1   9    9    ARG   HG2   H   .   .   .   .   .   5.0   0.0   5.0   .   .   .   .   .   A   .   7    TYR   QE    .   .   A   .   9    ARG   HG2   .   .   .   7    .   HE#   .   .   .   .   .   9    .   HG#   .   .   rr_2muh   1    
+     40    2   OR   .   1   1   7    7    TYR   QE    H   .   .   .   1   1   9    9    ARG   HG3   H   .   .   .   .   .   5.0   0.0   5.0   .   .   .   .   .   A   .   7    TYR   QE    .   .   A   .   9    ARG   HG3   .   .   .   7    .   HE#   .   .   .   .   .   9    .   HG#   .   .   rr_2muh   1    
+     41    1   OR   .   1   1   7    7    TYR   QE    H   .   .   .   1   1   9    9    ARG   HD2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   7    TYR   QE    .   .   A   .   9    ARG   HD2   .   .   .   7    .   HE#   .   .   .   .   .   9    .   HD#   .   .   rr_2muh   1    
+     41    2   OR   .   1   1   7    7    TYR   QE    H   .   .   .   1   1   9    9    ARG   HD3   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   7    TYR   QE    .   .   A   .   9    ARG   HD3   .   .   .   7    .   HE#   .   .   .   .   .   9    .   HD#   .   .   rr_2muh   1    
+     42    1   OR   .   1   1   7    7    TYR   QD    H   .   .   .   1   1   9    9    ARG   HD2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   7    TYR   QD    .   .   A   .   9    ARG   HD2   .   .   .   7    .   HD#   .   .   .   .   .   9    .   HD#   .   .   rr_2muh   1    
+     42    2   OR   .   1   1   7    7    TYR   QD    H   .   .   .   1   1   9    9    ARG   HD3   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   7    TYR   QD    .   .   A   .   9    ARG   HD3   .   .   .   7    .   HD#   .   .   .   .   .   9    .   HD#   .   .   rr_2muh   1    
+     43    1   OR   .   1   1   7    7    TYR   QD    H   .   .   .   1   1   14   14   VAL   MG1   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   QD    .   .   A   .   14   VAL   MG1   .   .   .   7    .   HD#   .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     43    2   OR   .   1   1   7    7    TYR   QD    H   .   .   .   1   1   14   14   VAL   MG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   QD    .   .   A   .   14   VAL   MG2   .   .   .   7    .   HD#   .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     44    1   OR   .   1   1   7    7    TYR   QE    H   .   .   .   1   1   16   16   VAL   MG1   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   7    TYR   QE    .   .   A   .   16   VAL   MG1   .   .   .   7    .   HE#   .   .   .   .   .   16   .   HG#   .   .   rr_2muh   1    
+     44    2   OR   .   1   1   16   16   VAL   MG2   H   .   .   .   1   1   7    7    TYR   QE    H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   16   VAL   MG2   .   .   A   .   7    TYR   QE    .   .   .   16   .   HG#   .   .   .   .   .   7    .   HE#   .   .   rr_2muh   1    
+     45    1   .    .   1   1   6    6    CYS   HA    H   .   .   .   1   1   7    7    TYR   QE    H   .   .   .   .   .   4.0   0.0   5.0   .   .   .   .   .   A   .   6    CYS   HA    .   .   A   .   7    TYR   QE    .   .   .   6    .   HA    .   .   .   .   .   7    .   HE#   .   .   rr_2muh   1    
+     46    1   OR   .   1   1   13   13   CYS   HA    H   .   .   .   1   1   14   14   VAL   MG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   13   CYS   HA    .   .   A   .   14   VAL   MG2   .   .   .   13   .   HA#   .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     46    2   OR   .   1   1   13   13   CYS   HA    H   .   .   .   1   1   14   14   VAL   MG1   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   13   CYS   HA    .   .   A   .   14   VAL   MG1   .   .   .   13   .   HA#   .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     47    1   .    .   1   1   14   14   VAL   HA    H   .   .   .   1   1   13   13   CYS   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   14   VAL   HA    .   .   A   .   13   CYS   HB2   .   .   .   14   .   HA    .   .   .   .   .   13   .   HB2   .   .   rr_2muh   1    
+     48    1   .    .   1   1   14   14   VAL   HA    H   .   .   .   1   1   13   13   CYS   HB3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   14   VAL   HA    .   .   A   .   13   CYS   HB3   .   .   .   14   .   HA    .   .   .   .   .   13   .   HB1   .   .   rr_2muh   1    
+     49    1   OR   .   1   1   1    1    ARG   HA    H   .   .   .   1   1   1    1    ARG   HD2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   1    ARG   HA    .   .   A   .   1    ARG   HD2   .   .   .   1    .   HA    .   .   .   .   .   1    .   HD#   .   .   rr_2muh   1    
+     49    2   OR   .   1   1   1    1    ARG   HA    H   .   .   .   1   1   1    1    ARG   HD3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   1    ARG   HA    .   .   A   .   1    ARG   HD3   .   .   .   1    .   HA    .   .   .   .   .   1    .   HD#   .   .   rr_2muh   1    
+     50    1   OR   .   1   1   1    1    ARG   HE    H   .   .   .   1   1   1    1    ARG   HD2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   1    ARG   HE    .   .   A   .   1    ARG   HD2   .   .   .   1    .   HE    .   .   .   .   .   1    .   HD#   .   .   rr_2muh   1    
+     50    2   OR   .   1   1   1    1    ARG   HD3   H   .   .   .   1   1   1    1    ARG   HE    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   1    ARG   HD3   .   .   A   .   1    ARG   HE    .   .   .   1    .   HD#   .   .   .   .   .   1    .   HE    .   .   rr_2muh   1    
+     51    1   OR   .   1   1   1    1    ARG   HE    H   .   .   .   1   1   1    1    ARG   HB2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   1    ARG   HE    .   .   A   .   1    ARG   HB2   .   .   .   1    .   HE    .   .   .   .   .   1    .   HB#   .   .   rr_2muh   1    
+     51    2   OR   .   1   1   1    1    ARG   HB3   H   .   .   .   1   1   1    1    ARG   HE    H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   1    ARG   HB3   .   .   A   .   1    ARG   HE    .   .   .   1    .   HB#   .   .   .   .   .   1    .   HE    .   .   rr_2muh   1    
+     52    1   OR   .   1   1   1    1    ARG   HA    H   .   .   .   1   1   1    1    ARG   HG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   1    ARG   HA    .   .   A   .   1    ARG   HG2   .   .   .   1    .   HA    .   .   .   .   .   1    .   HG#   .   .   rr_2muh   1    
+     52    2   OR   .   1   1   1    1    ARG   HA    H   .   .   .   1   1   1    1    ARG   HG3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   1    ARG   HA    .   .   A   .   1    ARG   HG3   .   .   .   1    .   HA    .   .   .   .   .   1    .   HG#   .   .   rr_2muh   1    
+     53    1   OR   .   1   1   1    1    ARG   HA    H   .   .   .   1   1   1    1    ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HA    .   .   A   .   1    ARG   HB2   .   .   .   1    .   HA    .   .   .   .   .   1    .   HB#   .   .   rr_2muh   1    
+     53    2   OR   .   1   1   1    1    ARG   HA    H   .   .   .   1   1   1    1    ARG   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HA    .   .   A   .   1    ARG   HB3   .   .   .   1    .   HA    .   .   .   .   .   1    .   HB#   .   .   rr_2muh   1    
+     54    1   OR   .   1   1   1    1    ARG   HB2   H   .   .   .   1   1   1    1    ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HB2   .   .   A   .   1    ARG   HG2   .   .   .   1    .   HB#   .   .   .   .   .   1    .   HG#   .   .   rr_2muh   1    
+     54    2   OR   .   1   1   1    1    ARG   HB3   H   .   .   .   1   1   1    1    ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HB3   .   .   A   .   1    ARG   HG2   .   .   .   1    .   HB#   .   .   .   .   .   1    .   HG#   .   .   rr_2muh   1    
+     54    3   OR   .   1   1   1    1    ARG   HG3   H   .   .   .   1   1   1    1    ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HG3   .   .   A   .   1    ARG   HB2   .   .   .   1    .   HG#   .   .   .   .   .   1    .   HB#   .   .   rr_2muh   1    
+     54    4   OR   .   1   1   1    1    ARG   HB3   H   .   .   .   1   1   1    1    ARG   HG3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HB3   .   .   A   .   1    ARG   HG3   .   .   .   1    .   HB#   .   .   .   .   .   1    .   HG#   .   .   rr_2muh   1    
+     55    1   OR   .   1   1   1    1    ARG   HB3   H   .   .   .   1   1   1    1    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HB3   .   .   A   .   1    ARG   HD2   .   .   .   1    .   HB#   .   .   .   .   .   1    .   HD#   .   .   rr_2muh   1    
+     55    2   OR   .   1   1   1    1    ARG   HB2   H   .   .   .   1   1   1    1    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HB2   .   .   A   .   1    ARG   HD2   .   .   .   1    .   HB#   .   .   .   .   .   1    .   HD#   .   .   rr_2muh   1    
+     55    3   OR   .   1   1   1    1    ARG   HD3   H   .   .   .   1   1   1    1    ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HD3   .   .   A   .   1    ARG   HB2   .   .   .   1    .   HD#   .   .   .   .   .   1    .   HB#   .   .   rr_2muh   1    
+     55    4   OR   .   1   1   1    1    ARG   HB3   H   .   .   .   1   1   1    1    ARG   HD3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HB3   .   .   A   .   1    ARG   HD3   .   .   .   1    .   HB#   .   .   .   .   .   1    .   HD#   .   .   rr_2muh   1    
+     56    1   OR   .   1   1   1    1    ARG   HD3   H   .   .   .   1   1   1    1    ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HD3   .   .   A   .   1    ARG   HG2   .   .   .   1    .   HD#   .   .   .   .   .   1    .   HG#   .   .   rr_2muh   1    
+     56    2   OR   .   1   1   1    1    ARG   HD2   H   .   .   .   1   1   1    1    ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HD2   .   .   A   .   1    ARG   HG2   .   .   .   1    .   HD#   .   .   .   .   .   1    .   HG#   .   .   rr_2muh   1    
+     56    3   OR   .   1   1   1    1    ARG   HG3   H   .   .   .   1   1   1    1    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HG3   .   .   A   .   1    ARG   HD2   .   .   .   1    .   HG#   .   .   .   .   .   1    .   HD#   .   .   rr_2muh   1    
+     56    4   OR   .   1   1   1    1    ARG   HG3   H   .   .   .   1   1   1    1    ARG   HD3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   1    ARG   HG3   .   .   A   .   1    ARG   HD3   .   .   .   1    .   HG#   .   .   .   .   .   1    .   HD#   .   .   rr_2muh   1    
+     57    1   OR   .   1   1   1    1    ARG   HE    H   .   .   .   1   1   1    1    ARG   HG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   1    ARG   HE    .   .   A   .   1    ARG   HG2   .   .   .   1    .   HE    .   .   .   .   .   1    .   HG#   .   .   rr_2muh   1    
+     57    2   OR   .   1   1   1    1    ARG   HG3   H   .   .   .   1   1   1    1    ARG   HE    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   1    ARG   HG3   .   .   A   .   1    ARG   HE    .   .   .   1    .   HG#   .   .   .   .   .   1    .   HE    .   .   rr_2muh   1    
+     58    1   OR   .   1   1   2    2    GLY   H     H   .   .   .   1   1   2    2    GLY   HA2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   2    GLY   H     .   .   A   .   2    GLY   HA2   .   .   .   2    .   HN    .   .   .   .   .   2    .   HA#   .   .   rr_2muh   1    
+     58    2   OR   .   1   1   2    2    GLY   H     H   .   .   .   1   1   2    2    GLY   HA3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   2    GLY   H     .   .   A   .   2    GLY   HA3   .   .   .   2    .   HN    .   .   .   .   .   2    .   HA#   .   .   rr_2muh   1    
+     59    1   OR   .   1   1   3    3    GLY   H     H   .   .   .   1   1   3    3    GLY   HA2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   3    GLY   H     .   .   A   .   3    GLY   HA2   .   .   .   3    .   HN    .   .   .   .   .   3    .   HA#   .   .   rr_2muh   1    
+     59    2   OR   .   1   1   3    3    GLY   H     H   .   .   .   1   1   3    3    GLY   HA3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   3    GLY   H     .   .   A   .   3    GLY   HA3   .   .   .   3    .   HN    .   .   .   .   .   3    .   HA#   .   .   rr_2muh   1    
+     60    1   OR   .   1   1   4    4    ARG   HA    H   .   .   .   1   1   4    4    ARG   HD2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   4    ARG   HA    .   .   A   .   4    ARG   HD2   .   .   .   4    .   HA    .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     60    2   OR   .   1   1   4    4    ARG   HA    H   .   .   .   1   1   4    4    ARG   HD3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   4    ARG   HA    .   .   A   .   4    ARG   HD3   .   .   .   4    .   HA    .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     61    1   .    .   1   1   4    4    ARG   H     H   .   .   .   1   1   4    4    ARG   HA    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   4    ARG   H     .   .   A   .   4    ARG   HA    .   .   .   4    .   HN    .   .   .   .   .   4    .   HA    .   .   rr_2muh   1    
+     62    1   OR   .   1   1   4    4    ARG   HA    H   .   .   .   1   1   4    4    ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HA    .   .   A   .   4    ARG   HB2   .   .   .   4    .   HA    .   .   .   .   .   4    .   HB#   .   .   rr_2muh   1    
+     62    2   OR   .   1   1   4    4    ARG   HA    H   .   .   .   1   1   4    4    ARG   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HA    .   .   A   .   4    ARG   HB3   .   .   .   4    .   HA    .   .   .   .   .   4    .   HB#   .   .   rr_2muh   1    
+     63    1   OR   .   1   1   4    4    ARG   HA    H   .   .   .   1   1   4    4    ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HA    .   .   A   .   4    ARG   HG2   .   .   .   4    .   HA    .   .   .   .   .   4    .   HG#   .   .   rr_2muh   1    
+     63    2   OR   .   1   1   4    4    ARG   HA    H   .   .   .   1   1   4    4    ARG   HG3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HA    .   .   A   .   4    ARG   HG3   .   .   .   4    .   HA    .   .   .   .   .   4    .   HG#   .   .   rr_2muh   1    
+     64    1   OR   .   1   1   4    4    ARG   HE    H   .   .   .   1   1   4    4    ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HE    .   .   A   .   4    ARG   HB2   .   .   .   4    .   HE    .   .   .   .   .   4    .   HB#   .   .   rr_2muh   1    
+     64    2   OR   .   1   1   4    4    ARG   HE    H   .   .   .   1   1   4    4    ARG   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HE    .   .   A   .   4    ARG   HB3   .   .   .   4    .   HE    .   .   .   .   .   4    .   HB#   .   .   rr_2muh   1    
+     65    1   OR   .   1   1   4    4    ARG   H     H   .   .   .   1   1   4    4    ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   H     .   .   A   .   4    ARG   HB2   .   .   .   4    .   HN    .   .   .   .   .   4    .   HB#   .   .   rr_2muh   1    
+     65    2   OR   .   1   1   4    4    ARG   H     H   .   .   .   1   1   4    4    ARG   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   H     .   .   A   .   4    ARG   HB3   .   .   .   4    .   HN    .   .   .   .   .   4    .   HB#   .   .   rr_2muh   1    
+     66    1   OR   .   1   1   4    4    ARG   HB3   H   .   .   .   1   1   4    4    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HB3   .   .   A   .   4    ARG   HD2   .   .   .   4    .   HB#   .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     66    2   OR   .   1   1   4    4    ARG   HB2   H   .   .   .   1   1   4    4    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HB2   .   .   A   .   4    ARG   HD2   .   .   .   4    .   HB#   .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     66    3   OR   .   1   1   4    4    ARG   HD3   H   .   .   .   1   1   4    4    ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HD3   .   .   A   .   4    ARG   HB2   .   .   .   4    .   HD#   .   .   .   .   .   4    .   HB#   .   .   rr_2muh   1    
+     66    4   OR   .   1   1   4    4    ARG   HD3   H   .   .   .   1   1   4    4    ARG   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HD3   .   .   A   .   4    ARG   HB3   .   .   .   4    .   HD#   .   .   .   .   .   4    .   HB#   .   .   rr_2muh   1    
+     67    1   OR   .   1   1   4    4    ARG   HD3   H   .   .   .   1   1   4    4    ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HD3   .   .   A   .   4    ARG   HG2   .   .   .   4    .   HD#   .   .   .   .   .   4    .   HG#   .   .   rr_2muh   1    
+     67    2   OR   .   1   1   4    4    ARG   HD2   H   .   .   .   1   1   4    4    ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HD2   .   .   A   .   4    ARG   HG2   .   .   .   4    .   HD#   .   .   .   .   .   4    .   HG#   .   .   rr_2muh   1    
+     67    3   OR   .   1   1   4    4    ARG   HG3   H   .   .   .   1   1   4    4    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HG3   .   .   A   .   4    ARG   HD2   .   .   .   4    .   HG#   .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     67    4   OR   .   1   1   4    4    ARG   HD3   H   .   .   .   1   1   4    4    ARG   HG3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HD3   .   .   A   .   4    ARG   HG3   .   .   .   4    .   HD#   .   .   .   .   .   4    .   HG#   .   .   rr_2muh   1    
+     68    1   OR   .   1   1   4    4    ARG   H     H   .   .   .   1   1   4    4    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   H     .   .   A   .   4    ARG   HD2   .   .   .   4    .   HN    .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     68    2   OR   .   1   1   4    4    ARG   H     H   .   .   .   1   1   4    4    ARG   HD3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   H     .   .   A   .   4    ARG   HD3   .   .   .   4    .   HN    .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     69    1   .    .   1   1   4    4    ARG   HA    H   .   .   .   1   1   4    4    ARG   HE    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HA    .   .   A   .   4    ARG   HE    .   .   .   4    .   HA    .   .   .   .   .   4    .   HE    .   .   rr_2muh   1    
+     70    1   OR   .   1   1   4    4    ARG   HE    H   .   .   .   1   1   4    4    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HE    .   .   A   .   4    ARG   HD2   .   .   .   4    .   HE    .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     70    2   OR   .   1   1   4    4    ARG   HE    H   .   .   .   1   1   4    4    ARG   HD3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HE    .   .   A   .   4    ARG   HD3   .   .   .   4    .   HE    .   .   .   .   .   4    .   HD#   .   .   rr_2muh   1    
+     71    1   OR   .   1   1   4    4    ARG   HE    H   .   .   .   1   1   4    4    ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HE    .   .   A   .   4    ARG   HG2   .   .   .   4    .   HE    .   .   .   .   .   4    .   HG#   .   .   rr_2muh   1    
+     71    2   OR   .   1   1   4    4    ARG   HE    H   .   .   .   1   1   4    4    ARG   HG3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   HE    .   .   A   .   4    ARG   HG3   .   .   .   4    .   HE    .   .   .   .   .   4    .   HG#   .   .   rr_2muh   1    
+     72    1   OR   .   1   1   4    4    ARG   H     H   .   .   .   1   1   4    4    ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   H     .   .   A   .   4    ARG   HG2   .   .   .   4    .   HN    .   .   .   .   .   4    .   HG#   .   .   rr_2muh   1    
+     72    2   OR   .   1   1   4    4    ARG   H     H   .   .   .   1   1   4    4    ARG   HG3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   4    ARG   H     .   .   A   .   4    ARG   HG3   .   .   .   4    .   HN    .   .   .   .   .   4    .   HG#   .   .   rr_2muh   1    
+     73    1   .    .   1   1   5    5    LEU   H     H   .   .   .   1   1   5    5    LEU   HA    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   5    LEU   H     .   .   A   .   5    LEU   HA    .   .   .   5    .   HN    .   .   .   .   .   5    .   HA    .   .   rr_2muh   1    
+     74    1   OR   .   1   1   5    5    LEU   HB2   H   .   .   .   1   1   5    5    LEU   MD1   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   5    LEU   HB2   .   .   A   .   5    LEU   MD1   .   .   .   5    .   HB#   .   .   .   .   .   5    .   HD#   .   .   rr_2muh   1    
+     74    2   OR   .   1   1   5    5    LEU   HB3   H   .   .   .   1   1   5    5    LEU   MD1   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   5    LEU   HB3   .   .   A   .   5    LEU   MD1   .   .   .   5    .   HB#   .   .   .   .   .   5    .   HD#   .   .   rr_2muh   1    
+     74    3   OR   .   1   1   5    5    LEU   MD2   H   .   .   .   1   1   5    5    LEU   HB2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   5    LEU   MD2   .   .   A   .   5    LEU   HB2   .   .   .   5    .   HD#   .   .   .   .   .   5    .   HB#   .   .   rr_2muh   1    
+     74    4   OR   .   1   1   5    5    LEU   MD2   H   .   .   .   1   1   5    5    LEU   HB3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   5    LEU   MD2   .   .   A   .   5    LEU   HB3   .   .   .   5    .   HD#   .   .   .   .   .   5    .   HB#   .   .   rr_2muh   1    
+     75    1   OR   .   1   1   5    5    LEU   HA    H   .   .   .   1   1   5    5    LEU   MD1   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   5    LEU   HA    .   .   A   .   5    LEU   MD1   .   .   .   5    .   HA    .   .   .   .   .   5    .   HD#   .   .   rr_2muh   1    
+     75    2   OR   .   1   1   5    5    LEU   HA    H   .   .   .   1   1   5    5    LEU   MD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   5    LEU   HA    .   .   A   .   5    LEU   MD2   .   .   .   5    .   HA    .   .   .   .   .   5    .   HD#   .   .   rr_2muh   1    
+     76    1   .    .   1   1   5    5    LEU   HA    H   .   .   .   1   1   5    5    LEU   HG    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   5    LEU   HA    .   .   A   .   5    LEU   HG    .   .   .   5    .   HA    .   .   .   .   .   5    .   HG    .   .   rr_2muh   1    
+     77    1   OR   .   1   1   5    5    LEU   H     H   .   .   .   1   1   5    5    LEU   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   5    LEU   H     .   .   A   .   5    LEU   HB2   .   .   .   5    .   HN    .   .   .   .   .   5    .   HB#   .   .   rr_2muh   1    
+     77    2   OR   .   1   1   5    5    LEU   H     H   .   .   .   1   1   5    5    LEU   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   5    LEU   H     .   .   A   .   5    LEU   HB3   .   .   .   5    .   HN    .   .   .   .   .   5    .   HB#   .   .   rr_2muh   1    
+     78    1   OR   .   1   1   5    5    LEU   HG    H   .   .   .   1   1   5    5    LEU   MD1   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   5    LEU   HG    .   .   A   .   5    LEU   MD1   .   .   .   5    .   HG    .   .   .   .   .   5    .   HD#   .   .   rr_2muh   1    
+     78    2   OR   .   1   1   5    5    LEU   MD2   H   .   .   .   1   1   5    5    LEU   HG    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   5    LEU   MD2   .   .   A   .   5    LEU   HG    .   .   .   5    .   HD#   .   .   .   .   .   5    .   HG    .   .   rr_2muh   1    
+     79    1   OR   .   1   1   5    5    LEU   H     H   .   .   .   1   1   5    5    LEU   MD1   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   5    LEU   H     .   .   A   .   5    LEU   MD1   .   .   .   5    .   HN    .   .   .   .   .   5    .   HD#   .   .   rr_2muh   1    
+     79    2   OR   .   1   1   5    5    LEU   H     H   .   .   .   1   1   5    5    LEU   MD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   5    LEU   H     .   .   A   .   5    LEU   MD2   .   .   .   5    .   HN    .   .   .   .   .   5    .   HD#   .   .   rr_2muh   1    
+     80    1   .    .   1   1   5    5    LEU   H     H   .   .   .   1   1   5    5    LEU   HG    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   5    LEU   H     .   .   A   .   5    LEU   HG    .   .   .   5    .   HN    .   .   .   .   .   5    .   HG    .   .   rr_2muh   1    
+     81    1   .    .   1   1   6    6    CYS   H     H   .   .   .   1   1   6    6    CYS   HA    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   6    CYS   H     .   .   A   .   6    CYS   HA    .   .   .   6    .   HN    .   .   .   .   .   6    .   HA    .   .   rr_2muh   1    
+     82    1   .    .   1   1   6    6    CYS   HA    H   .   .   .   1   1   6    6    CYS   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   6    CYS   HA    .   .   A   .   6    CYS   HB3   .   .   .   6    .   HA    .   .   .   .   .   6    .   HB1   .   .   rr_2muh   1    
+     83    1   .    .   1   1   6    6    CYS   HA    H   .   .   .   1   1   6    6    CYS   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   6    CYS   HA    .   .   A   .   6    CYS   HB2   .   .   .   6    .   HA    .   .   .   .   .   6    .   HB2   .   .   rr_2muh   1    
+     84    1   .    .   1   1   6    6    CYS   H     H   .   .   .   1   1   6    6    CYS   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   6    CYS   H     .   .   A   .   6    CYS   HB3   .   .   .   6    .   HN    .   .   .   .   .   6    .   HB1   .   .   rr_2muh   1    
+     85    1   .    .   1   1   6    6    CYS   H     H   .   .   .   1   1   6    6    CYS   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   6    CYS   H     .   .   A   .   6    CYS   HB2   .   .   .   6    .   HN    .   .   .   .   .   6    .   HB2   .   .   rr_2muh   1    
+     86    1   .    .   1   1   7    7    TYR   H     H   .   .   .   1   1   7    7    TYR   QD    H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   7    TYR   H     .   .   A   .   7    TYR   QD    .   .   .   7    .   HN    .   .   .   .   .   7    .   HD#   .   .   rr_2muh   1    
+     87    1   OR   .   1   1   7    7    TYR   HA    H   .   .   .   1   1   7    7    TYR   HB2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   HA    .   .   A   .   7    TYR   HB2   .   .   .   7    .   HA    .   .   .   .   .   7    .   HB#   .   .   rr_2muh   1    
+     87    2   OR   .   1   1   7    7    TYR   HA    H   .   .   .   1   1   7    7    TYR   HB3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   HA    .   .   A   .   7    TYR   HB3   .   .   .   7    .   HA    .   .   .   .   .   7    .   HB#   .   .   rr_2muh   1    
+     88    1   .    .   1   1   7    7    TYR   H     H   .   .   .   1   1   7    7    TYR   HA    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   H     .   .   A   .   7    TYR   HA    .   .   .   7    .   HN    .   .   .   .   .   7    .   HA    .   .   rr_2muh   1    
+     89    1   OR   .   1   1   7    7    TYR   QD    H   .   .   .   1   1   7    7    TYR   HB2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   QD    .   .   A   .   7    TYR   HB2   .   .   .   7    .   HD#   .   .   .   .   .   7    .   HB#   .   .   rr_2muh   1    
+     89    2   OR   .   1   1   7    7    TYR   QD    H   .   .   .   1   1   7    7    TYR   HB3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   QD    .   .   A   .   7    TYR   HB3   .   .   .   7    .   HD#   .   .   .   .   .   7    .   HB#   .   .   rr_2muh   1    
+     90    1   OR   .   1   1   7    7    TYR   QE    H   .   .   .   1   1   7    7    TYR   HB2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   QE    .   .   A   .   7    TYR   HB2   .   .   .   7    .   HE#   .   .   .   .   .   7    .   HB#   .   .   rr_2muh   1    
+     90    2   OR   .   1   1   7    7    TYR   QE    H   .   .   .   1   1   7    7    TYR   HB3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   QE    .   .   A   .   7    TYR   HB3   .   .   .   7    .   HE#   .   .   .   .   .   7    .   HB#   .   .   rr_2muh   1    
+     91    1   .    .   1   1   7    7    TYR   QD    H   .   .   .   1   1   7    7    TYR   QE    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   7    TYR   QD    .   .   A   .   7    TYR   QE    .   .   .   7    .   HD#   .   .   .   .   .   7    .   HE#   .   .   rr_2muh   1    
+     92    1   .    .   1   1   7    7    TYR   H     H   .   .   .   1   1   7    7    TYR   QD    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   7    TYR   H     .   .   A   .   7    TYR   QD    .   .   .   7    .   HN    .   .   .   .   .   7    .   HD#   .   .   rr_2muh   1    
+     93    1   OR   .   1   1   7    7    TYR   QE    H   .   .   .   1   1   7    7    TYR   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   7    TYR   QE    .   .   A   .   7    TYR   HB2   .   .   .   7    .   HE#   .   .   .   .   .   7    .   HB#   .   .   rr_2muh   1    
+     93    2   OR   .   1   1   7    7    TYR   QE    H   .   .   .   1   1   7    7    TYR   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   7    TYR   QE    .   .   A   .   7    TYR   HB3   .   .   .   7    .   HE#   .   .   .   .   .   7    .   HB#   .   .   rr_2muh   1    
+     94    1   OR   .   1   1   7    7    TYR   H     H   .   .   .   1   1   7    7    TYR   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   7    TYR   H     .   .   A   .   7    TYR   HB2   .   .   .   7    .   HN    .   .   .   .   .   7    .   HB#   .   .   rr_2muh   1    
+     94    2   OR   .   1   1   7    7    TYR   H     H   .   .   .   1   1   7    7    TYR   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   7    TYR   H     .   .   A   .   7    TYR   HB3   .   .   .   7    .   HN    .   .   .   .   .   7    .   HB#   .   .   rr_2muh   1    
+     95    1   .    .   1   1   7    7    TYR   HA    H   .   .   .   1   1   7    7    TYR   QD    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   HA    .   .   A   .   7    TYR   QD    .   .   .   7    .   HA    .   .   .   .   .   7    .   HD#   .   .   rr_2muh   1    
+     96    1   .    .   1   1   7    7    TYR   HA    H   .   .   .   1   1   7    7    TYR   QE    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   7    TYR   HA    .   .   A   .   7    TYR   QE    .   .   .   7    .   HA    .   .   .   .   .   7    .   HE#   .   .   rr_2muh   1    
+     97    1   .    .   1   1   7    7    TYR   H     H   .   .   .   1   1   7    7    TYR   QE    H   .   .   .   .   .   5.0   0.0   5.0   .   .   .   .   .   A   .   7    TYR   H     .   .   A   .   7    TYR   QE    .   .   .   7    .   HN    .   .   .   .   .   7    .   HE#   .   .   rr_2muh   1    
+     98    1   .    .   1   1   8    8    CYS   H     H   .   .   .   1   1   8    8    CYS   HA    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   8    CYS   H     .   .   A   .   8    CYS   HA    .   .   .   8    .   HN    .   .   .   .   .   8    .   HA    .   .   rr_2muh   1    
+     99    1   .    .   1   1   8    8    CYS   H     H   .   .   .   1   1   8    8    CYS   HB3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   8    CYS   H     .   .   A   .   8    CYS   HB3   .   .   .   8    .   HN    .   .   .   .   .   8    .   HB1   .   .   rr_2muh   1    
+     100   1   .    .   1   1   8    8    CYS   HA    H   .   .   .   1   1   8    8    CYS   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   8    CYS   HA    .   .   A   .   8    CYS   HB3   .   .   .   8    .   HA    .   .   .   .   .   8    .   HB1   .   .   rr_2muh   1    
+     101   1   .    .   1   1   8    8    CYS   HA    H   .   .   .   1   1   8    8    CYS   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   8    CYS   HA    .   .   A   .   8    CYS   HB2   .   .   .   8    .   HA    .   .   .   .   .   8    .   HB2   .   .   rr_2muh   1    
+     102   1   .    .   1   1   8    8    CYS   H     H   .   .   .   1   1   8    8    CYS   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   8    CYS   H     .   .   A   .   8    CYS   HB2   .   .   .   8    .   HN    .   .   .   .   .   8    .   HB2   .   .   rr_2muh   1    
+     103   1   .    .   1   1   9    9    ARG   HA    H   .   .   .   1   1   9    9    ARG   HE    H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   9    ARG   HA    .   .   A   .   9    ARG   HE    .   .   .   9    .   HA    .   .   .   .   .   9    .   HE    .   .   rr_2muh   1    
+     104   1   OR   .   1   1   9    9    ARG   HE    H   .   .   .   1   1   9    9    ARG   HB2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   9    ARG   HE    .   .   A   .   9    ARG   HB2   .   .   .   9    .   HE    .   .   .   .   .   9    .   HB#   .   .   rr_2muh   1    
+     104   2   OR   .   1   1   9    9    ARG   HE    H   .   .   .   1   1   9    9    ARG   HB3   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   9    ARG   HE    .   .   A   .   9    ARG   HB3   .   .   .   9    .   HE    .   .   .   .   .   9    .   HB#   .   .   rr_2muh   1    
+     105   1   OR   .   1   1   9    9    ARG   H     H   .   .   .   1   1   9    9    ARG   HB2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   9    ARG   H     .   .   A   .   9    ARG   HB2   .   .   .   9    .   HN    .   .   .   .   .   9    .   HB#   .   .   rr_2muh   1    
+     105   2   OR   .   1   1   9    9    ARG   HB3   H   .   .   .   1   1   9    9    ARG   H     H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   9    ARG   HB3   .   .   A   .   9    ARG   H     .   .   .   9    .   HB#   .   .   .   .   .   9    .   HN    .   .   rr_2muh   1    
+     106   1   OR   .   1   1   9    9    ARG   HA    H   .   .   .   1   1   9    9    ARG   HD2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HA    .   .   A   .   9    ARG   HD2   .   .   .   9    .   HA    .   .   .   .   .   9    .   HD#   .   .   rr_2muh   1    
+     106   2   OR   .   1   1   9    9    ARG   HD3   H   .   .   .   1   1   9    9    ARG   HA    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HD3   .   .   A   .   9    ARG   HA    .   .   .   9    .   HD#   .   .   .   .   .   9    .   HA    .   .   rr_2muh   1    
+     107   1   .    .   1   1   9    9    ARG   HA    H   .   .   .   1   1   9    9    ARG   H     H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HA    .   .   A   .   9    ARG   H     .   .   .   9    .   HA    .   .   .   .   .   9    .   HN    .   .   rr_2muh   1    
+     108   1   OR   .   1   1   9    9    ARG   HB3   H   .   .   .   1   1   9    9    ARG   HD2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HB3   .   .   A   .   9    ARG   HD2   .   .   .   9    .   HB#   .   .   .   .   .   9    .   HD#   .   .   rr_2muh   1    
+     108   2   OR   .   1   1   9    9    ARG   HB2   H   .   .   .   1   1   9    9    ARG   HD2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HB2   .   .   A   .   9    ARG   HD2   .   .   .   9    .   HB#   .   .   .   .   .   9    .   HD#   .   .   rr_2muh   1    
+     108   3   OR   .   1   1   9    9    ARG   HD3   H   .   .   .   1   1   9    9    ARG   HB2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HD3   .   .   A   .   9    ARG   HB2   .   .   .   9    .   HD#   .   .   .   .   .   9    .   HB#   .   .   rr_2muh   1    
+     108   4   OR   .   1   1   9    9    ARG   HD3   H   .   .   .   1   1   9    9    ARG   HB3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HD3   .   .   A   .   9    ARG   HB3   .   .   .   9    .   HD#   .   .   .   .   .   9    .   HB#   .   .   rr_2muh   1    
+     109   1   OR   .   1   1   9    9    ARG   HE    H   .   .   .   1   1   9    9    ARG   HG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HE    .   .   A   .   9    ARG   HG2   .   .   .   9    .   HE    .   .   .   .   .   9    .   HG#   .   .   rr_2muh   1    
+     109   2   OR   .   1   1   9    9    ARG   HG3   H   .   .   .   1   1   9    9    ARG   HE    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HG3   .   .   A   .   9    ARG   HE    .   .   .   9    .   HG#   .   .   .   .   .   9    .   HE    .   .   rr_2muh   1    
+     110   1   OR   .   1   1   9    9    ARG   HA    H   .   .   .   1   1   9    9    ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   9    ARG   HA    .   .   A   .   9    ARG   HB2   .   .   .   9    .   HA    .   .   .   .   .   9    .   HB#   .   .   rr_2muh   1    
+     110   2   OR   .   1   1   9    9    ARG   HA    H   .   .   .   1   1   9    9    ARG   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   9    ARG   HA    .   .   A   .   9    ARG   HB3   .   .   .   9    .   HA    .   .   .   .   .   9    .   HB#   .   .   rr_2muh   1    
+     111   1   OR   .   1   1   9    9    ARG   HA    H   .   .   .   1   1   9    9    ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   9    ARG   HA    .   .   A   .   9    ARG   HG2   .   .   .   9    .   HA    .   .   .   .   .   9    .   HG#   .   .   rr_2muh   1    
+     111   2   OR   .   1   1   9    9    ARG   HG3   H   .   .   .   1   1   9    9    ARG   HA    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   9    ARG   HG3   .   .   A   .   9    ARG   HA    .   .   .   9    .   HG#   .   .   .   .   .   9    .   HA    .   .   rr_2muh   1    
+     112   1   OR   .   1   1   9    9    ARG   HE    H   .   .   .   1   1   9    9    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   9    ARG   HE    .   .   A   .   9    ARG   HD2   .   .   .   9    .   HE    .   .   .   .   .   9    .   HD#   .   .   rr_2muh   1    
+     112   2   OR   .   1   1   9    9    ARG   HD3   H   .   .   .   1   1   9    9    ARG   HE    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   9    ARG   HD3   .   .   A   .   9    ARG   HE    .   .   .   9    .   HD#   .   .   .   .   .   9    .   HE    .   .   rr_2muh   1    
+     113   1   OR   .   1   1   9    9    ARG   H     H   .   .   .   1   1   9    9    ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   9    ARG   H     .   .   A   .   9    ARG   HD2   .   .   .   9    .   HN    .   .   .   .   .   9    .   HD#   .   .   rr_2muh   1    
+     113   2   OR   .   1   1   9    9    ARG   HD3   H   .   .   .   1   1   9    9    ARG   H     H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   9    ARG   HD3   .   .   A   .   9    ARG   H     .   .   .   9    .   HD#   .   .   .   .   .   9    .   HN    .   .   rr_2muh   1    
+     114   1   OR   .   1   1   9    9    ARG   H     H   .   .   .   1   1   9    9    ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   9    ARG   H     .   .   A   .   9    ARG   HG2   .   .   .   9    .   HN    .   .   .   .   .   9    .   HG#   .   .   rr_2muh   1    
+     114   2   OR   .   1   1   9    9    ARG   HG3   H   .   .   .   1   1   9    9    ARG   H     H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   9    ARG   HG3   .   .   A   .   9    ARG   H     .   .   .   9    .   HG#   .   .   .   .   .   9    .   HN    .   .   rr_2muh   1    
+     115   1   OR   .   1   1   9    9    ARG   HD2   H   .   .   .   1   1   9    9    ARG   HG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HD2   .   .   A   .   9    ARG   HG2   .   .   .   9    .   HD#   .   .   .   .   .   9    .   HG#   .   .   rr_2muh   1    
+     115   2   OR   .   1   1   9    9    ARG   HD3   H   .   .   .   1   1   9    9    ARG   HG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HD3   .   .   A   .   9    ARG   HG2   .   .   .   9    .   HD#   .   .   .   .   .   9    .   HG#   .   .   rr_2muh   1    
+     115   3   OR   .   1   1   9    9    ARG   HG3   H   .   .   .   1   1   9    9    ARG   HD2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HG3   .   .   A   .   9    ARG   HD2   .   .   .   9    .   HG#   .   .   .   .   .   9    .   HD#   .   .   rr_2muh   1    
+     115   4   OR   .   1   1   9    9    ARG   HG3   H   .   .   .   1   1   9    9    ARG   HD3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   9    ARG   HG3   .   .   A   .   9    ARG   HD3   .   .   .   9    .   HG#   .   .   .   .   .   9    .   HD#   .   .   rr_2muh   1    
+     116   1   .    .   1   1   10   10   ARG   HA    H   .   .   .   1   1   10   10   ARG   HE    H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   HA    .   .   A   .   10   ARG   HE    .   .   .   10   .   HA    .   .   .   .   .   10   .   HE    .   .   rr_2muh   1    
+     117   1   OR   .   1   1   10   10   ARG   HB3   H   .   .   .   1   1   10   10   ARG   HD2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   HB3   .   .   A   .   10   ARG   HD2   .   .   .   10   .   HB#   .   .   .   .   .   10   .   HD#   .   .   rr_2muh   1    
+     117   2   OR   .   1   1   10   10   ARG   HB2   H   .   .   .   1   1   10   10   ARG   HD2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   HB2   .   .   A   .   10   ARG   HD2   .   .   .   10   .   HB#   .   .   .   .   .   10   .   HD#   .   .   rr_2muh   1    
+     117   3   OR   .   1   1   10   10   ARG   HD3   H   .   .   .   1   1   10   10   ARG   HB2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   HD3   .   .   A   .   10   ARG   HB2   .   .   .   10   .   HD#   .   .   .   .   .   10   .   HB#   .   .   rr_2muh   1    
+     117   4   OR   .   1   1   10   10   ARG   HB3   H   .   .   .   1   1   10   10   ARG   HD3   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   HB3   .   .   A   .   10   ARG   HD3   .   .   .   10   .   HB#   .   .   .   .   .   10   .   HD#   .   .   rr_2muh   1    
+     118   1   OR   .   1   1   10   10   ARG   H     H   .   .   .   1   1   10   10   ARG   HD2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   H     .   .   A   .   10   ARG   HD2   .   .   .   10   .   HN    .   .   .   .   .   10   .   HD#   .   .   rr_2muh   1    
+     118   2   OR   .   1   1   10   10   ARG   HD3   H   .   .   .   1   1   10   10   ARG   H     H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   HD3   .   .   A   .   10   ARG   H     .   .   .   10   .   HD#   .   .   .   .   .   10   .   HN    .   .   rr_2muh   1    
+     119   1   OR   .   1   1   10   10   ARG   H     H   .   .   .   1   1   10   10   ARG   HB2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   H     .   .   A   .   10   ARG   HB2   .   .   .   10   .   HN    .   .   .   .   .   10   .   HB#   .   .   rr_2muh   1    
+     119   2   OR   .   1   1   10   10   ARG   HB3   H   .   .   .   1   1   10   10   ARG   H     H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   HB3   .   .   A   .   10   ARG   H     .   .   .   10   .   HB#   .   .   .   .   .   10   .   HN    .   .   rr_2muh   1    
+     120   1   OR   .   1   1   10   10   ARG   H     H   .   .   .   1   1   10   10   ARG   HD2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   H     .   .   A   .   10   ARG   HD2   .   .   .   10   .   HN    .   .   .   .   .   10   .   HD#   .   .   rr_2muh   1    
+     120   2   OR   .   1   1   10   10   ARG   HD3   H   .   .   .   1   1   10   10   ARG   H     H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   HD3   .   .   A   .   10   ARG   H     .   .   .   10   .   HD#   .   .   .   .   .   10   .   HN    .   .   rr_2muh   1    
+     121   1   OR   .   1   1   10   10   ARG   H     H   .   .   .   1   1   10   10   ARG   HG2   H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   H     .   .   A   .   10   ARG   HG2   .   .   .   10   .   HN    .   .   .   .   .   10   .   HG#   .   .   rr_2muh   1    
+     121   2   OR   .   1   1   10   10   ARG   HG3   H   .   .   .   1   1   10   10   ARG   H     H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   10   ARG   HG3   .   .   A   .   10   ARG   H     .   .   .   10   .   HG#   .   .   .   .   .   10   .   HN    .   .   rr_2muh   1    
+     122   1   .    .   1   1   10   10   ARG   HA    H   .   .   .   1   1   10   10   ARG   H     H   .   .   .   .   .   2.5   2.0   3.0   .   .   .   .   .   A   .   10   ARG   HA    .   .   A   .   10   ARG   H     .   .   .   10   .   HA    .   .   .   .   .   10   .   HN    .   .   rr_2muh   1    
+     123   1   OR   .   1   1   10   10   ARG   HE    H   .   .   .   1   1   10   10   ARG   HB2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   10   ARG   HE    .   .   A   .   10   ARG   HB2   .   .   .   10   .   HE    .   .   .   .   .   10   .   HB#   .   .   rr_2muh   1    
+     123   2   OR   .   1   1   10   10   ARG   HE    H   .   .   .   1   1   10   10   ARG   HB3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   10   ARG   HE    .   .   A   .   10   ARG   HB3   .   .   .   10   .   HE    .   .   .   .   .   10   .   HB#   .   .   rr_2muh   1    
+     124   1   OR   .   1   1   10   10   ARG   HE    H   .   .   .   1   1   10   10   ARG   HD2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   10   ARG   HE    .   .   A   .   10   ARG   HD2   .   .   .   10   .   HE    .   .   .   .   .   10   .   HD#   .   .   rr_2muh   1    
+     124   2   OR   .   1   1   10   10   ARG   HE    H   .   .   .   1   1   10   10   ARG   HD3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   10   ARG   HE    .   .   A   .   10   ARG   HD3   .   .   .   10   .   HE    .   .   .   .   .   10   .   HD#   .   .   rr_2muh   1    
+     125   1   OR   .   1   1   10   10   ARG   HE    H   .   .   .   1   1   10   10   ARG   HG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   10   ARG   HE    .   .   A   .   10   ARG   HG2   .   .   .   10   .   HE    .   .   .   .   .   10   .   HG#   .   .   rr_2muh   1    
+     125   2   OR   .   1   1   10   10   ARG   HG3   H   .   .   .   1   1   10   10   ARG   HE    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   10   ARG   HG3   .   .   A   .   10   ARG   HE    .   .   .   10   .   HG#   .   .   .   .   .   10   .   HE    .   .   rr_2muh   1    
+     126   1   OR   .   1   1   10   10   ARG   HA    H   .   .   .   1   1   10   10   ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   10   ARG   HA    .   .   A   .   10   ARG   HB2   .   .   .   10   .   HA    .   .   .   .   .   10   .   HB#   .   .   rr_2muh   1    
+     126   2   OR   .   1   1   10   10   ARG   HA    H   .   .   .   1   1   10   10   ARG   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   10   ARG   HA    .   .   A   .   10   ARG   HB3   .   .   .   10   .   HA    .   .   .   .   .   10   .   HB#   .   .   rr_2muh   1    
+     127   1   OR   .   1   1   10   10   ARG   HB2   H   .   .   .   1   1   10   10   ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   10   ARG   HB2   .   .   A   .   10   ARG   HG2   .   .   .   10   .   HB#   .   .   .   .   .   10   .   HG#   .   .   rr_2muh   1    
+     127   2   OR   .   1   1   10   10   ARG   HB3   H   .   .   .   1   1   10   10   ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   10   ARG   HB3   .   .   A   .   10   ARG   HG2   .   .   .   10   .   HB#   .   .   .   .   .   10   .   HG#   .   .   rr_2muh   1    
+     127   3   OR   .   1   1   10   10   ARG   HG3   H   .   .   .   1   1   10   10   ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   10   ARG   HG3   .   .   A   .   10   ARG   HB2   .   .   .   10   .   HG#   .   .   .   .   .   10   .   HB#   .   .   rr_2muh   1    
+     127   4   OR   .   1   1   10   10   ARG   HG3   H   .   .   .   1   1   10   10   ARG   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   10   ARG   HG3   .   .   A   .   10   ARG   HB3   .   .   .   10   .   HG#   .   .   .   .   .   10   .   HB#   .   .   rr_2muh   1    
+     128   1   OR   .   1   1   10   10   ARG   HE    H   .   .   .   1   1   10   10   ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   10   ARG   HE    .   .   A   .   10   ARG   HD2   .   .   .   10   .   HE    .   .   .   .   .   10   .   HD#   .   .   rr_2muh   1    
+     128   2   OR   .   1   1   10   10   ARG   HE    H   .   .   .   1   1   10   10   ARG   HD3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   10   ARG   HE    .   .   A   .   10   ARG   HD3   .   .   .   10   .   HE    .   .   .   .   .   10   .   HD#   .   .   rr_2muh   1    
+     129   1   OR   .   1   1   10   10   ARG   HA    H   .   .   .   1   1   10   10   ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   10   ARG   HA    .   .   A   .   10   ARG   HG2   .   .   .   10   .   HA    .   .   .   .   .   10   .   HG#   .   .   rr_2muh   1    
+     129   2   OR   .   1   1   10   10   ARG   HG3   H   .   .   .   1   1   10   10   ARG   HA    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   10   ARG   HG3   .   .   A   .   10   ARG   HA    .   .   .   10   .   HG#   .   .   .   .   .   10   .   HA    .   .   rr_2muh   1    
+     130   1   OR   .   1   1   10   10   ARG   HD2   H   .   .   .   1   1   10   10   ARG   HG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   10   ARG   HD2   .   .   A   .   10   ARG   HG2   .   .   .   10   .   HD#   .   .   .   .   .   10   .   HG#   .   .   rr_2muh   1    
+     130   2   OR   .   1   1   10   10   ARG   HD3   H   .   .   .   1   1   10   10   ARG   HG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   10   ARG   HD3   .   .   A   .   10   ARG   HG2   .   .   .   10   .   HD#   .   .   .   .   .   10   .   HG#   .   .   rr_2muh   1    
+     130   3   OR   .   1   1   10   10   ARG   HG3   H   .   .   .   1   1   10   10   ARG   HD2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   10   ARG   HG3   .   .   A   .   10   ARG   HD2   .   .   .   10   .   HG#   .   .   .   .   .   10   .   HD#   .   .   rr_2muh   1    
+     130   4   OR   .   1   1   10   10   ARG   HG3   H   .   .   .   1   1   10   10   ARG   HD3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   10   ARG   HG3   .   .   A   .   10   ARG   HD3   .   .   .   10   .   HG#   .   .   .   .   .   10   .   HD#   .   .   rr_2muh   1    
+     131   1   OR   .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HG2   .   .   .   11   .   HA    .   .   .   .   .   11   .   HG#   .   .   rr_2muh   1    
+     131   2   OR   .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HG3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HG3   .   .   .   11   .   HA    .   .   .   .   .   11   .   HG#   .   .   rr_2muh   1    
+     132   1   .    .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   H     H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   H     .   .   .   11   .   HA    .   .   .   .   .   11   .   HN    .   .   rr_2muh   1    
+     133   1   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HD2   .   .   .   11   .   HN    .   .   .   .   .   11   .   HD#   .   .   rr_2muh   1    
+     133   2   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HD3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HD3   .   .   .   11   .   HN    .   .   .   .   .   11   .   HD#   .   .   rr_2muh   1    
+     134   1   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HG2   .   .   .   11   .   HN    .   .   .   .   .   11   .   HG#   .   .   rr_2muh   1    
+     134   2   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HG3   H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HG3   .   .   .   11   .   HN    .   .   .   .   .   11   .   HG#   .   .   rr_2muh   1    
+     135   1   .    .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HE    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HE    .   .   .   11   .   HN    .   .   .   .   .   11   .   HE    .   .   rr_2muh   1    
+     136   1   .    .   1   1   11   11   ARG   HB3   H   .   .   .   1   1   11   11   ARG   HE    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   11   ARG   HB3   .   .   A   .   11   ARG   HE    .   .   .   11   .   HB1   .   .   .   .   .   11   .   HE    .   .   rr_2muh   1    
+     137   1   .    .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HE    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HE    .   .   .   11   .   HA    .   .   .   .   .   11   .   HE    .   .   rr_2muh   1    
+     138   1   .    .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HB2   .   .   .   11   .   HA    .   .   .   .   .   11   .   HB2   .   .   rr_2muh   1    
+     139   1   OR   .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HD2   .   .   .   11   .   HA    .   .   .   .   .   11   .   HD#   .   .   rr_2muh   1    
+     139   2   OR   .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HD3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HD3   .   .   .   11   .   HA    .   .   .   .   .   11   .   HD#   .   .   rr_2muh   1    
+     140   1   .    .   1   1   11   11   ARG   HB3   H   .   .   .   1   1   11   11   ARG   H     H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HB3   .   .   A   .   11   ARG   H     .   .   .   11   .   HB1   .   .   .   .   .   11   .   HN    .   .   rr_2muh   1    
+     141   1   .    .   1   1   11   11   ARG   HE    H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HE    .   .   A   .   11   ARG   HB2   .   .   .   11   .   HE    .   .   .   .   .   11   .   HB2   .   .   rr_2muh   1    
+     142   1   OR   .   1   1   11   11   ARG   HB2   H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HB2   .   .   A   .   11   ARG   HG2   .   .   .   11   .   HB2   .   .   .   .   .   11   .   HG#   .   .   rr_2muh   1    
+     142   2   OR   .   1   1   11   11   ARG   HG3   H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HG3   .   .   A   .   11   ARG   HB2   .   .   .   11   .   HG#   .   .   .   .   .   11   .   HB2   .   .   rr_2muh   1    
+     143   1   .    .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HB2   .   .   .   11   .   HN    .   .   .   .   .   11   .   HB2   .   .   rr_2muh   1    
+     144   1   OR   .   1   1   11   11   ARG   HB2   H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HB2   .   .   A   .   11   ARG   HD2   .   .   .   11   .   HB2   .   .   .   .   .   11   .   HD#   .   .   rr_2muh   1    
+     144   2   OR   .   1   1   11   11   ARG   HD3   H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HD3   .   .   A   .   11   ARG   HB2   .   .   .   11   .   HD#   .   .   .   .   .   11   .   HB2   .   .   rr_2muh   1    
+     145   1   OR   .   1   1   11   11   ARG   HE    H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HE    .   .   A   .   11   ARG   HD2   .   .   .   11   .   HE    .   .   .   .   .   11   .   HD#   .   .   rr_2muh   1    
+     145   2   OR   .   1   1   11   11   ARG   HD3   H   .   .   .   1   1   11   11   ARG   HE    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HD3   .   .   A   .   11   ARG   HE    .   .   .   11   .   HD#   .   .   .   .   .   11   .   HE    .   .   rr_2muh   1    
+     146   1   OR   .   1   1   11   11   ARG   HD3   H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HD3   .   .   A   .   11   ARG   HG2   .   .   .   11   .   HD#   .   .   .   .   .   11   .   HG#   .   .   rr_2muh   1    
+     146   2   OR   .   1   1   11   11   ARG   HD2   H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HD2   .   .   A   .   11   ARG   HG2   .   .   .   11   .   HD#   .   .   .   .   .   11   .   HG#   .   .   rr_2muh   1    
+     146   3   OR   .   1   1   11   11   ARG   HG3   H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HG3   .   .   A   .   11   ARG   HD2   .   .   .   11   .   HG#   .   .   .   .   .   11   .   HD#   .   .   rr_2muh   1    
+     146   4   OR   .   1   1   11   11   ARG   HG3   H   .   .   .   1   1   11   11   ARG   HD3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HG3   .   .   A   .   11   ARG   HD3   .   .   .   11   .   HG#   .   .   .   .   .   11   .   HD#   .   .   rr_2muh   1    
+     147   1   OR   .   1   1   11   11   ARG   HE    H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HE    .   .   A   .   11   ARG   HG2   .   .   .   11   .   HE    .   .   .   .   .   11   .   HG#   .   .   rr_2muh   1    
+     147   2   OR   .   1   1   11   11   ARG   HG3   H   .   .   .   1   1   11   11   ARG   HE    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   11   ARG   HG3   .   .   A   .   11   ARG   HE    .   .   .   11   .   HG#   .   .   .   .   .   11   .   HE    .   .   rr_2muh   1    
+     148   1   .    .   1   1   12   12   PHE   H     H   .   .   .   1   1   12   12   PHE   HA    H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   12   PHE   H     .   .   A   .   12   PHE   HA    .   .   .   12   .   HN    .   .   .   .   .   12   .   HA#   .   .   rr_2muh   1    
+     149   1   .    .   1   1   12   12   PHE   HB2   H   .   .   .   1   1   12   12   PHE   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   12   PHE   HB2   .   .   A   .   12   PHE   HB3   .   .   .   12   .   HB2   .   .   .   .   .   12   .   HB1   .   .   rr_2muh   1    
+     150   1   .    .   1   1   12   12   PHE   H     H   .   .   .   1   1   12   12   PHE   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   12   PHE   H     .   .   A   .   12   PHE   HB3   .   .   .   12   .   HN    .   .   .   .   .   12   .   HB1   .   .   rr_2muh   1    
+     151   1   .    .   1   1   12   12   PHE   H     H   .   .   .   1   1   12   12   PHE   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   12   PHE   H     .   .   A   .   12   PHE   HB2   .   .   .   12   .   HN    .   .   .   .   .   12   .   HB2   .   .   rr_2muh   1    
+     152   1   .    .   1   1   13   13   CYS   HA    H   .   .   .   1   1   13   13   CYS   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   13   CYS   HA    .   .   A   .   13   CYS   HB3   .   .   .   13   .   HA#   .   .   .   .   .   13   .   HB1   .   .   rr_2muh   1    
+     153   1   .    .   1   1   13   13   CYS   HA    H   .   .   .   1   1   13   13   CYS   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   13   CYS   HA    .   .   A   .   13   CYS   HB2   .   .   .   13   .   HA#   .   .   .   .   .   13   .   HB2   .   .   rr_2muh   1    
+     154   1   .    .   1   1   13   13   CYS   HA    H   .   .   .   1   1   13   13   CYS   H     H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   13   CYS   HA    .   .   A   .   13   CYS   H     .   .   .   13   .   HA#   .   .   .   .   .   13   .   HN    .   .   rr_2muh   1    
+     155   1   .    .   1   1   13   13   CYS   HB2   H   .   .   .   1   1   13   13   CYS   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   13   CYS   HB2   .   .   A   .   13   CYS   HB3   .   .   .   13   .   HB2   .   .   .   .   .   13   .   HB1   .   .   rr_2muh   1    
+     156   1   .    .   1   1   13   13   CYS   H     H   .   .   .   1   1   13   13   CYS   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   13   CYS   H     .   .   A   .   13   CYS   HB3   .   .   .   13   .   HN    .   .   .   .   .   13   .   HB1   .   .   rr_2muh   1    
+     157   1   .    .   1   1   13   13   CYS   H     H   .   .   .   1   1   13   13   CYS   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   13   CYS   H     .   .   A   .   13   CYS   HB2   .   .   .   13   .   HN    .   .   .   .   .   13   .   HB2   .   .   rr_2muh   1    
+     158   1   .    .   1   1   14   14   VAL   H     H   .   .   .   1   1   14   14   VAL   HA    H   .   .   .   .   .   2.5   0.0   3.5   .   .   .   .   .   A   .   14   VAL   H     .   .   A   .   14   VAL   HA    .   .   .   14   .   HN    .   .   .   .   .   14   .   HA    .   .   rr_2muh   1    
+     159   1   .    .   1   1   14   14   VAL   HA    H   .   .   .   1   1   14   14   VAL   HB    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   14   VAL   HA    .   .   A   .   14   VAL   HB    .   .   .   14   .   HA    .   .   .   .   .   14   .   HB#   .   .   rr_2muh   1    
+     160   1   .    .   1   1   14   14   VAL   H     H   .   .   .   1   1   14   14   VAL   HB    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   14   VAL   H     .   .   A   .   14   VAL   HB    .   .   .   14   .   HN    .   .   .   .   .   14   .   HB#   .   .   rr_2muh   1    
+     161   1   OR   .   1   1   14   14   VAL   HA    H   .   .   .   1   1   14   14   VAL   MG1   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   14   VAL   HA    .   .   A   .   14   VAL   MG1   .   .   .   14   .   HA    .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     161   2   OR   .   1   1   14   14   VAL   HA    H   .   .   .   1   1   14   14   VAL   MG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   14   VAL   HA    .   .   A   .   14   VAL   MG2   .   .   .   14   .   HA    .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     162   1   OR   .   1   1   14   14   VAL   HB    H   .   .   .   1   1   14   14   VAL   MG1   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   14   VAL   HB    .   .   A   .   14   VAL   MG1   .   .   .   14   .   HB#   .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     162   2   OR   .   1   1   14   14   VAL   MG2   H   .   .   .   1   1   14   14   VAL   HB    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   14   VAL   MG2   .   .   A   .   14   VAL   HB    .   .   .   14   .   HG#   .   .   .   .   .   14   .   HB#   .   .   rr_2muh   1    
+     163   1   OR   .   1   1   14   14   VAL   H     H   .   .   .   1   1   14   14   VAL   MG1   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   14   VAL   H     .   .   A   .   14   VAL   MG1   .   .   .   14   .   HN    .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     163   2   OR   .   1   1   14   14   VAL   H     H   .   .   .   1   1   14   14   VAL   MG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   14   VAL   H     .   .   A   .   14   VAL   MG2   .   .   .   14   .   HN    .   .   .   .   .   14   .   HG#   .   .   rr_2muh   1    
+     164   1   .    .   1   1   15   15   CYS   HA    H   .   .   .   1   1   15   15   CYS   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   15   CYS   HA    .   .   A   .   15   CYS   HB3   .   .   .   15   .   HA    .   .   .   .   .   15   .   HB1   .   .   rr_2muh   1    
+     165   1   .    .   1   1   15   15   CYS   HA    H   .   .   .   1   1   15   15   CYS   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   15   CYS   HA    .   .   A   .   15   CYS   HB2   .   .   .   15   .   HA    .   .   .   .   .   15   .   HB2   .   .   rr_2muh   1    
+     166   1   .    .   1   1   15   15   CYS   H     H   .   .   .   1   1   15   15   CYS   HA    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   15   CYS   H     .   .   A   .   15   CYS   HA    .   .   .   15   .   HN    .   .   .   .   .   15   .   HA    .   .   rr_2muh   1    
+     167   1   .    .   1   1   15   15   CYS   H     H   .   .   .   1   1   15   15   CYS   HB3   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   15   CYS   H     .   .   A   .   15   CYS   HB3   .   .   .   15   .   HN    .   .   .   .   .   15   .   HB1   .   .   rr_2muh   1    
+     168   1   .    .   1   1   15   15   CYS   H     H   .   .   .   1   1   15   15   CYS   HB2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   15   CYS   H     .   .   A   .   15   CYS   HB2   .   .   .   15   .   HN    .   .   .   .   .   15   .   HB2   .   .   rr_2muh   1    
+     169   1   .    .   1   1   16   16   VAL   HA    H   .   .   .   1   1   16   16   VAL   HB    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   16   VAL   HA    .   .   A   .   16   VAL   HB    .   .   .   16   .   HA    .   .   .   .   .   16   .   HB    .   .   rr_2muh   1    
+     170   1   .    .   1   1   16   16   VAL   H     H   .   .   .   1   1   16   16   VAL   HA    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   16   VAL   H     .   .   A   .   16   VAL   HA    .   .   .   16   .   HN    .   .   .   .   .   16   .   HA    .   .   rr_2muh   1    
+     171   1   .    .   1   1   16   16   VAL   H     H   .   .   .   1   1   16   16   VAL   HB    H   .   .   .   .   .   3.5   0.0   4.5   .   .   .   .   .   A   .   16   VAL   H     .   .   A   .   16   VAL   HB    .   .   .   16   .   HN    .   .   .   .   .   16   .   HB    .   .   rr_2muh   1    
+     172   1   OR   .   1   1   16   16   VAL   HA    H   .   .   .   1   1   16   16   VAL   MG1   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   16   VAL   HA    .   .   A   .   16   VAL   MG1   .   .   .   16   .   HA    .   .   .   .   .   16   .   HG#   .   .   rr_2muh   1    
+     172   2   OR   .   1   1   16   16   VAL   MG2   H   .   .   .   1   1   16   16   VAL   HA    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   16   VAL   MG2   .   .   A   .   16   VAL   HA    .   .   .   16   .   HG#   .   .   .   .   .   16   .   HA    .   .   rr_2muh   1    
+     173   1   OR   .   1   1   16   16   VAL   HB    H   .   .   .   1   1   16   16   VAL   MG1   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   16   VAL   HB    .   .   A   .   16   VAL   MG1   .   .   .   16   .   HB    .   .   .   .   .   16   .   HG#   .   .   rr_2muh   1    
+     173   2   OR   .   1   1   16   16   VAL   MG2   H   .   .   .   1   1   16   16   VAL   HB    H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   16   VAL   MG2   .   .   A   .   16   VAL   HB    .   .   .   16   .   HG#   .   .   .   .   .   16   .   HB    .   .   rr_2muh   1    
+     174   1   OR   .   1   1   16   16   VAL   H     H   .   .   .   1   1   16   16   VAL   MG1   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   16   VAL   H     .   .   A   .   16   VAL   MG1   .   .   .   16   .   HN    .   .   .   .   .   16   .   HG#   .   .   rr_2muh   1    
+     174   2   OR   .   1   1   16   16   VAL   H     H   .   .   .   1   1   16   16   VAL   MG2   H   .   .   .   .   .   4.5   0.0   5.5   .   .   .   .   .   A   .   16   VAL   H     .   .   A   .   16   VAL   MG2   .   .   .   16   .   HN    .   .   .   .   .   16   .   HG#   .   .   rr_2muh   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint_comment_org.ID
+      _Gen_dist_constraint_comment_org.Comment_text
+      _Gen_dist_constraint_comment_org.Comment_begin_line
+      _Gen_dist_constraint_comment_org.Comment_begin_column
+      _Gen_dist_constraint_comment_org.Comment_end_line
+      _Gen_dist_constraint_comment_org.Comment_end_column
+      _Gen_dist_constraint_comment_org.Entry_ID
+      _Gen_dist_constraint_comment_org.Gen_dist_constraint_list_ID
+
+     1   -----------------------NH-HA----------------------------------------   1   1   1   70   rr_2muh   1    
+
+   stop_
+
+save_
+
+save_MR_file_comment_1
+   _Org_constr_file_comment.Sf_framecode        MR_file_comment_1
+   _Org_constr_file_comment.Sf_category         org_constr_file_comment
+   _Org_constr_file_comment.Entry_ID            rr_2muh
+   _Org_constr_file_comment.ID                  1
+   _Org_constr_file_comment.Constraint_file_ID  1
+   _Org_constr_file_comment.Block_ID            1
+   _Org_constr_file_comment.Details             'Generated by Wattos'
+   _Org_constr_file_comment.Comment             '*HEADER ANTIMICROBIAL PROTEIN 10-SEP-14 2MUH *TITLE HIGH-RESOLUTION NMR STRUCTURE OF THE PROTEGRIN-2 DOCKED TO DPC *TITLE 2 MICELLES *COMPND MOL_ID: 1; *COMPND 2 MOLECULE: PROTEGRIN-2; *COMPND 3 CHAIN: A; *COMPND 4 FRAGMENT: UNP RESIDUES 131-146; *COMPND 5 SYNONYM: PG-2; *COMPND 6 ENGINEERED: YES *SOURCE MOL_ID: 1; *SOURCE 2 SYNTHETIC: YES; *SOURCE 3 ORGANISM_SCIENTIFIC: SUS SCROFA; *SOURCE 4 ORGANISM_COMMON: PIGS,SWINE,WILD BOAR; *SOURCE 5 ORGANISM_TAXID: 9823; *SOURCE 6 OTHER_DETAILS: SOLID-PHASE PEPTIDE SYNTHESIS USING AMINO ACIDS *SOURCE 7 PROTECTED BY THE 9-UORENYLMETHOXYCARBONYL GROUP AND WITH REACTION *SOURCE 8 MIXTURE CONDUCTIVITY CONTROL. *KEYWDS PROTEGRIN, ANTIMICROBIAL PROTEIN *EXPDTA SOLUTION NMR *NUMMDL 20 *AUTHOR A.V.FILIPPOV, S.V.EFIMOV, V.V.KLOCHKOV, O.N.ANTZUTKIN *REVDAT 1 10-DEC-14 2MUH 0'
+
+save_

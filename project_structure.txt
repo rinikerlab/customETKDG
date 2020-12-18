@@ -1,77 +1,79 @@
-├── README.md          	<- TODO The top-level README for developers.
+├── README.md          	<- top-level README
 │
-├── data		<- 1 folder per molecule, short name
-│   ├── 01_NAME         
-│   │   ├── 01_ref.pdb
-│   │   ├── 02_ref.smi
-│   │   ├── 10_NAME_SOLVENT_noebounds.csv
+├── data		<- 1 folder per molecule, 4 letter code (PDB code if available, not all files in all folders)
+│   ├── CODE         
+│   │   ├── code.pdb				<- reference structure(s)
+│   │   ├── code.smi				<- smiles string for topology
+│   │   ├── code.mr				<- information file from RCSB, contains raw NOE information
+│   │   ├── 10_code_NOE_index.csv		<- NOE information generated from raw data, consistent with RDKit mol
+│   │   ├── 10_NAME_SOLVENT_noebounds.csv	<- raw NOE information if table format
 │   │   ├── 11_NAME_SOLVENT_noebounds.csv
 │   │   ├── ...
-│   │   ├── 20_NAME_baseline_#CONFS.pdb		<- generated baseline ETKDG conformers
-│   │   ├── 2X_NAME_NOEFILENAME_#CONFS.pdb	<- generated NOE ETKDG conformers
+│   │   ├── 20_code_baseline_#CONFS.pdb		<- generated baseline ETKDG conformers
+│   │   ├── 21_code_tolX_noebounds_#CONFS.pdb	<- generated NOE-ETKDG conformers with tolerance X
 │   │   ├── ...
 │   │   ├── 3x_NAME_METHOD_REMARK_#CONFS.pdb	<- conformers for commparison, e.g. OmegaMC
 │   │   ├── ...
-│   │   ├── TODO
-│   ├── 02_NAME		<- next molecule
+│   │   ├── 40_min_vac_code_tolX_noebounds_#CONFS.pdb	<- vacuum minimized NOE-ETKDG conformers
+│   │   ├── 41_1ns_vac_code_tolX_noebounds_#CONFS.pdb	<- 1 ns vacuum simulated NOE-ETKDG conformers 
+│   │   ├── 42_5ns_vac_code_tolX_noebounds_#CONFS.pdb	<- 5 ns vacuum simulated NOE-ETKDG conformers 
+│   │   ├── 50_min_solv_code_tolX_noebounds_#CONFS.pdb	<- solvent minimized NOE-ETKDG conformers
+│   │   ├── 51_1ns_solv_code_tolX_noebounds_#CONFS.pdb	<- 1 ns solvent simulated NOE-ETKDG conformers 
+│   │   ├── 52_5ns_solv_code_tolX_noebounds_#CONFS.pdb	<- 5 ns solvent simulated NOE-ETKDG conformers 
+│   │   ├── 60_min_ANI_code_tolX_noebounds_#CONFS.pdb	<- ANI potential minimized NOE-ETKDG conformers
+│   │   └── X_ns_solv/vac_reporters(_eul)		<- folders containing trajectories in hdf5 format
+│   │ 
+│   ├── CODE			<- next molecule
 │   │   ...
-│   ├── 50_Shuzhe   	<- reference file by Shuzhe
-│   └── 99_tmp   	<- place to write and read tmp data for scripts
+│   ├── 30_GENE   		<- some overview files from Genentech
+│   ├── 50_Shuzhe   		<- reference files by Shuzhe
+│   └── 99_tmp   		<- place to write and read tmp data for scripts
 │       ├── 0X_CONF_FILENAME	<- rmsmat file for conformers (pickled)
 │       └── ...
 │
-├── docs               	<- TODO: Space for documentation
+├── docs               		<- TODO: Space for documentation
 │
-├── notebooks          	<- Jupyter notebooks. Naming convention is
-|                          date YYYYMMDD (for ordering) and a short `-` 
-|                          delimited description.
+├── notebooks          		<- jupyter notebooks for interactive analysis
 │
-├── project_structure.txt      	<- this file.
+├── project_structure.txt      	<- this file
 │
-├── references         <- important papers, code snippets, manuals, etc. 
+├── references         		<- important papers, code snippets, explanations, final presentation
 │   ├── papers         
 │
-├── results            <- Plots, results, final analysis docs.
+├── results            		<- plots
 │   ├── plots         
 │
-├── requirements.txt   <- TODO: The requirements file for reproducing the 
-|                         analysis environment.
+├── requirements.txt   		<- requirements file
 │
-├── .gitignore         <- Avoids uploading data, credentials, 
-|                         outputs, system files etc
+├── .gitignore         		<- Avoids uploading data, credentials, 
+|                         	   outputs, system files etc
 │
-└── src                		<- Source code for use in this project.
-    ├── __init__.py    		<- Makes src a Python module
+└── src                		<- source code for use in this project
+    ├── __init__.py    		<- makes src a Python module (not necessary anymore)
     │
-    ├── d00_utils      		<- Functions used across the project
-    │   └── _utils.py		<- original utils by Shuzhe
+    ├── d00_utils      		<- functions used across the project
+    │   ├── combinerX.py	<- a script to combine PDB files from split conformer simulations
+    │   ├── utils.py		<- utils functions used for NOE parsing and conformer generation
+    │   └── utils_orig.py	<- original utils by Shuzhe
     │
-    ├── d01_io       		<- Scripts to read, write, parse data
-    │   └── TODO
+    ├── d01_io       		<- scripts to read, write, parse data
+    │   ├── correct_pdb.py	<- just loading a PDB into and out of mdtraj to convert wrong formats
+    │   └── PDF_parser.py	<- script to extract data from tables in PDF with camelot
     │
-    ├── d02_ETKDG_confgen	<- Scripts for ETKDG conformer generation
-    |   |                  
-    │   └── TODO
+    ├── d02_ETKDG_confgen	<- scripts for ETKDG conformer generation               
+    │   └── ...
     │
-    ├── d03_other_confgen 	<- Scripts related to other confgen methods
-    |   | 			   e.g. OmegaMC  
-    │   ├── omega		
-    │   └── TODO
+    ├── d03_other_confgen 	<- scripts related to other confgen methods			 
+    │   └── omega		
     │
-    ├── d04_ensemble_selection 	<- Scripts so select conformer ensemble,
-    |   | 			   e.g. NAMFIS and Regression      
-    │   └── TODO
+    ├── d04_ensemble_selection 	<- scripts so select conformer ensemble,
+    |   | 			   e.g. NAMFIS and Regression (not functional) and Greedy forward selection (works)   
+    │   └── ...
     │
-    ├── d05_refinement  	<- Scripts to refine conformations with
-    |   |           	           force fields, e.g. openMM 
-    │   └── examples		<- some toy scripts for getting started
+    ├── d05_refinement  	<- scripts to refine conformations with
+    |   |           	           in openMM and ANI potential
+    │   └── ...
     │
-
-Maybe in the future:
-    ├── d06_model_evaluation<- Scripts that analyse model 
-    │    
-    ├── d07_reporting  <- Scripts to produce reporting tables
-    │   └── create_rpt_payment_summary.py
-    │
-    └── d08_visualisation<- Scripts to create frequently used plots
-        └── visualise_patient_journey.py
+    └── d06_analysis 		<- analysis scripts. The pickler script can be used to perform 
+        |           	           expensive calculations only once.
+        └── ...

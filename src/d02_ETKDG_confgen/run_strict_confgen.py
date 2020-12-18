@@ -3,7 +3,7 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 import sys
 import os
-from _utils import assign_hydrogen_pdbinfo, get_noe_restraint_bmat
+from src.d00_utils.utils import assign_hydrogen_pdbinfo, get_noe_restraint_bmat
 import time
 
 """

@@ -1,1 +1,31 @@
-TODO
+# general python stuff
+matplotlib
+numpy
+tqdm
+pickle
+pandas
+tempfile
+joblib
+contextlib
+
+# cheminformatics / MD sim
+rdkit
+mdtraj
+openMM
+parmed
+simtk
+openforcefield
+openforcefields
+ase
+pytorch  # for ANI potential
+torchani
+
+# for ensemble regression attempt
+scikit-learn
+
+# data extraction from PDF
+camelot
+
+# not conda-installable
+#mlddec
+#cpeptools

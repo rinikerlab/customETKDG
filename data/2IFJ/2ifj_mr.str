@@ -1,0 +1,499 @@
+data_wwPDB_remediated_restraints_file_for_PDB_entry_2ifj
+
+# This wwPDB archive file contains, for PDB entry 2ifj:
+#
+# - Sequence information from the PDB mmCIF file
+# - NMR restraints from the PDB MR file
+#
+# In this file, the NMR restraints share the same atom names as in the coordinate 
+# file, and in this way can differ from the data deposited at the wwPDB. To achieve
+# this aim, the NMR restraints were parsed from their original format files, and
+# the coordinates and NMR restraints information were subsequently harmonized.
+#
+# Due to the complexity of this harmonization process, minor modifications could
+# have occurred to the NMR restraints information, or data could have been lost
+# because of parsing or conversion errors. The PDB file remains the
+# authoritative reference for the atomic coordinates and the originally deposited
+# restraints files remain the primary reference for these data.
+#
+# This file is generated as part of the wwPDB at the BioMagResBank (BMRB) in
+# collaboration with the PDBe (formerly MSD) group at the European
+# Bioinformatics Institute (EBI) and the CMBI/IMM group at the Radboud
+# University of Nijmegen.
+#
+# Several software packages were used to produce this file:
+#
+# - Wattos (BMRB and CMBI/IMM).
+# - FormatConverter and NMRStarExport (PDBe).
+# - CCPN framework (http://www.ccpn.ac.uk/).
+#
+# More information about this process can be found in the references below.
+# Please cite the original reference for this PDB entry.
+#
+# JF Doreleijers, A Nederveen, W Vranken, J Lin, AM Bonvin, R Kaptein, JL
+# Markley, and EL Ulrich (2005). BioMagResBank databases DOCR and FRED
+# containing converted and filtered sets of experimental NMR restraints and
+# coordinates from over 500 protein PDB structures. J. Biomol. NMR 32, 1-12.
+#
+# WF Vranken, W Boucher, TJ Stevens, RH Fogh, A Pajon, M Llinas, EL Ulrich, JL
+# Markley, J Ionides, ED Laue (2005). The CCPN data model for NMR spectroscopy:
+# development of a software pipeline. Proteins 59, 687-696.
+#
+# JF Doreleijers, WF Vranken, C Schulte, J Lin, JR Wedell, CJ Penkett, GW Vuister, 
+# G Vriend, JL Markley, and EL Ulrich (2009). The NMR Restraints Grid at BMRB for 
+# 5,266 Protein and Nucleic Acid PDB Entries. J Biomol. NMR 45, 389-396.
+
+#######################
+#  Entry information  #
+#######################
+
+save_entry_information
+   _Entry.Sf_category                  entry_information
+   _Entry.Sf_framecode                 entry_information
+   _Entry.ID                           rr_2ifj
+   _Entry.Title                        'wwPDB remediated NMR restraints for PDB entry 2ifj'
+   _Entry.Version_type                 original
+   _Entry.NMR_STAR_version             3.1.0.8
+   _Entry.Experimental_method          NMR
+   _Entry.Experimental_method_subtype  solution
+   _Entry.Details                      'Contains the remediated restraint lists and coordinates for PDB entry 2ifj'
+   _Entry.PDB_coordinate_file_version  3.20
+
+   loop_
+      _Related_entries.Database_name
+      _Related_entries.Database_accession_code
+      _Related_entries.Relationship
+      _Related_entries.Entry_ID
+
+     PDB   2ifj   'Master copy'   rr_2ifj    
+
+   stop_
+
+save_
+
+#############################################
+#  Molecular system (assembly) description  #
+#############################################
+
+save_assembly
+   _Assembly.Sf_category           assembly
+   _Assembly.Sf_framecode          assembly
+   _Assembly.Entry_ID              rr_2ifj
+   _Assembly.ID                    1
+   _Assembly.Name                  2ifj
+   _Assembly.Number_of_components  1
+   _Assembly.Organic_ligands       0
+   _Assembly.Metal_ions            0
+   _Assembly.Non_standard_bonds    no
+   _Assembly.Paramagnetic          no
+   _Assembly.Thiol_state           'all free'
+   _Assembly.Molecular_mass        1386.6189
+
+   loop_
+      _Entity_assembly.ID
+      _Entity_assembly.Entity_assembly_name
+      _Entity_assembly.Entity_ID
+      _Entity_assembly.Entity_label
+      _Entity_assembly.Asym_ID
+      _Entity_assembly.PDB_chain_ID
+      _Entity_assembly.Experimental_data_reported
+      _Entity_assembly.Physical_state
+      _Entity_assembly.Conformational_isomer
+      _Entity_assembly.Chemical_exchange_state
+      _Entity_assembly.Magnetic_equivalence_group_code
+      _Entity_assembly.Role
+      _Entity_assembly.Details
+      _Entity_assembly.Entry_ID
+      _Entity_assembly.Assembly_ID
+
+     1   'Alpha conotoxin ImI'   1   $Alpha_conotoxin_ImI   A   .   no   .   .   .   .   .   .   rr_2ifj   1    
+
+   stop_
+
+save_
+
+    ####################################
+    #  Biological polymers and ligands #
+    ####################################
+
+save_Alpha_conotoxin_ImI
+   _Entity.Sf_category                      entity
+   _Entity.Sf_framecode                     Alpha_conotoxin_ImI
+   _Entity.Entry_ID                         rr_2ifj
+   _Entity.ID                               1
+   _Entity.Name                             Alpha_conotoxin_ImI
+   _Entity.Type                             polymer
+   _Entity.Polymer_type                     polypeptide(L)
+   _Entity.Polymer_strand_ID                A
+   _Entity.Polymer_seq_one_letter_code      GCCSDKRCAWRC
+   _Entity.Ambiguous_conformational_states  no
+   _Entity.Ambiguous_chem_comp_sites        no
+   _Entity.Nstd_monomer                     no
+   _Entity.Nstd_chirality                   no
+   _Entity.Nstd_linkage                     no
+   _Entity.Number_of_monomers               12
+   _Entity.Paramagnetic                     no
+   _Entity.Thiol_state                      'all free'
+   _Entity.Parent_entity_ID                 1
+   _Entity.Formula_weight                   1386.6189
+
+   loop_
+      _Entity_comp_index.ID
+      _Entity_comp_index.Auth_seq_ID
+      _Entity_comp_index.Comp_ID
+      _Entity_comp_index.Comp_label
+      _Entity_comp_index.Entry_ID
+      _Entity_comp_index.Entity_ID
+
+     1    .   GLY   .   rr_2ifj   1    
+     2    .   CYS   .   rr_2ifj   1    
+     3    .   CYS   .   rr_2ifj   1    
+     4    .   SER   .   rr_2ifj   1    
+     5    .   ASP   .   rr_2ifj   1    
+     6    .   LYS   .   rr_2ifj   1    
+     7    .   ARG   .   rr_2ifj   1    
+     8    .   CYS   .   rr_2ifj   1    
+     9    .   ALA   .   rr_2ifj   1    
+     10   .   TRP   .   rr_2ifj   1    
+     11   .   ARG   .   rr_2ifj   1    
+     12   .   CYS   .   rr_2ifj   1    
+
+   stop_
+
+   loop_
+      _Entity_poly_seq.Hetero
+      _Entity_poly_seq.Mon_ID
+      _Entity_poly_seq.Num
+      _Entity_poly_seq.Comp_index_ID
+      _Entity_poly_seq.Entry_ID
+      _Entity_poly_seq.Entity_ID
+
+     .   GLY   1    1    rr_2ifj   1    
+     .   CYS   2    2    rr_2ifj   1    
+     .   CYS   3    3    rr_2ifj   1    
+     .   SER   4    4    rr_2ifj   1    
+     .   ASP   5    5    rr_2ifj   1    
+     .   LYS   6    6    rr_2ifj   1    
+     .   ARG   7    7    rr_2ifj   1    
+     .   CYS   8    8    rr_2ifj   1    
+     .   ALA   9    9    rr_2ifj   1    
+     .   TRP   10   10   rr_2ifj   1    
+     .   ARG   11   11   rr_2ifj   1    
+     .   CYS   12   12   rr_2ifj   1    
+
+   stop_
+
+save_
+
+
+##############################
+#  Structure determinations  #
+##############################
+
+    ##########################
+    #  Conformer statistics  #
+    ##########################
+
+save_conformer_statistics
+   _Conformer_stat_list.Sf_category                    conformer_statistics
+   _Conformer_stat_list.Sf_framecode                   conformer_statistics
+   _Conformer_stat_list.Entry_ID                       rr_2ifj
+   _Conformer_stat_list.ID                             1
+   _Conformer_stat_list.Conf_family_coord_set_ID       1
+   _Conformer_stat_list.Conf_family_coord_set_label    $Original_constraints_and_structures
+   _Conformer_stat_list.Conformer_submitted_total_num  16
+
+save_
+
+###########################
+#  Constraint Statistics  #
+###########################
+
+save_constraint_statistics
+   _Constraint_stat_list.Sf_framecode  constraint_statistics
+   _Constraint_stat_list.Sf_category   constraint_statistics
+   _Constraint_stat_list.Entry_ID      rr_2ifj
+   _Constraint_stat_list.ID            1
+
+   loop_
+      _Constraint_file.ID
+      _Constraint_file.Constraint_filename
+      _Constraint_file.Software_ID
+      _Constraint_file.Software_label
+      _Constraint_file.Software_name
+      _Constraint_file.Block_ID
+      _Constraint_file.Constraint_type
+      _Constraint_file.Constraint_subtype
+      _Constraint_file.Constraint_subsubtype
+      _Constraint_file.Constraint_number
+      _Constraint_file.Entry_ID
+      _Constraint_file.Constraint_stat_list_ID
+
+     1   2ifj.mr   .   .   'MR format'   1   comment                  'Not applicable'   'Not applicable'   0    rr_2ifj   1    
+     1   2ifj.mr   .   .   DISCOVER      2   distance                 NOE                simple             81   rr_2ifj   1    
+     1   2ifj.mr   .   .   'MR format'   3   'nomenclature mapping'   'Not applicable'   'Not applicable'   0    rr_2ifj   1    
+
+   stop_
+
+save_
+
+save_Discover_distance_constraints_2
+   _Gen_dist_constraint_list.Sf_category         general_distance_constraints
+   _Gen_dist_constraint_list.Sf_framecode        Discover_distance_constraints_2
+   _Gen_dist_constraint_list.Entry_ID            rr_2ifj
+   _Gen_dist_constraint_list.ID                  1
+   _Gen_dist_constraint_list.Constraint_type     NOE
+   _Gen_dist_constraint_list.Details             'Generated by Wattos'
+   _Gen_dist_constraint_list.Constraint_file_ID  1
+   _Gen_dist_constraint_list.Block_ID            2
+
+   loop_
+      _Gen_dist_constraint_software.Software_ID
+      _Gen_dist_constraint_software.Software_label
+      _Gen_dist_constraint_software.Method_ID
+      _Gen_dist_constraint_software.Method_label
+      _Gen_dist_constraint_software.Entry_ID
+      _Gen_dist_constraint_software.Gen_dist_constraint_list_ID
+
+     .   .   .   .   rr_2ifj   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint.ID
+      _Gen_dist_constraint.Member_ID
+      _Gen_dist_constraint.Member_logic_code
+      _Gen_dist_constraint.Assembly_atom_ID_1
+      _Gen_dist_constraint.Entity_assembly_ID_1
+      _Gen_dist_constraint.Entity_ID_1
+      _Gen_dist_constraint.Comp_index_ID_1
+      _Gen_dist_constraint.Seq_ID_1
+      _Gen_dist_constraint.Comp_ID_1
+      _Gen_dist_constraint.Atom_ID_1
+      _Gen_dist_constraint.Atom_type_1
+      _Gen_dist_constraint.Atom_isotope_number_1
+      _Gen_dist_constraint.Resonance_ID_1
+      _Gen_dist_constraint.Assembly_atom_ID_2
+      _Gen_dist_constraint.Entity_assembly_ID_2
+      _Gen_dist_constraint.Entity_ID_2
+      _Gen_dist_constraint.Comp_index_ID_2
+      _Gen_dist_constraint.Seq_ID_2
+      _Gen_dist_constraint.Comp_ID_2
+      _Gen_dist_constraint.Atom_ID_2
+      _Gen_dist_constraint.Atom_type_2
+      _Gen_dist_constraint.Atom_isotope_number_2
+      _Gen_dist_constraint.Resonance_ID_2
+      _Gen_dist_constraint.Intensity_val
+      _Gen_dist_constraint.Intensity_lower_val_err
+      _Gen_dist_constraint.Intensity_upper_val_err
+      _Gen_dist_constraint.Distance_val
+      _Gen_dist_constraint.Distance_lower_bound_val
+      _Gen_dist_constraint.Distance_upper_bound_val
+      _Gen_dist_constraint.Contribution_fractional_val
+      _Gen_dist_constraint.Spectral_peak_ID
+      _Gen_dist_constraint.Spectral_peak_list_ID
+      _Gen_dist_constraint.PDB_record_ID_1
+      _Gen_dist_constraint.PDB_model_num_1
+      _Gen_dist_constraint.PDB_strand_ID_1
+      _Gen_dist_constraint.PDB_ins_code_1
+      _Gen_dist_constraint.PDB_residue_no_1
+      _Gen_dist_constraint.PDB_residue_name_1
+      _Gen_dist_constraint.PDB_atom_name_1
+      _Gen_dist_constraint.PDB_record_ID_2
+      _Gen_dist_constraint.PDB_model_num_2
+      _Gen_dist_constraint.PDB_strand_ID_2
+      _Gen_dist_constraint.PDB_ins_code_2
+      _Gen_dist_constraint.PDB_residue_no_2
+      _Gen_dist_constraint.PDB_residue_name_2
+      _Gen_dist_constraint.PDB_atom_name_2
+      _Gen_dist_constraint.Auth_entity_assembly_ID_1
+      _Gen_dist_constraint.Auth_asym_ID_1
+      _Gen_dist_constraint.Auth_chain_ID_1
+      _Gen_dist_constraint.Auth_seq_ID_1
+      _Gen_dist_constraint.Auth_comp_ID_1
+      _Gen_dist_constraint.Auth_atom_ID_1
+      _Gen_dist_constraint.Auth_alt_ID_1
+      _Gen_dist_constraint.Auth_atom_name_1
+      _Gen_dist_constraint.Auth_entity_assembly_ID_2
+      _Gen_dist_constraint.Auth_asym_ID_2
+      _Gen_dist_constraint.Auth_chain_ID_2
+      _Gen_dist_constraint.Auth_seq_ID_2
+      _Gen_dist_constraint.Auth_comp_ID_2
+      _Gen_dist_constraint.Auth_atom_ID_2
+      _Gen_dist_constraint.Auth_alt_ID_2
+      _Gen_dist_constraint.Auth_atom_name_2
+      _Gen_dist_constraint.Entry_ID
+      _Gen_dist_constraint.Gen_dist_constraint_list_ID
+
+     1    1   .    .   1   1   4    4    SER   H     H   .   .   .   1   1   5    5    ASP   H     H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   4    SER   H     .   .   A   .   5    ASP   H     .   1   .   4    SER   HN    .   .   .   1   .   5    ASP   HN    .   .   rr_2ifj   1    
+     2    1   OR   .   1   1   7    7    ARG   H     H   .   .   .   1   1   11   11   ARG   NH2   N   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   11   ARG   NH2   .   1   .   7    ARG   HN    .   .   .   1   .   11   ARG   NH*   .   .   rr_2ifj   1    
+     2    2   OR   .   1   1   11   11   ARG   NH1   N   .   .   .   1   1   7    7    ARG   H     H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   11   ARG   NH1   .   .   A   .   7    ARG   H     .   1   .   11   ARG   NH*   .   .   .   1   .   7    ARG   HN    .   .   rr_2ifj   1    
+     3    1   .    .   1   1   9    9    ALA   H     H   .   .   .   1   1   10   10   TRP   H     H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   9    ALA   H     .   .   A   .   10   TRP   H     .   1   .   9    ALA   HN    .   .   .   1   .   10   TRP   HN    .   .   rr_2ifj   1    
+     4    1   .    .   1   1   10   10   TRP   H     H   .   .   .   1   1   11   11   ARG   H     H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   11   ARG   H     .   1   .   10   TRP   HN    .   .   .   1   .   11   ARG   HN    .   .   rr_2ifj   1    
+     5    1   .    .   1   1   7    7    ARG   H     H   .   .   .   1   1   8    8    CYS   H     H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   8    CYS   H     .   1   .   7    ARG   HN    .   .   .   1   .   8    CYS   HN    .   .   rr_2ifj   1    
+     6    1   .    .   1   1   2    2    CYS   H     H   .   .   .   1   1   3    3    CYS   H     H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   2    CYS   H     .   .   A   .   3    CYS   H     .   1   .   2    CYS   HN    .   .   .   1   .   3    CYS   HN    .   .   rr_2ifj   1    
+     7    1   .    .   1   1   7    7    ARG   H     H   .   .   .   1   1   6    6    LYS   H     H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   6    LYS   H     .   1   .   7    ARG   HN    .   .   .   1   .   6    LYS   HN    .   .   rr_2ifj   1    
+     8    1   .    .   1   1   4    4    SER   H     H   .   .   .   1   1   3    3    CYS   HA    H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   4    SER   H     .   .   A   .   3    CYS   HA    .   1   .   4    SER   HN    .   .   .   1   .   3    CYS   HA    .   .   rr_2ifj   1    
+     9    1   .    .   1   1   3    3    CYS   H     H   .   .   .   1   1   3    3    CYS   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   3    CYS   H     .   .   A   .   3    CYS   HA    .   1   .   3    CYS   HN    .   .   .   1   .   3    CYS   HA    .   .   rr_2ifj   1    
+     10   1   .    .   1   1   3    3    CYS   H     H   .   .   .   1   1   2    2    CYS   HA    H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   3    CYS   H     .   .   A   .   2    CYS   HA    .   1   .   3    CYS   HN    .   .   .   1   .   2    CYS   HA    .   .   rr_2ifj   1    
+     11   1   .    .   1   1   4    4    SER   H     H   .   .   .   1   1   4    4    SER   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   4    SER   H     .   .   A   .   4    SER   HA    .   1   .   4    SER   HN    .   .   .   1   .   4    SER   HA    .   .   rr_2ifj   1    
+     12   1   OR   .   1   1   4    4    SER   H     H   .   .   .   1   1   4    4    SER   HB2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   4    SER   H     .   .   A   .   4    SER   HB2   .   1   .   4    SER   HN    .   .   .   1   .   4    SER   HB*   .   .   rr_2ifj   1    
+     12   2   OR   .   1   1   4    4    SER   H     H   .   .   .   1   1   4    4    SER   HB3   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   4    SER   H     .   .   A   .   4    SER   HB3   .   1   .   4    SER   HN    .   .   .   1   .   4    SER   HB*   .   .   rr_2ifj   1    
+     13   1   OR   .   1   1   3    3    CYS   H     H   .   .   .   1   1   3    3    CYS   HB2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   3    CYS   H     .   .   A   .   3    CYS   HB2   .   1   .   3    CYS   HN    .   .   .   1   .   3    CYS   HB*   .   .   rr_2ifj   1    
+     13   2   OR   .   1   1   3    3    CYS   H     H   .   .   .   1   1   3    3    CYS   HB3   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   3    CYS   H     .   .   A   .   3    CYS   HB3   .   1   .   3    CYS   HN    .   .   .   1   .   3    CYS   HB*   .   .   rr_2ifj   1    
+     14   1   OR   .   1   1   4    4    SER   H     H   .   .   .   1   1   3    3    CYS   HB2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   4    SER   H     .   .   A   .   3    CYS   HB2   .   1   .   4    SER   HN    .   .   .   1   .   3    CYS   HB*   .   .   rr_2ifj   1    
+     14   2   OR   .   1   1   4    4    SER   H     H   .   .   .   1   1   3    3    CYS   HB3   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   4    SER   H     .   .   A   .   3    CYS   HB3   .   1   .   4    SER   HN    .   .   .   1   .   3    CYS   HB*   .   .   rr_2ifj   1    
+     15   1   OR   .   1   1   3    3    CYS   H     H   .   .   .   1   1   8    8    CYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   3    CYS   H     .   .   A   .   8    CYS   HB2   .   1   .   3    CYS   HN    .   .   .   1   .   8    CYS   HB*   .   .   rr_2ifj   1    
+     15   2   OR   .   1   1   3    3    CYS   H     H   .   .   .   1   1   8    8    CYS   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   3    CYS   H     .   .   A   .   8    CYS   HB3   .   1   .   3    CYS   HN    .   .   .   1   .   8    CYS   HB*   .   .   rr_2ifj   1    
+     16   1   OR   .   1   1   3    3    CYS   H     H   .   .   .   1   1   2    2    CYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   3    CYS   H     .   .   A   .   2    CYS   HB2   .   1   .   3    CYS   HN    .   .   .   1   .   2    CYS   HB*   .   .   rr_2ifj   1    
+     16   2   OR   .   1   1   3    3    CYS   H     H   .   .   .   1   1   2    2    CYS   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   3    CYS   H     .   .   A   .   2    CYS   HB3   .   1   .   3    CYS   HN    .   .   .   1   .   2    CYS   HB*   .   .   rr_2ifj   1    
+     17   1   OR   .   1   1   2    2    CYS   H     H   .   .   .   1   1   2    2    CYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   2    CYS   H     .   .   A   .   2    CYS   HB2   .   1   .   2    CYS   HN    .   .   .   1   .   2    CYS   HB*   .   .   rr_2ifj   1    
+     17   2   OR   .   1   1   2    2    CYS   H     H   .   .   .   1   1   2    2    CYS   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   2    CYS   H     .   .   A   .   2    CYS   HB3   .   1   .   2    CYS   HN    .   .   .   1   .   2    CYS   HB*   .   .   rr_2ifj   1    
+     18   1   .    .   1   1   2    2    CYS   H     H   .   .   .   1   1   2    2    CYS   HA    H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   2    CYS   H     .   .   A   .   2    CYS   HA    .   1   .   2    CYS   HN    .   .   .   1   .   2    CYS   HA    .   .   rr_2ifj   1    
+     19   1   .    .   1   1   6    6    LYS   H     H   .   .   .   1   1   5    5    ASP   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   6    LYS   H     .   .   A   .   5    ASP   HA    .   1   .   6    LYS   HN    .   .   .   1   .   5    ASP   HA    .   .   rr_2ifj   1    
+     20   1   OR   .   1   1   9    9    ALA   H     H   .   .   .   1   1   8    8    CYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   9    ALA   H     .   .   A   .   8    CYS   HB2   .   1   .   9    ALA   HN    .   .   .   1   .   8    CYS   HB*   .   .   rr_2ifj   1    
+     20   2   OR   .   1   1   9    9    ALA   H     H   .   .   .   1   1   8    8    CYS   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   9    ALA   H     .   .   A   .   8    CYS   HB3   .   1   .   9    ALA   HN    .   .   .   1   .   8    CYS   HB*   .   .   rr_2ifj   1    
+     21   1   .    .   1   1   9    9    ALA   H     H   .   .   .   1   1   9    9    ALA   MB    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   9    ALA   H     .   .   A   .   9    ALA   MB    .   1   .   9    ALA   HN    .   .   .   1   .   9    ALA   HB*   .   .   rr_2ifj   1    
+     22   1   OR   .   1   1   6    6    LYS   H     H   .   .   .   1   1   6    6    LYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   6    LYS   H     .   .   A   .   6    LYS   HB2   .   1   .   6    LYS   HN    .   .   .   1   .   6    LYS   HB*   .   .   rr_2ifj   1    
+     22   2   OR   .   1   1   6    6    LYS   H     H   .   .   .   1   1   6    6    LYS   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   6    LYS   H     .   .   A   .   6    LYS   HB3   .   1   .   6    LYS   HN    .   .   .   1   .   6    LYS   HB*   .   .   rr_2ifj   1    
+     23   1   .    .   1   1   11   11   ARG   H     H   .   .   .   1   1   9    9    ALA   MB    H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   9    ALA   MB    .   1   .   11   ARG   HN    .   .   .   1   .   9    ALA   HB*   .   .   rr_2ifj   1    
+     24   1   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HG2   .   1   .   11   ARG   HN    .   .   .   1   .   11   ARG   HG*   .   .   rr_2ifj   1    
+     24   2   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HG3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HG3   .   1   .   11   ARG   HN    .   .   .   1   .   11   ARG   HG*   .   .   rr_2ifj   1    
+     25   1   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HB2   .   1   .   11   ARG   HN    .   .   .   1   .   11   ARG   HB*   .   .   rr_2ifj   1    
+     25   2   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HB3   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HB3   .   1   .   11   ARG   HN    .   .   .   1   .   11   ARG   HB*   .   .   rr_2ifj   1    
+     26   1   OR   .   1   1   7    7    ARG   H     H   .   .   .   1   1   7    7    ARG   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   7    ARG   HB2   .   1   .   7    ARG   HN    .   .   .   1   .   7    ARG   HB*   .   .   rr_2ifj   1    
+     26   2   OR   .   1   1   7    7    ARG   H     H   .   .   .   1   1   7    7    ARG   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   7    ARG   HB3   .   1   .   7    ARG   HN    .   .   .   1   .   7    ARG   HB*   .   .   rr_2ifj   1    
+     27   1   OR   .   1   1   7    7    ARG   H     H   .   .   .   1   1   7    7    ARG   HG2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   7    ARG   HG2   .   1   .   7    ARG   HN    .   .   .   1   .   7    ARG   HG*   .   .   rr_2ifj   1    
+     27   2   OR   .   1   1   7    7    ARG   H     H   .   .   .   1   1   7    7    ARG   HG3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   7    ARG   HG3   .   1   .   7    ARG   HN    .   .   .   1   .   7    ARG   HG*   .   .   rr_2ifj   1    
+     28   1   .    .   1   1   10   10   TRP   H     H   .   .   .   1   1   9    9    ALA   MB    H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   9    ALA   MB    .   1   .   10   TRP   HN    .   .   .   1   .   9    ALA   HB*   .   .   rr_2ifj   1    
+     29   1   OR   .   1   1   5    5    ASP   H     H   .   .   .   1   1   5    5    ASP   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   5    ASP   HB2   .   1   .   5    ASP   HN    .   .   .   1   .   5    ASP   HB*   .   .   rr_2ifj   1    
+     29   2   OR   .   1   1   5    5    ASP   H     H   .   .   .   1   1   5    5    ASP   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   5    ASP   HB3   .   1   .   5    ASP   HN    .   .   .   1   .   5    ASP   HB*   .   .   rr_2ifj   1    
+     30   1   OR   .   1   1   8    8    CYS   H     H   .   .   .   1   1   8    8    CYS   HB2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   8    CYS   H     .   .   A   .   8    CYS   HB2   .   1   .   8    CYS   HN    .   .   .   1   .   8    CYS   HB*   .   .   rr_2ifj   1    
+     30   2   OR   .   1   1   8    8    CYS   H     H   .   .   .   1   1   8    8    CYS   HB3   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   8    CYS   H     .   .   A   .   8    CYS   HB3   .   1   .   8    CYS   HN    .   .   .   1   .   8    CYS   HB*   .   .   rr_2ifj   1    
+     31   1   OR   .   1   1   7    7    ARG   H     H   .   .   .   1   1   5    5    ASP   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   5    ASP   HB2   .   1   .   7    ARG   HN    .   .   .   1   .   5    ASP   HB*   .   .   rr_2ifj   1    
+     31   2   OR   .   1   1   7    7    ARG   H     H   .   .   .   1   1   5    5    ASP   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   5    ASP   HB3   .   1   .   7    ARG   HN    .   .   .   1   .   5    ASP   HB*   .   .   rr_2ifj   1    
+     32   1   OR   .   1   1   10   10   TRP   H     H   .   .   .   1   1   8    8    CYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   8    CYS   HB2   .   1   .   10   TRP   HN    .   .   .   1   .   8    CYS   HB*   .   .   rr_2ifj   1    
+     32   2   OR   .   1   1   10   10   TRP   H     H   .   .   .   1   1   8    8    CYS   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   8    CYS   HB3   .   1   .   10   TRP   HN    .   .   .   1   .   8    CYS   HB*   .   .   rr_2ifj   1    
+     33   1   OR   .   1   1   10   10   TRP   H     H   .   .   .   1   1   10   10   TRP   HB2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   10   TRP   HB2   .   1   .   10   TRP   HN    .   .   .   1   .   10   TRP   HB*   .   .   rr_2ifj   1    
+     33   2   OR   .   1   1   10   10   TRP   H     H   .   .   .   1   1   10   10   TRP   HB3   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   10   TRP   HB3   .   1   .   10   TRP   HN    .   .   .   1   .   10   TRP   HB*   .   .   rr_2ifj   1    
+     34   1   OR   .   1   1   5    5    ASP   H     H   .   .   .   1   1   4    4    SER   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   4    SER   HB2   .   1   .   5    ASP   HN    .   .   .   1   .   4    SER   HB*   .   .   rr_2ifj   1    
+     34   2   OR   .   1   1   5    5    ASP   H     H   .   .   .   1   1   4    4    SER   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   4    SER   HB3   .   1   .   5    ASP   HN    .   .   .   1   .   4    SER   HB*   .   .   rr_2ifj   1    
+     35   1   .    .   1   1   6    6    LYS   H     H   .   .   .   1   1   6    6    LYS   HA    H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   6    LYS   H     .   .   A   .   6    LYS   HA    .   1   .   6    LYS   HN    .   .   .   1   .   6    LYS   HA    .   .   rr_2ifj   1    
+     36   1   .    .   1   1   9    9    ALA   H     H   .   .   .   1   1   9    9    ALA   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   9    ALA   H     .   .   A   .   9    ALA   HA    .   1   .   9    ALA   HN    .   .   .   1   .   9    ALA   HA    .   .   rr_2ifj   1    
+     37   1   OR   .   1   1   12   12   CYS   H     H   .   .   .   1   1   12   12   CYS   HB2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   12   CYS   H     .   .   A   .   12   CYS   HB2   .   1   .   12   CYS   HN    .   .   .   1   .   12   CYS   HB*   .   .   rr_2ifj   1    
+     37   2   OR   .   1   1   12   12   CYS   HB3   H   .   .   .   1   1   12   12   CYS   H     H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   12   CYS   HB3   .   .   A   .   12   CYS   H     .   1   .   12   CYS   HB*   .   .   .   1   .   12   CYS   HN    .   .   rr_2ifj   1    
+     38   1   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   10   10   TRP   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   10   TRP   HB2   .   1   .   11   ARG   HN    .   .   .   1   .   10   TRP   HB*   .   .   rr_2ifj   1    
+     38   2   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   10   10   TRP   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   10   TRP   HB3   .   1   .   11   ARG   HN    .   .   .   1   .   10   TRP   HB*   .   .   rr_2ifj   1    
+     39   1   .    .   1   1   8    8    CYS   H     H   .   .   .   1   1   6    6    LYS   HA    H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   8    CYS   H     .   .   A   .   6    LYS   HA    .   1   .   8    CYS   HN    .   .   .   1   .   6    LYS   HA    .   .   rr_2ifj   1    
+     40   1   .    .   1   1   8    8    CYS   H     H   .   .   .   1   1   7    7    ARG   HA    H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   8    CYS   H     .   .   A   .   7    ARG   HA    .   1   .   8    CYS   HN    .   .   .   1   .   7    ARG   HA    .   .   rr_2ifj   1    
+     41   1   .    .   1   1   9    9    ALA   H     H   .   .   .   1   1   8    8    CYS   HA    H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   9    ALA   H     .   .   A   .   8    CYS   HA    .   1   .   9    ALA   HN    .   .   .   1   .   8    CYS   HA    .   .   rr_2ifj   1    
+     42   1   .    .   1   1   5    5    ASP   H     H   .   .   .   1   1   5    5    ASP   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   5    ASP   HA    .   1   .   5    ASP   HN    .   .   .   1   .   5    ASP   HA    .   .   rr_2ifj   1    
+     43   1   .    .   1   1   11   11   ARG   H     H   .   .   .   1   1   10   10   TRP   HA    H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   10   TRP   HA    .   1   .   11   ARG   HN    .   .   .   1   .   10   TRP   HA    .   .   rr_2ifj   1    
+     44   1   .    .   1   1   12   12   CYS   H     H   .   .   .   1   1   12   12   CYS   HA    H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   12   CYS   H     .   .   A   .   12   CYS   HA    .   1   .   12   CYS   HN    .   .   .   1   .   12   CYS   HA    .   .   rr_2ifj   1    
+     45   1   .    .   1   1   5    5    ASP   H     H   .   .   .   1   1   4    4    SER   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   4    SER   HA    .   1   .   5    ASP   HN    .   .   .   1   .   4    SER   HA    .   .   rr_2ifj   1    
+     46   1   .    .   1   1   8    8    CYS   H     H   .   .   .   1   1   8    8    CYS   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   8    CYS   H     .   .   A   .   8    CYS   HA    .   1   .   8    CYS   HN    .   .   .   1   .   8    CYS   HA    .   .   rr_2ifj   1    
+     47   1   .    .   1   1   7    7    ARG   H     H   .   .   .   1   1   7    7    ARG   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   7    ARG   HA    .   1   .   7    ARG   HN    .   .   .   1   .   7    ARG   HA    .   .   rr_2ifj   1    
+     48   1   .    .   1   1   7    7    ARG   H     H   .   .   .   1   1   6    6    LYS   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   6    LYS   HA    .   1   .   7    ARG   HN    .   .   .   1   .   6    LYS   HA    .   .   rr_2ifj   1    
+     49   1   .    .   1   1   10   10   TRP   H     H   .   .   .   1   1   9    9    ALA   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   9    ALA   HA    .   1   .   10   TRP   HN    .   .   .   1   .   9    ALA   HA    .   .   rr_2ifj   1    
+     50   1   .    .   1   1   10   10   TRP   H     H   .   .   .   1   1   10   10   TRP   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   10   TRP   HA    .   1   .   10   TRP   HN    .   .   .   1   .   10   TRP   HA    .   .   rr_2ifj   1    
+     51   1   OR   .   1   1   10   10   TRP   HA    H   .   .   .   1   1   7    7    ARG   NH2   N   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   10   TRP   HA    .   .   A   .   7    ARG   NH2   .   1   .   10   TRP   HA    .   .   .   1   .   7    ARG   NH*   .   .   rr_2ifj   1    
+     51   2   OR   .   1   1   10   10   TRP   HA    H   .   .   .   1   1   7    7    ARG   NH1   N   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   10   TRP   HA    .   .   A   .   7    ARG   NH1   .   1   .   10   TRP   HA    .   .   .   1   .   7    ARG   NH*   .   .   rr_2ifj   1    
+     52   1   OR   .   1   1   9    9    ALA   MB    H   .   .   .   1   1   7    7    ARG   NH2   N   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   9    ALA   MB    .   .   A   .   7    ARG   NH2   .   1   .   9    ALA   HB*   .   .   .   1   .   7    ARG   NH*   .   .   rr_2ifj   1    
+     52   2   OR   .   1   1   9    9    ALA   MB    H   .   .   .   1   1   7    7    ARG   NH1   N   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   9    ALA   MB    .   .   A   .   7    ARG   NH1   .   1   .   9    ALA   HB*   .   .   .   1   .   7    ARG   NH*   .   .   rr_2ifj   1    
+     53   1   OR   .   1   1   7    7    ARG   NH2   N   .   .   .   1   1   7    7    ARG   HG2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   NH2   .   .   A   .   7    ARG   HG2   .   1   .   7    ARG   NH*   .   .   .   1   .   7    ARG   HG*   .   .   rr_2ifj   1    
+     53   2   OR   .   1   1   7    7    ARG   HG3   H   .   .   .   1   1   7    7    ARG   NH2   N   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   HG3   .   .   A   .   7    ARG   NH2   .   1   .   7    ARG   HG*   .   .   .   1   .   7    ARG   NH*   .   .   rr_2ifj   1    
+     53   3   OR   .   1   1   7    7    ARG   HG3   H   .   .   .   1   1   7    7    ARG   NH1   N   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   HG3   .   .   A   .   7    ARG   NH1   .   1   .   7    ARG   HG*   .   .   .   1   .   7    ARG   NH*   .   .   rr_2ifj   1    
+     53   4   OR   .   1   1   7    7    ARG   NH1   N   .   .   .   1   1   7    7    ARG   HG2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   7    ARG   NH1   .   .   A   .   7    ARG   HG2   .   1   .   7    ARG   NH*   .   .   .   1   .   7    ARG   HG*   .   .   rr_2ifj   1    
+     54   1   .    .   1   1   9    9    ALA   MB    H   .   .   .   1   1   9    9    ALA   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   9    ALA   MB    .   .   A   .   9    ALA   HA    .   1   .   9    ALA   HB*   .   .   .   1   .   9    ALA   HA    .   .   rr_2ifj   1    
+     55   1   OR   .   1   1   6    6    LYS   HA    H   .   .   .   1   1   6    6    LYS   HG2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   6    LYS   HA    .   .   A   .   6    LYS   HG2   .   1   .   6    LYS   HA    .   .   .   1   .   6    LYS   HG*   .   .   rr_2ifj   1    
+     55   2   OR   .   1   1   6    6    LYS   HA    H   .   .   .   1   1   6    6    LYS   HG3   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   6    LYS   HA    .   .   A   .   6    LYS   HG3   .   1   .   6    LYS   HA    .   .   .   1   .   6    LYS   HG*   .   .   rr_2ifj   1    
+     56   1   OR   .   1   1   6    6    LYS   HA    H   .   .   .   1   1   6    6    LYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   6    LYS   HA    .   .   A   .   6    LYS   HB2   .   1   .   6    LYS   HA    .   .   .   1   .   6    LYS   HB*   .   .   rr_2ifj   1    
+     56   2   OR   .   1   1   6    6    LYS   HB3   H   .   .   .   1   1   6    6    LYS   HA    H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   6    LYS   HB3   .   .   A   .   6    LYS   HA    .   1   .   6    LYS   HB*   .   .   .   1   .   6    LYS   HA    .   .   rr_2ifj   1    
+     57   1   OR   .   1   1   6    6    LYS   HA    H   .   .   .   1   1   6    6    LYS   HD2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   6    LYS   HA    .   .   A   .   6    LYS   HD2   .   1   .   6    LYS   HA    .   .   .   1   .   6    LYS   HD*   .   .   rr_2ifj   1    
+     57   2   OR   .   1   1   6    6    LYS   HA    H   .   .   .   1   1   6    6    LYS   HD3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   6    LYS   HA    .   .   A   .   6    LYS   HD3   .   1   .   6    LYS   HA    .   .   .   1   .   6    LYS   HD*   .   .   rr_2ifj   1    
+     58   1   OR   .   1   1   7    7    ARG   HB2   H   .   .   .   1   1   7    7    ARG   HD2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   7    ARG   HB2   .   .   A   .   7    ARG   HD2   .   1   .   7    ARG   HB*   .   .   .   1   .   7    ARG   HD*   .   .   rr_2ifj   1    
+     58   2   OR   .   1   1   7    7    ARG   HD3   H   .   .   .   1   1   7    7    ARG   HB2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   7    ARG   HD3   .   .   A   .   7    ARG   HB2   .   1   .   7    ARG   HD*   .   .   .   1   .   7    ARG   HB*   .   .   rr_2ifj   1    
+     58   3   OR   .   1   1   7    7    ARG   HB3   H   .   .   .   1   1   7    7    ARG   HD3   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   7    ARG   HB3   .   .   A   .   7    ARG   HD3   .   1   .   7    ARG   HB*   .   .   .   1   .   7    ARG   HD*   .   .   rr_2ifj   1    
+     58   4   OR   .   1   1   7    7    ARG   HB3   H   .   .   .   1   1   7    7    ARG   HD2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   7    ARG   HB3   .   .   A   .   7    ARG   HD2   .   1   .   7    ARG   HB*   .   .   .   1   .   7    ARG   HD*   .   .   rr_2ifj   1    
+     59   1   OR   .   1   1   11   11   ARG   HB2   H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   11   ARG   HB2   .   .   A   .   11   ARG   HD2   .   1   .   11   ARG   HB*   .   .   .   1   .   11   ARG   HD*   .   .   rr_2ifj   1    
+     59   2   OR   .   1   1   11   11   ARG   HB3   H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   11   ARG   HB3   .   .   A   .   11   ARG   HD2   .   1   .   11   ARG   HB*   .   .   .   1   .   11   ARG   HD*   .   .   rr_2ifj   1    
+     59   3   OR   .   1   1   11   11   ARG   HD3   H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   11   ARG   HD3   .   .   A   .   11   ARG   HB2   .   1   .   11   ARG   HD*   .   .   .   1   .   11   ARG   HB*   .   .   rr_2ifj   1    
+     59   4   OR   .   1   1   11   11   ARG   HB3   H   .   .   .   1   1   11   11   ARG   HD3   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   11   ARG   HB3   .   .   A   .   11   ARG   HD3   .   1   .   11   ARG   HB*   .   .   .   1   .   11   ARG   HD*   .   .   rr_2ifj   1    
+     60   1   OR   .   1   1   7    7    ARG   HD2   H   .   .   .   1   1   7    7    ARG   HG2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   7    ARG   HD2   .   .   A   .   7    ARG   HG2   .   1   .   7    ARG   HD*   .   .   .   1   .   7    ARG   HG*   .   .   rr_2ifj   1    
+     60   2   OR   .   1   1   7    7    ARG   HD3   H   .   .   .   1   1   7    7    ARG   HG2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   7    ARG   HD3   .   .   A   .   7    ARG   HG2   .   1   .   7    ARG   HD*   .   .   .   1   .   7    ARG   HG*   .   .   rr_2ifj   1    
+     60   3   OR   .   1   1   7    7    ARG   HG3   H   .   .   .   1   1   7    7    ARG   HD2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   7    ARG   HG3   .   .   A   .   7    ARG   HD2   .   1   .   7    ARG   HG*   .   .   .   1   .   7    ARG   HD*   .   .   rr_2ifj   1    
+     60   4   OR   .   1   1   7    7    ARG   HG3   H   .   .   .   1   1   7    7    ARG   HD3   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   7    ARG   HG3   .   .   A   .   7    ARG   HD3   .   1   .   7    ARG   HG*   .   .   .   1   .   7    ARG   HD*   .   .   rr_2ifj   1    
+     61   1   OR   .   1   1   11   11   ARG   HD2   H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   11   ARG   HD2   .   .   A   .   11   ARG   HG2   .   1   .   11   ARG   HD*   .   .   .   1   .   11   ARG   HG*   .   .   rr_2ifj   1    
+     61   2   OR   .   1   1   11   11   ARG   HD3   H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   11   ARG   HD3   .   .   A   .   11   ARG   HG2   .   1   .   11   ARG   HD*   .   .   .   1   .   11   ARG   HG*   .   .   rr_2ifj   1    
+     61   3   OR   .   1   1   11   11   ARG   HG3   H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   11   ARG   HG3   .   .   A   .   11   ARG   HD2   .   1   .   11   ARG   HG*   .   .   .   1   .   11   ARG   HD*   .   .   rr_2ifj   1    
+     61   4   OR   .   1   1   11   11   ARG   HG3   H   .   .   .   1   1   11   11   ARG   HD3   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   11   ARG   HG3   .   .   A   .   11   ARG   HD3   .   1   .   11   ARG   HG*   .   .   .   1   .   11   ARG   HD*   .   .   rr_2ifj   1    
+     62   1   .    .   1   1   2    2    CYS   HB3   H   .   .   .   1   1   2    2    CYS   HB2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   2    CYS   HB3   .   .   A   .   2    CYS   HB2   .   1   .   2    CYS   HB1   .   .   .   1   .   2    CYS   HB2   .   .   rr_2ifj   1    
+     63   1   OR   .   1   1   2    2    CYS   HB3   H   .   .   .   1   1   12   12   CYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   2    CYS   HB3   .   .   A   .   12   CYS   HB2   .   1   .   2    CYS   HB*   .   .   .   1   .   12   CYS   HB*   .   .   rr_2ifj   1    
+     63   2   OR   .   1   1   2    2    CYS   HB2   H   .   .   .   1   1   12   12   CYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   2    CYS   HB2   .   .   A   .   12   CYS   HB2   .   1   .   2    CYS   HB*   .   .   .   1   .   12   CYS   HB*   .   .   rr_2ifj   1    
+     63   3   OR   .   1   1   12   12   CYS   HB3   H   .   .   .   1   1   2    2    CYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   12   CYS   HB3   .   .   A   .   2    CYS   HB2   .   1   .   12   CYS   HB*   .   .   .   1   .   2    CYS   HB*   .   .   rr_2ifj   1    
+     63   4   OR   .   1   1   2    2    CYS   HB3   H   .   .   .   1   1   12   12   CYS   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   2    CYS   HB3   .   .   A   .   12   CYS   HB3   .   1   .   2    CYS   HB*   .   .   .   1   .   12   CYS   HB*   .   .   rr_2ifj   1    
+     64   1   OR   .   1   1   3    3    CYS   HB3   H   .   .   .   1   1   8    8    CYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   3    CYS   HB3   .   .   A   .   8    CYS   HB2   .   1   .   3    CYS   HB*   .   .   .   1   .   8    CYS   HB*   .   .   rr_2ifj   1    
+     64   2   OR   .   1   1   3    3    CYS   HB2   H   .   .   .   1   1   8    8    CYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   3    CYS   HB2   .   .   A   .   8    CYS   HB2   .   1   .   3    CYS   HB*   .   .   .   1   .   8    CYS   HB*   .   .   rr_2ifj   1    
+     64   3   OR   .   1   1   8    8    CYS   HB3   H   .   .   .   1   1   3    3    CYS   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   8    CYS   HB3   .   .   A   .   3    CYS   HB2   .   1   .   8    CYS   HB*   .   .   .   1   .   3    CYS   HB*   .   .   rr_2ifj   1    
+     64   4   OR   .   1   1   3    3    CYS   HB3   H   .   .   .   1   1   8    8    CYS   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   3    CYS   HB3   .   .   A   .   8    CYS   HB3   .   1   .   3    CYS   HB*   .   .   .   1   .   8    CYS   HB*   .   .   rr_2ifj   1    
+     65   1   .    .   1   1   8    8    CYS   HB3   H   .   .   .   1   1   8    8    CYS   HB2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   8    CYS   HB3   .   .   A   .   8    CYS   HB2   .   1   .   8    CYS   HB1   .   .   .   1   .   8    CYS   HB2   .   .   rr_2ifj   1    
+     66   1   .    .   1   1   3    3    CYS   HB3   H   .   .   .   1   1   3    3    CYS   HB2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   3    CYS   HB3   .   .   A   .   3    CYS   HB2   .   1   .   3    CYS   HB1   .   .   .   1   .   3    CYS   HB2   .   .   rr_2ifj   1    
+     67   1   OR   .   1   1   4    4    SER   HA    H   .   .   .   1   1   4    4    SER   HB2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   4    SER   HA    .   .   A   .   4    SER   HB2   .   1   .   4    SER   HA    .   .   .   1   .   4    SER   HB*   .   .   rr_2ifj   1    
+     67   2   OR   .   1   1   4    4    SER   HA    H   .   .   .   1   1   4    4    SER   HB3   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   4    SER   HA    .   .   A   .   4    SER   HB3   .   1   .   4    SER   HA    .   .   .   1   .   4    SER   HB*   .   .   rr_2ifj   1    
+     68   1   OR   .   1   1   5    5    ASP   HA    H   .   .   .   1   1   4    4    SER   HB2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   4    SER   HB2   .   1   .   5    ASP   HA    .   .   .   1   .   4    SER   HB*   .   .   rr_2ifj   1    
+     68   2   OR   .   1   1   4    4    SER   HB3   H   .   .   .   1   1   5    5    ASP   HA    H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   4    SER   HB3   .   .   A   .   5    ASP   HA    .   1   .   4    SER   HB*   .   .   .   1   .   5    ASP   HA    .   .   rr_2ifj   1    
+     69   1   OR   .   1   1   7    7    ARG   HA    H   .   .   .   1   1   7    7    ARG   HG2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   7    ARG   HA    .   .   A   .   7    ARG   HG2   .   1   .   7    ARG   HA    .   .   .   1   .   7    ARG   HG*   .   .   rr_2ifj   1    
+     69   2   OR   .   1   1   7    7    ARG   HG3   H   .   .   .   1   1   7    7    ARG   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   7    ARG   HG3   .   .   A   .   7    ARG   HA    .   1   .   7    ARG   HG*   .   .   .   1   .   7    ARG   HA    .   .   rr_2ifj   1    
+     70   1   OR   .   1   1   12   12   CYS   HA    H   .   .   .   1   1   12   12   CYS   HB2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   12   CYS   HA    .   .   A   .   12   CYS   HB2   .   1   .   12   CYS   HA    .   .   .   1   .   12   CYS   HB*   .   .   rr_2ifj   1    
+     70   2   OR   .   1   1   12   12   CYS   HB3   H   .   .   .   1   1   12   12   CYS   HA    H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   12   CYS   HB3   .   .   A   .   12   CYS   HA    .   1   .   12   CYS   HB*   .   .   .   1   .   12   CYS   HA    .   .   rr_2ifj   1    
+     71   1   OR   .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HD2   .   1   .   11   ARG   HA    .   .   .   1   .   11   ARG   HD*   .   .   rr_2ifj   1    
+     71   2   OR   .   1   1   11   11   ARG   HD3   H   .   .   .   1   1   11   11   ARG   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   11   ARG   HD3   .   .   A   .   11   ARG   HA    .   1   .   11   ARG   HD*   .   .   .   1   .   11   ARG   HA    .   .   rr_2ifj   1    
+     72   1   OR   .   1   1   5    5    ASP   HA    H   .   .   .   1   1   3    3    CYS   HB2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   3    CYS   HB2   .   1   .   5    ASP   HA    .   .   .   1   .   3    CYS   HB*   .   .   rr_2ifj   1    
+     72   2   OR   .   1   1   3    3    CYS   HB3   H   .   .   .   1   1   5    5    ASP   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   3    CYS   HB3   .   .   A   .   5    ASP   HA    .   1   .   3    CYS   HB*   .   .   .   1   .   5    ASP   HA    .   .   rr_2ifj   1    
+     73   1   OR   .   1   1   10   10   TRP   HA    H   .   .   .   1   1   10   10   TRP   HB2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   10   TRP   HA    .   .   A   .   10   TRP   HB2   .   1   .   10   TRP   HA    .   .   .   1   .   10   TRP   HB*   .   .   rr_2ifj   1    
+     73   2   OR   .   1   1   10   10   TRP   HB3   H   .   .   .   1   1   10   10   TRP   HA    H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   10   TRP   HB3   .   .   A   .   10   TRP   HA    .   1   .   10   TRP   HB*   .   .   .   1   .   10   TRP   HA    .   .   rr_2ifj   1    
+     74   1   OR   .   1   1   3    3    CYS   HA    H   .   .   .   1   1   3    3    CYS   HB2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   3    CYS   HA    .   .   A   .   3    CYS   HB2   .   1   .   3    CYS   HA    .   .   .   1   .   3    CYS   HB*   .   .   rr_2ifj   1    
+     74   2   OR   .   1   1   3    3    CYS   HA    H   .   .   .   1   1   3    3    CYS   HB3   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   3    CYS   HA    .   .   A   .   3    CYS   HB3   .   1   .   3    CYS   HA    .   .   .   1   .   3    CYS   HB*   .   .   rr_2ifj   1    
+     75   1   OR   .   1   1   2    2    CYS   HA    H   .   .   .   1   1   2    2    CYS   HB2   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   2    CYS   HA    .   .   A   .   2    CYS   HB2   .   1   .   2    CYS   HA    .   .   .   1   .   2    CYS   HB*   .   .   rr_2ifj   1    
+     75   2   OR   .   1   1   2    2    CYS   HA    H   .   .   .   1   1   2    2    CYS   HB3   H   .   .   .   .   .   .   1.9   3.1   .   .   .   .   .   A   .   2    CYS   HA    .   .   A   .   2    CYS   HB3   .   1   .   2    CYS   HA    .   .   .   1   .   2    CYS   HB*   .   .   rr_2ifj   1    
+     76   1   OR   .   1   1   5    5    ASP   HA    H   .   .   .   1   1   7    7    ARG   HB2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   7    ARG   HB2   .   1   .   5    ASP   HA    .   .   .   1   .   7    ARG   HB*   .   .   rr_2ifj   1    
+     76   2   OR   .   1   1   5    5    ASP   HA    H   .   .   .   1   1   7    7    ARG   HB3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   7    ARG   HB3   .   1   .   5    ASP   HA    .   .   .   1   .   7    ARG   HB*   .   .   rr_2ifj   1    
+     77   1   OR   .   1   1   5    5    ASP   HA    H   .   .   .   1   1   6    6    LYS   HD2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   6    LYS   HD2   .   1   .   5    ASP   HA    .   .   .   1   .   6    LYS   HD*   .   .   rr_2ifj   1    
+     77   2   OR   .   1   1   5    5    ASP   HA    H   .   .   .   1   1   6    6    LYS   HD3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   6    LYS   HD3   .   1   .   5    ASP   HA    .   .   .   1   .   6    LYS   HD*   .   .   rr_2ifj   1    
+     78   1   OR   .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HB2   .   1   .   11   ARG   HA    .   .   .   1   .   11   ARG   HB*   .   .   rr_2ifj   1    
+     78   2   OR   .   1   1   11   11   ARG   HB3   H   .   .   .   1   1   11   11   ARG   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   11   ARG   HB3   .   .   A   .   11   ARG   HA    .   1   .   11   ARG   HB*   .   .   .   1   .   11   ARG   HA    .   .   rr_2ifj   1    
+     79   1   OR   .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HG2   .   1   .   11   ARG   HA    .   .   .   1   .   11   ARG   HG*   .   .   rr_2ifj   1    
+     79   2   OR   .   1   1   11   11   ARG   HG3   H   .   .   .   1   1   11   11   ARG   HA    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   11   ARG   HG3   .   .   A   .   11   ARG   HA    .   1   .   11   ARG   HG*   .   .   .   1   .   11   ARG   HA    .   .   rr_2ifj   1    
+     80   1   OR   .   1   1   5    5    ASP   HA    H   .   .   .   1   1   6    6    LYS   HG2   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   6    LYS   HG2   .   1   .   5    ASP   HA    .   .   .   1   .   6    LYS   HG*   .   .   rr_2ifj   1    
+     80   2   OR   .   1   1   5    5    ASP   HA    H   .   .   .   1   1   6    6    LYS   HG3   H   .   .   .   .   .   .   1.9   5.0   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   6    LYS   HG3   .   1   .   5    ASP   HA    .   .   .   1   .   6    LYS   HG*   .   .   rr_2ifj   1    
+     81   1   .    .   1   1   5    5    ASP   HA    H   .   .   .   1   1   9    9    ALA   MB    H   .   .   .   .   .   .   1.9   3.8   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   9    ALA   MB    .   1   .   5    ASP   HA    .   .   .   1   .   9    ALA   HB*   .   .   rr_2ifj   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint_comment_org.ID
+      _Gen_dist_constraint_comment_org.Comment_text
+      _Gen_dist_constraint_comment_org.Comment_begin_line
+      _Gen_dist_constraint_comment_org.Comment_begin_column
+      _Gen_dist_constraint_comment_org.Comment_end_line
+      _Gen_dist_constraint_comment_org.Comment_end_column
+      _Gen_dist_constraint_comment_org.Entry_ID
+      _Gen_dist_constraint_comment_org.Gen_dist_constraint_list_ID
+
+     1   'BIOSYM restraint 1 distance'   1   1   3   9   rr_2ifj   1    
+
+   stop_
+
+save_
+
+save_MR_file_comment_1
+   _Org_constr_file_comment.Sf_framecode        MR_file_comment_1
+   _Org_constr_file_comment.Sf_category         org_constr_file_comment
+   _Org_constr_file_comment.Entry_ID            rr_2ifj
+   _Org_constr_file_comment.ID                  1
+   _Org_constr_file_comment.Constraint_file_ID  1
+   _Org_constr_file_comment.Block_ID            1
+   _Org_constr_file_comment.Details             'Generated by Wattos'
+   _Org_constr_file_comment.Comment             '*HEADER TOXIN 21-SEP-06 2IFJ *TITLE LYS6 DEAMIDATED VARIANT OF IMI CONOTOXIN *COMPND MOL_ID: 1; *COMPND 2 MOLECULE: ALPHA-CONOTOXIN IMI; *COMPND 3 CHAIN: A; *COMPND 4 ENGINEERED: YES *SOURCE MOL_ID: 1; *SOURCE 2 SYNTHETIC: YES; *SOURCE 3 OTHER_DETAILS: CHEMICALLY SYNTHESIZED USING FMOC SOLID *SOURCE 4 PHASE PEPTIDE SYNTHESIS. *KEYWDS CONOTOXIN, DISULFIDE LINKAGES, RIBBON CONFORMATION, NMR *EXPDTA NMR, 16 STRUCTURES *AUTHOR R.M.KINI, T.S.KANG *REVDAT 1 14-AUG-07 2IFJ 0'
+
+save_

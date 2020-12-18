@@ -6,7 +6,7 @@ from sklearn import datasets
 from matplotlib import pyplot as plt
 from tensorflow import square
 
-from MolDistances import get_distances
+from src.d04_ensemble_selection.MolDistances import get_distances
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits import mplot3d
 import time
@@ -30,23 +30,8 @@ noe_df = pd.read_csv("/home/kkajo/Workspace/Git/MacrocycleConfGenNOE/src/CsA/CsA
 y_true, X = get_distances(mol, noe_df)
 y_true = y_true.reshape(-1, 1)
 
-# Load the diabetes dataset. In this case we will not be using a constant intercept feature
-# diabetes = datasets.load_diabetes()
-# X = diabetes.data
-# y_true = diabetes.target.reshape(-1, 1)
-
-
 # Initialize variables
 m, n = X.shape
-
-
-# sc = StandardScaler()
-# sc = MinMaxScaler(feature_range=(0, 1))
-# X_scaled = sc.fit_transform(X)
-# y_scaled = sc.transform(y_true)
-
-# inputs = Input(shape=(n,))
-# preds = Dense(1,activation='linear')(inputs)
 
 # define base mode
 def baseline_model(input_shape=100):
@@ -125,29 +110,6 @@ pos_count = len(list(filter(lambda x: (x > 1e-3), weights)))
 print("Positive numbers : ", pos_count)
 print("Negative numbers : ", neg_count)
 
-"""
-# save for inspection
-df = pd.DataFrame(theta_lasso)
-df.to_csv("thetas.csv", header=alphas)
-
-# Plot results
-n, _ = theta_lasso.shape
-plt.figure(figsize=(12, 8))
-
-# do not plot zeros
-#theta_lasso[theta_lasso == 0] = np.nan
-
-for i in range(n):
-    plt.plot(alphas, theta_lasso[i], label=np.arange(1, n))
-
-plt.xscale('log') # alt: "log" "linear"
-plt.xlabel('Log($\\lambda$)')
-plt.ylabel('Coefficients')
-plt.title('Lasso Paths - Numpy implementation')
-#plt.legend()
-plt.axis('tight')
-plt.savefig("test.png")
-"""
 
 runtime = time.time() - t
 print("Took {:.0f} s.".format(runtime))

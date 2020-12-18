@@ -1,0 +1,543 @@
+data_wwPDB_remediated_restraints_file_for_PDB_entry_6bf3
+
+# This wwPDB archive file contains, for PDB entry 6bf3:
+#
+# - Sequence information from the PDB mmCIF file
+# - NMR restraints from the PDB MR file
+#
+# In this file, the NMR restraints share the same atom names as in the coordinate 
+# file, and in this way can differ from the data deposited at the wwPDB. To achieve
+# this aim, the NMR restraints were parsed from their original format files, and
+# the coordinates and NMR restraints information were subsequently harmonized.
+#
+# Due to the complexity of this harmonization process, minor modifications could
+# have occurred to the NMR restraints information, or data could have been lost
+# because of parsing or conversion errors. The PDB file remains the
+# authoritative reference for the atomic coordinates and the originally deposited
+# restraints files remain the primary reference for these data.
+#
+# This file is generated as part of the wwPDB at the BioMagResBank (BMRB) in
+# collaboration with the PDBe (formerly MSD) group at the European
+# Bioinformatics Institute (EBI) and the CMBI/IMM group at the Radboud
+# University of Nijmegen.
+#
+# Several software packages were used to produce this file:
+#
+# - Wattos (BMRB and CMBI/IMM).
+# - FormatConverter and NMRStarExport (PDBe).
+# - CCPN framework (http://www.ccpn.ac.uk/).
+#
+# More information about this process can be found in the references below.
+# Please cite the original reference for this PDB entry.
+#
+# JF Doreleijers, A Nederveen, W Vranken, J Lin, AM Bonvin, R Kaptein, JL
+# Markley, and EL Ulrich (2005). BioMagResBank databases DOCR and FRED
+# containing converted and filtered sets of experimental NMR restraints and
+# coordinates from over 500 protein PDB structures. J. Biomol. NMR 32, 1-12.
+#
+# WF Vranken, W Boucher, TJ Stevens, RH Fogh, A Pajon, M Llinas, EL Ulrich, JL
+# Markley, J Ionides, ED Laue (2005). The CCPN data model for NMR spectroscopy:
+# development of a software pipeline. Proteins 59, 687-696.
+#
+# JF Doreleijers, WF Vranken, C Schulte, J Lin, JR Wedell, CJ Penkett, GW Vuister, 
+# G Vriend, JL Markley, and EL Ulrich (2009). The NMR Restraints Grid at BMRB for 
+# 5,266 Protein and Nucleic Acid PDB Entries. J Biomol. NMR 45, 389-396.
+
+#######################
+#  Entry information  #
+#######################
+
+save_entry_information
+   _Entry.Sf_category                  entry_information
+   _Entry.Sf_framecode                 entry_information
+   _Entry.ID                           rr_6bf3
+   _Entry.Title                        'wwPDB remediated NMR restraints for PDB entry 6bf3'
+   _Entry.Version_type                 original
+   _Entry.NMR_STAR_version             3.1.0.8
+   _Entry.Experimental_method          NMR
+   _Entry.Experimental_method_subtype  solution
+   _Entry.Details                      'Contains the remediated restraint lists and coordinates for PDB entry 6bf3'
+   _Entry.PDB_coordinate_file_version  3.20
+
+   loop_
+      _Related_entries.Database_name
+      _Related_entries.Database_accession_code
+      _Related_entries.Relationship
+      _Related_entries.Entry_ID
+
+     PDB   6bf3   'Master copy'   rr_6bf3    
+
+   stop_
+
+save_
+
+#############################################
+#  Molecular system (assembly) description  #
+#############################################
+
+save_assembly
+   _Assembly.Sf_category           assembly
+   _Assembly.Sf_framecode          assembly
+   _Assembly.Entry_ID              rr_6bf3
+   _Assembly.ID                    1
+   _Assembly.Name                  6bf3
+   _Assembly.Number_of_components  1
+   _Assembly.Organic_ligands       0
+   _Assembly.Metal_ions            0
+   _Assembly.Non_standard_bonds    no
+   _Assembly.Paramagnetic          no
+   _Assembly.Thiol_state           'not present'
+   _Assembly.Molecular_mass        781.8184
+
+   loop_
+      _Entity_assembly.ID
+      _Entity_assembly.Entity_assembly_name
+      _Entity_assembly.Entity_ID
+      _Entity_assembly.Entity_label
+      _Entity_assembly.Asym_ID
+      _Entity_assembly.PDB_chain_ID
+      _Entity_assembly.Experimental_data_reported
+      _Entity_assembly.Physical_state
+      _Entity_assembly.Conformational_isomer
+      _Entity_assembly.Chemical_exchange_state
+      _Entity_assembly.Magnetic_equivalence_group_code
+      _Entity_assembly.Role
+      _Entity_assembly.Details
+      _Entity_assembly.Entry_ID
+      _Entity_assembly.Assembly_ID
+
+     1   'QDP DPR K 2TL DAS'   1   $QDP_DPR_K_2TL__DAS_   A   .   no   .   .   .   .   .   .   rr_6bf3   1    
+
+   stop_
+
+save_
+
+    ####################################
+    #  Biological polymers and ligands #
+    ####################################
+
+save_QDP_DPR_K_2TL__DAS_
+   _Entity.Sf_category                      entity
+   _Entity.Sf_framecode                     QDP_DPR_K_2TL__DAS_
+   _Entity.Entry_ID                         rr_6bf3
+   _Entity.ID                               1
+   _Entity.Name                             QDP_DPR_K_2TL__DAS_
+   _Entity.Type                             polymer
+   _Entity.Polymer_type                     polypeptide(L)
+   _Entity.Polymer_strand_ID                A
+   _Entity.Polymer_seq_one_letter_code      QDPXKXX
+   _Entity.Ambiguous_conformational_states  no
+   _Entity.Ambiguous_chem_comp_sites        no
+   _Entity.Nstd_monomer                     yes
+   _Entity.Nstd_chirality                   yes
+   _Entity.Nstd_linkage                     no
+   _Entity.Number_of_monomers               7
+   _Entity.Paramagnetic                     no
+   _Entity.Thiol_state                      'not present'
+   _Entity.Parent_entity_ID                 1
+   _Entity.Formula_weight                   781.8184
+
+   loop_
+      _Entity_comp_index.ID
+      _Entity_comp_index.Auth_seq_ID
+      _Entity_comp_index.Comp_ID
+      _Entity_comp_index.Comp_label
+      _Entity_comp_index.Entry_ID
+      _Entity_comp_index.Entity_ID
+
+     1   .   GLN   .   rr_6bf3   1    
+     2   .   ASP   .   rr_6bf3   1    
+     3   .   PRO   .   rr_6bf3   1    
+     4   .   DPR   .   rr_6bf3   1    
+     5   .   LYS   .   rr_6bf3   1    
+     6   .   DTH   .   rr_6bf3   1    
+     7   .   .     .   rr_6bf3   1    
+
+   stop_
+
+   loop_
+      _Entity_poly_seq.Hetero
+      _Entity_poly_seq.Mon_ID
+      _Entity_poly_seq.Num
+      _Entity_poly_seq.Comp_index_ID
+      _Entity_poly_seq.Entry_ID
+      _Entity_poly_seq.Entity_ID
+
+     .   GLN   1   1   rr_6bf3   1    
+     .   ASP   2   2   rr_6bf3   1    
+     .   PRO   3   3   rr_6bf3   1    
+     .   DPR   4   4   rr_6bf3   1    
+     .   LYS   5   5   rr_6bf3   1    
+     .   DTH   6   6   rr_6bf3   1    
+     .   .     7   7   rr_6bf3   1    
+
+   stop_
+
+save_
+
+    #################################
+    #  Polymer residues and ligands #
+    #################################
+
+save_chem_comp_DPR
+   _Chem_comp.Sf_category                  chem_comp
+   _Chem_comp.Sf_framecode                 chem_comp_DPR
+   _Chem_comp.Entry_ID                     rr_6bf3
+   _Chem_comp.ID                           DPR
+   _Chem_comp.Name                         D-proline
+   _Chem_comp.Type                         'L-peptide linking'
+   _Chem_comp.PDB_code                     DPR
+   _Chem_comp.Std_deriv_one_letter_code    P
+   _Chem_comp.Std_deriv_three_letter_code  Pro
+   _Chem_comp.Std_deriv_PDB_code           PRO
+   _Chem_comp.Std_deriv_chem_comp_name     PROLINE
+   _Chem_comp.Formal_charge                0
+   _Chem_comp.Paramagnetic                 no
+   _Chem_comp.Aromatic                     no
+   _Chem_comp.Formula                      'C5 H7 N O'
+   _Chem_comp.Formula_weight               97.1164
+
+   loop_
+      _Chem_comp_common_name.Name
+      _Chem_comp_common_name.Type
+      _Chem_comp_common_name.Entry_ID
+      _Chem_comp_common_name.Comp_ID
+
+     L-proline   name   rr_6bf3   DPR    
+
+   stop_
+
+save_
+
+save_chem_comp_DTH
+   _Chem_comp.Sf_category                  chem_comp
+   _Chem_comp.Sf_framecode                 chem_comp_DTH
+   _Chem_comp.Entry_ID                     rr_6bf3
+   _Chem_comp.ID                           DTH
+   _Chem_comp.Name                         D-threonine
+   _Chem_comp.Type                         'L-peptide linking'
+   _Chem_comp.PDB_code                     DTH
+   _Chem_comp.Std_deriv_one_letter_code    T
+   _Chem_comp.Std_deriv_three_letter_code  Thr
+   _Chem_comp.Std_deriv_PDB_code           THR
+   _Chem_comp.Std_deriv_chem_comp_name     THREONINE
+   _Chem_comp.Formal_charge                0
+   _Chem_comp.Paramagnetic                 no
+   _Chem_comp.Aromatic                     no
+   _Chem_comp.Formula                      'C4 H7 N O2'
+   _Chem_comp.Formula_weight               101.1048
+
+   loop_
+      _Chem_comp_common_name.Name
+      _Chem_comp_common_name.Type
+      _Chem_comp_common_name.Entry_ID
+      _Chem_comp_common_name.Comp_ID
+
+     L-threonine   name   rr_6bf3   DTH    
+
+   stop_
+
+save_
+
+save_chem_comp_DAS
+   _Chem_comp.Sf_category     chem_comp
+   _Chem_comp.Sf_framecode    chem_comp_DAS
+   _Chem_comp.Entry_ID        rr_6bf3
+   _Chem_comp.ID              1
+   _Chem_comp.Name            Das
+   _Chem_comp.Type            'L-peptide COOH carboxy terminus'
+   _Chem_comp.Formal_charge   0
+   _Chem_comp.Paramagnetic    no
+   _Chem_comp.Aromatic        no
+   _Chem_comp.Formula         'C4 H4 N O3'
+   _Chem_comp.Formula_weight  114.0805
+
+save_
+
+
+##############################
+#  Structure determinations  #
+##############################
+
+    ##########################
+    #  Conformer statistics  #
+    ##########################
+
+save_conformer_statistics
+   _Conformer_stat_list.Sf_category                    conformer_statistics
+   _Conformer_stat_list.Sf_framecode                   conformer_statistics
+   _Conformer_stat_list.Entry_ID                       rr_6bf3
+   _Conformer_stat_list.ID                             1
+   _Conformer_stat_list.Conf_family_coord_set_ID       1
+   _Conformer_stat_list.Conf_family_coord_set_label    $Original_constraints_and_structures
+   _Conformer_stat_list.Conformer_submitted_total_num  20
+
+save_
+
+###########################
+#  Constraint Statistics  #
+###########################
+
+save_constraint_statistics
+   _Constraint_stat_list.Sf_framecode  constraint_statistics
+   _Constraint_stat_list.Sf_category   constraint_statistics
+   _Constraint_stat_list.Entry_ID      rr_6bf3
+   _Constraint_stat_list.ID            1
+
+   loop_
+      _Constraint_file.ID
+      _Constraint_file.Constraint_filename
+      _Constraint_file.Software_ID
+      _Constraint_file.Software_label
+      _Constraint_file.Software_name
+      _Constraint_file.Block_ID
+      _Constraint_file.Constraint_type
+      _Constraint_file.Constraint_subtype
+      _Constraint_file.Constraint_subsubtype
+      _Constraint_file.Constraint_number
+      _Constraint_file.Entry_ID
+      _Constraint_file.Constraint_stat_list_ID
+
+     1   6bf3.mr   .   .   'MR format'   1   comment                  'Not applicable'   'Not applicable'   0    rr_6bf3   1    
+     1   6bf3.mr   .   .   XPLOR/CNS     2   distance                 NOE                simple             66   rr_6bf3   1    
+     1   6bf3.mr   .   .   'MR format'   3   'nomenclature mapping'   'Not applicable'   'Not applicable'   0    rr_6bf3   1    
+
+   stop_
+
+save_
+
+save_CNS/XPLOR_distance_constraints_2
+   _Gen_dist_constraint_list.Sf_category         general_distance_constraints
+   _Gen_dist_constraint_list.Sf_framecode        CNS/XPLOR_distance_constraints_2
+   _Gen_dist_constraint_list.Entry_ID            rr_6bf3
+   _Gen_dist_constraint_list.ID                  1
+   _Gen_dist_constraint_list.Constraint_type     NOE
+   _Gen_dist_constraint_list.Details             'Generated by Wattos'
+   _Gen_dist_constraint_list.Constraint_file_ID  1
+   _Gen_dist_constraint_list.Block_ID            2
+
+   loop_
+      _Gen_dist_constraint_software.Software_ID
+      _Gen_dist_constraint_software.Software_label
+      _Gen_dist_constraint_software.Method_ID
+      _Gen_dist_constraint_software.Method_label
+      _Gen_dist_constraint_software.Entry_ID
+      _Gen_dist_constraint_software.Gen_dist_constraint_list_ID
+
+     .   .   .   .   rr_6bf3   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint.ID
+      _Gen_dist_constraint.Member_ID
+      _Gen_dist_constraint.Member_logic_code
+      _Gen_dist_constraint.Assembly_atom_ID_1
+      _Gen_dist_constraint.Entity_assembly_ID_1
+      _Gen_dist_constraint.Entity_ID_1
+      _Gen_dist_constraint.Comp_index_ID_1
+      _Gen_dist_constraint.Seq_ID_1
+      _Gen_dist_constraint.Comp_ID_1
+      _Gen_dist_constraint.Atom_ID_1
+      _Gen_dist_constraint.Atom_type_1
+      _Gen_dist_constraint.Atom_isotope_number_1
+      _Gen_dist_constraint.Resonance_ID_1
+      _Gen_dist_constraint.Assembly_atom_ID_2
+      _Gen_dist_constraint.Entity_assembly_ID_2
+      _Gen_dist_constraint.Entity_ID_2
+      _Gen_dist_constraint.Comp_index_ID_2
+      _Gen_dist_constraint.Seq_ID_2
+      _Gen_dist_constraint.Comp_ID_2
+      _Gen_dist_constraint.Atom_ID_2
+      _Gen_dist_constraint.Atom_type_2
+      _Gen_dist_constraint.Atom_isotope_number_2
+      _Gen_dist_constraint.Resonance_ID_2
+      _Gen_dist_constraint.Intensity_val
+      _Gen_dist_constraint.Intensity_lower_val_err
+      _Gen_dist_constraint.Intensity_upper_val_err
+      _Gen_dist_constraint.Distance_val
+      _Gen_dist_constraint.Distance_lower_bound_val
+      _Gen_dist_constraint.Distance_upper_bound_val
+      _Gen_dist_constraint.Contribution_fractional_val
+      _Gen_dist_constraint.Spectral_peak_ID
+      _Gen_dist_constraint.Spectral_peak_list_ID
+      _Gen_dist_constraint.PDB_record_ID_1
+      _Gen_dist_constraint.PDB_model_num_1
+      _Gen_dist_constraint.PDB_strand_ID_1
+      _Gen_dist_constraint.PDB_ins_code_1
+      _Gen_dist_constraint.PDB_residue_no_1
+      _Gen_dist_constraint.PDB_residue_name_1
+      _Gen_dist_constraint.PDB_atom_name_1
+      _Gen_dist_constraint.PDB_record_ID_2
+      _Gen_dist_constraint.PDB_model_num_2
+      _Gen_dist_constraint.PDB_strand_ID_2
+      _Gen_dist_constraint.PDB_ins_code_2
+      _Gen_dist_constraint.PDB_residue_no_2
+      _Gen_dist_constraint.PDB_residue_name_2
+      _Gen_dist_constraint.PDB_atom_name_2
+      _Gen_dist_constraint.Auth_entity_assembly_ID_1
+      _Gen_dist_constraint.Auth_asym_ID_1
+      _Gen_dist_constraint.Auth_chain_ID_1
+      _Gen_dist_constraint.Auth_seq_ID_1
+      _Gen_dist_constraint.Auth_comp_ID_1
+      _Gen_dist_constraint.Auth_atom_ID_1
+      _Gen_dist_constraint.Auth_alt_ID_1
+      _Gen_dist_constraint.Auth_atom_name_1
+      _Gen_dist_constraint.Auth_entity_assembly_ID_2
+      _Gen_dist_constraint.Auth_asym_ID_2
+      _Gen_dist_constraint.Auth_chain_ID_2
+      _Gen_dist_constraint.Auth_seq_ID_2
+      _Gen_dist_constraint.Auth_comp_ID_2
+      _Gen_dist_constraint.Auth_atom_ID_2
+      _Gen_dist_constraint.Auth_alt_ID_2
+      _Gen_dist_constraint.Auth_atom_name_2
+      _Gen_dist_constraint.Entry_ID
+      _Gen_dist_constraint.Gen_dist_constraint_list_ID
+
+     1    1   .   .   1   1   6   6   DTH   H     H   .   .   .   1   1   4   4   DPR   HA    H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   6   DTH   H     .   .   A   .   4   DPR   HA    .   .   .   5   .   HN    .   .   .   .   .   3   .   HA    .   .   rr_6bf3   1    
+     2    1   .   .   1   1   4   4   DPR   HA    H   .   .   .   1   1   4   4   DPR   HD3   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   4   DPR   HA    .   .   A   .   4   DPR   HD3   .   .   .   3   .   HA    .   .   .   .   .   3   .   HD2   .   .   rr_6bf3   1    
+     3    1   .   .   1   1   4   4   DPR   HB3   H   .   .   .   1   1   4   4   DPR   HD3   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   4   DPR   HB3   .   .   A   .   4   DPR   HD3   .   .   .   3   .   HB2   .   .   .   .   .   3   .   HD2   .   .   rr_6bf3   1    
+     4    1   .   .   1   1   4   4   DPR   HD3   H   .   .   .   1   1   4   4   DPR   HB2   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   4   DPR   HD3   .   .   A   .   4   DPR   HB2   .   .   .   3   .   HD2   .   .   .   .   .   3   .   HB1   .   .   rr_6bf3   1    
+     5    1   .   .   1   1   4   4   DPR   HD3   H   .   .   .   1   1   4   4   DPR   HG3   H   .   .   .   .   .   3.5   2.3   4.7   .   .   .   .   .   A   .   4   DPR   HD3   .   .   A   .   4   DPR   HG3   .   .   .   3   .   HD2   .   .   .   .   .   3   .   HG2   .   .   rr_6bf3   1    
+     6    1   .   .   1   1   4   4   DPR   HD3   H   .   .   .   1   1   4   4   DPR   HG2   H   .   .   .   .   .   3.5   2.3   4.7   .   .   .   .   .   A   .   4   DPR   HD3   .   .   A   .   4   DPR   HG2   .   .   .   3   .   HD2   .   .   .   .   .   3   .   HG1   .   .   rr_6bf3   1    
+     7    1   .   .   1   1   4   4   DPR   HB3   H   .   .   .   1   1   4   4   DPR   HD2   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   4   DPR   HB3   .   .   A   .   4   DPR   HD2   .   .   .   3   .   HB2   .   .   .   .   .   3   .   HD1   .   .   rr_6bf3   1    
+     8    1   .   .   1   1   4   4   DPR   HB2   H   .   .   .   1   1   4   4   DPR   HD2   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   4   DPR   HB2   .   .   A   .   4   DPR   HD2   .   .   .   3   .   HB1   .   .   .   .   .   3   .   HD1   .   .   rr_6bf3   1    
+     9    1   .   .   1   1   4   4   DPR   HG3   H   .   .   .   1   1   4   4   DPR   HD2   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   4   DPR   HG3   .   .   A   .   4   DPR   HD2   .   .   .   3   .   HG2   .   .   .   .   .   3   .   HD1   .   .   rr_6bf3   1    
+     10   1   .   .   1   1   4   4   DPR   HG2   H   .   .   .   1   1   4   4   DPR   HD2   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   4   DPR   HG2   .   .   A   .   4   DPR   HD2   .   .   .   3   .   HG1   .   .   .   .   .   3   .   HD1   .   .   rr_6bf3   1    
+     11   1   .   .   1   1   5   5   LYS   HA    H   .   .   .   1   1   5   5   LYS   HG3   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   5   LYS   HA    .   .   A   .   5   LYS   HG3   .   .   .   4   .   HA    .   .   .   .   .   4   .   HG2   .   .   rr_6bf3   1    
+     12   1   .   .   1   1   5   5   LYS   HA    H   .   .   .   1   1   5   5   LYS   HG2   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   5   LYS   HA    .   .   A   .   5   LYS   HG2   .   .   .   4   .   HA    .   .   .   .   .   4   .   HG1   .   .   rr_6bf3   1    
+     13   1   .   .   1   1   6   6   DTH   H     H   .   .   .   1   1   5   5   LYS   HA    H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   6   DTH   H     .   .   A   .   5   LYS   HA    .   .   .   5   .   HN    .   .   .   .   .   4   .   HA    .   .   rr_6bf3   1    
+     14   1   .   .   1   1   4   4   DPR   HA    H   .   .   .   1   1   5   5   LYS   HD3   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   4   DPR   HA    .   .   A   .   5   LYS   HD3   .   .   .   3   .   HA    .   .   .   .   .   4   .   HD2   .   .   rr_6bf3   1    
+     15   1   .   .   1   1   4   4   DPR   HG3   H   .   .   .   1   1   5   5   LYS   HD3   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   4   DPR   HG3   .   .   A   .   5   LYS   HD3   .   .   .   3   .   HG2   .   .   .   .   .   4   .   HD2   .   .   rr_6bf3   1    
+     16   1   .   .   1   1   5   5   LYS   HG3   H   .   .   .   1   1   5   5   LYS   HD3   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   5   LYS   HG3   .   .   A   .   5   LYS   HD3   .   .   .   4   .   HG2   .   .   .   .   .   4   .   HD2   .   .   rr_6bf3   1    
+     17   1   .   .   1   1   5   5   LYS   HG2   H   .   .   .   1   1   5   5   LYS   HD3   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   5   LYS   HG2   .   .   A   .   5   LYS   HD3   .   .   .   4   .   HG1   .   .   .   .   .   4   .   HD2   .   .   rr_6bf3   1    
+     18   1   .   .   1   1   6   6   DTH   H     H   .   .   .   1   1   5   5   LYS   HD3   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   6   DTH   H     .   .   A   .   5   LYS   HD3   .   .   .   5   .   HN    .   .   .   .   .   4   .   HD2   .   .   rr_6bf3   1    
+     19   1   .   .   1   1   4   4   DPR   HA    H   .   .   .   1   1   5   5   LYS   HD2   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   4   DPR   HA    .   .   A   .   5   LYS   HD2   .   .   .   3   .   HA    .   .   .   .   .   4   .   HD1   .   .   rr_6bf3   1    
+     20   1   .   .   1   1   5   5   LYS   HG3   H   .   .   .   1   1   5   5   LYS   HD2   H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   5   LYS   HG3   .   .   A   .   5   LYS   HD2   .   .   .   4   .   HG2   .   .   .   .   .   4   .   HD1   .   .   rr_6bf3   1    
+     21   1   .   .   1   1   5   5   LYS   HG2   H   .   .   .   1   1   5   5   LYS   HD2   H   .   .   .   .   .   3.5   2.3   4.7   .   .   .   .   .   A   .   5   LYS   HG2   .   .   A   .   5   LYS   HD2   .   .   .   4   .   HG1   .   .   .   .   .   4   .   HD1   .   .   rr_6bf3   1    
+     22   1   .   .   1   1   6   6   DTH   H     H   .   .   .   1   1   6   6   DTH   HA    H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   6   DTH   H     .   .   A   .   6   DTH   HA    .   .   .   5   .   HN    .   .   .   .   .   5   .   HA    .   .   rr_6bf3   1    
+     23   1   .   .   1   1   6   6   DTH   H     H   .   .   .   1   1   6   6   DTH   HB    H   .   .   .   .   .   4.5   2.9   6.1   .   .   .   .   .   A   .   6   DTH   H     .   .   A   .   6   DTH   HB    .   .   .   5   .   HN    .   .   .   .   .   5   .   HB#   .   .   rr_6bf3   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint_parse_err.ID
+      _Gen_dist_constraint_parse_err.Content
+      _Gen_dist_constraint_parse_err.Begin_line
+      _Gen_dist_constraint_parse_err.Begin_column
+      _Gen_dist_constraint_parse_err.End_line
+      _Gen_dist_constraint_parse_err.End_column
+      _Gen_dist_constraint_parse_err.Entry_ID
+      _Gen_dist_constraint_parse_err.Gen_dist_constraint_list_ID
+
+     1   '# Restraints file 1: survivor_1_noe.tbl'   1   1   1   39   rr_6bf3   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint_comment_org.ID
+      _Gen_dist_constraint_comment_org.Comment_text
+      _Gen_dist_constraint_comment_org.Comment_begin_line
+      _Gen_dist_constraint_comment_org.Comment_begin_column
+      _Gen_dist_constraint_comment_org.Comment_end_line
+      _Gen_dist_constraint_comment_org.Comment_end_column
+      _Gen_dist_constraint_comment_org.Entry_ID
+      _Gen_dist_constraint_comment_org.Gen_dist_constraint_list_ID
+
+     1   
+;
+-------------------------------------------------------------------------!
+NOE Table for Surivivor_1 peptide !
+Updated 041317 mds
+Survivor_1, 9mer GLN ASP PRO pro LYS thr asp
+Upper case L-Amino Acid
+Lower case D-Amino Acid ! NOE binning !!
+strong 2.5 0.7 0.7
+medium 3.5 1.2 1.2
+weak 4.5 1.6 1.6
+very weak 5.0 2.0 2.0
+TOTAL NOES = 66
+long range (j-i >6) = 0
+short range (2 > j-i < 5) = 12
+sequential (i to j) = 16
+intraresidue (i to i) = 38
+------------------------------------------------------------!
+;
+2    1   21   63   rr_6bf3   1    
+     2   
+;
+assign ( resid 7 and name HG# ) ( resid 2 and name HN ) 4.5 1.6 1.6
+assign ( resid 7 and name HG# ) ( resid 7 and name HN ) 4.5 1.6 1.6
+;
+                                                                                                                                                                                                                                                                                                                                                                            86   1   87   75   rr_6bf3   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint_conv_err.ID
+      _Gen_dist_constraint_conv_err.Gen_dist_constraint_parse_file_ID
+      _Gen_dist_constraint_conv_err.Parse_file_constraint_ID
+      _Gen_dist_constraint_conv_err.Conv_error_type
+      _Gen_dist_constraint_conv_err.Conv_error_note
+      _Gen_dist_constraint_conv_err.Entry_ID
+      _Gen_dist_constraint_conv_err.Gen_dist_constraint_list_ID
+
+     1    2   1    1   "Not handling restraint 1, item 1, resonance(s) ' .2.HN' (nmrStar names),' .6.HN' (nmrStar names) not linked"      rr_6bf3   1    
+     2    2   2    1   "Not handling restraint 2, item 1, resonance(s) ' .2.HN' (nmrStar names),' .7.HN' (nmrStar names) not linked"      rr_6bf3   1    
+     3    2   3    1   "Not handling restraint 3, item 1, resonance(s) ' .6.HN' (nmrStar names) not linked"                               rr_6bf3   1    
+     4    2   4    1   "Not handling restraint 4, item 1, resonance(s) ' .7.HN' (nmrStar names),' .6.HB' (nmrStar names) not linked"      rr_6bf3   1    
+     5    2   5    1   "Not handling restraint 5, item 1, resonance(s) ' .7.HN' (nmrStar names),' .7.HA' (nmrStar names) not linked"      rr_6bf3   1    
+     6    2   6    1   "Not handling restraint 6, item 1, resonance(s) ' .7.HN' (nmrStar names),' .7.HA' (nmrStar names) not linked"      rr_6bf3   1    
+     7    2   7    1   "Not handling restraint 7, item 1, resonance(s) ' .7.HN' (nmrStar names),' .7.HA' (nmrStar names) not linked"      rr_6bf3   1    
+     8    2   8    1   "Not handling restraint 8, item 1, resonance(s) ' .7.HN' (nmrStar names),' .7.HB#' (nmrStar names) not linked"     rr_6bf3   1    
+     9    2   9    1   "Not handling restraint 9, item 1, resonance(s) ' .2.HN' (nmrStar names) not linked"                               rr_6bf3   1    
+     10   2   10   1   "Not handling restraint 10, item 1, resonance(s) ' .2.HN' (nmrStar names) not linked"                              rr_6bf3   1    
+     11   2   11   1   "Not handling restraint 11, item 1, resonance(s) ' .6.HN' (nmrStar names) not linked"                              rr_6bf3   1    
+     12   2   12   1   "Not handling restraint 12, item 1, resonance(s) ' .2.HN' (nmrStar names) not linked"                              rr_6bf3   1    
+     13   2   13   1   "Not handling restraint 13, item 1, resonance(s) ' .6.HN' (nmrStar names) not linked"                              rr_6bf3   1    
+     14   2   15   1   "Not handling restraint 15, item 1, resonance(s) ' .2.HN' (nmrStar names) not linked"                              rr_6bf3   1    
+     15   2   16   1   "Not handling restraint 16, item 1, resonance(s) ' .2.HN' (nmrStar names) not linked"                              rr_6bf3   1    
+     16   2   22   1   "Not handling restraint 22, item 1, resonance(s) ' .2.HN' (nmrStar names) not linked"                              rr_6bf3   1    
+     17   2   27   1   "Not handling restraint 27, item 1, resonance(s) ' .4.HB#' (nmrStar names) not linked"                             rr_6bf3   1    
+     18   2   33   1   "Not handling restraint 33, item 1, resonance(s) ' .4.HB#' (nmrStar names) not linked"                             rr_6bf3   1    
+     19   2   37   1   "Not handling restraint 37, item 1, resonance(s) ' .6.HN' (nmrStar names) not linked"                              rr_6bf3   1    
+     20   2   39   1   "Not handling restraint 39, item 1, resonance(s) ' .4.HB#' (nmrStar names) not linked"                             rr_6bf3   1    
+     21   2   43   1   "Not handling restraint 43, item 1, resonance(s) ' .6.HN' (nmrStar names) not linked"                              rr_6bf3   1    
+     22   2   44   1   "Not handling restraint 44, item 1, resonance(s) ' .2.HN' (nmrStar names) not linked"                              rr_6bf3   1    
+     23   2   46   1   "Not handling restraint 46, item 1, resonance(s) ' .6.HN' (nmrStar names) not linked"                              rr_6bf3   1    
+     24   2   47   1   "Not handling restraint 47, item 1, resonance(s) ' .5.HD2' (nmrStar names) not linked"                             rr_6bf3   1    
+     25   2   48   1   "Not handling restraint 48, item 1, resonance(s) ' .5.HD1' (nmrStar names) not linked"                             rr_6bf3   1    
+     26   2   49   1   "Not handling restraint 49, item 1, resonance(s) ' .5.HE#' (nmrStar names) not linked"                             rr_6bf3   1    
+     27   2   50   1   "Not handling restraint 50, item 1, resonance(s) ' .5.HE#' (nmrStar names),' .5.HZ#' (nmrStar names) not linked"   rr_6bf3   1    
+     28   2   51   1   "Not handling restraint 51, item 1, resonance(s) ' .5.HG#' (nmrStar names) not linked"                             rr_6bf3   1    
+     29   2   52   1   "Not handling restraint 52, item 1, resonance(s) ' .5.HZ#' (nmrStar names) not linked"                             rr_6bf3   1    
+     30   2   53   1   "Not handling restraint 53, item 1, resonance(s) ' .6.HN' (nmrStar names),' .6.HA' (nmrStar names) not linked"     rr_6bf3   1    
+     31   2   54   1   "Not handling restraint 54, item 1, resonance(s) ' .6.HN' (nmrStar names),' .6.HB' (nmrStar names) not linked"     rr_6bf3   1    
+     32   2   55   1   "Not handling restraint 55, item 1, resonance(s) ' .2.HN' (nmrStar names),' .6.HG2#' (nmrStar names) not linked"   rr_6bf3   1    
+     33   2   56   1   "Not handling restraint 56, item 1, resonance(s) ' .6.HG2#' (nmrStar names) not linked"                            rr_6bf3   1    
+     34   2   57   1   "Not handling restraint 57, item 1, resonance(s) ' .6.HN' (nmrStar names),' .6.HG2#' (nmrStar names) not linked"   rr_6bf3   1    
+     35   2   58   1   "Not handling restraint 58, item 1, resonance(s) ' .7.HN' (nmrStar names),' .6.HG2#' (nmrStar names) not linked"   rr_6bf3   1    
+     36   2   59   1   "Not handling restraint 59, item 1, resonance(s) ' .7.HN' (nmrStar names),' .6.HG2#' (nmrStar names) not linked"   rr_6bf3   1    
+     37   2   60   1   "Not handling restraint 60, item 1, resonance(s) ' .6.HN' (nmrStar names),' .7.HN' (nmrStar names) not linked"     rr_6bf3   1    
+     38   2   61   1   "Not handling restraint 61, item 1, resonance(s) ' .2.HN' (nmrStar names),' .7.HA' (nmrStar names) not linked"     rr_6bf3   1    
+     39   2   62   1   "Not handling restraint 62, item 1, resonance(s) ' .2.HN' (nmrStar names),' .7.HB#' (nmrStar names) not linked"    rr_6bf3   1    
+     40   2   63   1   "Not handling restraint 63, item 1, resonance(s) ' .6.HN' (nmrStar names),' .7.HB#' (nmrStar names) not linked"    rr_6bf3   1    
+     41   2   64   1   "Not handling restraint 64, item 1, resonance(s) ' .7.HN' (nmrStar names),' .7.HB#' (nmrStar names) not linked"    rr_6bf3   1    
+     42   2   65   1   "Not handling restraint 65, item 1, resonance(s) ' .2.HN' (nmrStar names),' .7.HA' (nmrStar names) not linked"     rr_6bf3   1    
+     43   2   66   1   "Not handling restraint 66, item 1, resonance(s) ' .7.HN' (nmrStar names),' .7.HB#' (nmrStar names) not linked"    rr_6bf3   1    
+
+   stop_
+
+save_
+
+save_MR_file_comment_1
+   _Org_constr_file_comment.Sf_framecode        MR_file_comment_1
+   _Org_constr_file_comment.Sf_category         org_constr_file_comment
+   _Org_constr_file_comment.Entry_ID            rr_6bf3
+   _Org_constr_file_comment.ID                  1
+   _Org_constr_file_comment.Constraint_file_ID  1
+   _Org_constr_file_comment.Block_ID            1
+   _Org_constr_file_comment.Details             'Generated by Wattos'
+   _Org_constr_file_comment.Comment             '*HEADER DE NOVO PROTEIN 25-OCT-17 6BF3 *TITLE SOLUTION STRUCTURE OF DE NOVO MACROCYCLE DESIGN7.3A *COMPND MOL_ID: 1; *COMPND 2 MOLECULE: QDP(DPR)K(2TL)(DAS); *COMPND 3 CHAIN: A; *COMPND 4 ENGINEERED: YES *SOURCE MOL_ID: 1; *SOURCE 2 SYNTHETIC: YES; *SOURCE 3 ORGANISM_SCIENTIFIC: HOMO SAPIENS; *SOURCE 4 ORGANISM_TAXID: 9606 *KEYWDS MACROCYCLE, DE NOVO, DE NOVO PROTEIN *EXPDTA SOLUTION NMR *NUMMDL 20 *AUTHOR M.D.SHORTRIDGE,P.HOSSEINZADEH,F.PARDO-AVILA,G.VARANI,D.BAKER *REVDAT 1 10-JAN-18 6BF3 0'
+
+save_

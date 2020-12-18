@@ -1,0 +1,55 @@
+assign (resid  0 and name HC5 ) (resid  0 and name HC6 ) 2.18 0.59 0.59
+assign (resid  0 and name HC5 ) (resid  0 and name HC71) 5.06 3.84 1.44
+assign (resid  0 and name HC5 ) (resid  0 and name H13 ) 2.03 0.41 0.41
+assign (resid  0 and name HC6 ) (resid  0 and name HC71) 2.26 0.64 0.64
+assign (resid  0 and name HC6 ) (resid  0 and name HC8 ) 4.19 2.20 2.20
+assign (resid  0 and name HC6 ) (resid  0 and name H13 ) 4.80 2.88 1.70
+assign (resid  0 and name HC71) (resid  0 and name HC8 ) 2.46 0.61 0.61
+assign (resid  0 and name H13 ) (resid  0 and name H14#) 2.46 0.91 0.91
+assign (resid  0 and name HC3 ) (resid  3 and name HB1 ) 3.55 1.26 1.26
+assign (resid  0 and name HC3 ) (resid  5 and name H   ) 4.53 3.07 1.97
+assign (resid  0 and name HC3 ) (resid  6 and name HB  ) 3.50 1.22 1.22
+assign (resid  0 and name HC3 ) (resid  7 and name HA  ) 5.07 4.51 1.43
+assign (resid  0 and name HC3 ) (resid  7 and name HG2#) 3.92 2.30 2.30
+assign (resid  0 and name HC6 ) (resid  2 and name H   ) 5.29 4.20 1.21
+assign (resid  0 and name HC71) (resid  2 and name H   ) 5.17 4.67 1.33
+assign (resid  0 and name HC71) (resid 10 and name HD1#) 3.09 0.95 0.95
+assign (resid  0 and name HC8 ) (resid  2 and name H   ) 3.59 1.29 1.29
+assign (resid  0 and name HC8 ) (resid  2 and name HA  ) 3.63 1.65 1.65
+assign (resid  0 and name HC8 ) (resid  7 and name HG2#) 3.39 1.15 1.15
+assign (resid  0 and name HC8 ) (resid 10 and name HD1#) 2.96 0.87 0.87
+assign (resid  0 and name HC8 ) (resid 10 and name HG1 ) 5.35 5.01 1.15
+assign (resid  0 and name HC8 ) (resid 10 and name HG2#) 3.42 1.17 1.17
+assign (resid  0 and name H13 ) (resid  6 and name HB  ) 3.72 1.39 1.39
+assign (resid  0 and name H14#) (resid  3 and name HB1 ) 2.71 0.74 0.74
+assign (resid  0 and name H14#) (resid  4 and name H   ) 4.50 3.03 2.00
+assign (resid  1 and name HA  ) (resid 10 and name HD1#) 2.97 0.88 0.88
+assign (resid  1 and name HA  ) (resid 10 and name HG2#) 3.42 1.17 1.17
+assign (resid  2 and name HA  ) (resid 12 and name HB  ) 5.10 3.91 1.40
+assign (resid  2 and name HA  ) (resid 12 and name HG2#) 2.90 0.84 0.84
+assign (resid  3 and name H   ) (resid  5 and name H   ) 4.72 3.35 1.78
+assign (resid  3 and name H   ) (resid 12 and name HB  ) 3.26 1.07 1.07
+assign (resid  3 and name H   ) (resid 12 and name HG2#) 2.56 0.65 0.65
+assign (resid  4 and name HA  ) (resid 12 and name HA  ) 5.12 3.93 1.38
+assign (resid  4 and name HA  ) (resid 12 and name HB  ) 2.45 0.60 0.60
+assign (resid  4 and name HA  ) (resid 12 and name HG2#) 3.55 1.57 1.57
+assign (resid  4 and name HA  ) (resid 14 and name HB2 ) 4.91 4.23 1.59
+assign (resid  4 and name HB# ) (resid 12 and name HB  ) 4.64 3.22 1.86
+assign (resid  4 and name HB# ) (resid 14 and name HB2 ) 3.80 2.17 2.17
+assign (resid  5 and name H   ) (resid  7 and name H   ) 4.28 3.21 2.22
+assign (resid  5 and name H   ) (resid 12 and name HA  ) 3.46 1.19 1.19
+assign (resid  5 and name H   ) (resid 12 and name HB  ) 2.49 0.62 0.62
+assign (resid  5 and name H   ) (resid 12 and name HG2#) 3.18 1.27 1.27
+assign (resid  7 and name H   ) (resid 13 and name HB  ) 2.57 0.66 0.66
+assign (resid  7 and name H   ) (resid 13 and name HC  ) 3.20 1.02 1.02
+assign (resid  7 and name HG2#) (resid 10 and name H   ) 2.58 0.66 0.66
+assign (resid  7 and name HG2#) (resid 10 and name HG1 ) 3.99 1.99 1.99
+assign (resid  7 and name HG2#) (resid 12 and name H   ) 2.86 0.82 0.82
+assign (resid  7 and name HG2#) (resid 12 and name HB  ) 4.25 3.15 2.25
+assign (resid  7 and name HG2#) (resid 13 and name HB  ) 3.37 1.13 1.13
+assign (resid  8 and name H1  ) (resid 10 and name H   ) 3.76 2.12 2.12
+assign (resid  8 and name HG# ) (resid 13 and name HB  ) 3.24 1.84 1.84
+assign (resid 10 and name H   ) (resid 12 and name H   ) 3.98 2.38 2.38
+assign (resid 10 and name HG2#) (resid 12 and name H   ) 3.51 1.23 1.23
+assign (resid 14 and name HB2 ) (resid 16 and name H   ) 4.63 3.21 1.87
+assign (resid 14 and name HB3 ) (resid 16 and name H   ) 3.70 1.71 1.71

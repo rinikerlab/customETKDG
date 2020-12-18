@@ -1,0 +1,244 @@
+data_wwPDB_remediated_restraints_file_for_PDB_entry_2frb
+
+# This wwPDB archive file contains, for PDB entry 2frb:
+#
+# - Sequence information from the PDB mmCIF file
+# - NMR restraints from the PDB MR file
+#
+# In this file, the NMR restraints share the same atom names as in the coordinate 
+# file, and in this way can differ from the data deposited at the wwPDB. To achieve
+# this aim, the NMR restraints were parsed from their original format files, and
+# the coordinates and NMR restraints information were subsequently harmonized.
+#
+# Due to the complexity of this harmonization process, minor modifications could
+# have occurred to the NMR restraints information, or data could have been lost
+# because of parsing or conversion errors. The PDB file remains the
+# authoritative reference for the atomic coordinates and the originally deposited
+# restraints files remain the primary reference for these data.
+#
+# This file is generated as part of the wwPDB at the BioMagResBank (BMRB) in
+# collaboration with the PDBe (formerly MSD) group at the European
+# Bioinformatics Institute (EBI) and the CMBI/IMM group at the Radboud
+# University of Nijmegen.
+#
+# Several software packages were used to produce this file:
+#
+# - Wattos (BMRB and CMBI/IMM).
+# - FormatConverter and NMRStarExport (PDBe).
+# - CCPN framework (http://www.ccpn.ac.uk/).
+#
+# More information about this process can be found in the references below.
+# Please cite the original reference for this PDB entry.
+#
+# JF Doreleijers, A Nederveen, W Vranken, J Lin, AM Bonvin, R Kaptein, JL
+# Markley, and EL Ulrich (2005). BioMagResBank databases DOCR and FRED
+# containing converted and filtered sets of experimental NMR restraints and
+# coordinates from over 500 protein PDB structures. J. Biomol. NMR 32, 1-12.
+#
+# WF Vranken, W Boucher, TJ Stevens, RH Fogh, A Pajon, M Llinas, EL Ulrich, JL
+# Markley, J Ionides, ED Laue (2005). The CCPN data model for NMR spectroscopy:
+# development of a software pipeline. Proteins 59, 687-696.
+#
+# JF Doreleijers, WF Vranken, C Schulte, J Lin, JR Wedell, CJ Penkett, GW Vuister, 
+# G Vriend, JL Markley, and EL Ulrich (2009). The NMR Restraints Grid at BMRB for 
+# 5,266 Protein and Nucleic Acid PDB Entries. J Biomol. NMR 45, 389-396.
+
+#######################
+#  Entry information  #
+#######################
+
+save_entry_information
+   _Entry.Sf_category                  entry_information
+   _Entry.Sf_framecode                 entry_information
+   _Entry.ID                           rr_2frb
+   _Entry.Title                        'wwPDB remediated NMR restraints for PDB entry 2frb'
+   _Entry.NMR_STAR_version             3.1
+   _Entry.Experimental_method          NMR
+   _Entry.Experimental_method_subtype  solution
+   _Entry.Details                      'Contains the remediated restraint lists and coordinates for PDB entry 2frb'
+
+save_
+
+#############################################
+#  Molecular system (assembly) description  #
+#############################################
+
+save_assembly
+   _Assembly.Sf_category           assembly
+   _Assembly.Sf_framecode          assembly
+   _Assembly.Entry_ID              rr_2frb
+   _Assembly.ID                    1
+   _Assembly.Name                  2frb
+   _Assembly.Number_of_components  1
+   _Assembly.Organic_ligands       0
+   _Assembly.Metal_ions            0
+   _Assembly.Non_standard_bonds    no
+   _Assembly.Paramagnetic          no
+   _Assembly.Thiol_state           'all free'
+   _Assembly.Molecular_mass        1324.4814
+
+   loop_
+      _Entity_assembly.ID
+      _Entity_assembly.Entity_assembly_name
+      _Entity_assembly.Entity_ID
+      _Entity_assembly.Entity_label
+      _Entity_assembly.Asym_ID
+      _Entity_assembly.PDB_chain_ID
+      _Entity_assembly.Experimental_data_reported
+      _Entity_assembly.Physical_state
+      _Entity_assembly.Conformational_isomer
+      _Entity_assembly.Chemical_exchange_state
+      _Entity_assembly.Magnetic_equivalence_group_code
+      _Entity_assembly.Role
+      _Entity_assembly.Details
+      _Entity_assembly.Entry_ID
+      _Entity_assembly.Assembly_ID
+
+     1   'Alpha conotoxin GIA'   1   $Alpha_conotoxin_GIA   A   .   no   .   .   .   .   .   .   rr_2frb   1    
+
+   stop_
+
+save_
+
+    ####################################
+    #  Biological polymers and ligands #
+    ####################################
+
+save_Alpha_conotoxin_GIA
+   _Entity.Sf_category                      entity
+   _Entity.Sf_framecode                     Alpha_conotoxin_GIA
+   _Entity.Entry_ID                         rr_2frb
+   _Entity.ID                               1
+   _Entity.Name                             Alpha_conotoxin_GIA
+   _Entity.Type                             polymer
+   _Entity.Polymer_type                     polypeptide(L)
+   _Entity.Polymer_strand_ID                A
+   _Entity.Polymer_seq_one_letter_code      ECCPACGRHYSC
+   _Entity.Ambiguous_conformational_states  no
+   _Entity.Ambiguous_chem_comp_sites        no
+   _Entity.Nstd_monomer                     no
+   _Entity.Nstd_chirality                   no
+   _Entity.Nstd_linkage                     no
+   _Entity.Number_of_monomers               12
+   _Entity.Paramagnetic                     no
+   _Entity.Thiol_state                      'all free'
+   _Entity.Parent_entity_ID                 1
+   _Entity.Formula_weight                   1324.4814
+
+   loop_
+      _Entity_comp_index.ID
+      _Entity_comp_index.Auth_seq_ID
+      _Entity_comp_index.Comp_ID
+      _Entity_comp_index.Comp_label
+      _Entity_comp_index.Entry_ID
+      _Entity_comp_index.Entity_ID
+
+     1    .   GLU   .   rr_2frb   1    
+     2    .   CYS   .   rr_2frb   1    
+     3    .   CYS   .   rr_2frb   1    
+     4    .   PRO   .   rr_2frb   1    
+     5    .   ALA   .   rr_2frb   1    
+     6    .   CYS   .   rr_2frb   1    
+     7    .   GLY   .   rr_2frb   1    
+     8    .   ARG   .   rr_2frb   1    
+     9    .   HIS   .   rr_2frb   1    
+     10   .   TYR   .   rr_2frb   1    
+     11   .   SER   .   rr_2frb   1    
+     12   .   CYS   .   rr_2frb   1    
+
+   stop_
+
+   loop_
+      _Entity_poly_seq.Hetero
+      _Entity_poly_seq.Mon_ID
+      _Entity_poly_seq.Num
+      _Entity_poly_seq.Comp_index_ID
+      _Entity_poly_seq.Entry_ID
+      _Entity_poly_seq.Entity_ID
+
+     .   GLU   1    1    rr_2frb   1    
+     .   CYS   2    2    rr_2frb   1    
+     .   CYS   3    3    rr_2frb   1    
+     .   PRO   4    4    rr_2frb   1    
+     .   ALA   5    5    rr_2frb   1    
+     .   CYS   6    6    rr_2frb   1    
+     .   GLY   7    7    rr_2frb   1    
+     .   ARG   8    8    rr_2frb   1    
+     .   HIS   9    9    rr_2frb   1    
+     .   TYR   10   10   rr_2frb   1    
+     .   SER   11   11   rr_2frb   1    
+     .   CYS   12   12   rr_2frb   1    
+
+   stop_
+
+save_
+
+
+##############################
+#  Structure determinations  #
+##############################
+
+    ##########################
+    #  Conformer statistics  #
+    ##########################
+
+save_conformer_statistics
+   _Conformer_stat_list.Sf_category                    conformer_statistics
+   _Conformer_stat_list.Sf_framecode                   conformer_statistics
+   _Conformer_stat_list.Entry_ID                       rr_2frb
+   _Conformer_stat_list.ID                             1
+   _Conformer_stat_list.Conf_family_coord_set_ID       1
+   _Conformer_stat_list.Conf_family_coord_set_label    $Original_constraints_and_structures
+   _Conformer_stat_list.Conformer_submitted_total_num  20
+
+save_
+
+###########################
+#  Constraint Statistics  #
+###########################
+
+save_constraint_statistics
+   _Constraint_stat_list.Sf_framecode  constraint_statistics
+   _Constraint_stat_list.Sf_category   constraint_statistics
+   _Constraint_stat_list.Entry_ID      rr_2frb
+   _Constraint_stat_list.ID            1
+
+   loop_
+      _Constraint_file.ID
+      _Constraint_file.Constraint_filename
+      _Constraint_file.Software_ID
+      _Constraint_file.Software_label
+      _Constraint_file.Software_name
+      _Constraint_file.Block_ID
+      _Constraint_file.Constraint_type
+      _Constraint_file.Constraint_subtype
+      _Constraint_file.Constraint_subsubtype
+      _Constraint_file.Constraint_number
+      _Constraint_file.Entry_ID
+      _Constraint_file.Constraint_stat_list_ID
+
+     1   2frb.mr   .   .   'MR format'   1   comment                  'Not applicable'   'Not applicable'   0   rr_2frb   1    
+     1   2frb.mr   .   .   DYANA/DIANA   2   sequence                 'Not applicable'   'Not applicable'   0   rr_2frb   1    
+     1   2frb.mr   .   .   unknown       3   'chemical shift'         'Not applicable'   'Not applicable'   0   rr_2frb   1    
+     1   2frb.mr   .   .   unknown       4   peak                     'Not applicable'   'Not applicable'   0   rr_2frb   1    
+     1   2frb.mr   .   .   DYANA/DIANA   5   'coupling constant'      'Not applicable'   'Not applicable'   0   rr_2frb   1    
+     1   2frb.mr   .   .   'MR format'   6   'nomenclature mapping'   'Not applicable'   'Not applicable'   0   rr_2frb   1    
+
+   stop_
+
+save_
+
+save_MR_file_comment_1
+   _Org_constr_file_comment.Sf_framecode        MR_file_comment_1
+   _Org_constr_file_comment.Sf_category         org_constr_file_comment
+   _Org_constr_file_comment.Entry_ID            rr_2frb
+   _Org_constr_file_comment.ID                  1
+   _Org_constr_file_comment.Constraint_file_ID  1
+   _Org_constr_file_comment.Block_ID            1
+   _Org_constr_file_comment.Details             'Generated by Wattos'
+   _Org_constr_file_comment.Comment           
+;
+*HEADER TOXIN 19-JAN-06 2FRB *TITLE NMR STRUCTURE OF THE ALPHA-CONOTOXIN GI (ASN4)- *TITLE 2 BENZOYLPHENYLALANINE DERIVATIVE *COMPND MOL_ID: 1; *COMPND 2 MOLECULE: ALPHA-CONOTOXIN GIA; *COMPND 3 CHAIN: A; *COMPND 4 FRAGMENT: RESIDUES 1-13; *COMPND 5 ENGINEERED: YES *SOURCE MOL_ID: 1; *SOURCE 2 SYNTHETIC: YES; *SOURCE 3 OTHER_DETAILS: THE PROTEIN WAS CHEMICALLY SYNTHESIZED, THE *SOURCE 4 SEQUENCE CAN BE NATURALLY FOUND IN CONUS GEOGRAPHUS *SOURCE 5 (GEOGRAPHY CONE) *KEYWDS ALPHA-CONOTOXIN GI, BENZOPHENONE ANALOGS, NICOTINIC *KEYWDS 2 ACETYLCHOLINE RECEPTOR ANTAGONIST *EXPDTA NMR, 20 STRUCTURES *AUTHOR V.S.PASHKOV, I.MASLENNIKOV, I.V.KASHEVEROV, M.N.ZHMAK, *AUTHOR 2 Y.N.UTKIN, V.I.TSETLIN, A.S.ARSENIEV *REVDAT 1 30-MAY-06 2FRB 0 
+;
+
+save_

@@ -2,9 +2,9 @@ from rdkit import Chem
 import tqdm
 import numpy as np
 from itertools import product
-from _utils import assign_hydrogen_pdbinfo, map_mol_with_noe
+from src.d00_utils.utils import assign_hydrogen_pdbinfo, map_mol_with_noe
 
-
+# No longer needed function. We now directly generate the consistent NOE_index file with the conformers.
 def get_distances(mol, noe_df):
     mol_atom_names2atom_index, noe_atom_names2mol_atom_names, noe_atom_pair2upper_distance = map_mol_with_noe(mol,
                                                                                                               noe_df,
@@ -67,3 +67,13 @@ def get_distances(mol, noe_df):
     dist = np.transpose(dist)
 
     return ref_val, dist
+
+
+def get_distances_new(rdmol, noe_index):
+    noe_dist = 0
+    confs_dist = 0
+
+    distance_matrix_for_each_conformer = np.array([Chem.Get3DDistanceMatrix(rdmol, i) for i in tqdm.tqdm(range(rdmol.GetNumConformers()))])
+    distances = distance_matrix_for_each_conformer[:, noe_index['Atm_idx_1'], noe_index['Atm_idx_2']]
+
+    return noe_index['Dist_[A]'], distances

@@ -1,0 +1,460 @@
+data_wwPDB_remediated_restraints_file_for_PDB_entry_6hvc
+
+# This wwPDB archive file contains, for PDB entry 6hvc:
+#
+# - Sequence information from the PDB mmCIF file
+# - NMR restraints from the PDB MR file
+#
+# In this file, the NMR restraints share the same atom names as in the coordinate 
+# file, and in this way can differ from the data deposited at the wwPDB. To achieve
+# this aim, the NMR restraints were parsed from their original format files, and
+# the coordinates and NMR restraints information were subsequently harmonized.
+#
+# Due to the complexity of this harmonization process, minor modifications could
+# have occurred to the NMR restraints information, or data could have been lost
+# because of parsing or conversion errors. The PDB file remains the
+# authoritative reference for the atomic coordinates and the originally deposited
+# restraints files remain the primary reference for these data.
+#
+# This file is generated as part of the wwPDB at the BioMagResBank (BMRB) in
+# collaboration with the PDBe (formerly MSD) group at the European
+# Bioinformatics Institute (EBI) and the CMBI/IMM group at the Radboud
+# University of Nijmegen.
+#
+# Several software packages were used to produce this file:
+#
+# - Wattos (BMRB and CMBI/IMM).
+# - FormatConverter and NMRStarExport (PDBe).
+# - CCPN framework (http://www.ccpn.ac.uk/).
+#
+# More information about this process can be found in the references below.
+# Please cite the original reference for this PDB entry.
+#
+# JF Doreleijers, A Nederveen, W Vranken, J Lin, AM Bonvin, R Kaptein, JL
+# Markley, and EL Ulrich (2005). BioMagResBank databases DOCR and FRED
+# containing converted and filtered sets of experimental NMR restraints and
+# coordinates from over 500 protein PDB structures. J. Biomol. NMR 32, 1-12.
+#
+# WF Vranken, W Boucher, TJ Stevens, RH Fogh, A Pajon, M Llinas, EL Ulrich, JL
+# Markley, J Ionides, ED Laue (2005). The CCPN data model for NMR spectroscopy:
+# development of a software pipeline. Proteins 59, 687-696.
+#
+# JF Doreleijers, WF Vranken, C Schulte, J Lin, JR Wedell, CJ Penkett, GW Vuister, 
+# G Vriend, JL Markley, and EL Ulrich (2009). The NMR Restraints Grid at BMRB for 
+# 5,266 Protein and Nucleic Acid PDB Entries. J Biomol. NMR 45, 389-396.
+
+#######################
+#  Entry information  #
+#######################
+
+save_entry_information
+   _Entry.Sf_category                  entry_information
+   _Entry.Sf_framecode                 entry_information
+   _Entry.ID                           rr_6hvc
+   _Entry.Title                        'wwPDB remediated NMR restraints for PDB entry 6hvc'
+   _Entry.Version_type                 original
+   _Entry.NMR_STAR_version             3.1.0.8
+   _Entry.Experimental_method          NMR
+   _Entry.Experimental_method_subtype  solution
+   _Entry.Details                      'Contains the remediated restraint lists and coordinates for PDB entry 6hvc'
+   _Entry.PDB_coordinate_file_version  3.20
+
+   loop_
+      _Related_entries.Database_name
+      _Related_entries.Database_accession_code
+      _Related_entries.Relationship
+      _Related_entries.Entry_ID
+
+     PDB   6hvc   'Master copy'   rr_6hvc    
+
+   stop_
+
+save_
+
+#############################################
+#  Molecular system (assembly) description  #
+#############################################
+
+save_assembly
+   _Assembly.Sf_category           assembly
+   _Assembly.Sf_framecode          assembly
+   _Assembly.Entry_ID              rr_6hvc
+   _Assembly.ID                    1
+   _Assembly.Name                  6hvc
+   _Assembly.Number_of_components  1
+   _Assembly.Organic_ligands       0
+   _Assembly.Metal_ions            0
+   _Assembly.Non_standard_bonds    no
+   _Assembly.Paramagnetic          no
+   _Assembly.Thiol_state           'all free'
+   _Assembly.Molecular_mass        1075.2622
+
+   loop_
+      _Entity_assembly.ID
+      _Entity_assembly.Entity_assembly_name
+      _Entity_assembly.Entity_ID
+      _Entity_assembly.Entity_label
+      _Entity_assembly.Asym_ID
+      _Entity_assembly.PDB_chain_ID
+      _Entity_assembly.Experimental_data_reported
+      _Entity_assembly.Physical_state
+      _Entity_assembly.Conformational_isomer
+      _Entity_assembly.Chemical_exchange_state
+      _Entity_assembly.Magnetic_equivalence_group_code
+      _Entity_assembly.Role
+      _Entity_assembly.Details
+      _Entity_assembly.Entry_ID
+      _Entity_assembly.Assembly_ID
+
+     1   'Urotensin 2'   1   $Urotensin_2   A   .   no   .   .   .   .   .   .   rr_6hvc   1    
+
+   stop_
+
+save_
+
+    ####################################
+    #  Biological polymers and ligands #
+    ####################################
+
+save_Urotensin_2
+   _Entity.Sf_category                      entity
+   _Entity.Sf_framecode                     Urotensin_2
+   _Entity.Entry_ID                         rr_6hvc
+   _Entity.ID                               1
+   _Entity.Name                             Urotensin_2
+   _Entity.Type                             polymer
+   _Entity.Polymer_type                     polypeptide(L)
+   _Entity.Polymer_strand_ID                A
+   _Entity.Polymer_seq_one_letter_code      DCFWXYCV
+   _Entity.Ambiguous_conformational_states  no
+   _Entity.Ambiguous_chem_comp_sites        no
+   _Entity.Nstd_monomer                     yes
+   _Entity.Nstd_chirality                   yes
+   _Entity.Nstd_linkage                     no
+   _Entity.Number_of_monomers               8
+   _Entity.Paramagnetic                     no
+   _Entity.Thiol_state                      'all free'
+   _Entity.Parent_entity_ID                 1
+   _Entity.Formula_weight                   1075.2622
+
+   loop_
+      _Entity_comp_index.ID
+      _Entity_comp_index.Auth_seq_ID
+      _Entity_comp_index.Comp_ID
+      _Entity_comp_index.Comp_label
+      _Entity_comp_index.Entry_ID
+      _Entity_comp_index.Entity_ID
+
+     1   .   ASP   .   rr_6hvc   1    
+     2   .   CYS   .   rr_6hvc   1    
+     3   .   PHE   .   rr_6hvc   1    
+     4   .   TRP   .   rr_6hvc   1    
+     5   .   .     .   rr_6hvc   1    
+     6   .   TYR   .   rr_6hvc   1    
+     7   .   CYS   .   rr_6hvc   1    
+     8   .   VAL   .   rr_6hvc   1    
+
+   stop_
+
+   loop_
+      _Entity_poly_seq.Hetero
+      _Entity_poly_seq.Mon_ID
+      _Entity_poly_seq.Num
+      _Entity_poly_seq.Comp_index_ID
+      _Entity_poly_seq.Entry_ID
+      _Entity_poly_seq.Entity_ID
+
+     .   ASP   1   1   rr_6hvc   1    
+     .   CYS   2   2   rr_6hvc   1    
+     .   PHE   3   3   rr_6hvc   1    
+     .   TRP   4   4   rr_6hvc   1    
+     .   .     5   5   rr_6hvc   1    
+     .   TYR   6   6   rr_6hvc   1    
+     .   CYS   7   7   rr_6hvc   1    
+     .   VAL   8   8   rr_6hvc   1    
+
+   stop_
+
+save_
+
+    #################################
+    #  Polymer residues and ligands #
+    #################################
+
+save_chem_comp_NMK
+   _Chem_comp.Sf_category     chem_comp
+   _Chem_comp.Sf_framecode    chem_comp_NMK
+   _Chem_comp.Entry_ID        rr_6hvc
+   _Chem_comp.ID              1
+   _Chem_comp.Name            Nmk
+   _Chem_comp.Type            'L-peptide linking'
+   _Chem_comp.Formal_charge   0
+   _Chem_comp.Paramagnetic    no
+   _Chem_comp.Aromatic        no
+   _Chem_comp.Formula         'C7 H15 N2 O'
+   _Chem_comp.Formula_weight  143.2083
+
+save_
+
+
+##############################
+#  Structure determinations  #
+##############################
+
+    ##########################
+    #  Conformer statistics  #
+    ##########################
+
+save_conformer_statistics
+   _Conformer_stat_list.Sf_category                    conformer_statistics
+   _Conformer_stat_list.Sf_framecode                   conformer_statistics
+   _Conformer_stat_list.Entry_ID                       rr_6hvc
+   _Conformer_stat_list.ID                             1
+   _Conformer_stat_list.Conf_family_coord_set_ID       1
+   _Conformer_stat_list.Conf_family_coord_set_label    $Original_constraints_and_structures
+   _Conformer_stat_list.Conformer_submitted_total_num  10
+
+save_
+
+###########################
+#  Constraint Statistics  #
+###########################
+
+save_constraint_statistics
+   _Constraint_stat_list.Sf_framecode  constraint_statistics
+   _Constraint_stat_list.Sf_category   constraint_statistics
+   _Constraint_stat_list.Entry_ID      rr_6hvc
+   _Constraint_stat_list.ID            1
+
+   loop_
+      _Constraint_file.ID
+      _Constraint_file.Constraint_filename
+      _Constraint_file.Software_ID
+      _Constraint_file.Software_label
+      _Constraint_file.Software_name
+      _Constraint_file.Block_ID
+      _Constraint_file.Constraint_type
+      _Constraint_file.Constraint_subtype
+      _Constraint_file.Constraint_subsubtype
+      _Constraint_file.Constraint_number
+      _Constraint_file.Entry_ID
+      _Constraint_file.Constraint_stat_list_ID
+
+     1   6hvc.mr   .   .   'MR format'   1   comment                  'Not applicable'   'Not applicable'   0    rr_6hvc   1    
+     1   6hvc.mr   .   .   DYANA/DIANA   2   distance                 NOE                simple             67   rr_6hvc   1    
+     1   6hvc.mr   .   .   'MR format'   3   'nomenclature mapping'   'Not applicable'   'Not applicable'   0    rr_6hvc   1    
+
+   stop_
+
+save_
+
+save_DYANA/DIANA_distance_constraints_2
+   _Gen_dist_constraint_list.Sf_category         general_distance_constraints
+   _Gen_dist_constraint_list.Sf_framecode        DYANA/DIANA_distance_constraints_2
+   _Gen_dist_constraint_list.Entry_ID            rr_6hvc
+   _Gen_dist_constraint_list.ID                  1
+   _Gen_dist_constraint_list.Constraint_type     NOE
+   _Gen_dist_constraint_list.Details             'Generated by Wattos'
+   _Gen_dist_constraint_list.Constraint_file_ID  1
+   _Gen_dist_constraint_list.Block_ID            2
+
+   loop_
+      _Gen_dist_constraint_software.Software_ID
+      _Gen_dist_constraint_software.Software_label
+      _Gen_dist_constraint_software.Method_ID
+      _Gen_dist_constraint_software.Method_label
+      _Gen_dist_constraint_software.Entry_ID
+      _Gen_dist_constraint_software.Gen_dist_constraint_list_ID
+
+     .   .   .   .   rr_6hvc   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint.ID
+      _Gen_dist_constraint.Member_ID
+      _Gen_dist_constraint.Member_logic_code
+      _Gen_dist_constraint.Assembly_atom_ID_1
+      _Gen_dist_constraint.Entity_assembly_ID_1
+      _Gen_dist_constraint.Entity_ID_1
+      _Gen_dist_constraint.Comp_index_ID_1
+      _Gen_dist_constraint.Seq_ID_1
+      _Gen_dist_constraint.Comp_ID_1
+      _Gen_dist_constraint.Atom_ID_1
+      _Gen_dist_constraint.Atom_type_1
+      _Gen_dist_constraint.Atom_isotope_number_1
+      _Gen_dist_constraint.Resonance_ID_1
+      _Gen_dist_constraint.Assembly_atom_ID_2
+      _Gen_dist_constraint.Entity_assembly_ID_2
+      _Gen_dist_constraint.Entity_ID_2
+      _Gen_dist_constraint.Comp_index_ID_2
+      _Gen_dist_constraint.Seq_ID_2
+      _Gen_dist_constraint.Comp_ID_2
+      _Gen_dist_constraint.Atom_ID_2
+      _Gen_dist_constraint.Atom_type_2
+      _Gen_dist_constraint.Atom_isotope_number_2
+      _Gen_dist_constraint.Resonance_ID_2
+      _Gen_dist_constraint.Intensity_val
+      _Gen_dist_constraint.Intensity_lower_val_err
+      _Gen_dist_constraint.Intensity_upper_val_err
+      _Gen_dist_constraint.Distance_val
+      _Gen_dist_constraint.Distance_lower_bound_val
+      _Gen_dist_constraint.Distance_upper_bound_val
+      _Gen_dist_constraint.Contribution_fractional_val
+      _Gen_dist_constraint.Spectral_peak_ID
+      _Gen_dist_constraint.Spectral_peak_list_ID
+      _Gen_dist_constraint.PDB_record_ID_1
+      _Gen_dist_constraint.PDB_model_num_1
+      _Gen_dist_constraint.PDB_strand_ID_1
+      _Gen_dist_constraint.PDB_ins_code_1
+      _Gen_dist_constraint.PDB_residue_no_1
+      _Gen_dist_constraint.PDB_residue_name_1
+      _Gen_dist_constraint.PDB_atom_name_1
+      _Gen_dist_constraint.PDB_record_ID_2
+      _Gen_dist_constraint.PDB_model_num_2
+      _Gen_dist_constraint.PDB_strand_ID_2
+      _Gen_dist_constraint.PDB_ins_code_2
+      _Gen_dist_constraint.PDB_residue_no_2
+      _Gen_dist_constraint.PDB_residue_name_2
+      _Gen_dist_constraint.PDB_atom_name_2
+      _Gen_dist_constraint.Auth_entity_assembly_ID_1
+      _Gen_dist_constraint.Auth_asym_ID_1
+      _Gen_dist_constraint.Auth_chain_ID_1
+      _Gen_dist_constraint.Auth_seq_ID_1
+      _Gen_dist_constraint.Auth_comp_ID_1
+      _Gen_dist_constraint.Auth_atom_ID_1
+      _Gen_dist_constraint.Auth_alt_ID_1
+      _Gen_dist_constraint.Auth_atom_name_1
+      _Gen_dist_constraint.Auth_entity_assembly_ID_2
+      _Gen_dist_constraint.Auth_asym_ID_2
+      _Gen_dist_constraint.Auth_chain_ID_2
+      _Gen_dist_constraint.Auth_seq_ID_2
+      _Gen_dist_constraint.Auth_comp_ID_2
+      _Gen_dist_constraint.Auth_atom_ID_2
+      _Gen_dist_constraint.Auth_alt_ID_2
+      _Gen_dist_constraint.Auth_atom_name_2
+      _Gen_dist_constraint.Entry_ID
+      _Gen_dist_constraint.Gen_dist_constraint_list_ID
+
+     1    1   .    .   1   1   1   1   ASP   HA    H   .   .   .   1   1   2   2   CYS   H     H   .   .   .   .   .   .   .   2.71   .   .   .   .   .   A   .   4    ASP   HA    .   .   A   .   5    CYS   H     .   .   .   4    ASP   HA    .   .   .   .   .   5    CYS   HN    .   .   rr_6hvc   1    
+     2    1   .    .   1   1   2   2   CYS   H     H   .   .   .   1   1   2   2   CYS   HB2   H   .   .   .   .   .   .   .   2.83   .   .   .   .   .   A   .   5    CYS   H     .   .   A   .   5    CYS   HB2   .   .   .   5    CYS   HN    .   .   .   .   .   5    CYS   HB2   .   .   rr_6hvc   1    
+     3    1   .    .   1   1   2   2   CYS   H     H   .   .   .   1   1   2   2   CYS   HB3   H   .   .   .   .   .   .   .   2.83   .   .   .   .   .   A   .   5    CYS   H     .   .   A   .   5    CYS   HB3   .   .   .   5    CYS   HN    .   .   .   .   .   5    CYS   HB3   .   .   rr_6hvc   1    
+     4    1   .    .   1   1   2   2   CYS   HA    H   .   .   .   1   1   2   2   CYS   HB2   H   .   .   .   .   .   .   .   2.83   .   .   .   .   .   A   .   5    CYS   HA    .   .   A   .   5    CYS   HB2   .   .   .   5    CYS   HA    .   .   .   .   .   5    CYS   HB2   .   .   rr_6hvc   1    
+     5    1   .    .   1   1   2   2   CYS   HA    H   .   .   .   1   1   2   2   CYS   HB3   H   .   .   .   .   .   .   .   2.83   .   .   .   .   .   A   .   5    CYS   HA    .   .   A   .   5    CYS   HB3   .   .   .   5    CYS   HA    .   .   .   .   .   5    CYS   HB3   .   .   rr_6hvc   1    
+     6    1   .    .   1   1   2   2   CYS   HA    H   .   .   .   1   1   3   3   PHE   H     H   .   .   .   .   .   .   .   2.68   .   .   .   .   .   A   .   5    CYS   HA    .   .   A   .   6    PHE   H     .   .   .   5    CYS   HA    .   .   .   .   .   6    PHE   HN    .   .   rr_6hvc   1    
+     7    1   .    .   1   1   2   2   CYS   HA    H   .   .   .   1   1   3   3   PHE   QD    H   .   .   .   .   .   .   .   7.62   .   .   .   .   .   A   .   5    CYS   HA    .   .   A   .   6    PHE   QD    .   .   .   5    CYS   HA    .   .   .   .   .   6    PHE   QD    .   .   rr_6hvc   1    
+     8    1   .    .   1   1   2   2   CYS   HA    H   .   .   .   1   1   7   7   CYS   HA    H   .   .   .   .   .   .   .   2.59   .   .   .   .   .   A   .   5    CYS   HA    .   .   A   .   10   CYS   HA    .   .   .   5    CYS   HA    .   .   .   .   .   10   CYS   HA    .   .   rr_6hvc   1    
+     9    1   .    .   1   1   2   2   CYS   HA    H   .   .   .   1   1   8   8   VAL   H     H   .   .   .   .   .   .   .   3.73   .   .   .   .   .   A   .   5    CYS   HA    .   .   A   .   11   VAL   H     .   .   .   5    CYS   HA    .   .   .   .   .   11   VAL   HN    .   .   rr_6hvc   1    
+     10   1   OR   .   1   1   7   7   CYS   HA    H   .   .   .   1   1   2   2   CYS   HB3   H   .   .   .   .   .   .   .   5.39   .   .   .   .   .   A   .   10   CYS   HA    .   .   A   .   5    CYS   HB3   .   .   .   10   CYS   HA    .   .   .   .   .   5    CYS   QB    .   .   rr_6hvc   1    
+     10   2   OR   .   1   1   7   7   CYS   HA    H   .   .   .   1   1   2   2   CYS   HB2   H   .   .   .   .   .   .   .   5.39   .   .   .   .   .   A   .   10   CYS   HA    .   .   A   .   5    CYS   HB2   .   .   .   10   CYS   HA    .   .   .   .   .   5    CYS   QB    .   .   rr_6hvc   1    
+     11   1   OR   .   1   1   8   8   VAL   H     H   .   .   .   1   1   2   2   CYS   HB3   H   .   .   .   .   .   .   .   6.38   .   .   .   .   .   A   .   11   VAL   H     .   .   A   .   5    CYS   HB3   .   .   .   11   VAL   HN    .   .   .   .   .   5    CYS   QB    .   .   rr_6hvc   1    
+     11   2   OR   .   1   1   8   8   VAL   H     H   .   .   .   1   1   2   2   CYS   HB2   H   .   .   .   .   .   .   .   6.38   .   .   .   .   .   A   .   11   VAL   H     .   .   A   .   5    CYS   HB2   .   .   .   11   VAL   HN    .   .   .   .   .   5    CYS   QB    .   .   rr_6hvc   1    
+     12   1   .    .   1   1   3   3   PHE   H     H   .   .   .   1   1   3   3   PHE   HB2   H   .   .   .   .   .   .   .   4.14   .   .   .   .   .   A   .   6    PHE   H     .   .   A   .   6    PHE   HB2   .   .   .   6    PHE   HN    .   .   .   .   .   6    PHE   HB2   .   .   rr_6hvc   1    
+     13   1   .    .   1   1   3   3   PHE   H     H   .   .   .   1   1   3   3   PHE   HB3   H   .   .   .   .   .   .   .   4.14   .   .   .   .   .   A   .   6    PHE   H     .   .   A   .   6    PHE   HB3   .   .   .   6    PHE   HN    .   .   .   .   .   6    PHE   HB3   .   .   rr_6hvc   1    
+     14   1   OR   .   1   1   3   3   PHE   H     H   .   .   .   1   1   3   3   PHE   HB2   H   .   .   .   .   .   .   .   3.60   .   .   .   .   .   A   .   6    PHE   H     .   .   A   .   6    PHE   HB2   .   .   .   6    PHE   HN    .   .   .   .   .   6    PHE   QB    .   .   rr_6hvc   1    
+     14   2   OR   .   1   1   3   3   PHE   H     H   .   .   .   1   1   3   3   PHE   HB3   H   .   .   .   .   .   .   .   3.60   .   .   .   .   .   A   .   6    PHE   H     .   .   A   .   6    PHE   HB3   .   .   .   6    PHE   HN    .   .   .   .   .   6    PHE   QB    .   .   rr_6hvc   1    
+     15   1   OR   .   1   1   3   3   PHE   H     H   .   .   .   1   1   4   4   TRP   HB2   H   .   .   .   .   .   .   .   6.38   .   .   .   .   .   A   .   6    PHE   H     .   .   A   .   7    TRP   HB2   .   .   .   6    PHE   HN    .   .   .   .   .   7    TRP   QB    .   .   rr_6hvc   1    
+     15   2   OR   .   1   1   3   3   PHE   H     H   .   .   .   1   1   4   4   TRP   HB3   H   .   .   .   .   .   .   .   6.38   .   .   .   .   .   A   .   6    PHE   H     .   .   A   .   7    TRP   HB3   .   .   .   6    PHE   HN    .   .   .   .   .   7    TRP   QB    .   .   rr_6hvc   1    
+     16   1   .    .   1   1   3   3   PHE   H     H   .   .   .   1   1   6   6   TYR   H     H   .   .   .   .   .   .   .   3.30   .   .   .   .   .   A   .   6    PHE   H     .   .   A   .   9    TYR   H     .   .   .   6    PHE   HN    .   .   .   .   .   9    TYR   HN    .   .   rr_6hvc   1    
+     17   1   .    .   1   1   3   3   PHE   H     H   .   .   .   1   1   7   7   CYS   HA    H   .   .   .   .   .   .   .   3.67   .   .   .   .   .   A   .   6    PHE   H     .   .   A   .   10   CYS   HA    .   .   .   6    PHE   HN    .   .   .   .   .   10   CYS   HA    .   .   rr_6hvc   1    
+     18   1   .    .   1   1   3   3   PHE   HA    H   .   .   .   1   1   3   3   PHE   HB2   H   .   .   .   .   .   .   .   2.96   .   .   .   .   .   A   .   6    PHE   HA    .   .   A   .   6    PHE   HB2   .   .   .   6    PHE   HA    .   .   .   .   .   6    PHE   HB2   .   .   rr_6hvc   1    
+     19   1   .    .   1   1   3   3   PHE   HB3   H   .   .   .   1   1   3   3   PHE   HA    H   .   .   .   .   .   .   .   2.96   .   .   .   .   .   A   .   6    PHE   HB3   .   .   A   .   6    PHE   HA    .   .   .   6    PHE   HB3   .   .   .   .   .   6    PHE   HA    .   .   rr_6hvc   1    
+     20   1   OR   .   1   1   3   3   PHE   HA    H   .   .   .   1   1   3   3   PHE   HB2   H   .   .   .   .   .   .   .   2.73   .   .   .   .   .   A   .   6    PHE   HA    .   .   A   .   6    PHE   HB2   .   .   .   6    PHE   HA    .   .   .   .   .   6    PHE   QB    .   .   rr_6hvc   1    
+     20   2   OR   .   1   1   3   3   PHE   HB3   H   .   .   .   1   1   3   3   PHE   HA    H   .   .   .   .   .   .   .   2.73   .   .   .   .   .   A   .   6    PHE   HB3   .   .   A   .   6    PHE   HA    .   .   .   6    PHE   QB    .   .   .   .   .   6    PHE   HA    .   .   rr_6hvc   1    
+     21   1   .    .   1   1   3   3   PHE   HA    H   .   .   .   1   1   4   4   TRP   H     H   .   .   .   .   .   .   .   2.90   .   .   .   .   .   A   .   6    PHE   HA    .   .   A   .   7    TRP   H     .   .   .   6    PHE   HA    .   .   .   .   .   7    TRP   HN    .   .   rr_6hvc   1    
+     22   1   .    .   1   1   3   3   PHE   QD    H   .   .   .   1   1   4   4   TRP   H     H   .   .   .   .   .   .   .   7.00   .   .   .   .   .   A   .   6    PHE   QD    .   .   A   .   7    TRP   H     .   .   .   6    PHE   QD    .   .   .   .   .   7    TRP   HN    .   .   rr_6hvc   1    
+     23   1   OR   .   1   1   3   3   PHE   QD    H   .   .   .   1   1   8   8   VAL   MG1   H   .   .   .   .   .   .   .   9.74   .   .   .   .   .   A   .   6    PHE   QD    .   .   A   .   11   VAL   MG1   .   .   .   6    PHE   QD    .   .   .   .   .   11   VAL   QQG   .   .   rr_6hvc   1    
+     23   2   OR   .   1   1   3   3   PHE   QD    H   .   .   .   1   1   8   8   VAL   MG2   H   .   .   .   .   .   .   .   9.74   .   .   .   .   .   A   .   6    PHE   QD    .   .   A   .   11   VAL   MG2   .   .   .   6    PHE   QD    .   .   .   .   .   11   VAL   QQG   .   .   rr_6hvc   1    
+     24   1   OR   .   1   1   3   3   PHE   QE    H   .   .   .   1   1   8   8   VAL   MG1   H   .   .   .   .   .   .   .   9.71   .   .   .   .   .   A   .   6    PHE   QE    .   .   A   .   11   VAL   MG1   .   .   .   6    PHE   QE    .   .   .   .   .   11   VAL   QQG   .   .   rr_6hvc   1    
+     24   2   OR   .   1   1   8   8   VAL   MG2   H   .   .   .   1   1   3   3   PHE   QE    H   .   .   .   .   .   .   .   9.71   .   .   .   .   .   A   .   11   VAL   MG2   .   .   A   .   6    PHE   QE    .   .   .   11   VAL   QQG   .   .   .   .   .   6    PHE   QE    .   .   rr_6hvc   1    
+     25   1   .    .   1   1   4   4   TRP   H     H   .   .   .   1   1   4   4   TRP   HB2   H   .   .   .   .   .   .   .   2.96   .   .   .   .   .   A   .   7    TRP   H     .   .   A   .   7    TRP   HB2   .   .   .   7    TRP   HN    .   .   .   .   .   7    TRP   HB2   .   .   rr_6hvc   1    
+     26   1   .    .   1   1   4   4   TRP   HB3   H   .   .   .   1   1   4   4   TRP   H     H   .   .   .   .   .   .   .   2.96   .   .   .   .   .   A   .   7    TRP   HB3   .   .   A   .   7    TRP   H     .   .   .   7    TRP   HB3   .   .   .   .   .   7    TRP   HN    .   .   rr_6hvc   1    
+     27   1   OR   .   1   1   4   4   TRP   H     H   .   .   .   1   1   4   4   TRP   HB2   H   .   .   .   .   .   .   .   2.70   .   .   .   .   .   A   .   7    TRP   H     .   .   A   .   7    TRP   HB2   .   .   .   7    TRP   HN    .   .   .   .   .   7    TRP   QB    .   .   rr_6hvc   1    
+     27   2   OR   .   1   1   4   4   TRP   HB3   H   .   .   .   1   1   4   4   TRP   H     H   .   .   .   .   .   .   .   2.70   .   .   .   .   .   A   .   7    TRP   HB3   .   .   A   .   7    TRP   H     .   .   .   7    TRP   QB    .   .   .   .   .   7    TRP   HN    .   .   rr_6hvc   1    
+     28   1   .    .   1   1   4   4   TRP   H     H   .   .   .   1   1   4   4   TRP   HD1   H   .   .   .   .   .   .   .   4.97   .   .   .   .   .   A   .   7    TRP   H     .   .   A   .   7    TRP   HD1   .   .   .   7    TRP   HN    .   .   .   .   .   7    TRP   HD1   .   .   rr_6hvc   1    
+     29   1   .    .   1   1   4   4   TRP   HD1   H   .   .   .   1   1   4   4   TRP   HA    H   .   .   .   .   .   .   .   4.85   .   .   .   .   .   A   .   7    TRP   HD1   .   .   A   .   7    TRP   HA    .   .   .   7    TRP   HD1   .   .   .   .   .   7    TRP   HA    .   .   rr_6hvc   1    
+     30   1   .    .   1   1   4   4   TRP   HA    H   .   .   .   1   1   4   4   TRP   HE3   H   .   .   .   .   .   .   .   3.55   .   .   .   .   .   A   .   7    TRP   HA    .   .   A   .   7    TRP   HE3   .   .   .   7    TRP   HA    .   .   .   .   .   7    TRP   HE3   .   .   rr_6hvc   1    
+     31   1   .    .   1   1   6   6   TYR   H     H   .   .   .   1   1   4   4   TRP   HA    H   .   .   .   .   .   .   .   3.39   .   .   .   .   .   A   .   9    TYR   H     .   .   A   .   7    TRP   HA    .   .   .   9    TYR   HN    .   .   .   .   .   7    TRP   HA    .   .   rr_6hvc   1    
+     32   1   .    .   1   1   4   4   TRP   HD1   H   .   .   .   1   1   4   4   TRP   HB2   H   .   .   .   .   .   .   .   3.83   .   .   .   .   .   A   .   7    TRP   HD1   .   .   A   .   7    TRP   HB2   .   .   .   7    TRP   HD1   .   .   .   .   .   7    TRP   HB2   .   .   rr_6hvc   1    
+     33   1   .    .   1   1   4   4   TRP   HE3   H   .   .   .   1   1   4   4   TRP   HB2   H   .   .   .   .   .   .   .   3.79   .   .   .   .   .   A   .   7    TRP   HE3   .   .   A   .   7    TRP   HB2   .   .   .   7    TRP   HE3   .   .   .   .   .   7    TRP   HB2   .   .   rr_6hvc   1    
+     34   1   .    .   1   1   4   4   TRP   HB3   H   .   .   .   1   1   4   4   TRP   HD1   H   .   .   .   .   .   .   .   3.83   .   .   .   .   .   A   .   7    TRP   HB3   .   .   A   .   7    TRP   HD1   .   .   .   7    TRP   HB3   .   .   .   .   .   7    TRP   HD1   .   .   rr_6hvc   1    
+     35   1   .    .   1   1   4   4   TRP   HB3   H   .   .   .   1   1   4   4   TRP   HE3   H   .   .   .   .   .   .   .   3.79   .   .   .   .   .   A   .   7    TRP   HB3   .   .   A   .   7    TRP   HE3   .   .   .   7    TRP   HB3   .   .   .   .   .   7    TRP   HE3   .   .   rr_6hvc   1    
+     36   1   .    .   1   1   6   6   TYR   H     H   .   .   .   1   1   6   6   TYR   HB2   H   .   .   .   .   .   .   .   3.73   .   .   .   .   .   A   .   9    TYR   H     .   .   A   .   9    TYR   HB2   .   .   .   9    TYR   HN    .   .   .   .   .   9    TYR   HB2   .   .   rr_6hvc   1    
+     37   1   .    .   1   1   6   6   TYR   H     H   .   .   .   1   1   6   6   TYR   HB3   H   .   .   .   .   .   .   .   3.73   .   .   .   .   .   A   .   9    TYR   H     .   .   A   .   9    TYR   HB3   .   .   .   9    TYR   HN    .   .   .   .   .   9    TYR   HB3   .   .   rr_6hvc   1    
+     38   1   OR   .   1   1   6   6   TYR   H     H   .   .   .   1   1   6   6   TYR   HB3   H   .   .   .   .   .   .   .   3.40   .   .   .   .   .   A   .   9    TYR   H     .   .   A   .   9    TYR   HB3   .   .   .   9    TYR   HN    .   .   .   .   .   9    TYR   QB    .   .   rr_6hvc   1    
+     38   2   OR   .   1   1   6   6   TYR   H     H   .   .   .   1   1   6   6   TYR   HB2   H   .   .   .   .   .   .   .   3.40   .   .   .   .   .   A   .   9    TYR   H     .   .   A   .   9    TYR   HB2   .   .   .   9    TYR   HN    .   .   .   .   .   9    TYR   QB    .   .   rr_6hvc   1    
+     39   1   .    .   1   1   6   6   TYR   H     H   .   .   .   1   1   6   6   TYR   QE    H   .   .   .   .   .   .   .   7.63   .   .   .   .   .   A   .   9    TYR   H     .   .   A   .   9    TYR   QE    .   .   .   9    TYR   HN    .   .   .   .   .   9    TYR   QE    .   .   rr_6hvc   1    
+     40   1   .    .   1   1   6   6   TYR   H     H   .   .   .   1   1   7   7   CYS   H     H   .   .   .   .   .   .   .   4.01   .   .   .   .   .   A   .   9    TYR   H     .   .   A   .   10   CYS   H     .   .   .   9    TYR   HN    .   .   .   .   .   10   CYS   HN    .   .   rr_6hvc   1    
+     41   1   .    .   1   1   6   6   TYR   HB2   H   .   .   .   1   1   6   6   TYR   HA    H   .   .   .   .   .   .   .   3.08   .   .   .   .   .   A   .   9    TYR   HB2   .   .   A   .   9    TYR   HA    .   .   .   9    TYR   HB2   .   .   .   .   .   9    TYR   HA    .   .   rr_6hvc   1    
+     42   1   .    .   1   1   6   6   TYR   HA    H   .   .   .   1   1   6   6   TYR   HB3   H   .   .   .   .   .   .   .   3.08   .   .   .   .   .   A   .   9    TYR   HA    .   .   A   .   9    TYR   HB3   .   .   .   9    TYR   HA    .   .   .   .   .   9    TYR   HB3   .   .   rr_6hvc   1    
+     43   1   .    .   1   1   7   7   CYS   H     H   .   .   .   1   1   6   6   TYR   HA    H   .   .   .   .   .   .   .   2.96   .   .   .   .   .   A   .   10   CYS   H     .   .   A   .   9    TYR   HA    .   .   .   10   CYS   HN    .   .   .   .   .   9    TYR   HA    .   .   rr_6hvc   1    
+     44   1   OR   .   1   1   6   6   TYR   QD    H   .   .   .   1   1   8   8   VAL   MG1   H   .   .   .   .   .   .   .   9.76   .   .   .   .   .   A   .   9    TYR   QD    .   .   A   .   11   VAL   MG1   .   .   .   9    TYR   QD    .   .   .   .   .   11   VAL   QQG   .   .   rr_6hvc   1    
+     44   2   OR   .   1   1   8   8   VAL   MG2   H   .   .   .   1   1   6   6   TYR   QD    H   .   .   .   .   .   .   .   9.76   .   .   .   .   .   A   .   11   VAL   MG2   .   .   A   .   9    TYR   QD    .   .   .   11   VAL   QQG   .   .   .   .   .   9    TYR   QD    .   .   rr_6hvc   1    
+     45   1   .    .   1   1   6   6   TYR   QE    H   .   .   .   1   1   8   8   VAL   HA    H   .   .   .   .   .   .   .   7.63   .   .   .   .   .   A   .   9    TYR   QE    .   .   A   .   11   VAL   HA    .   .   .   9    TYR   QE    .   .   .   .   .   11   VAL   HA    .   .   rr_6hvc   1    
+     46   1   OR   .   1   1   6   6   TYR   QE    H   .   .   .   1   1   8   8   VAL   MG1   H   .   .   .   .   .   .   .   9.75   .   .   .   .   .   A   .   9    TYR   QE    .   .   A   .   11   VAL   MG1   .   .   .   9    TYR   QE    .   .   .   .   .   11   VAL   QQG   .   .   rr_6hvc   1    
+     46   2   OR   .   1   1   8   8   VAL   MG2   H   .   .   .   1   1   6   6   TYR   QE    H   .   .   .   .   .   .   .   9.75   .   .   .   .   .   A   .   11   VAL   MG2   .   .   A   .   9    TYR   QE    .   .   .   11   VAL   QQG   .   .   .   .   .   9    TYR   QE    .   .   rr_6hvc   1    
+     47   1   .    .   1   1   7   7   CYS   HA    H   .   .   .   1   1   8   8   VAL   H     H   .   .   .   .   .   .   .   2.77   .   .   .   .   .   A   .   10   CYS   HA    .   .   A   .   11   VAL   H     .   .   .   10   CYS   HA    .   .   .   .   .   11   VAL   HN    .   .   rr_6hvc   1    
+     48   1   OR   .   1   1   7   7   CYS   HA    H   .   .   .   1   1   8   8   VAL   MG1   H   .   .   .   .   .   .   .   7.62   .   .   .   .   .   A   .   10   CYS   HA    .   .   A   .   11   VAL   MG1   .   .   .   10   CYS   HA    .   .   .   .   .   11   VAL   QQG   .   .   rr_6hvc   1    
+     48   2   OR   .   1   1   7   7   CYS   HA    H   .   .   .   1   1   8   8   VAL   MG2   H   .   .   .   .   .   .   .   7.62   .   .   .   .   .   A   .   10   CYS   HA    .   .   A   .   11   VAL   MG2   .   .   .   10   CYS   HA    .   .   .   .   .   11   VAL   QQG   .   .   rr_6hvc   1    
+     49   1   .    .   1   1   8   8   VAL   H     H   .   .   .   1   1   8   8   VAL   HB    H   .   .   .   .   .   .   .   3.86   .   .   .   .   .   A   .   11   VAL   H     .   .   A   .   11   VAL   HB    .   .   .   11   VAL   HN    .   .   .   .   .   11   VAL   HB    .   .   rr_6hvc   1    
+     50   1   .    .   1   1   8   8   VAL   HA    H   .   .   .   1   1   8   8   VAL   HB    H   .   .   .   .   .   .   .   2.96   .   .   .   .   .   A   .   11   VAL   HA    .   .   A   .   11   VAL   HB    .   .   .   11   VAL   HA    .   .   .   .   .   11   VAL   HB    .   .   rr_6hvc   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint_comment_org.ID
+      _Gen_dist_constraint_comment_org.Comment_text
+      _Gen_dist_constraint_comment_org.Comment_begin_line
+      _Gen_dist_constraint_comment_org.Comment_begin_column
+      _Gen_dist_constraint_comment_org.Comment_end_line
+      _Gen_dist_constraint_comment_org.Comment_end_column
+      _Gen_dist_constraint_comment_org.Entry_ID
+      _Gen_dist_constraint_comment_org.Gen_dist_constraint_list_ID
+
+     1   'Restraints file 1: me8.upl'   1   1   1   28   rr_6hvc   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint_conv_err.ID
+      _Gen_dist_constraint_conv_err.Gen_dist_constraint_parse_file_ID
+      _Gen_dist_constraint_conv_err.Parse_file_constraint_ID
+      _Gen_dist_constraint_conv_err.Conv_error_type
+      _Gen_dist_constraint_conv_err.Conv_error_note
+      _Gen_dist_constraint_conv_err.Entry_ID
+      _Gen_dist_constraint_conv_err.Gen_dist_constraint_list_ID
+
+     1    2   31   1   "Not handling restraint 31, item 1, resonance(s) ' .8.QB' (nmrStar names) not linked"                             rr_6hvc   1    
+     2    2   32   1   "Not handling restraint 32, item 1, resonance(s) ' .8.QG' (nmrStar names) not linked"                             rr_6hvc   1    
+     3    2   38   1   "Not handling restraint 38, item 1, resonance(s) ' .8.HA' (nmrStar names) not linked"                             rr_6hvc   1    
+     4    2   38   1   "Not handling restraint 38, item 1, resonance(s) ' .8.HA' (nmrStar names) not linked"                             rr_6hvc   1    
+     5    2   39   1   "Not handling restraint 39, item 1, resonance(s) ' .8.HA' (nmrStar names) not linked"                             rr_6hvc   1    
+     6    2   40   1   "Not handling restraint 40, item 1, resonance(s) ' .8.QG' (nmrStar names) not linked"                             rr_6hvc   1    
+     7    2   41   1   "Not handling restraint 41, item 1, resonance(s) ' .8.QH' (nmrStar names) not linked"                             rr_6hvc   1    
+     8    2   42   1   "Not handling restraint 42, item 1, resonance(s) ' .8.HA' (nmrStar names) not linked"                             rr_6hvc   1    
+     9    2   43   1   "Not handling restraint 43, item 1, resonance(s) ' .8.QG' (nmrStar names) not linked"                             rr_6hvc   1    
+     10   2   44   1   "Not handling restraint 44, item 1, resonance(s) ' .8.QG' (nmrStar names) not linked"                             rr_6hvc   1    
+     11   2   45   1   "Not handling restraint 45, item 1, resonance(s) ' .8.QD' (nmrStar names) not linked"                             rr_6hvc   1    
+     12   2   46   1   "Not handling restraint 46, item 1, resonance(s) ' .8.QH' (nmrStar names),' .8.HG2' (nmrStar names) not linked"   rr_6hvc   1    
+     13   2   47   1   "Not handling restraint 47, item 1, resonance(s) ' .8.QH' (nmrStar names),' .8.HG3' (nmrStar names) not linked"   rr_6hvc   1    
+     14   2   48   1   "Not handling restraint 48, item 1, resonance(s) ' .8.QG' (nmrStar names),' .8.QH' (nmrStar names) not linked"    rr_6hvc   1    
+     15   2   49   1   "Not handling restraint 49, item 1, resonance(s) ' .8.HA' (nmrStar names) not linked"                             rr_6hvc   1    
+     16   2   50   1   "Not handling restraint 50, item 1, resonance(s) ' .8.HB2' (nmrStar names),' .8.QE' (nmrStar names) not linked"   rr_6hvc   1    
+     17   2   51   1   "Not handling restraint 51, item 1, resonance(s) ' .8.QE' (nmrStar names),' .8.HB3' (nmrStar names) not linked"   rr_6hvc   1    
+     18   2   52   1   "Not handling restraint 52, item 1, resonance(s) ' .8.QB' (nmrStar names),' .8.QE' (nmrStar names) not linked"    rr_6hvc   1    
+
+   stop_
+
+save_
+
+save_MR_file_comment_1
+   _Org_constr_file_comment.Sf_framecode        MR_file_comment_1
+   _Org_constr_file_comment.Sf_category         org_constr_file_comment
+   _Org_constr_file_comment.Entry_ID            rr_6hvc
+   _Org_constr_file_comment.ID                  1
+   _Org_constr_file_comment.Constraint_file_ID  1
+   _Org_constr_file_comment.Block_ID            1
+   _Org_constr_file_comment.Details             'Generated by Wattos'
+   _Org_constr_file_comment.Comment             "*HEADER PEPTIDE BINDING PROTEIN 10-OCT-18 6HVC *TITLE NMR STRUCTURE OF UROTENSIN PEPTIDE ASP-C[CYS-PHE-TRP-(N-ME)LYS-TYR- *TITLE 2 CYS]-VAL IN SDS SOLUTION *COMPND MOL_ID: 1; *COMPND 2 MOLECULE: UROTENSIN-2; *COMPND 3 CHAIN: A; *COMPND 4 SYNONYM: UROTENSIN II,UII; *COMPND 5 ENGINEERED: YES *SOURCE MOL_ID: 1; *SOURCE 2 SYNTHETIC: YES; *SOURCE 3 ORGANISM_SCIENTIFIC: HOMO SAPIENS; *SOURCE 4 ORGANISM_COMMON: HUMAN; *SOURCE 5 ORGANISM_TAXID: 9606 *KEYWDS G PROTEIN-COUPLED RECEPTOR, UROTENSIN II RECEPTOR, NMR SOLUTIONS, *KEYWDS 2 SDS, N-METHYLATION, PEPTIDE BINDING PROTEIN *EXPDTA SOLUTION NMR *NUMMDL 10 *AUTHOR D.BRANCACCIO,A.CAROTENUTO,F.MERLINO,E.BILLARD,A.M.YOUSIF,S.DI MARO, *AUTHOR 2 L.ABATE,R.BELLAVITA,R.D'EMMANUELE DI VILLA BIANCA,P.SANTICIOLI, *AUTHOR 3 L.MARINELLI,E.NOVELLINO,T.E.HEBERT,W.D.LUBELL,D.CHATENET,P.GRIECO *REVDAT 1 16-JAN-19 6HVC 0"
+
+save_

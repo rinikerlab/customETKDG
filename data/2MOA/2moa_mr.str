@@ -1,0 +1,573 @@
+data_wwPDB_remediated_restraints_file_for_PDB_entry_2moa
+
+# This wwPDB archive file contains, for PDB entry 2moa:
+#
+# - Sequence information from the PDB mmCIF file
+# - NMR restraints from the PDB MR file
+#
+# In this file, the NMR restraints share the same atom names as in the coordinate 
+# file, and in this way can differ from the data deposited at the wwPDB. To achieve
+# this aim, the NMR restraints were parsed from their original format files, and
+# the coordinates and NMR restraints information were subsequently harmonized.
+#
+# Due to the complexity of this harmonization process, minor modifications could
+# have occurred to the NMR restraints information, or data could have been lost
+# because of parsing or conversion errors. The PDB file remains the
+# authoritative reference for the atomic coordinates and the originally deposited
+# restraints files remain the primary reference for these data.
+#
+# This file is generated as part of the wwPDB at the BioMagResBank (BMRB) in
+# collaboration with the PDBe (formerly MSD) group at the European
+# Bioinformatics Institute (EBI) and the CMBI/IMM group at the Radboud
+# University of Nijmegen.
+#
+# Several software packages were used to produce this file:
+#
+# - Wattos (BMRB and CMBI/IMM).
+# - FormatConverter and NMRStarExport (PDBe).
+# - CCPN framework (http://www.ccpn.ac.uk/).
+#
+# More information about this process can be found in the references below.
+# Please cite the original reference for this PDB entry.
+#
+# JF Doreleijers, A Nederveen, W Vranken, J Lin, AM Bonvin, R Kaptein, JL
+# Markley, and EL Ulrich (2005). BioMagResBank databases DOCR and FRED
+# containing converted and filtered sets of experimental NMR restraints and
+# coordinates from over 500 protein PDB structures. J. Biomol. NMR 32, 1-12.
+#
+# WF Vranken, W Boucher, TJ Stevens, RH Fogh, A Pajon, M Llinas, EL Ulrich, JL
+# Markley, J Ionides, ED Laue (2005). The CCPN data model for NMR spectroscopy:
+# development of a software pipeline. Proteins 59, 687-696.
+#
+# JF Doreleijers, WF Vranken, C Schulte, J Lin, JR Wedell, CJ Penkett, GW Vuister, 
+# G Vriend, JL Markley, and EL Ulrich (2009). The NMR Restraints Grid at BMRB for 
+# 5,266 Protein and Nucleic Acid PDB Entries. J Biomol. NMR 45, 389-396.
+
+#######################
+#  Entry information  #
+#######################
+
+save_entry_information
+   _Entry.Sf_category                  entry_information
+   _Entry.Sf_framecode                 entry_information
+   _Entry.ID                           rr_2moa
+   _Entry.Title                        'wwPDB remediated NMR restraints for PDB entry 2moa'
+   _Entry.Version_type                 original
+   _Entry.NMR_STAR_version             3.1.0.8
+   _Entry.Experimental_method          NMR
+   _Entry.Experimental_method_subtype  solution
+   _Entry.Details                      'Contains the remediated restraint lists and coordinates for PDB entry 2moa'
+   _Entry.PDB_coordinate_file_version  3.20
+
+   loop_
+      _Related_entries.Database_name
+      _Related_entries.Database_accession_code
+      _Related_entries.Relationship
+      _Related_entries.Entry_ID
+
+     PDB   2moa   'Master copy'   rr_2moa    
+
+   stop_
+
+save_
+
+#############################################
+#  Molecular system (assembly) description  #
+#############################################
+
+save_assembly
+   _Assembly.Sf_category           assembly
+   _Assembly.Sf_framecode          assembly
+   _Assembly.Entry_ID              rr_2moa
+   _Assembly.ID                    1
+   _Assembly.Name                  2moa
+   _Assembly.Number_of_components  1
+   _Assembly.Organic_ligands       0
+   _Assembly.Metal_ions            0
+   _Assembly.Non_standard_bonds    no
+   _Assembly.Paramagnetic          no
+   _Assembly.Thiol_state           'all free'
+   _Assembly.Molecular_mass        1381.6226
+
+   loop_
+      _Entity_assembly.ID
+      _Entity_assembly.Entity_assembly_name
+      _Entity_assembly.Entity_ID
+      _Entity_assembly.Entity_label
+      _Entity_assembly.Asym_ID
+      _Entity_assembly.PDB_chain_ID
+      _Entity_assembly.Experimental_data_reported
+      _Entity_assembly.Physical_state
+      _Entity_assembly.Conformational_isomer
+      _Entity_assembly.Chemical_exchange_state
+      _Entity_assembly.Magnetic_equivalence_group_code
+      _Entity_assembly.Role
+      _Entity_assembly.Details
+      _Entity_assembly.Entry_ID
+      _Entity_assembly.Assembly_ID
+
+     1   'Alpha conotoxin ImI'   1   $Alpha_conotoxin_ImI   A   .   no   .   .   .   .   .   .   rr_2moa   1    
+
+   stop_
+
+save_
+
+    ####################################
+    #  Biological polymers and ligands #
+    ####################################
+
+save_Alpha_conotoxin_ImI
+   _Entity.Sf_category                      entity
+   _Entity.Sf_framecode                     Alpha_conotoxin_ImI
+   _Entity.Entry_ID                         rr_2moa
+   _Entity.ID                               1
+   _Entity.Name                             Alpha_conotoxin_ImI
+   _Entity.Type                             polymer
+   _Entity.Polymer_type                     polypeptide(L)
+   _Entity.Polymer_strand_ID                A
+   _Entity.Polymer_seq_one_letter_code      GXASDPRCAWRCX
+   _Entity.Ambiguous_conformational_states  no
+   _Entity.Ambiguous_chem_comp_sites        no
+   _Entity.Nstd_monomer                     yes
+   _Entity.Nstd_chirality                   yes
+   _Entity.Nstd_linkage                     yes
+   _Entity.Number_of_monomers               13
+   _Entity.Paramagnetic                     no
+   _Entity.Thiol_state                      'all free'
+   _Entity.Parent_entity_ID                 1
+   _Entity.Formula_weight                   1381.6226
+
+   loop_
+      _Entity_comp_index.ID
+      _Entity_comp_index.Auth_seq_ID
+      _Entity_comp_index.Comp_ID
+      _Entity_comp_index.Comp_label
+      _Entity_comp_index.Entry_ID
+      _Entity_comp_index.Entity_ID
+
+     1    .   GLY   .   rr_2moa   1    
+     2    .   .     .   rr_2moa   1    
+     3    .   ALA   .   rr_2moa   1    
+     4    .   SER   .   rr_2moa   1    
+     5    .   ASP   .   rr_2moa   1    
+     6    .   PRO   .   rr_2moa   1    
+     7    .   ARG   .   rr_2moa   1    
+     8    .   CYS   .   rr_2moa   1    
+     9    .   ALA   .   rr_2moa   1    
+     10   .   TRP   .   rr_2moa   1    
+     11   .   ARG   .   rr_2moa   1    
+     12   .   CYS   .   rr_2moa   1    
+     13   .   NH2   .   rr_2moa   1    
+
+   stop_
+
+   loop_
+      _Entity_poly_seq.Hetero
+      _Entity_poly_seq.Mon_ID
+      _Entity_poly_seq.Num
+      _Entity_poly_seq.Comp_index_ID
+      _Entity_poly_seq.Entry_ID
+      _Entity_poly_seq.Entity_ID
+
+     .   GLY   1    1    rr_2moa   1    
+     .   .     2    2    rr_2moa   1    
+     .   ALA   3    3    rr_2moa   1    
+     .   SER   4    4    rr_2moa   1    
+     .   ASP   5    5    rr_2moa   1    
+     .   PRO   6    6    rr_2moa   1    
+     .   ARG   7    7    rr_2moa   1    
+     .   CYS   8    8    rr_2moa   1    
+     .   ALA   9    9    rr_2moa   1    
+     .   TRP   10   10   rr_2moa   1    
+     .   ARG   11   11   rr_2moa   1    
+     .   CYS   12   12   rr_2moa   1    
+     .   NH2   13   13   rr_2moa   1    
+
+   stop_
+
+save_
+
+    #################################
+    #  Polymer residues and ligands #
+    #################################
+
+save_chem_comp_81S
+   _Chem_comp.Sf_category     chem_comp
+   _Chem_comp.Sf_framecode    chem_comp_81S
+   _Chem_comp.Entry_ID        rr_2moa
+   _Chem_comp.ID              1
+   _Chem_comp.Name            81s
+   _Chem_comp.Type            'L-peptide linking'
+   _Chem_comp.Formal_charge   0
+   _Chem_comp.Paramagnetic    no
+   _Chem_comp.Aromatic        no
+   _Chem_comp.Formula         'C5 H7 N O S2'
+   _Chem_comp.Formula_weight  161.2364
+
+save_
+
+save_chem_comp_NH2
+   _Chem_comp.Sf_category     chem_comp
+   _Chem_comp.Sf_framecode    chem_comp_NH2
+   _Chem_comp.Entry_ID        rr_2moa
+   _Chem_comp.ID              NH2
+   _Chem_comp.Name            'AMINO GROUP'
+   _Chem_comp.Type            non-polymer
+   _Chem_comp.PDB_code        NH2
+   _Chem_comp.Formal_charge   0
+   _Chem_comp.Paramagnetic    no
+   _Chem_comp.Aromatic        no
+   _Chem_comp.Formula         'H2 N'
+   _Chem_comp.Formula_weight  16.0225
+
+save_
+
+
+##############################
+#  Structure determinations  #
+##############################
+
+    ##########################
+    #  Conformer statistics  #
+    ##########################
+
+save_conformer_statistics
+   _Conformer_stat_list.Sf_category                    conformer_statistics
+   _Conformer_stat_list.Sf_framecode                   conformer_statistics
+   _Conformer_stat_list.Entry_ID                       rr_2moa
+   _Conformer_stat_list.ID                             1
+   _Conformer_stat_list.Conf_family_coord_set_ID       1
+   _Conformer_stat_list.Conf_family_coord_set_label    $Original_constraints_and_structures
+   _Conformer_stat_list.Conformer_submitted_total_num  20
+
+save_
+
+###########################
+#  Constraint Statistics  #
+###########################
+
+save_constraint_statistics
+   _Constraint_stat_list.Sf_framecode  constraint_statistics
+   _Constraint_stat_list.Sf_category   constraint_statistics
+   _Constraint_stat_list.Entry_ID      rr_2moa
+   _Constraint_stat_list.ID            1
+
+   loop_
+      _Constraint_file.ID
+      _Constraint_file.Constraint_filename
+      _Constraint_file.Software_ID
+      _Constraint_file.Software_label
+      _Constraint_file.Software_name
+      _Constraint_file.Block_ID
+      _Constraint_file.Constraint_type
+      _Constraint_file.Constraint_subtype
+      _Constraint_file.Constraint_subsubtype
+      _Constraint_file.Constraint_number
+      _Constraint_file.Entry_ID
+      _Constraint_file.Constraint_stat_list_ID
+
+     1   2moa.mr   .   .   'MR format'   1   comment                  'Not applicable'   'Not applicable'   0     rr_2moa   1    
+     1   2moa.mr   .   .   XPLOR/CNS     2   distance                 NOE                simple             164   rr_2moa   1    
+     1   2moa.mr   .   .   'MR format'   3   'nomenclature mapping'   'Not applicable'   'Not applicable'   0     rr_2moa   1    
+
+   stop_
+
+save_
+
+save_CNS/XPLOR_distance_constraints_2
+   _Gen_dist_constraint_list.Sf_category         general_distance_constraints
+   _Gen_dist_constraint_list.Sf_framecode        CNS/XPLOR_distance_constraints_2
+   _Gen_dist_constraint_list.Entry_ID            rr_2moa
+   _Gen_dist_constraint_list.ID                  1
+   _Gen_dist_constraint_list.Constraint_type     NOE
+   _Gen_dist_constraint_list.Details             'Generated by Wattos'
+   _Gen_dist_constraint_list.Constraint_file_ID  1
+   _Gen_dist_constraint_list.Block_ID            2
+
+   loop_
+      _Gen_dist_constraint_software.Software_ID
+      _Gen_dist_constraint_software.Software_label
+      _Gen_dist_constraint_software.Method_ID
+      _Gen_dist_constraint_software.Method_label
+      _Gen_dist_constraint_software.Entry_ID
+      _Gen_dist_constraint_software.Gen_dist_constraint_list_ID
+
+     .   .   .   .   rr_2moa   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint.ID
+      _Gen_dist_constraint.Member_ID
+      _Gen_dist_constraint.Member_logic_code
+      _Gen_dist_constraint.Assembly_atom_ID_1
+      _Gen_dist_constraint.Entity_assembly_ID_1
+      _Gen_dist_constraint.Entity_ID_1
+      _Gen_dist_constraint.Comp_index_ID_1
+      _Gen_dist_constraint.Seq_ID_1
+      _Gen_dist_constraint.Comp_ID_1
+      _Gen_dist_constraint.Atom_ID_1
+      _Gen_dist_constraint.Atom_type_1
+      _Gen_dist_constraint.Atom_isotope_number_1
+      _Gen_dist_constraint.Resonance_ID_1
+      _Gen_dist_constraint.Assembly_atom_ID_2
+      _Gen_dist_constraint.Entity_assembly_ID_2
+      _Gen_dist_constraint.Entity_ID_2
+      _Gen_dist_constraint.Comp_index_ID_2
+      _Gen_dist_constraint.Seq_ID_2
+      _Gen_dist_constraint.Comp_ID_2
+      _Gen_dist_constraint.Atom_ID_2
+      _Gen_dist_constraint.Atom_type_2
+      _Gen_dist_constraint.Atom_isotope_number_2
+      _Gen_dist_constraint.Resonance_ID_2
+      _Gen_dist_constraint.Intensity_val
+      _Gen_dist_constraint.Intensity_lower_val_err
+      _Gen_dist_constraint.Intensity_upper_val_err
+      _Gen_dist_constraint.Distance_val
+      _Gen_dist_constraint.Distance_lower_bound_val
+      _Gen_dist_constraint.Distance_upper_bound_val
+      _Gen_dist_constraint.Contribution_fractional_val
+      _Gen_dist_constraint.Spectral_peak_ID
+      _Gen_dist_constraint.Spectral_peak_list_ID
+      _Gen_dist_constraint.PDB_record_ID_1
+      _Gen_dist_constraint.PDB_model_num_1
+      _Gen_dist_constraint.PDB_strand_ID_1
+      _Gen_dist_constraint.PDB_ins_code_1
+      _Gen_dist_constraint.PDB_residue_no_1
+      _Gen_dist_constraint.PDB_residue_name_1
+      _Gen_dist_constraint.PDB_atom_name_1
+      _Gen_dist_constraint.PDB_record_ID_2
+      _Gen_dist_constraint.PDB_model_num_2
+      _Gen_dist_constraint.PDB_strand_ID_2
+      _Gen_dist_constraint.PDB_ins_code_2
+      _Gen_dist_constraint.PDB_residue_no_2
+      _Gen_dist_constraint.PDB_residue_name_2
+      _Gen_dist_constraint.PDB_atom_name_2
+      _Gen_dist_constraint.Auth_entity_assembly_ID_1
+      _Gen_dist_constraint.Auth_asym_ID_1
+      _Gen_dist_constraint.Auth_chain_ID_1
+      _Gen_dist_constraint.Auth_seq_ID_1
+      _Gen_dist_constraint.Auth_comp_ID_1
+      _Gen_dist_constraint.Auth_atom_ID_1
+      _Gen_dist_constraint.Auth_alt_ID_1
+      _Gen_dist_constraint.Auth_atom_name_1
+      _Gen_dist_constraint.Auth_entity_assembly_ID_2
+      _Gen_dist_constraint.Auth_asym_ID_2
+      _Gen_dist_constraint.Auth_chain_ID_2
+      _Gen_dist_constraint.Auth_seq_ID_2
+      _Gen_dist_constraint.Auth_comp_ID_2
+      _Gen_dist_constraint.Auth_atom_ID_2
+      _Gen_dist_constraint.Auth_alt_ID_2
+      _Gen_dist_constraint.Auth_atom_name_2
+      _Gen_dist_constraint.Entry_ID
+      _Gen_dist_constraint.Gen_dist_constraint_list_ID
+
+     1     1   .    .   1   1   4    4    SER   HB3   H   .   .   .   1   1   4    4    SER   HB2   H   .   .   .   .   .   2.25   1.8   2.7   .   .   .   .   .   A   .   4    SER   HB3   .   .   A   .   4    SER   HB2   .   .   .   4    .   HB3   .   .   .   .   .   4    .   HB2   .   .   rr_2moa   1    
+     2     1   .    .   1   1   5    5    ASP   HB3   H   .   .   .   1   1   5    5    ASP   HB2   H   .   .   .   .   .   2.25   1.8   2.7   .   .   .   .   .   A   .   5    ASP   HB3   .   .   A   .   5    ASP   HB2   .   .   .   5    .   HB3   .   .   .   .   .   5    .   HB2   .   .   rr_2moa   1    
+     3     1   .    .   1   1   6    6    PRO   HB3   H   .   .   .   1   1   6    6    PRO   HB2   H   .   .   .   .   .   2.25   1.8   2.7   .   .   .   .   .   A   .   6    PRO   HB3   .   .   A   .   6    PRO   HB2   .   .   .   6    .   HB3   .   .   .   .   .   6    .   HB2   .   .   rr_2moa   1    
+     4     1   OR   .   1   1   6    6    PRO   HB3   H   .   .   .   1   1   6    6    PRO   HG2   H   .   .   .   .   .   2.25   1.8   2.7   .   .   .   .   .   A   .   6    PRO   HB3   .   .   A   .   6    PRO   HG2   .   .   .   6    .   HB3   .   .   .   .   .   6    .   HG#   .   .   rr_2moa   1    
+     4     2   OR   .   1   1   6    6    PRO   HB3   H   .   .   .   1   1   6    6    PRO   HG3   H   .   .   .   .   .   2.25   1.8   2.7   .   .   .   .   .   A   .   6    PRO   HB3   .   .   A   .   6    PRO   HG3   .   .   .   6    .   HB3   .   .   .   .   .   6    .   HG#   .   .   rr_2moa   1    
+     5     1   OR   .   1   1   6    6    PRO   HB2   H   .   .   .   1   1   6    6    PRO   HG2   H   .   .   .   .   .   2.25   1.8   2.7   .   .   .   .   .   A   .   6    PRO   HB2   .   .   A   .   6    PRO   HG2   .   .   .   6    .   HB2   .   .   .   .   .   6    .   HG#   .   .   rr_2moa   1    
+     5     2   OR   .   1   1   6    6    PRO   HB2   H   .   .   .   1   1   6    6    PRO   HG3   H   .   .   .   .   .   2.25   1.8   2.7   .   .   .   .   .   A   .   6    PRO   HB2   .   .   A   .   6    PRO   HG3   .   .   .   6    .   HB2   .   .   .   .   .   6    .   HG#   .   .   rr_2moa   1    
+     6     1   .    .   1   1   7    7    ARG   HB3   H   .   .   .   1   1   7    7    ARG   HB2   H   .   .   .   .   .   2.25   1.8   2.7   .   .   .   .   .   A   .   7    ARG   HB3   .   .   A   .   7    ARG   HB2   .   .   .   7    .   HB3   .   .   .   .   .   7    .   HB2   .   .   rr_2moa   1    
+     7     1   .    .   1   1   10   10   TRP   HH2   H   .   .   .   1   1   10   10   TRP   HZ2   H   .   .   .   .   .   2.25   1.8   2.7   .   .   .   .   .   A   .   10   TRP   HH2   .   .   A   .   10   TRP   HZ2   .   .   .   10   .   HH2   .   .   .   .   .   10   .   HZ2   .   .   rr_2moa   1    
+     8     1   .    .   1   1   10   10   TRP   HH2   H   .   .   .   1   1   10   10   TRP   HZ3   H   .   .   .   .   .   2.25   1.8   2.7   .   .   .   .   .   A   .   10   TRP   HH2   .   .   A   .   10   TRP   HZ3   .   .   .   10   .   HH2   .   .   .   .   .   10   .   HZ3   .   .   rr_2moa   1    
+     9     1   .    .   1   1   12   12   CYS   HB3   H   .   .   .   1   1   12   12   CYS   HB2   H   .   .   .   .   .   2.25   1.8   2.7   .   .   .   .   .   A   .   12   CYS   HB3   .   .   A   .   12   CYS   HB2   .   .   .   12   .   HB3   .   .   .   .   .   12   .   HB2   .   .   rr_2moa   1    
+     10    1   .    .   1   1   3    3    ALA   HA    H   .   .   .   1   1   3    3    ALA   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   3    ALA   HA    .   .   A   .   3    ALA   H     .   .   .   3    .   HA    .   .   .   .   .   3    .   HN    .   .   rr_2moa   1    
+     11    1   .    .   1   1   3    3    ALA   HA    H   .   .   .   1   1   4    4    SER   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   3    ALA   HA    .   .   A   .   4    SER   H     .   .   .   3    .   HA    .   .   .   .   .   4    .   HN    .   .   rr_2moa   1    
+     12    1   .    .   1   1   3    3    ALA   HA    H   .   .   .   1   1   3    3    ALA   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   3    ALA   HA    .   .   A   .   3    ALA   H     .   .   .   3    .   HB#   .   .   .   .   .   3    .   HN    .   .   rr_2moa   1    
+     13    1   .    .   1   1   3    3    ALA   HA    H   .   .   .   1   1   4    4    SER   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   3    ALA   HA    .   .   A   .   4    SER   H     .   .   .   3    .   HB#   .   .   .   .   .   4    .   HN    .   .   rr_2moa   1    
+     14    1   .    .   1   1   4    4    SER   HB2   H   .   .   .   1   1   4    4    SER   HA    H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   4    SER   HB2   .   .   A   .   4    SER   HA    .   .   .   4    .   HB2   .   .   .   .   .   4    .   HA    .   .   rr_2moa   1    
+     15    1   .    .   1   1   4    4    SER   H     H   .   .   .   1   1   4    4    SER   HA    H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   4    SER   H     .   .   A   .   4    SER   HA    .   .   .   4    .   HN    .   .   .   .   .   4    .   HA    .   .   rr_2moa   1    
+     16    1   .    .   1   1   4    4    SER   HA    H   .   .   .   1   1   5    5    ASP   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   4    SER   HA    .   .   A   .   5    ASP   H     .   .   .   4    .   HA    .   .   .   .   .   5    .   HN    .   .   rr_2moa   1    
+     17    1   .    .   1   1   4    4    SER   HB3   H   .   .   .   1   1   4    4    SER   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   4    SER   HB3   .   .   A   .   4    SER   H     .   .   .   4    .   HB3   .   .   .   .   .   4    .   HN    .   .   rr_2moa   1    
+     18    1   .    .   1   1   4    4    SER   HB2   H   .   .   .   1   1   4    4    SER   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   4    SER   HB2   .   .   A   .   4    SER   H     .   .   .   4    .   HB2   .   .   .   .   .   4    .   HN    .   .   rr_2moa   1    
+     19    1   .    .   1   1   5    5    ASP   HB3   H   .   .   .   1   1   5    5    ASP   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   5    ASP   HB3   .   .   A   .   5    ASP   H     .   .   .   5    .   HB3   .   .   .   .   .   5    .   HN    .   .   rr_2moa   1    
+     20    1   .    .   1   1   5    5    ASP   HB2   H   .   .   .   1   1   5    5    ASP   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   5    ASP   HB2   .   .   A   .   5    ASP   H     .   .   .   5    .   HB2   .   .   .   .   .   5    .   HN    .   .   rr_2moa   1    
+     21    1   .    .   1   1   4    4    SER   H     H   .   .   .   1   1   5    5    ASP   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   4    SER   H     .   .   A   .   5    ASP   H     .   .   .   4    .   HN    .   .   .   .   .   5    .   HN    .   .   rr_2moa   1    
+     22    1   .    .   1   1   6    6    PRO   HB3   H   .   .   .   1   1   6    6    PRO   HA    H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   6    PRO   HB3   .   .   A   .   6    PRO   HA    .   .   .   6    .   HB3   .   .   .   .   .   6    .   HA    .   .   rr_2moa   1    
+     23    1   .    .   1   1   6    6    PRO   HB3   H   .   .   .   1   1   6    6    PRO   HD3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   6    PRO   HB3   .   .   A   .   6    PRO   HD3   .   .   .   6    .   HB3   .   .   .   .   .   6    .   HD3   .   .   rr_2moa   1    
+     24    1   .    .   1   1   6    6    PRO   HB3   H   .   .   .   1   1   6    6    PRO   HD2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   6    PRO   HB3   .   .   A   .   6    PRO   HD2   .   .   .   6    .   HB3   .   .   .   .   .   6    .   HD2   .   .   rr_2moa   1    
+     25    1   .    .   1   1   6    6    PRO   HB3   H   .   .   .   1   1   7    7    ARG   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   6    PRO   HB3   .   .   A   .   7    ARG   H     .   .   .   6    .   HB3   .   .   .   .   .   7    .   HN    .   .   rr_2moa   1    
+     26    1   .    .   1   1   6    6    PRO   HD3   H   .   .   .   1   1   7    7    ARG   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   6    PRO   HD3   .   .   A   .   7    ARG   H     .   .   .   6    .   HD3   .   .   .   .   .   7    .   HN    .   .   rr_2moa   1    
+     27    1   OR   .   1   1   6    6    PRO   HD3   H   .   .   .   1   1   6    6    PRO   HG2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   6    PRO   HD3   .   .   A   .   6    PRO   HG2   .   .   .   6    .   HD3   .   .   .   .   .   6    .   HG#   .   .   rr_2moa   1    
+     27    2   OR   .   1   1   6    6    PRO   HG3   H   .   .   .   1   1   6    6    PRO   HD3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   6    PRO   HG3   .   .   A   .   6    PRO   HD3   .   .   .   6    .   HG#   .   .   .   .   .   6    .   HD3   .   .   rr_2moa   1    
+     28    1   OR   .   1   1   6    6    PRO   HD2   H   .   .   .   1   1   6    6    PRO   HG2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   6    PRO   HD2   .   .   A   .   6    PRO   HG2   .   .   .   6    .   HD2   .   .   .   .   .   6    .   HG#   .   .   rr_2moa   1    
+     28    2   OR   .   1   1   6    6    PRO   HG3   H   .   .   .   1   1   6    6    PRO   HD2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   6    PRO   HG3   .   .   A   .   6    PRO   HD2   .   .   .   6    .   HG#   .   .   .   .   .   6    .   HD2   .   .   rr_2moa   1    
+     29    1   .    .   1   1   7    7    ARG   H     H   .   .   .   1   1   7    7    ARG   HA    H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   7    ARG   HA    .   .   .   7    .   HN    .   .   .   .   .   7    .   HA    .   .   rr_2moa   1    
+     30    1   .    .   1   1   7    7    ARG   HB3   H   .   .   .   1   1   7    7    ARG   HD3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   7    ARG   HB3   .   .   A   .   7    ARG   HD3   .   .   .   7    .   HB3   .   .   .   .   .   7    .   HD3   .   .   rr_2moa   1    
+     31    1   .    .   1   1   7    7    ARG   HB3   H   .   .   .   1   1   7    7    ARG   HD2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   7    ARG   HB3   .   .   A   .   7    ARG   HD2   .   .   .   7    .   HB3   .   .   .   .   .   7    .   HD2   .   .   rr_2moa   1    
+     32    1   .    .   1   1   7    7    ARG   HB3   H   .   .   .   1   1   7    7    ARG   HE    H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   7    ARG   HB3   .   .   A   .   7    ARG   HE    .   .   .   7    .   HB3   .   .   .   .   .   7    .   HE    .   .   rr_2moa   1    
+     33    1   .    .   1   1   7    7    ARG   HB3   H   .   .   .   1   1   7    7    ARG   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   7    ARG   HB3   .   .   A   .   7    ARG   H     .   .   .   7    .   HB3   .   .   .   .   .   7    .   HN    .   .   rr_2moa   1    
+     34    1   .    .   1   1   7    7    ARG   HB2   H   .   .   .   1   1   7    7    ARG   HA    H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   7    ARG   HB2   .   .   A   .   7    ARG   HA    .   .   .   7    .   HB2   .   .   .   .   .   7    .   HA    .   .   rr_2moa   1    
+     35    1   .    .   1   1   7    7    ARG   HB2   H   .   .   .   1   1   7    7    ARG   HD3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   7    ARG   HB2   .   .   A   .   7    ARG   HD3   .   .   .   7    .   HB2   .   .   .   .   .   7    .   HD3   .   .   rr_2moa   1    
+     36    1   .    .   1   1   7    7    ARG   HB2   H   .   .   .   1   1   7    7    ARG   HD2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   7    ARG   HB2   .   .   A   .   7    ARG   HD2   .   .   .   7    .   HB2   .   .   .   .   .   7    .   HD2   .   .   rr_2moa   1    
+     37    1   .    .   1   1   7    7    ARG   HB2   H   .   .   .   1   1   7    7    ARG   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   7    ARG   HB2   .   .   A   .   7    ARG   H     .   .   .   7    .   HB2   .   .   .   .   .   7    .   HN    .   .   rr_2moa   1    
+     38    1   .    .   1   1   8    8    CYS   HA    H   .   .   .   1   1   8    8    CYS   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   8    CYS   HA    .   .   A   .   8    CYS   H     .   .   .   8    .   HA    .   .   .   .   .   8    .   HN    .   .   rr_2moa   1    
+     39    1   .    .   1   1   8    8    CYS   HA    H   .   .   .   1   1   9    9    ALA   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   8    CYS   HA    .   .   A   .   9    ALA   H     .   .   .   8    .   HA    .   .   .   .   .   9    .   HN    .   .   rr_2moa   1    
+     40    1   .    .   1   1   8    8    CYS   HA    H   .   .   .   1   1   8    8    CYS   HB3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   8    CYS   HA    .   .   A   .   8    CYS   HB3   .   .   .   8    .   HA    .   .   .   .   .   8    .   HB3   .   .   rr_2moa   1    
+     41    1   .    .   1   1   8    8    CYS   H     H   .   .   .   1   1   8    8    CYS   HB3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   8    CYS   H     .   .   A   .   8    CYS   HB3   .   .   .   8    .   HN    .   .   .   .   .   8    .   HB3   .   .   rr_2moa   1    
+     42    1   .    .   1   1   8    8    CYS   HA    H   .   .   .   1   1   8    8    CYS   HB2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   8    CYS   HA    .   .   A   .   8    CYS   HB2   .   .   .   8    .   HA    .   .   .   .   .   8    .   HB2   .   .   rr_2moa   1    
+     43    1   .    .   1   1   8    8    CYS   H     H   .   .   .   1   1   8    8    CYS   HB2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   8    CYS   H     .   .   A   .   8    CYS   HB2   .   .   .   8    .   HN    .   .   .   .   .   8    .   HB2   .   .   rr_2moa   1    
+     44    1   .    .   1   1   7    7    ARG   H     H   .   .   .   1   1   8    8    CYS   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   8    CYS   H     .   .   .   7    .   HN    .   .   .   .   .   8    .   HN    .   .   rr_2moa   1    
+     45    1   .    .   1   1   8    8    CYS   H     H   .   .   .   1   1   9    9    ALA   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   8    CYS   H     .   .   A   .   9    ALA   H     .   .   .   8    .   HN    .   .   .   .   .   9    .   HN    .   .   rr_2moa   1    
+     46    1   .    .   1   1   9    9    ALA   H     H   .   .   .   1   1   9    9    ALA   HA    H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   9    ALA   H     .   .   A   .   9    ALA   HA    .   .   .   9    .   HN    .   .   .   .   .   9    .   HB#   .   .   rr_2moa   1    
+     47    1   .    .   1   1   9    9    ALA   HA    H   .   .   .   1   1   12   12   CYS   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   9    ALA   HA    .   .   A   .   12   CYS   H     .   .   .   9    .   HA    .   .   .   .   .   12   .   HN    .   .   rr_2moa   1    
+     48    1   .    .   1   1   10   10   TRP   HA    H   .   .   .   1   1   10   10   TRP   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   10   TRP   HA    .   .   A   .   10   TRP   H     .   .   .   10   .   HA    .   .   .   .   .   10   .   HN    .   .   rr_2moa   1    
+     49    1   .    .   1   1   10   10   TRP   HB3   H   .   .   .   1   1   10   10   TRP   HD1   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   10   TRP   HB3   .   .   A   .   10   TRP   HD1   .   .   .   10   .   HB3   .   .   .   .   .   10   .   HD1   .   .   rr_2moa   1    
+     50    1   .    .   1   1   10   10   TRP   HB3   H   .   .   .   1   1   10   10   TRP   HE3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   10   TRP   HB3   .   .   A   .   10   TRP   HE3   .   .   .   10   .   HB3   .   .   .   .   .   10   .   HE3   .   .   rr_2moa   1    
+     51    1   .    .   1   1   10   10   TRP   H     H   .   .   .   1   1   10   10   TRP   HB3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   10   TRP   HB3   .   .   .   10   .   HN    .   .   .   .   .   10   .   HB3   .   .   rr_2moa   1    
+     52    1   .    .   1   1   10   10   TRP   HD1   H   .   .   .   1   1   10   10   TRP   HB2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   10   TRP   HD1   .   .   A   .   10   TRP   HB2   .   .   .   10   .   HD1   .   .   .   .   .   10   .   HB2   .   .   rr_2moa   1    
+     53    1   .    .   1   1   10   10   TRP   HE3   H   .   .   .   1   1   10   10   TRP   HB2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   10   TRP   HE3   .   .   A   .   10   TRP   HB2   .   .   .   10   .   HE3   .   .   .   .   .   10   .   HB2   .   .   rr_2moa   1    
+     54    1   .    .   1   1   10   10   TRP   HD1   H   .   .   .   1   1   10   10   TRP   HE1   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   10   TRP   HD1   .   .   A   .   10   TRP   HE1   .   .   .   10   .   HD1   .   .   .   .   .   10   .   HE1   .   .   rr_2moa   1    
+     55    1   .    .   1   1   10   10   TRP   HZ3   H   .   .   .   1   1   10   10   TRP   HE3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   10   TRP   HZ3   .   .   A   .   10   TRP   HE3   .   .   .   10   .   HZ3   .   .   .   .   .   10   .   HE3   .   .   rr_2moa   1    
+     56    1   .    .   1   1   9    9    ALA   H     H   .   .   .   1   1   10   10   TRP   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   9    ALA   H     .   .   A   .   10   TRP   H     .   .   .   9    .   HN    .   .   .   .   .   10   .   HN    .   .   rr_2moa   1    
+     57    1   .    .   1   1   10   10   TRP   H     H   .   .   .   1   1   11   11   ARG   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   11   ARG   H     .   .   .   10   .   HN    .   .   .   .   .   11   .   HN    .   .   rr_2moa   1    
+     58    1   .    .   1   1   10   10   TRP   HZ2   H   .   .   .   1   1   10   10   TRP   HE1   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   10   TRP   HZ2   .   .   A   .   10   TRP   HE1   .   .   .   10   .   HZ2   .   .   .   .   .   10   .   HE1   .   .   rr_2moa   1    
+     59    1   .    .   1   1   12   12   CYS   H     H   .   .   .   1   1   11   11   ARG   HA    H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   12   CYS   H     .   .   A   .   11   ARG   HA    .   .   .   12   .   HN    .   .   .   .   .   11   .   HA    .   .   rr_2moa   1    
+     60    1   OR   .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HB2   .   .   .   11   .   HA    .   .   .   .   .   11   .   HB#   .   .   rr_2moa   1    
+     60    2   OR   .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HB3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HB3   .   .   .   11   .   HA    .   .   .   .   .   11   .   HB#   .   .   rr_2moa   1    
+     61    1   OR   .   1   1   11   11   ARG   HB3   H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HB3   .   .   A   .   11   ARG   HD2   .   .   .   11   .   HB#   .   .   .   .   .   11   .   HD#   .   .   rr_2moa   1    
+     61    2   OR   .   1   1   11   11   ARG   HD3   H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HD3   .   .   A   .   11   ARG   HB2   .   .   .   11   .   HD#   .   .   .   .   .   11   .   HB#   .   .   rr_2moa   1    
+     61    3   OR   .   1   1   11   11   ARG   HB3   H   .   .   .   1   1   11   11   ARG   HD3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HB3   .   .   A   .   11   ARG   HD3   .   .   .   11   .   HB#   .   .   .   .   .   11   .   HD#   .   .   rr_2moa   1    
+     61    4   OR   .   1   1   11   11   ARG   HB2   H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HB2   .   .   A   .   11   ARG   HD2   .   .   .   11   .   HB#   .   .   .   .   .   11   .   HD#   .   .   rr_2moa   1    
+     62    1   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HB2   .   .   .   11   .   HN    .   .   .   .   .   11   .   HB#   .   .   rr_2moa   1    
+     62    2   OR   .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HB3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HB3   .   .   .   11   .   HN    .   .   .   .   .   11   .   HB#   .   .   rr_2moa   1    
+     63    1   OR   .   1   1   11   11   ARG   HE    H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HE    .   .   A   .   11   ARG   HD2   .   .   .   11   .   HE    .   .   .   .   .   11   .   HD#   .   .   rr_2moa   1    
+     63    2   OR   .   1   1   11   11   ARG   HD3   H   .   .   .   1   1   11   11   ARG   HE    H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HD3   .   .   A   .   11   ARG   HE    .   .   .   11   .   HD#   .   .   .   .   .   11   .   HE    .   .   rr_2moa   1    
+     64    1   OR   .   1   1   11   11   ARG   HG3   H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HG3   .   .   A   .   11   ARG   HB2   .   .   .   11   .   HG3   .   .   .   .   .   11   .   HB#   .   .   rr_2moa   1    
+     64    2   OR   .   1   1   11   11   ARG   HB3   H   .   .   .   1   1   11   11   ARG   HG3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HB3   .   .   A   .   11   ARG   HG3   .   .   .   11   .   HB#   .   .   .   .   .   11   .   HG3   .   .   rr_2moa   1    
+     65    1   OR   .   1   1   11   11   ARG   HG3   H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HG3   .   .   A   .   11   ARG   HD2   .   .   .   11   .   HG3   .   .   .   .   .   11   .   HD#   .   .   rr_2moa   1    
+     65    2   OR   .   1   1   11   11   ARG   HD3   H   .   .   .   1   1   11   11   ARG   HG3   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HD3   .   .   A   .   11   ARG   HG3   .   .   .   11   .   HD#   .   .   .   .   .   11   .   HG3   .   .   rr_2moa   1    
+     66    1   OR   .   1   1   11   11   ARG   HG2   H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HG2   .   .   A   .   11   ARG   HB2   .   .   .   11   .   HG2   .   .   .   .   .   11   .   HB#   .   .   rr_2moa   1    
+     66    2   OR   .   1   1   11   11   ARG   HB3   H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HB3   .   .   A   .   11   ARG   HG2   .   .   .   11   .   HB#   .   .   .   .   .   11   .   HG2   .   .   rr_2moa   1    
+     67    1   OR   .   1   1   11   11   ARG   HG2   H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HG2   .   .   A   .   11   ARG   HD2   .   .   .   11   .   HG2   .   .   .   .   .   11   .   HD#   .   .   rr_2moa   1    
+     67    2   OR   .   1   1   11   11   ARG   HD3   H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   11   ARG   HD3   .   .   A   .   11   ARG   HG2   .   .   .   11   .   HD#   .   .   .   .   .   11   .   HG2   .   .   rr_2moa   1    
+     68    1   .    .   1   1   12   12   CYS   H     H   .   .   .   1   1   11   11   ARG   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   12   CYS   H     .   .   A   .   11   ARG   H     .   .   .   12   .   HN    .   .   .   .   .   11   .   HN    .   .   rr_2moa   1    
+     69    1   .    .   1   1   12   12   CYS   HB3   H   .   .   .   1   1   12   12   CYS   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   12   CYS   HB3   .   .   A   .   12   CYS   H     .   .   .   12   .   HB3   .   .   .   .   .   12   .   HN    .   .   rr_2moa   1    
+     70    1   .    .   1   1   12   12   CYS   HB2   H   .   .   .   1   1   12   12   CYS   H     H   .   .   .   .   .   3.10   1.8   3.5   .   .   .   .   .   A   .   12   CYS   HB2   .   .   A   .   12   CYS   H     .   .   .   12   .   HB2   .   .   .   .   .   12   .   HN    .   .   rr_2moa   1    
+     71    1   .    .   1   1   3    3    ALA   HA    H   .   .   .   1   1   5    5    ASP   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   3    ALA   HA    .   .   A   .   5    ASP   H     .   .   .   3    .   HB#   .   .   .   .   .   5    .   HN    .   .   rr_2moa   1    
+     72    1   .    .   1   1   4    4    SER   HB3   H   .   .   .   1   1   3    3    ALA   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   4    SER   HB3   .   .   A   .   3    ALA   H     .   .   .   4    .   HB3   .   .   .   .   .   3    .   HN    .   .   rr_2moa   1    
+     73    1   .    .   1   1   4    4    SER   HB3   H   .   .   .   1   1   4    4    SER   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   4    SER   HB3   .   .   A   .   4    SER   HA    .   .   .   4    .   HB3   .   .   .   .   .   4    .   HA    .   .   rr_2moa   1    
+     74    1   .    .   1   1   4    4    SER   HB3   H   .   .   .   1   1   5    5    ASP   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   4    SER   HB3   .   .   A   .   5    ASP   H     .   .   .   4    .   HB3   .   .   .   .   .   5    .   HN    .   .   rr_2moa   1    
+     75    1   .    .   1   1   3    3    ALA   H     H   .   .   .   1   1   4    4    SER   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   3    ALA   H     .   .   A   .   4    SER   H     .   .   .   3    .   HN    .   .   .   .   .   4    .   HN    .   .   rr_2moa   1    
+     76    1   .    .   1   1   5    5    ASP   H     H   .   .   .   1   1   5    5    ASP   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   5    ASP   HA    .   .   .   5    .   HN    .   .   .   .   .   5    .   HA    .   .   rr_2moa   1    
+     77    1   .    .   1   1   5    5    ASP   HB3   H   .   .   .   1   1   4    4    SER   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   5    ASP   HB3   .   .   A   .   4    SER   H     .   .   .   5    .   HB3   .   .   .   .   .   4    .   HN    .   .   rr_2moa   1    
+     78    1   .    .   1   1   5    5    ASP   HB3   H   .   .   .   1   1   6    6    PRO   HD3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   5    ASP   HB3   .   .   A   .   6    PRO   HD3   .   .   .   5    .   HB3   .   .   .   .   .   6    .   HD3   .   .   rr_2moa   1    
+     79    1   .    .   1   1   5    5    ASP   HB3   H   .   .   .   1   1   6    6    PRO   HD2   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   5    ASP   HB3   .   .   A   .   6    PRO   HD2   .   .   .   5    .   HB3   .   .   .   .   .   6    .   HD2   .   .   rr_2moa   1    
+     80    1   .    .   1   1   5    5    ASP   HB2   H   .   .   .   1   1   3    3    ALA   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   5    ASP   HB2   .   .   A   .   3    ALA   H     .   .   .   5    .   HB2   .   .   .   .   .   3    .   HN    .   .   rr_2moa   1    
+     81    1   .    .   1   1   5    5    ASP   H     H   .   .   .   1   1   6    6    PRO   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   6    PRO   HA    .   .   .   5    .   HN    .   .   .   .   .   6    .   HA    .   .   rr_2moa   1    
+     82    1   .    .   1   1   6    6    PRO   HA    H   .   .   .   1   1   7    7    ARG   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   6    PRO   HA    .   .   A   .   7    ARG   H     .   .   .   6    .   HA    .   .   .   .   .   7    .   HN    .   .   rr_2moa   1    
+     83    1   .    .   1   1   6    6    PRO   HB2   H   .   .   .   1   1   6    6    PRO   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   6    PRO   HB2   .   .   A   .   6    PRO   HA    .   .   .   6    .   HB2   .   .   .   .   .   6    .   HA    .   .   rr_2moa   1    
+     84    1   .    .   1   1   6    6    PRO   HB2   H   .   .   .   1   1   6    6    PRO   HD3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   6    PRO   HB2   .   .   A   .   6    PRO   HD3   .   .   .   6    .   HB2   .   .   .   .   .   6    .   HD3   .   .   rr_2moa   1    
+     85    1   .    .   1   1   6    6    PRO   HB2   H   .   .   .   1   1   6    6    PRO   HD2   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   6    PRO   HB2   .   .   A   .   6    PRO   HD2   .   .   .   6    .   HB2   .   .   .   .   .   6    .   HD2   .   .   rr_2moa   1    
+     86    1   .    .   1   1   5    5    ASP   H     H   .   .   .   1   1   6    6    PRO   HD3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   6    PRO   HD3   .   .   .   5    .   HN    .   .   .   .   .   6    .   HD3   .   .   rr_2moa   1    
+     87    1   .    .   1   1   5    5    ASP   H     H   .   .   .   1   1   6    6    PRO   HD2   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   6    PRO   HD2   .   .   .   5    .   HN    .   .   .   .   .   6    .   HD2   .   .   rr_2moa   1    
+     88    1   .    .   1   1   6    6    PRO   HD2   H   .   .   .   1   1   7    7    ARG   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   6    PRO   HD2   .   .   A   .   7    ARG   H     .   .   .   6    .   HD2   .   .   .   .   .   7    .   HN    .   .   rr_2moa   1    
+     89    1   OR   .   1   1   6    6    PRO   HA    H   .   .   .   1   1   6    6    PRO   HG2   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   6    PRO   HA    .   .   A   .   6    PRO   HG2   .   .   .   6    .   HA    .   .   .   .   .   6    .   HG#   .   .   rr_2moa   1    
+     89    2   OR   .   1   1   6    6    PRO   HG3   H   .   .   .   1   1   6    6    PRO   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   6    PRO   HG3   .   .   A   .   6    PRO   HA    .   .   .   6    .   HG#   .   .   .   .   .   6    .   HA    .   .   rr_2moa   1    
+     90    1   .    .   1   1   7    7    ARG   HA    H   .   .   .   1   1   8    8    CYS   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   7    ARG   HA    .   .   A   .   8    CYS   H     .   .   .   7    .   HA    .   .   .   .   .   8    .   HN    .   .   rr_2moa   1    
+     91    1   .    .   1   1   7    7    ARG   HB3   H   .   .   .   1   1   7    7    ARG   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   7    ARG   HB3   .   .   A   .   7    ARG   HA    .   .   .   7    .   HB3   .   .   .   .   .   7    .   HA    .   .   rr_2moa   1    
+     92    1   .    .   1   1   7    7    ARG   HB3   H   .   .   .   1   1   8    8    CYS   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   7    ARG   HB3   .   .   A   .   8    CYS   H     .   .   .   7    .   HB3   .   .   .   .   .   8    .   HN    .   .   rr_2moa   1    
+     93    1   .    .   1   1   7    7    ARG   HB2   H   .   .   .   1   1   7    7    ARG   HE    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   7    ARG   HB2   .   .   A   .   7    ARG   HE    .   .   .   7    .   HB2   .   .   .   .   .   7    .   HE    .   .   rr_2moa   1    
+     94    1   .    .   1   1   7    7    ARG   HB2   H   .   .   .   1   1   8    8    CYS   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   7    ARG   HB2   .   .   A   .   8    CYS   H     .   .   .   7    .   HB2   .   .   .   .   .   8    .   HN    .   .   rr_2moa   1    
+     95    1   .    .   1   1   7    7    ARG   HD3   H   .   .   .   1   1   7    7    ARG   HE    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   7    ARG   HD3   .   .   A   .   7    ARG   HE    .   .   .   7    .   HD3   .   .   .   .   .   7    .   HE    .   .   rr_2moa   1    
+     96    1   .    .   1   1   7    7    ARG   H     H   .   .   .   1   1   7    7    ARG   HD3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   7    ARG   HD3   .   .   .   7    .   HN    .   .   .   .   .   7    .   HD3   .   .   rr_2moa   1    
+     97    1   .    .   1   1   7    7    ARG   HD2   H   .   .   .   1   1   7    7    ARG   HE    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   7    ARG   HD2   .   .   A   .   7    ARG   HE    .   .   .   7    .   HD2   .   .   .   .   .   7    .   HE    .   .   rr_2moa   1    
+     98    1   .    .   1   1   7    7    ARG   H     H   .   .   .   1   1   7    7    ARG   HD2   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   7    ARG   HD2   .   .   .   7    .   HN    .   .   .   .   .   7    .   HD2   .   .   rr_2moa   1    
+     99    1   .    .   1   1   7    7    ARG   H     H   .   .   .   1   1   7    7    ARG   HE    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   7    ARG   HE    .   .   .   7    .   HN    .   .   .   .   .   7    .   HE    .   .   rr_2moa   1    
+     100   1   .    .   1   1   8    8    CYS   HA    H   .   .   .   1   1   10   10   TRP   HD1   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   8    CYS   HA    .   .   A   .   10   TRP   HD1   .   .   .   8    .   HA    .   .   .   .   .   10   .   HD1   .   .   rr_2moa   1    
+     101   1   .    .   1   1   7    7    ARG   H     H   .   .   .   1   1   8    8    CYS   HB3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   7    ARG   H     .   .   A   .   8    CYS   HB3   .   .   .   7    .   HN    .   .   .   .   .   8    .   HB3   .   .   rr_2moa   1    
+     102   1   .    .   1   1   8    8    CYS   HB3   H   .   .   .   1   1   9    9    ALA   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   8    CYS   HB3   .   .   A   .   9    ALA   HA    .   .   .   8    .   HB3   .   .   .   .   .   9    .   HA    .   .   rr_2moa   1    
+     103   1   .    .   1   1   8    8    CYS   HA    H   .   .   .   1   1   12   12   CYS   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   8    CYS   HA    .   .   A   .   12   CYS   H     .   .   .   8    .   HA    .   .   .   .   .   12   .   HN    .   .   rr_2moa   1    
+     104   1   .    .   1   1   9    9    ALA   H     H   .   .   .   1   1   9    9    ALA   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   9    ALA   H     .   .   A   .   9    ALA   HA    .   .   .   9    .   HN    .   .   .   .   .   9    .   HA    .   .   rr_2moa   1    
+     105   1   .    .   1   1   9    9    ALA   HA    H   .   .   .   1   1   10   10   TRP   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   9    ALA   HA    .   .   A   .   10   TRP   H     .   .   .   9    .   HA    .   .   .   .   .   10   .   HN    .   .   rr_2moa   1    
+     106   1   .    .   1   1   9    9    ALA   HA    H   .   .   .   1   1   12   12   CYS   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   9    ALA   HA    .   .   A   .   12   CYS   H     .   .   .   9    .   HA    .   .   .   .   .   12   .   HN    .   .   rr_2moa   1    
+     107   1   .    .   1   1   5    5    ASP   H     H   .   .   .   1   1   9    9    ALA   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   9    ALA   HA    .   .   .   5    .   HN    .   .   .   .   .   9    .   HB#   .   .   rr_2moa   1    
+     108   1   .    .   1   1   6    6    PRO   HA    H   .   .   .   1   1   9    9    ALA   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   6    PRO   HA    .   .   A   .   9    ALA   HA    .   .   .   6    .   HA    .   .   .   .   .   9    .   HB#   .   .   rr_2moa   1    
+     109   1   .    .   1   1   6    6    PRO   HD2   H   .   .   .   1   1   9    9    ALA   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   6    PRO   HD2   .   .   A   .   9    ALA   HA    .   .   .   6    .   HD2   .   .   .   .   .   9    .   HB#   .   .   rr_2moa   1    
+     110   1   .    .   1   1   9    9    ALA   HA    H   .   .   .   1   1   10   10   TRP   HD1   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   9    ALA   HA    .   .   A   .   10   TRP   HD1   .   .   .   9    .   HB#   .   .   .   .   .   10   .   HD1   .   .   rr_2moa   1    
+     111   1   .    .   1   1   9    9    ALA   HA    H   .   .   .   1   1   10   10   TRP   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   9    ALA   HA    .   .   A   .   10   TRP   H     .   .   .   9    .   HB#   .   .   .   .   .   10   .   HN    .   .   rr_2moa   1    
+     112   1   .    .   1   1   10   10   TRP   HA    H   .   .   .   1   1   10   10   TRP   HD1   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   10   TRP   HA    .   .   A   .   10   TRP   HD1   .   .   .   10   .   HA    .   .   .   .   .   10   .   HD1   .   .   rr_2moa   1    
+     113   1   .    .   1   1   10   10   TRP   HA    H   .   .   .   1   1   10   10   TRP   HE3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   10   TRP   HA    .   .   A   .   10   TRP   HE3   .   .   .   10   .   HA    .   .   .   .   .   10   .   HE3   .   .   rr_2moa   1    
+     114   1   .    .   1   1   10   10   TRP   HA    H   .   .   .   1   1   11   11   ARG   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   10   TRP   HA    .   .   A   .   11   ARG   H     .   .   .   10   .   HA    .   .   .   .   .   11   .   HN    .   .   rr_2moa   1    
+     115   1   .    .   1   1   10   10   TRP   HB3   H   .   .   .   1   1   11   11   ARG   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   10   TRP   HB3   .   .   A   .   11   ARG   H     .   .   .   10   .   HB3   .   .   .   .   .   11   .   HN    .   .   rr_2moa   1    
+     116   1   .    .   1   1   10   10   TRP   H     H   .   .   .   1   1   10   10   TRP   HB2   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   10   TRP   HB2   .   .   .   10   .   HN    .   .   .   .   .   10   .   HB2   .   .   rr_2moa   1    
+     117   1   .    .   1   1   10   10   TRP   HB2   H   .   .   .   1   1   11   11   ARG   H     H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   10   TRP   HB2   .   .   A   .   11   ARG   H     .   .   .   10   .   HB2   .   .   .   .   .   11   .   HN    .   .   rr_2moa   1    
+     118   1   .    .   1   1   10   10   TRP   H     H   .   .   .   1   1   10   10   TRP   HD1   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   10   TRP   HD1   .   .   .   10   .   HN    .   .   .   .   .   10   .   HD1   .   .   rr_2moa   1    
+     119   1   .    .   1   1   12   12   CYS   H     H   .   .   .   1   1   10   10   TRP   HE3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   12   CYS   H     .   .   A   .   10   TRP   HE3   .   .   .   12   .   HN    .   .   .   .   .   10   .   HE3   .   .   rr_2moa   1    
+     120   1   .    .   1   1   10   10   TRP   HZ2   H   .   .   .   1   1   10   10   TRP   HZ3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   10   TRP   HZ2   .   .   A   .   10   TRP   HZ3   .   .   .   10   .   HZ2   .   .   .   .   .   10   .   HZ3   .   .   rr_2moa   1    
+     121   1   .    .   1   1   10   10   TRP   HE3   H   .   .   .   1   1   11   11   ARG   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   10   TRP   HE3   .   .   A   .   11   ARG   HA    .   .   .   10   .   HE3   .   .   .   .   .   11   .   HA    .   .   rr_2moa   1    
+     122   1   .    .   1   1   11   11   ARG   H     H   .   .   .   1   1   11   11   ARG   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   11   ARG   H     .   .   A   .   11   ARG   HA    .   .   .   11   .   HN    .   .   .   .   .   11   .   HA    .   .   rr_2moa   1    
+     123   1   OR   .   1   1   10   10   TRP   HE3   H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   10   TRP   HE3   .   .   A   .   11   ARG   HB2   .   .   .   10   .   HE3   .   .   .   .   .   11   .   HB#   .   .   rr_2moa   1    
+     123   2   OR   .   1   1   10   10   TRP   HE3   H   .   .   .   1   1   11   11   ARG   HB3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   10   TRP   HE3   .   .   A   .   11   ARG   HB3   .   .   .   10   .   HE3   .   .   .   .   .   11   .   HB#   .   .   rr_2moa   1    
+     124   1   OR   .   1   1   11   11   ARG   HE    H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   11   ARG   HE    .   .   A   .   11   ARG   HB2   .   .   .   11   .   HE    .   .   .   .   .   11   .   HB#   .   .   rr_2moa   1    
+     124   2   OR   .   1   1   11   11   ARG   HB3   H   .   .   .   1   1   11   11   ARG   HE    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   11   ARG   HB3   .   .   A   .   11   ARG   HE    .   .   .   11   .   HB#   .   .   .   .   .   11   .   HE    .   .   rr_2moa   1    
+     125   1   OR   .   1   1   12   12   CYS   H     H   .   .   .   1   1   11   11   ARG   HB2   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   12   CYS   H     .   .   A   .   11   ARG   HB2   .   .   .   12   .   HN    .   .   .   .   .   11   .   HB#   .   .   rr_2moa   1    
+     125   2   OR   .   1   1   12   12   CYS   H     H   .   .   .   1   1   11   11   ARG   HB3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   12   CYS   H     .   .   A   .   11   ARG   HB3   .   .   .   12   .   HN    .   .   .   .   .   11   .   HB#   .   .   rr_2moa   1    
+     126   1   OR   .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HD2   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HD2   .   .   .   11   .   HA    .   .   .   .   .   11   .   HD#   .   .   rr_2moa   1    
+     126   2   OR   .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HD3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HD3   .   .   .   11   .   HA    .   .   .   .   .   11   .   HD#   .   .   rr_2moa   1    
+     127   1   .    .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HG3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HG3   .   .   .   11   .   HA    .   .   .   .   .   11   .   HG3   .   .   rr_2moa   1    
+     128   1   .    .   1   1   11   11   ARG   HE    H   .   .   .   1   1   11   11   ARG   HG3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   11   ARG   HE    .   .   A   .   11   ARG   HG3   .   .   .   11   .   HE    .   .   .   .   .   11   .   HG3   .   .   rr_2moa   1    
+     129   1   .    .   1   1   11   11   ARG   HA    H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   11   ARG   HA    .   .   A   .   11   ARG   HG2   .   .   .   11   .   HA    .   .   .   .   .   11   .   HG2   .   .   rr_2moa   1    
+     130   1   .    .   1   1   11   11   ARG   HE    H   .   .   .   1   1   11   11   ARG   HG2   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   11   ARG   HE    .   .   A   .   11   ARG   HG2   .   .   .   11   .   HE    .   .   .   .   .   11   .   HG2   .   .   rr_2moa   1    
+     131   1   .    .   1   1   12   12   CYS   H     H   .   .   .   1   1   12   12   CYS   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   12   CYS   H     .   .   A   .   12   CYS   HA    .   .   .   12   .   HN    .   .   .   .   .   12   .   HA    .   .   rr_2moa   1    
+     132   1   .    .   1   1   3    3    ALA   HA    H   .   .   .   1   1   12   12   CYS   HB3   H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   3    ALA   HA    .   .   A   .   12   CYS   HB3   .   .   .   3    .   HA    .   .   .   .   .   12   .   HB3   .   .   rr_2moa   1    
+     133   1   .    .   1   1   12   12   CYS   HB3   H   .   .   .   1   1   12   12   CYS   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   12   CYS   HB3   .   .   A   .   12   CYS   HA    .   .   .   12   .   HB3   .   .   .   .   .   12   .   HA    .   .   rr_2moa   1    
+     134   1   .    .   1   1   12   12   CYS   HB2   H   .   .   .   1   1   12   12   CYS   HA    H   .   .   .   .   .   4.50   1.8   5.5   .   .   .   .   .   A   .   12   CYS   HB2   .   .   A   .   12   CYS   HA    .   .   .   12   .   HB2   .   .   .   .   .   12   .   HA    .   .   rr_2moa   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint_conv_err.ID
+      _Gen_dist_constraint_conv_err.Gen_dist_constraint_parse_file_ID
+      _Gen_dist_constraint_conv_err.Parse_file_constraint_ID
+      _Gen_dist_constraint_conv_err.Conv_error_type
+      _Gen_dist_constraint_conv_err.Conv_error_note
+      _Gen_dist_constraint_conv_err.Entry_ID
+      _Gen_dist_constraint_conv_err.Gen_dist_constraint_list_ID
+
+     1    2   1     1   "Not handling restraint 1, item 1, resonance(s) ' .2.HB3' (nmrStar names),' .2.HB2' (nmrStar names) not linked"    rr_2moa   1    
+     2    2   2     1   "Not handling restraint 2, item 1, resonance(s) ' .2.HD3' (nmrStar names),' .2.HD2' (nmrStar names) not linked"    rr_2moa   1    
+     3    2   3     1   "Not handling restraint 3, item 1, resonance(s) ' .2.HD2' (nmrStar names),' .2.HG' (nmrStar names) not linked"     rr_2moa   1    
+     4    2   11    1   "Not handling restraint 11, item 1, resonance(s) ' .7.HG#' (nmrStar names) not linked"                             rr_2moa   1    
+     5    2   12    1   "Not handling restraint 12, item 1, resonance(s) ' .7.HG#' (nmrStar names) not linked"                             rr_2moa   1    
+     6    2   16    1   "Not handling restraint 16, item 1, resonance(s) ' .2.HB3' (nmrStar names),' .2.HD3' (nmrStar names) not linked"   rr_2moa   1    
+     7    2   17    1   "Not handling restraint 17, item 1, resonance(s) ' .2.HB3' (nmrStar names),' .2.HD2' (nmrStar names) not linked"   rr_2moa   1    
+     8    2   18    1   "Not handling restraint 18, item 1, resonance(s) ' .2.HB3' (nmrStar names),' .2.HG' (nmrStar names) not linked"    rr_2moa   1    
+     9    2   19    1   "Not handling restraint 19, item 1, resonance(s) ' .2.HB2' (nmrStar names),' .2.HA' (nmrStar names) not linked"    rr_2moa   1    
+     10   2   20    1   "Not handling restraint 20, item 1, resonance(s) ' .2.HB2' (nmrStar names),' .2.HD3' (nmrStar names) not linked"   rr_2moa   1    
+     11   2   21    1   "Not handling restraint 21, item 1, resonance(s) ' .2.HB2' (nmrStar names),' .2.HD2' (nmrStar names) not linked"   rr_2moa   1    
+     12   2   22    1   "Not handling restraint 22, item 1, resonance(s) ' .2.HB2' (nmrStar names),' .2.HG' (nmrStar names) not linked"    rr_2moa   1    
+     13   2   23    1   "Not handling restraint 23, item 1, resonance(s) ' .2.HB2' (nmrStar names) not linked"                             rr_2moa   1    
+     14   2   24    1   "Not handling restraint 24, item 1, resonance(s) ' .2.HD3' (nmrStar names),' .2.HG' (nmrStar names) not linked"    rr_2moa   1    
+     15   2   53    1   "Not handling restraint 53, item 1, resonance(s) ' .7.HG#' (nmrStar names) not linked"                             rr_2moa   1    
+     16   2   54    1   "Not handling restraint 54, item 1, resonance(s) ' .7.HG#' (nmrStar names) not linked"                             rr_2moa   1    
+     17   2   55    1   "Not handling restraint 55, item 1, resonance(s) ' .7.HG#' (nmrStar names) not linked"                             rr_2moa   1    
+     18   2   56    1   "Not handling restraint 56, item 1, resonance(s) ' .7.HG#' (nmrStar names) not linked"                             rr_2moa   1    
+     19   2   57    1   "Not handling restraint 57, item 1, resonance(s) ' .7.HG#' (nmrStar names) not linked"                             rr_2moa   1    
+     20   2   92    1   "Not handling restraint 92, item 1, resonance(s) ' .2.HA' (nmrStar names) not linked"                              rr_2moa   1    
+     21   2   93    1   "Not handling restraint 93, item 1, resonance(s) ' .2.HB3' (nmrStar names),' .2.HA' (nmrStar names) not linked"    rr_2moa   1    
+     22   2   94    1   "Not handling restraint 94, item 1, resonance(s) ' .2.HB3' (nmrStar names) not linked"                             rr_2moa   1    
+     23   2   95    1   "Not handling restraint 95, item 1, resonance(s) ' .2.HB3' (nmrStar names) not linked"                             rr_2moa   1    
+     24   2   96    1   "Not handling restraint 96, item 1, resonance(s) ' .2.HB3' (nmrStar names) not linked"                             rr_2moa   1    
+     25   2   97    1   "Not handling restraint 97, item 1, resonance(s) ' .2.HB2' (nmrStar names) not linked"                             rr_2moa   1    
+     26   2   98    1   "Not handling restraint 98, item 1, resonance(s) ' .2.HD3' (nmrStar names),' .2.HA' (nmrStar names) not linked"    rr_2moa   1    
+     27   2   99    1   "Not handling restraint 99, item 1, resonance(s) ' .2.HD2' (nmrStar names) not linked"                             rr_2moa   1    
+     28   2   129   1   "Not handling restraint 129, item 1, resonance(s) ' .7.HG#' (nmrStar names) not linked"                            rr_2moa   1    
+
+   stop_
+
+save_
+
+save_MR_file_comment_1
+   _Org_constr_file_comment.Sf_framecode        MR_file_comment_1
+   _Org_constr_file_comment.Sf_category         org_constr_file_comment
+   _Org_constr_file_comment.Entry_ID            rr_2moa
+   _Org_constr_file_comment.ID                  1
+   _Org_constr_file_comment.Constraint_file_ID  1
+   _Org_constr_file_comment.Block_ID            1
+   _Org_constr_file_comment.Details             'Generated by Wattos'
+   _Org_constr_file_comment.Comment             '*HEADER TOXIN 24-APR-14 2MOA *TITLE SOLUTION NMR STRUCTURE OF PEPTIDE IMI1 (PEAK 2) *COMPND MOL_ID: 1; *COMPND 2 MOLECULE: ALPHA-CONOTOXIN IMI; *COMPND 3 CHAIN: A; *COMPND 4 FRAGMENT: UNP RESIDUES 5-16; *COMPND 5 SYNONYM: ALPHA-CTX IMI; *COMPND 6 ENGINEERED: YES; *COMPND 7 MUTATION: YES *SOURCE MOL_ID: 1; *SOURCE 2 SYNTHETIC: YES; *SOURCE 3 ORGANISM_SCIENTIFIC: CONUS IMPERIALIS; *SOURCE 4 ORGANISM_COMMON: IMPERIAL CONE; *SOURCE 5 ORGANISM_TAXID: 35631 *KEYWDS DITHIOL AMINO ACID, CONOTOXIN, BICYCLIC PEPTIDE, MACROCYCLE, PHAGE *KEYWDS 2 DISPLAY, TOXIN *EXPDTA SOLUTION NMR *NUMMDL 20 *AUTHOR C.HEINIS, S.CHEN *REVDAT 1 24-SEP-14 2MOA 0'
+
+save_

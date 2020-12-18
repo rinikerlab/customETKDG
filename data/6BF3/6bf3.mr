@@ -1,0 +1,1125 @@
+*HEADER    DE NOVO PROTEIN                         25-OCT-17   6BF3              
+*TITLE     SOLUTION STRUCTURE OF DE NOVO MACROCYCLE DESIGN7.3A                   
+*COMPND    MOL_ID: 1;                                                            
+*COMPND   2 MOLECULE: QDP(DPR)K(2TL)(DAS);                                       
+*COMPND   3 CHAIN: A;                                                            
+*COMPND   4 ENGINEERED: YES                                                      
+*SOURCE    MOL_ID: 1;                                                            
+*SOURCE   2 SYNTHETIC: YES;                                                      
+*SOURCE   3 ORGANISM_SCIENTIFIC: HOMO SAPIENS;                                   
+*SOURCE   4 ORGANISM_TAXID: 9606                                                 
+*KEYWDS    MACROCYCLE, DE NOVO, DE NOVO PROTEIN                                  
+*EXPDTA    SOLUTION NMR                                                          
+*NUMMDL    20                                                                    
+*AUTHOR    M.D.SHORTRIDGE,P.HOSSEINZADEH,F.PARDO-AVILA,G.VARANI,D.BAKER          
+*REVDAT   1   10-JAN-18 6BF3    0                                                
+# Restraints file 1: survivor_1_noe.tbl
+!-------------------------------------------------------------------------!
+!NOE Table for Surivivor_1 peptide !
+!Updated 041317 mds
+!Survivor_1, 9mer GLN ASP PRO pro LYS thr asp
+!Upper case L-Amino Acid
+!Lower case D-Amino Acid
+!
+!! NOE binning !!
+!strong     2.5 0.7 0.7
+!medium     3.5 1.2 1.2
+!weak       4.5 1.6 1.6
+!very weak  5.0 2.0 2.0
+
+!TOTAL NOES                    = 66
+!long range          (j-i >6)  = 0
+!short range    (2 > j-i < 5)  = 12
+!sequential          (i to j)  = 16
+!intraresidue        (i to i)  = 38
+
+!------------------------------------------------------------!
+ assign ( resid  2 and name HN   ) ( resid  6 and name HN   ) 3.5 1.2 1.2
+ assign ( resid  2 and name HN   ) ( resid  7 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  5 and name HN   ) ( resid  6 and name HN   ) 3.5 1.2 1.2
+ assign ( resid  6 and name HB   ) ( resid  7 and name HN   ) 3.5 1.2 1.2
+ assign ( resid  7 and name HA   ) ( resid  7 and name HN   ) 3.5 1.2 1.2
+ assign ( resid  7 and name HA   ) ( resid  7 and name HN   ) 3.5 1.2 1.2
+ assign ( resid  7 and name HA   ) ( resid  7 and name HN   ) 3.5 1.2 1.2
+ assign ( resid  7 and name HB#  ) ( resid  7 and name HN   ) 3.5 1.2 1.2
+ assign ( resid  2 and name HA   ) ( resid  2 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  2 and name HB2  ) ( resid  2 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  2 and name HB2  ) ( resid  6 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  2 and name HB1  ) ( resid  2 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  2 and name HB1  ) ( resid  6 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  3 and name HA   ) ( resid  5 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  3 and name HB2  ) ( resid  2 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  3 and name HD2  ) ( resid  2 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  3 and name HD2  ) ( resid  3 and name HA   ) 4.5 1.6 1.6
+ assign ( resid  3 and name HD2  ) ( resid  3 and name HB2  ) 4.5 1.6 1.6
+ assign ( resid  3 and name HD2  ) ( resid  3 and name HB1  ) 4.5 1.6 1.6
+ assign ( resid  3 and name HD2  ) ( resid  3 and name HG2  ) 3.5 1.2 1.2
+ assign ( resid  3 and name HD2  ) ( resid  3 and name HG1  ) 3.5 1.2 1.2
+ assign ( resid  3 and name HD1  ) ( resid  2 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  3 and name HD1  ) ( resid  3 and name HB2  ) 4.5 1.6 1.6
+ assign ( resid  3 and name HD1  ) ( resid  3 and name HB1  ) 4.5 1.6 1.6
+ assign ( resid  3 and name HD1  ) ( resid  3 and name HG2  ) 4.5 1.6 1.6
+ assign ( resid  3 and name HD1  ) ( resid  3 and name HG1  ) 4.5 1.6 1.6
+ assign ( resid  4 and name HA   ) ( resid  4 and name HB#  ) 3.5 1.2 1.2
+ assign ( resid  4 and name HA   ) ( resid  4 and name HG2  ) 4.5 1.6 1.6
+ assign ( resid  4 and name HA   ) ( resid  4 and name HG1  ) 4.5 1.6 1.6
+ assign ( resid  4 and name HA   ) ( resid  5 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  4 and name HD2  ) ( resid  3 and name HA   ) 4.5 1.6 1.6
+ assign ( resid  4 and name HD2  ) ( resid  3 and name HG2  ) 4.5 1.6 1.6
+ assign ( resid  4 and name HD2  ) ( resid  4 and name HB#  ) 4.5 1.6 1.6
+ assign ( resid  4 and name HD2  ) ( resid  4 and name HG2  ) 4.5 1.6 1.6
+ assign ( resid  4 and name HD2  ) ( resid  4 and name HG1  ) 4.5 1.6 1.6
+ assign ( resid  4 and name HD2  ) ( resid  5 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  4 and name HD2  ) ( resid  6 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  4 and name HD1  ) ( resid  3 and name HA   ) 4.5 1.6 1.6
+ assign ( resid  4 and name HD1  ) ( resid  4 and name HB#  ) 4.5 1.6 1.6
+ assign ( resid  4 and name HD1  ) ( resid  4 and name HG2  ) 4.5 1.6 1.6
+ assign ( resid  4 and name HD1  ) ( resid  4 and name HG1  ) 3.5 1.2 1.2
+ assign ( resid  5 and name HA   ) ( resid  5 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  5 and name HA   ) ( resid  6 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  5 and name HB#  ) ( resid  2 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  5 and name HB#  ) ( resid  5 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  5 and name HB#  ) ( resid  6 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  5 and name HD2  ) ( resid  5 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  5 and name HD1  ) ( resid  5 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  5 and name HE#  ) ( resid  5 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  5 and name HE#  ) ( resid  5 and name HZ#  ) 3.5 1.2 1.2
+ assign ( resid  5 and name HG#  ) ( resid  5 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  5 and name HZ#  ) ( resid  5 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  6 and name HA   ) ( resid  6 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  6 and name HB   ) ( resid  6 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  6 and name HG2# ) ( resid  2 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  6 and name HG2# ) ( resid  4 and name HD2  ) 4.5 1.6 1.6
+ assign ( resid  6 and name HG2# ) ( resid  6 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  6 and name HG2# ) ( resid  7 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  6 and name HG2# ) ( resid  7 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  6 and name HN   ) ( resid  7 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  7 and name HA   ) ( resid  2 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  7 and name HB#  ) ( resid  2 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  7 and name HB#  ) ( resid  6 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  7 and name HB#  ) ( resid  7 and name HN   ) 4.5 1.6 1.6
+! assign ( resid  7 and name HG#  ) ( resid  2 and name HN   ) 4.5 1.6 1.6
+! assign ( resid  7 and name HG#  ) ( resid  7 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  7 and name HA   ) ( resid  2 and name HN   ) 4.5 1.6 1.6
+ assign ( resid  7 and name HB#  ) ( resid  7 and name HN   ) 4.5 1.6 1.6
+  Entry H atom name         Submitted Coord H atom name
+  Start of MODEL    1
+    1    H1   GLN   1           H1       GLN   1  19.980  16.690  20.760
+    2    HA   GLN   1           HA       GLN   1  19.120  14.660  21.010
+    3    HB2  GLN   1           HB2      GLN   1  17.600  15.750  23.390
+    4    HB3  GLN   1           HB1      GLN   1  18.130  14.130  23.180
+    5    HG2  GLN   1           HG2      GLN   1  19.890  16.600  23.470
+    6    HG3  GLN   1           HG1      GLN   1  19.620  15.510  24.750
+    7   HE21  GLN   1          1HE2      GLN   1  20.230  13.210  24.190
+    8   HE22  GLN   1          2HE2      GLN   1  21.670  12.820  23.220
+    9    H    ASP   2           H        ASP   2  17.410  16.330  19.250
+   10    HA   ASP   2           HA       ASP   2  15.250  14.240  19.030
+   11    HB2  ASP   2           HB2      ASP   2  14.270  15.910  20.410
+   12    HB3  ASP   2           HB1      ASP   2  14.730  17.180  19.300
+   13    HA   PRO   3           HA       PRO   3  17.550  15.170  15.620
+   14    HB2  PRO   3           HB2      PRO   3  17.090  13.150  13.750
+   15    HB3  PRO   3           HB1      PRO   3  18.140  13.110  15.180
+   16    HG2  PRO   3           HG2      PRO   3  15.180  12.400  14.860
+   17    HG3  PRO   3           HG1      PRO   3  16.360  11.360  15.620
+   18    HD2  PRO   3           HD2      PRO   3  14.870  12.870  17.340
+   19    HD3  PRO   3           HD1      PRO   3  16.590  12.950  17.630
+   20    HA   DPR   4           HA       DPR   4  15.250  16.620  12.070
+   21    HB2  DPR   4           HB1      DPR   4  17.280  18.370  11.020
+   22    HB3  DPR   4           HB2      DPR   4  17.140  16.720  10.520
+   23    HG2  DPR   4           HG1      DPR   4  18.770  17.820  12.800
+   24    HG3  DPR   4           HG2      DPR   4  19.230  16.740  11.430
+   25    HD2  DPR   4           HD1      DPR   4  18.810  15.780  13.800
+   26    HD3  DPR   4           HD2      DPR   4  17.980  14.880  12.510
+   27    H    LYS   5           H        LYS   5  15.490  17.570  15.000
+   28    HA   LYS   5           HA       LYS   5  14.640  20.240  14.350
+   29    HB2  LYS   5           HB2      LYS   5  14.050  18.590  16.920
+   30    HB3  LYS   5           HB1      LYS   5  13.590  20.220  16.550
+   31    HG2  LYS   5           HG2      LYS   5  11.680  19.520  15.820
+   32    HG3  LYS   5           HG1      LYS   5  12.500  19.030  14.350
+   33    HD2  LYS   5           HD2      LYS   5  12.700  16.750  15.470
+   34    HD3  LYS   5           HD1      LYS   5  11.740  17.350  16.790
+   35    HE2  LYS   5           HE2      LYS   5   9.810  17.840  15.240
+   36    HE3  LYS   5           HE1      LYS   5  10.820  17.300  13.940
+   37    HZ1  LYS   5           HZ1      LYS   5  10.020  15.640  16.190
+   38    HZ2  LYS   5           HZ2      LYS   5  11.090  15.110  15.060
+   39    HZ3  LYS   5           HZ3      LYS   5   9.530  15.440  14.680
+   40    H    DTH   6           H        DTH   6  16.800  18.560  16.670
+   41    HA   DTH   6           HA       DTH   6  17.870  21.060  17.720
+   42    HB   DTH   6           HB       DTH   6  20.260  20.320  17.190
+   43   HG21  DTH   6          1HG2      DTH   6  18.970  19.290  14.580
+   44   HG22  DTH   6          2HG2      DTH   6  19.780  18.230  15.780
+   45   HG23  DTH   6          3HG2      DTH   6  20.670  19.530  15.030
+   46    HG1  DTH   6           HG1      DTH   6  18.690  21.230  15.060
+   47    H    DAS   7           H        DAS   7  18.630  20.790  19.650
+   48    HA   DAS   7           HA       DAS   7  18.980  19.720  21.660
+   49    HB2  DAS   7           HB1      DAS   7  20.920  18.190  19.980
+   50    HB3  DAS   7           HB2      DAS   7  21.040  18.420  21.640
+  Start of MODEL    2
+    1    H1   GLN   1           H1       GLN   1  19.908  16.642  20.932
+    2    HA   GLN   1           HA       GLN   1  19.106  14.676  21.022
+    3    HB2  GLN   1           HB2      GLN   1  17.257  15.501  23.147
+    4    HB3  GLN   1           HB1      GLN   1  18.172  13.925  22.978
+    5    HG2  GLN   1           HG2      GLN   1  19.355  16.545  23.807
+    6    HG3  GLN   1           HG1      GLN   1  18.822  15.341  24.975
+    7   HE21  GLN   1          1HE2      GLN   1  19.534  12.952  24.438
+    8   HE22  GLN   1          2HE2      GLN   1  21.286  12.882  24.117
+    9    H    ASP   2           H        ASP   2  17.253  16.556  19.263
+   10    HA   ASP   2           HA       ASP   2  15.272  14.454  19.033
+   11    HB2  ASP   2           HB2      ASP   2  14.407  16.340  20.285
+   12    HB3  ASP   2           HB1      ASP   2  14.651  17.421  18.862
+   13    HA   PRO   3           HA       PRO   3  17.707  14.918  15.468
+   14    HB2  PRO   3           HB2      PRO   3  17.177  12.690  13.965
+   15    HB3  PRO   3           HB1      PRO   3  17.959  12.685  15.595
+   16    HG2  PRO   3           HG2      PRO   3  15.063  12.302  14.982
+   17    HG3  PRO   3           HG1      PRO   3  16.082  11.198  15.905
+   18    HD2  PRO   3           HD2      PRO   3  14.493  13.035  17.083
+   19    HD3  PRO   3           HD1      PRO   3  16.078  12.753  17.775
+   20    HA   DPR   4           HA       DPR   4  15.485  16.624  11.920
+   21    HB2  DPR   4           HB1      DPR   4  17.803  18.517  12.256
+   22    HB3  DPR   4           HB2      DPR   4  17.172  17.919  10.753
+   23    HG2  DPR   4           HG1      DPR   4  19.388  16.753  11.639
+   24    HG3  DPR   4           HG2      DPR   4  18.039  15.686  11.081
+   25    HD2  DPR   4           HD1      DPR   4  18.700  16.695  13.876
+   26    HD3  DPR   4           HD2      DPR   4  18.625  14.995  13.413
+   27    H    LYS   5           H        LYS   5  16.015  17.684  15.082
+   28    HA   LYS   5           HA       LYS   5  14.672  20.300  14.588
+   29    HB2  LYS   5           HB2      LYS   5  13.854  18.256  16.623
+   30    HB3  LYS   5           HB1      LYS   5  13.216  19.878  16.609
+   31    HG2  LYS   5           HG2      LYS   5  12.213  19.513  14.309
+   32    HG3  LYS   5           HG1      LYS   5  12.777  17.900  14.337
+   33    HD2  LYS   5           HD2      LYS   5  11.531  17.587  16.596
+   34    HD3  LYS   5           HD1      LYS   5  10.650  19.100  16.251
+   35    HE2  LYS   5           HE2      LYS   5   9.926  18.220  14.109
+   36    HE3  LYS   5           HE1      LYS   5  10.874  16.780  14.401
+   37    HZ1  LYS   5           HZ1      LYS   5   8.732  16.311  15.200
+   38    HZ2  LYS   5           HZ2      LYS   5   8.466  17.671  15.879
+   39    HZ3  LYS   5           HZ3      LYS   5   9.498  16.516  16.571
+   40    H    DTH   6           H        DTH   6  17.180  18.612  16.057
+   41    HA   DTH   6           HA       DTH   6  17.734  21.015  17.778
+   42    HB   DTH   6           HB       DTH   6  20.225  20.514  17.279
+   43   HG21  DTH   6          1HG2      DTH   6  20.847  19.639  15.216
+   44   HG22  DTH   6          2HG2      DTH   6  19.107  19.295  14.837
+   45   HG23  DTH   6          3HG2      DTH   6  19.946  18.430  16.207
+   46    HG1  DTH   6           HG1      DTH   6  19.724  22.291  16.154
+   47    H    DAS   7           H        DAS   7  18.552  20.785  19.698
+   48    HA   DAS   7           HA       DAS   7  19.180  19.851  21.542
+   49    HB2  DAS   7           HB1      DAS   7  20.909  18.040  19.944
+   50    HB3  DAS   7           HB2      DAS   7  21.130  18.567  21.549
+  Start of MODEL    3
+    1    H1   GLN   1           H1       GLN   1  19.891  16.846  20.056
+    2    HA   GLN   1           HA       GLN   1  19.453  14.806  20.234
+    3    HB2  GLN   1           HB2      GLN   1  18.466  15.121  22.950
+    4    HB3  GLN   1           HB1      GLN   1  18.684  13.605  22.007
+    5    HG2  GLN   1           HG2      GLN   1  21.063  13.857  21.718
+    6    HG3  GLN   1           HG1      GLN   1  20.988  15.377  22.604
+    7   HE21  GLN   1          1HE2      GLN   1  22.686  12.847  23.032
+    8   HE22  GLN   1          2HE2      GLN   1  22.013  12.227  24.530
+    9    H    ASP   2           H        ASP   2  17.302  16.902  19.327
+   10    HA   ASP   2           HA       ASP   2  15.090  14.900  19.040
+   11    HB2  ASP   2           HB2      ASP   2  14.837  17.228  20.161
+   12    HB3  ASP   2           HB1      ASP   2  15.146  17.822  18.485
+   13    HA   PRO   3           HA       PRO   3  17.229  13.973  15.301
+   14    HB2  PRO   3           HB2      PRO   3  14.473  12.885  14.715
+   15    HB3  PRO   3           HB1      PRO   3  16.086  12.153  14.299
+   16    HG2  PRO   3           HG2      PRO   3  14.641  11.332  16.502
+   17    HG3  PRO   3           HG1      PRO   3  16.439  11.520  16.458
+   18    HD2  PRO   3           HD2      PRO   3  14.135  13.354  17.402
+   19    HD3  PRO   3           HD1      PRO   3  15.749  13.039  18.169
+   20    HA   DPR   4           HA       DPR   4  15.786  16.657  12.000
+   21    HB2  DPR   4           HB1      DPR   4  18.072  18.202  11.664
+   22    HB3  DPR   4           HB2      DPR   4  17.921  16.471  11.113
+   23    HG2  DPR   4           HG1      DPR   4  19.008  17.604  13.652
+   24    HG3  DPR   4           HG2      DPR   4  19.845  16.440  12.595
+   25    HD2  DPR   4           HD1      DPR   4  18.486  15.614  14.828
+   26    HD3  DPR   4           HD2      DPR   4  18.503  14.689  13.311
+   27    H    LYS   5           H        LYS   5  16.110  17.551  15.110
+   28    HA   LYS   5           HA       LYS   5  14.700  20.106  14.442
+   29    HB2  LYS   5           HB2      LYS   5  14.130  18.050  16.471
+   30    HB3  LYS   5           HB1      LYS   5  13.393  19.694  16.484
+   31    HG2  LYS   5           HG2      LYS   5  12.504  19.354  14.216
+   32    HG3  LYS   5           HG1      LYS   5  13.089  17.677  14.160
+   33    HD2  LYS   5           HD2      LYS   5  11.691  17.174  16.049
+   34    HD3  LYS   5           HD1      LYS   5  11.130  18.980  16.113
+   35    HE2  LYS   5           HE2      LYS   5  10.173  18.816  14.040
+   36    HE3  LYS   5           HE1      LYS   5  10.780  17.214  13.681
+   37    HZ1  LYS   5           HZ1      LYS   5   8.527  16.959  14.270
+   38    HZ2  LYS   5           HZ2      LYS   5   8.702  17.919  15.582
+   39    HZ3  LYS   5           HZ3      LYS   5   9.349  16.462  15.615
+   40    H    DTH   6           H        DTH   6  17.296  18.813  16.259
+   41    HA   DTH   6           HA       DTH   6  17.276  21.162  18.068
+   42    HB   DTH   6           HB       DTH   6  19.619  21.681  17.848
+   43   HG21  DTH   6          1HG2      DTH   6  20.699  19.698  17.098
+   44   HG22  DTH   6          2HG2      DTH   6  20.901  20.998  15.931
+   45   HG23  DTH   6          3HG2      DTH   6  19.697  19.647  15.660
+   46    HG1  DTH   6           HG1      DTH   6  18.586  22.918  16.635
+   47    H    DAS   7           H        DAS   7  18.581  20.844  19.922
+   48    HA   DAS   7           HA       DAS   7  18.682  19.754  21.777
+   49    HB2  DAS   7           HB1      DAS   7  21.156  18.551  20.579
+   50    HB3  DAS   7           HB2      DAS   7  20.796  19.052  22.253
+  Start of MODEL    4
+    1    H1   GLN   1           H1       GLN   1  20.005  16.430  20.513
+    2    HA   GLN   1           HA       GLN   1  18.990  14.582  20.775
+    3    HB2  GLN   1           HB2      GLN   1  17.786  15.530  23.378
+    4    HB3  GLN   1           HB1      GLN   1  17.785  13.911  22.665
+    5    HG2  GLN   1           HG2      GLN   1  20.379  14.094  22.676
+    6    HG3  GLN   1           HG1      GLN   1  20.176  15.641  23.463
+    7   HE21  GLN   1          1HE2      GLN   1  21.662  13.615  24.608
+    8   HE22  GLN   1          2HE2      GLN   1  20.728  12.974  25.977
+    9    H    ASP   2           H        ASP   2  17.538  16.560  19.120
+   10    HA   ASP   2           HA       ASP   2  15.046  14.994  18.949
+   11    HB2  ASP   2           HB2      ASP   2  14.688  17.276  19.975
+   12    HB3  ASP   2           HB1      ASP   2  14.950  17.811  18.237
+   13    HA   PRO   3           HA       PRO   3  17.734  14.432  15.272
+   14    HB2  PRO   3           HB2      PRO   3  15.727  12.577  14.414
+   15    HB3  PRO   3           HB1      PRO   3  17.536  12.530  14.551
+   16    HG2  PRO   3           HG2      PRO   3  15.757  11.288  16.490
+   17    HG3  PRO   3           HG1      PRO   3  17.440  11.873  16.780
+   18    HD2  PRO   3           HD2      PRO   3  15.007  13.172  17.652
+   19    HD3  PRO   3           HD1      PRO   3  16.714  13.210  18.246
+   20    HA   DPR   4           HA       DPR   4  15.589  16.482  11.887
+   21    HB2  DPR   4           HB1      DPR   4  17.290  18.498  11.556
+   22    HB3  DPR   4           HB2      DPR   4  17.804  16.829  11.034
+   23    HG2  DPR   4           HG1      DPR   4  18.461  18.420  13.576
+   24    HG3  DPR   4           HG2      DPR   4  19.543  17.367  12.509
+   25    HD2  DPR   4           HD1      DPR   4  18.557  16.321  14.706
+   26    HD3  DPR   4           HD2      DPR   4  18.681  15.371  13.199
+   27    H    LYS   5           H        LYS   5  16.166  17.883  15.004
+   28    HA   LYS   5           HA       LYS   5  14.563  20.286  14.394
+   29    HB2  LYS   5           HB2      LYS   5  13.780  18.099  16.340
+   30    HB3  LYS   5           HB1      LYS   5  13.341  19.825  16.438
+   31    HG2  LYS   5           HG2      LYS   5  12.444  19.540  14.086
+   32    HG3  LYS   5           HG1      LYS   5  12.716  17.816  14.237
+   33    HD2  LYS   5           HD2      LYS   5  11.166  17.839  16.145
+   34    HD3  LYS   5           HD1      LYS   5  10.653  19.567  15.800
+   35    HE2  LYS   5           HE2      LYS   5  10.082  18.879  13.545
+   36    HE3  LYS   5           HE1      LYS   5  10.537  17.288  13.770
+   37    HZ1  LYS   5           HZ1      LYS   5   8.349  18.659  15.328
+   38    HZ2  LYS   5           HZ2      LYS   5   8.697  17.079  15.428
+   39    HZ3  LYS   5           HZ3      LYS   5   8.168  17.624  14.034
+   40    H    DTH   6           H        DTH   6  16.870  18.597  16.482
+   41    HA   DTH   6           HA       DTH   6  17.089  20.808  18.258
+   42    HB   DTH   6           HB       DTH   6  19.477  21.438  17.726
+   43   HG21  DTH   6          1HG2      DTH   6  19.246  19.363  15.428
+   44   HG22  DTH   6          2HG2      DTH   6  20.333  19.260  16.763
+   45   HG23  DTH   6          3HG2      DTH   6  20.627  20.529  15.686
+   46    HG1  DTH   6           HG1      DTH   6  18.196  22.721  16.652
+   47    H    DAS   7           H        DAS   7  18.591  20.693  19.958
+   48    HA   DAS   7           HA       DAS   7  19.408  19.586  21.715
+   49    HB2  DAS   7           HB1      DAS   7  21.002  17.983  19.721
+   50    HB3  DAS   7           HB2      DAS   7  21.383  18.383  21.395
+  Start of MODEL    5
+    1    H1   GLN   1           H1       GLN   1  19.897  16.644  20.217
+    2    HA   GLN   1           HA       GLN   1  19.222  14.579  20.478
+    3    HB2  GLN   1           HB2      GLN   1  18.024  15.322  23.125
+    4    HB3  GLN   1           HB1      GLN   1  18.650  13.697  22.573
+    5    HG2  GLN   1           HG2      GLN   1  20.952  14.654  22.434
+    6    HG3  GLN   1           HG1      GLN   1  20.362  16.053  23.300
+    7   HE21  GLN   1          1HE2      GLN   1  22.044  15.399  24.976
+    8   HE22  GLN   1          2HE2      GLN   1  21.632  14.126  26.086
+    9    H    ASP   2           H        ASP   2  17.642  16.278  19.055
+   10    HA   ASP   2           HA       ASP   2  15.085  14.832  19.072
+   11    HB2  ASP   2           HB2      ASP   2  14.907  17.043  20.351
+   12    HB3  ASP   2           HB1      ASP   2  15.324  17.811  18.938
+   13    HA   PRO   3           HA       PRO   3  17.451  14.203  15.375
+   14    HB2  PRO   3           HB2      PRO   3  14.746  13.129  14.726
+   15    HB3  PRO   3           HB1      PRO   3  16.280  12.548  14.095
+   16    HG2  PRO   3           HG2      PRO   3  15.209  11.329  16.376
+   17    HG3  PRO   3           HG1      PRO   3  16.869  11.805  16.264
+   18    HD2  PRO   3           HD2      PRO   3  14.635  13.278  17.672
+   19    HD3  PRO   3           HD1      PRO   3  16.348  13.196  18.162
+   20    HA   DPR   4           HA       DPR   4  15.620  16.559  11.923
+   21    HB2  DPR   4           HB1      DPR   4  18.105  18.220  12.079
+   22    HB3  DPR   4           HB2      DPR   4  17.320  17.472  10.652
+   23    HG2  DPR   4           HG1      DPR   4  19.457  16.307  11.596
+   24    HG3  DPR   4           HG2      DPR   4  18.081  15.321  11.019
+   25    HD2  DPR   4           HD1      DPR   4  18.857  16.080  13.789
+   26    HD3  DPR   4           HD2      DPR   4  18.247  14.493  13.245
+   27    H    LYS   5           H        LYS   5  16.314  17.880  14.903
+   28    HA   LYS   5           HA       LYS   5  14.641  20.265  14.399
+   29    HB2  LYS   5           HB2      LYS   5  14.034  18.190  16.471
+   30    HB3  LYS   5           HB1      LYS   5  13.330  19.808  16.367
+   31    HG2  LYS   5           HG2      LYS   5  12.290  19.385  14.107
+   32    HG3  LYS   5           HG1      LYS   5  12.907  17.784  14.185
+   33    HD2  LYS   5           HD2      LYS   5  11.629  17.369  16.284
+   34    HD3  LYS   5           HD1      LYS   5  10.880  18.956  16.142
+   35    HE2  LYS   5           HE2      LYS   5   9.910  18.507  14.068
+   36    HE3  LYS   5           HE1      LYS   5  10.737  16.951  13.906
+   37    HZ1  LYS   5           HZ1      LYS   5   8.521  17.703  15.685
+   38    HZ2  LYS   5           HZ2      LYS   5   9.576  16.663  16.284
+   39    HZ3  LYS   5           HZ3      LYS   5   8.705  16.277  14.918
+   40    H    DTH   6           H        DTH   6  16.756  18.587  16.521
+   41    HA   DTH   6           HA       DTH   6  17.579  20.986  17.993
+   42    HB   DTH   6           HB       DTH   6  19.941  21.044  17.313
+   43   HG21  DTH   6          1HG2      DTH   6  20.589  19.987  15.315
+   44   HG22  DTH   6          2HG2      DTH   6  19.124  18.959  15.244
+   45   HG23  DTH   6          3HG2      DTH   6  20.373  18.696  16.546
+   46    HG1  DTH   6           HG1      DTH   6  18.070  21.049  15.186
+   47    H    DAS   7           H        DAS   7  18.596  20.739  19.759
+   48    HA   DAS   7           HA       DAS   7  18.581  19.838  21.641
+   49    HB2  DAS   7           HB1      DAS   7  21.032  18.240  21.102
+   50    HB3  DAS   7           HB2      DAS   7  20.592  19.258  22.446
+  Start of MODEL    6
+    1    H1   GLN   1           H1       GLN   1  19.948  16.747  20.111
+    2    HA   GLN   1           HA       GLN   1  19.326  14.637  20.384
+    3    HB2  GLN   1           HB2      GLN   1  18.329  15.479  23.145
+    4    HB3  GLN   1           HB1      GLN   1  18.480  13.880  22.615
+    5    HG2  GLN   1           HG2      GLN   1  20.264  14.285  23.828
+    6    HG3  GLN   1           HG1      GLN   1  20.951  14.131  22.236
+    7   HE21  GLN   1          1HE2      GLN   1  19.745  16.533  24.840
+    8   HE22  GLN   1          2HE2      GLN   1  20.765  17.798  24.407
+    9    H    ASP   2           H        ASP   2  17.567  16.428  19.048
+   10    HA   ASP   2           HA       ASP   2  15.191  14.768  19.175
+   11    HB2  ASP   2           HB2      ASP   2  14.681  16.940  20.343
+   12    HB3  ASP   2           HB1      ASP   2  15.082  17.763  18.767
+   13    HA   PRO   3           HA       PRO   3  17.158  14.061  15.489
+   14    HB2  PRO   3           HB2      PRO   3  14.444  13.019  14.679
+   15    HB3  PRO   3           HB1      PRO   3  16.059  12.485  14.119
+   16    HG2  PRO   3           HG2      PRO   3  14.945  11.406  16.372
+   17    HG3  PRO   3           HG1      PRO   3  16.727  11.850  16.299
+   18    HD2  PRO   3           HD2      PRO   3  14.313  13.175  17.559
+   19    HD3  PRO   3           HD1      PRO   3  15.891  13.084  18.167
+   20    HA   DPR   4           HA       DPR   4  16.012  16.623  11.907
+   21    HB2  DPR   4           HB1      DPR   4  18.251  18.251  11.714
+   22    HB3  DPR   4           HB2      DPR   4  18.301  16.564  11.242
+   23    HG2  DPR   4           HG1      DPR   4  19.194  17.813  13.801
+   24    HG3  DPR   4           HG2      DPR   4  20.054  16.590  12.824
+   25    HD2  DPR   4           HD1      DPR   4  18.512  16.037  15.049
+   26    HD3  DPR   4           HD2      DPR   4  18.679  14.941  13.755
+   27    H    LYS   5           H        LYS   5  15.830  17.458  15.119
+   28    HA   LYS   5           HA       LYS   5  14.633  20.060  14.338
+   29    HB2  LYS   5           HB2      LYS   5  13.918  18.202  16.655
+   30    HB3  LYS   5           HB1      LYS   5  13.189  19.702  16.294
+   31    HG2  LYS   5           HG2      LYS   5  13.365  17.223  14.463
+   32    HG3  LYS   5           HG1      LYS   5  12.052  17.616  15.565
+   33    HD2  LYS   5           HD2      LYS   5  11.489  19.620  14.372
+   34    HD3  LYS   5           HD1      LYS   5  12.841  19.476  13.273
+   35    HE2  LYS   5           HE2      LYS   5  12.053  17.307  12.504
+   36    HE3  LYS   5           HE1      LYS   5  10.674  17.319  13.665
+   37    HZ1  LYS   5           HZ1      LYS   5   9.724  19.009  12.566
+   38    HZ2  LYS   5           HZ2      LYS   5   9.943  17.916  11.394
+   39    HZ3  LYS   5           HZ3      LYS   5  10.890  19.259  11.454
+   40    H    DTH   6           H        DTH   6  17.065  18.735  16.457
+   41    HA   DTH   6           HA       DTH   6  17.313  21.118  18.127
+   42    HB   DTH   6           HB       DTH   6  19.623  21.373  17.752
+   43   HG21  DTH   6          1HG2      DTH   6  20.155  19.244  16.803
+   44   HG22  DTH   6          2HG2      DTH   6  20.754  20.647  15.874
+   45   HG23  DTH   6          3HG2      DTH   6  19.359  19.811  15.202
+   46    HG1  DTH   6           HG1      DTH   6  18.274  21.948  15.416
+   47    H    DAS   7           H        DAS   7  18.468  20.765  19.985
+   48    HA   DAS   7           HA       DAS   7  18.991  19.791  21.717
+   49    HB2  DAS   7           HB1      DAS   7  21.020  18.341  19.965
+   50    HB3  DAS   7           HB2      DAS   7  21.277  18.770  21.599
+  Start of MODEL    7
+    1    H1   GLN   1           H1       GLN   1  20.091  16.500  21.103
+    2    HA   GLN   1           HA       GLN   1  19.211  14.585  21.070
+    3    HB2  GLN   1           HB2      GLN   1  17.662  15.967  23.174
+    4    HB3  GLN   1           HB1      GLN   1  17.635  14.198  23.063
+    5    HG2  GLN   1           HG2      GLN   1  19.248  14.833  24.794
+    6    HG3  GLN   1           HG1      GLN   1  19.936  13.971  23.472
+    7   HE21  GLN   1          1HE2      GLN   1  19.853  16.907  25.217
+    8   HE22  GLN   1          2HE2      GLN   1  21.004  17.875  24.357
+    9    H    ASP   2           H        ASP   2  17.705  16.341  19.223
+   10    HA   ASP   2           HA       ASP   2  15.239  14.722  18.985
+   11    HB2  ASP   2           HB2      ASP   2  14.905  17.043  20.195
+   12    HB3  ASP   2           HB1      ASP   2  15.093  17.777  18.683
+   13    HA   PRO   3           HA       PRO   3  17.521  14.579  15.445
+   14    HB2  PRO   3           HB2      PRO   3  15.322  12.669  14.424
+   15    HB3  PRO   3           HB1      PRO   3  17.106  12.643  14.013
+   16    HG2  PRO   3           HG2      PRO   3  16.022  11.197  16.150
+   17    HG3  PRO   3           HG1      PRO   3  17.525  12.081  16.472
+   18    HD2  PRO   3           HD2      PRO   3  14.730  12.785  16.972
+   19    HD3  PRO   3           HD1      PRO   3  16.101  13.048  18.067
+   20    HA   DPR   4           HA       DPR   4  15.473  16.469  11.924
+   21    HB2  DPR   4           HB1      DPR   4  17.877  18.257  11.885
+   22    HB3  DPR   4           HB2      DPR   4  17.091  17.355  10.532
+   23    HG2  DPR   4           HG1      DPR   4  19.437  16.507  11.582
+   24    HG3  DPR   4           HG2      DPR   4  18.204  15.479  10.882
+   25    HD2  DPR   4           HD1      DPR   4  18.738  16.102  13.862
+   26    HD3  DPR   4           HD2      DPR   4  18.200  14.593  13.211
+   27    H    LYS   5           H        LYS   5  15.755  17.541  15.026
+   28    HA   LYS   5           HA       LYS   5  14.652  20.309  14.495
+   29    HB2  LYS   5           HB2      LYS   5  13.959  18.473  16.689
+   30    HB3  LYS   5           HB1      LYS   5  13.352  20.112  16.462
+   31    HG2  LYS   5           HG2      LYS   5  12.489  17.884  14.766
+   32    HG3  LYS   5           HG1      LYS   5  11.652  18.854  16.031
+   33    HD2  LYS   5           HD2      LYS   5  11.371  20.739  14.537
+   34    HD3  LYS   5           HD1      LYS   5  12.702  20.074  13.575
+   35    HE2  LYS   5           HE2      LYS   5  11.181  18.269  12.829
+   36    HE3  LYS   5           HE1      LYS   5   9.925  18.876  13.934
+   37    HZ1  LYS   5           HZ1      LYS   5   9.755  20.864  12.482
+   38    HZ2  LYS   5           HZ2      LYS   5   9.757  19.459  11.569
+   39    HZ3  LYS   5           HZ3      LYS   5  11.056  20.423  11.675
+   40    H    DTH   6           H        DTH   6  17.080  18.686  16.429
+   41    HA   DTH   6           HA       DTH   6  17.553  21.186  17.982
+   42    HB   DTH   6           HB       DTH   6  20.014  20.954  17.448
+   43   HG21  DTH   6          1HG2      DTH   6  20.455  19.035  16.270
+   44   HG22  DTH   6          2HG2      DTH   6  20.346  20.215  14.960
+   45   HG23  DTH   6          3HG2      DTH   6  19.027  19.124  15.239
+   46    HG1  DTH   6           HG1      DTH   6  18.781  21.687  15.125
+   47    H    DAS   7           H        DAS   7  18.289  20.686  19.891
+   48    HA   DAS   7           HA       DAS   7  19.110  19.736  21.636
+   49    HB2  DAS   7           HB1      DAS   7  20.840  18.294  19.678
+   50    HB3  DAS   7           HB2      DAS   7  21.122  18.362  21.408
+  Start of MODEL    8
+    1    H1   GLN   1           H1       GLN   1  19.946  16.256  20.709
+    2    HA   GLN   1           HA       GLN   1  18.861  14.523  21.003
+    3    HB2  GLN   1           HB2      GLN   1  17.783  16.103  23.336
+    4    HB3  GLN   1           HB1      GLN   1  17.743  14.267  23.181
+    5    HG2  GLN   1           HG2      GLN   1  20.294  15.880  23.187
+    6    HG3  GLN   1           HG1      GLN   1  19.489  15.359  24.617
+    7   HE21  GLN   1          1HE2      GLN   1  22.128  14.462  23.957
+    8   HE22  GLN   1          2HE2      GLN   1  22.042  12.806  23.345
+    9    H    ASP   2           H        ASP   2  17.377  16.270  19.273
+   10    HA   ASP   2           HA       ASP   2  14.933  14.617  19.063
+   11    HB2  ASP   2           HB2      ASP   2  14.294  16.664  20.357
+   12    HB3  ASP   2           HB1      ASP   2  14.775  17.688  19.010
+   13    HA   PRO   3           HA       PRO   3  18.034  15.039  15.700
+   14    HB2  PRO   3           HB2      PRO   3  16.125  12.968  14.635
+   15    HB3  PRO   3           HB1      PRO   3  17.931  13.134  14.383
+   16    HG2  PRO   3           HG2      PRO   3  16.813  11.499  16.220
+   17    HG3  PRO   3           HG1      PRO   3  18.318  12.531  16.434
+   18    HD2  PRO   3           HD2      PRO   3  15.492  12.828  17.475
+   19    HD3  PRO   3           HD1      PRO   3  17.081  13.337  18.292
+   20    HA   DPR   4           HA       DPR   4  15.743  16.441  11.881
+   21    HB2  DPR   4           HB1      DPR   4  17.819  18.590  12.088
+   22    HB3  DPR   4           HB2      DPR   4  17.237  17.637  10.635
+   23    HG2  DPR   4           HG1      DPR   4  19.593  17.167  11.992
+   24    HG3  DPR   4           HG2      DPR   4  18.641  15.811  11.208
+   25    HD2  DPR   4           HD1      DPR   4  19.041  16.720  13.982
+   26    HD3  DPR   4           HD2      DPR   4  18.690  15.099  13.430
+   27    H    LYS   5           H        LYS   5  15.738  17.621  14.862
+   28    HA   LYS   5           HA       LYS   5  14.405  20.234  14.325
+   29    HB2  LYS   5           HB2      LYS   5  13.827  18.165  16.384
+   30    HB3  LYS   5           HB1      LYS   5  13.014  19.827  16.332
+   31    HG2  LYS   5           HG2      LYS   5  12.009  19.079  14.199
+   32    HG3  LYS   5           HG1      LYS   5  12.786  17.567  14.218
+   33    HD2  LYS   5           HD2      LYS   5  11.468  17.007  16.254
+   34    HD3  LYS   5           HD1      LYS   5  10.745  18.539  16.295
+   35    HE2  LYS   5           HE2      LYS   5   9.273  16.821  15.420
+   36    HE3  LYS   5           HE1      LYS   5   9.524  18.251  14.366
+   37    HZ1  LYS   5           HZ1      LYS   5  10.742  16.934  12.862
+   38    HZ2  LYS   5           HZ2      LYS   5   9.515  15.967  13.280
+   39    HZ3  LYS   5           HZ3      LYS   5  11.021  15.823  13.997
+   40    H    DTH   6           H        DTH   6  16.827  18.612  16.294
+   41    HA   DTH   6           HA       DTH   6  17.162  20.712  18.257
+   42    HB   DTH   6           HB       DTH   6  19.559  21.297  17.393
+   43   HG21  DTH   6          1HG2      DTH   6  20.137  19.291  16.213
+   44   HG22  DTH   6          2HG2      DTH   6  20.229  20.635  15.100
+   45   HG23  DTH   6          3HG2      DTH   6  18.875  19.602  15.032
+   46    HG1  DTH   6           HG1      DTH   6  17.500  21.924  15.734
+   47    H    DAS   7           H        DAS   7  18.920  20.557  19.732
+   48    HA   DAS   7           HA       DAS   7  19.916  19.388  21.331
+   49    HB2  DAS   7           HB1      DAS   7  20.986  17.353  19.503
+   50    HB3  DAS   7           HB2      DAS   7  21.563  18.075  21.016
+  Start of MODEL    9
+    1    H1   GLN   1           H1       GLN   1  19.890  16.558  21.088
+    2    HA   GLN   1           HA       GLN   1  18.887  14.594  21.348
+    3    HB2  GLN   1           HB2      GLN   1  17.146  16.117  23.326
+    4    HB3  GLN   1           HB1      GLN   1  17.363  14.412  23.258
+    5    HG2  GLN   1           HG2      GLN   1  19.629  16.295  23.972
+    6    HG3  GLN   1           HG1      GLN   1  18.691  15.262  25.045
+    7   HE21  GLN   1          1HE2      GLN   1  18.678  12.712  23.970
+    8   HE22  GLN   1          2HE2      GLN   1  20.242  12.297  23.288
+    9    H    ASP   2           H        ASP   2  17.597  16.184  19.253
+   10    HA   ASP   2           HA       ASP   2  15.154  14.647  18.921
+   11    HB2  ASP   2           HB2      ASP   2  14.837  16.980  20.214
+   12    HB3  ASP   2           HB1      ASP   2  15.193  17.651  18.647
+   13    HA   PRO   3           HA       PRO   3  17.911  14.905  15.254
+   14    HB2  PRO   3           HB2      PRO   3  16.764  12.975  13.734
+   15    HB3  PRO   3           HB1      PRO   3  18.053  12.809  14.910
+   16    HG2  PRO   3           HG2      PRO   3  15.108  12.324  15.303
+   17    HG3  PRO   3           HG1      PRO   3  16.369  11.303  15.849
+   18    HD2  PRO   3           HD2      PRO   3  15.309  12.998  17.584
+   19    HD3  PRO   3           HD1      PRO   3  17.130  13.015  17.495
+   20    HA   DPR   4           HA       DPR   4  15.409  16.635  11.914
+   21    HB2  DPR   4           HB1      DPR   4  17.390  18.875  12.179
+   22    HB3  DPR   4           HB2      DPR   4  16.831  17.950  10.687
+   23    HG2  DPR   4           HG1      DPR   4  19.302  17.805  12.022
+   24    HG3  DPR   4           HG2      DPR   4  18.463  16.342  11.196
+   25    HD2  DPR   4           HD1      DPR   4  18.621  17.049  14.099
+   26    HD3  DPR   4           HD2      DPR   4  18.723  15.431  13.213
+   27    H    LYS   5           H        LYS   5  15.751  17.619  15.012
+   28    HA   LYS   5           HA       LYS   5  14.332  20.210  14.784
+   29    HB2  LYS   5           HB2      LYS   5  13.976  17.673  16.409
+   30    HB3  LYS   5           HB1      LYS   5  13.469  19.258  17.020
+   31    HG2  LYS   5           HG2      LYS   5  12.023  19.613  15.151
+   32    HG3  LYS   5           HG1      LYS   5  12.471  18.039  14.443
+   33    HD2  LYS   5           HD2      LYS   5  10.395  17.605  15.474
+   34    HD3  LYS   5           HD1      LYS   5  11.487  16.879  16.475
+   35    HE2  LYS   5           HE2      LYS   5  11.565  18.864  17.983
+   36    HE3  LYS   5           HE1      LYS   5  10.336  19.713  16.825
+   37    HZ1  LYS   5           HZ1      LYS   5   8.930  17.865  17.418
+   38    HZ2  LYS   5           HZ2      LYS   5   9.321  18.845  18.696
+   39    HZ3  LYS   5           HZ3      LYS   5  10.043  17.460  18.629
+   40    H    DTH   6           H        DTH   6  17.001  18.510  16.264
+   41    HA   DTH   6           HA       DTH   6  17.803  20.919  17.721
+   42    HB   DTH   6           HB       DTH   6  20.156  20.474  16.929
+   43   HG21  DTH   6          1HG2      DTH   6  18.838  19.124  14.517
+   44   HG22  DTH   6          2HG2      DTH   6  19.708  18.155  15.686
+   45   HG23  DTH   6          3HG2      DTH   6  20.461  19.504  14.794
+   46    HG1  DTH   6           HG1      DTH   6  19.742  21.686  14.979
+   47    H    DAS   7           H        DAS   7  18.951  20.640  19.471
+   48    HA   DAS   7           HA       DAS   7  19.200  19.726  21.554
+   49    HB2  DAS   7           HB1      DAS   7  21.060  17.812  19.995
+   50    HB3  DAS   7           HB2      DAS   7  21.199  18.333  21.598
+  Start of MODEL   10
+    1    H1   GLN   1           H1       GLN   1  19.841  16.537  20.732
+    2    HA   GLN   1           HA       GLN   1  19.156  14.467  21.356
+    3    HB2  GLN   1           HB2      GLN   1  17.091  15.789  23.168
+    4    HB3  GLN   1           HB1      GLN   1  17.409  14.205  23.100
+    5    HG2  GLN   1           HG2      GLN   1  19.529  16.196  23.921
+    6    HG3  GLN   1           HG1      GLN   1  18.441  15.356  24.964
+    7   HE21  GLN   1          1HE2      GLN   1  20.982  14.825  25.538
+    8   HE22  GLN   1          2HE2      GLN   1  21.284  13.134  25.198
+    9    H    ASP   2           H        ASP   2  17.529  16.610  19.466
+   10    HA   ASP   2           HA       ASP   2  15.227  14.758  18.987
+   11    HB2  ASP   2           HB2      ASP   2  14.710  16.839  20.235
+   12    HB3  ASP   2           HB1      ASP   2  15.410  17.757  18.955
+   13    HA   PRO   3           HA       PRO   3  17.774  14.677  15.109
+   14    HB2  PRO   3           HB2      PRO   3  15.450  12.811  14.404
+   15    HB3  PRO   3           HB1      PRO   3  17.220  12.673  14.042
+   16    HG2  PRO   3           HG2      PRO   3  16.080  11.247  16.022
+   17    HG3  PRO   3           HG1      PRO   3  17.691  11.997  16.246
+   18    HD2  PRO   3           HD2      PRO   3  15.002  13.029  17.227
+   19    HD3  PRO   3           HD1      PRO   3  16.591  13.041  18.056
+   20    HA   DPR   4           HA       DPR   4  15.043  16.464  12.135
+   21    HB2  DPR   4           HB1      DPR   4  16.849  18.096  10.753
+   22    HB3  DPR   4           HB2      DPR   4  17.144  16.382  10.705
+   23    HG2  DPR   4           HG1      DPR   4  18.396  18.322  12.754
+   24    HG3  DPR   4           HG2      DPR   4  19.214  17.203  11.649
+   25    HD2  DPR   4           HD1      DPR   4  18.579  16.701  14.215
+   26    HD3  DPR   4           HD2      DPR   4  18.541  15.407  12.989
+   27    H    LYS   5           H        LYS   5  15.777  17.704  14.973
+   28    HA   LYS   5           HA       LYS   5  14.669  20.435  14.351
+   29    HB2  LYS   5           HB2      LYS   5  13.959  18.111  16.024
+   30    HB3  LYS   5           HB1      LYS   5  13.667  19.772  16.713
+   31    HG2  LYS   5           HG2      LYS   5  12.174  20.146  14.843
+   32    HG3  LYS   5           HG1      LYS   5  12.556  18.576  14.122
+   33    HD2  LYS   5           HD2      LYS   5  10.528  18.294  15.062
+   34    HD3  LYS   5           HD1      LYS   5  11.500  17.697  16.438
+   35    HE2  LYS   5           HE2      LYS   5  11.415  19.732  17.613
+   36    HE3  LYS   5           HE1      LYS   5  10.488  20.486  16.205
+   37    HZ1  LYS   5           HZ1      LYS   5   8.976  19.948  17.962
+   38    HZ2  LYS   5           HZ2      LYS   5   9.297  18.394  17.845
+   39    HZ3  LYS   5           HZ3      LYS   5   8.689  19.149  16.579
+   40    H    DTH   6           H        DTH   6  16.924  18.671  16.528
+   41    HA   DTH   6           HA       DTH   6  17.700  21.084  17.957
+   42    HB   DTH   6           HB       DTH   6  20.083  20.879  17.269
+   43   HG21  DTH   6          1HG2      DTH   6  20.465  18.779  16.474
+   44   HG22  DTH   6          2HG2      DTH   6  20.436  19.765  15.017
+   45   HG23  DTH   6          3HG2      DTH   6  19.081  18.705  15.412
+   46    HG1  DTH   6           HG1      DTH   6  19.453  22.226  15.945
+   47    H    DAS   7           H        DAS   7  18.356  20.652  19.872
+   48    HA   DAS   7           HA       DAS   7  19.023  19.658  21.779
+   49    HB2  DAS   7           HB1      DAS   7  20.894  18.167  19.945
+   50    HB3  DAS   7           HB2      DAS   7  21.043  18.367  21.700
+  Start of MODEL   11
+    1    H1   GLN   1           H1       GLN   1  19.827  16.509  20.659
+    2    HA   GLN   1           HA       GLN   1  19.147  14.629  20.816
+    3    HB2  GLN   1           HB2      GLN   1  17.688  15.467  23.331
+    4    HB3  GLN   1           HB1      GLN   1  17.987  13.798  22.885
+    5    HG2  GLN   1           HG2      GLN   1  20.007  15.912  23.378
+    6    HG3  GLN   1           HG1      GLN   1  19.571  14.785  24.582
+    7   HE21  GLN   1          1HE2      GLN   1  22.131  15.312  23.080
+    8   HE22  GLN   1          2HE2      GLN   1  22.733  13.748  22.462
+    9    H    ASP   2           H        ASP   2  17.478  16.549  19.291
+   10    HA   ASP   2           HA       ASP   2  14.913  14.941  19.004
+   11    HB2  ASP   2           HB2      ASP   2  14.616  16.939  20.197
+   12    HB3  ASP   2           HB1      ASP   2  15.230  17.920  18.960
+   13    HA   PRO   3           HA       PRO   3  17.908  15.173  15.626
+   14    HB2  PRO   3           HB2      PRO   3  16.451  12.801  14.431
+   15    HB3  PRO   3           HB1      PRO   3  18.203  13.163  14.496
+   16    HG2  PRO   3           HG2      PRO   3  16.683  11.487  16.208
+   17    HG3  PRO   3           HG1      PRO   3  18.116  12.375  16.855
+   18    HD2  PRO   3           HD2      PRO   3  15.231  12.935  17.204
+   19    HD3  PRO   3           HD1      PRO   3  16.629  13.269  18.296
+   20    HA   DPR   4           HA       DPR   4  15.283  16.369  12.053
+   21    HB2  DPR   4           HB1      DPR   4  16.851  18.148  10.927
+   22    HB3  DPR   4           HB2      DPR   4  17.141  16.334  10.850
+   23    HG2  DPR   4           HG1      DPR   4  18.428  18.360  12.753
+   24    HG3  DPR   4           HG2      DPR   4  19.327  17.174  11.685
+   25    HD2  DPR   4           HD1      DPR   4  18.565  16.610  14.319
+   26    HD3  DPR   4           HD2      DPR   4  18.586  15.353  12.954
+   27    H    LYS   5           H        LYS   5  15.544  17.602  14.826
+   28    HA   LYS   5           HA       LYS   5  14.669  20.421  14.449
+   29    HB2  LYS   5           HB2      LYS   5  13.641  18.292  16.225
+   30    HB3  LYS   5           HB1      LYS   5  13.240  19.931  16.610
+   31    HG2  LYS   5           HG2      LYS   5  11.977  20.250  14.598
+   32    HG3  LYS   5           HG1      LYS   5  12.596  18.833  13.827
+   33    HD2  LYS   5           HD2      LYS   5  10.367  18.337  14.616
+   34    HD3  LYS   5           HD1      LYS   5  11.457  17.420  15.663
+   35    HE2  LYS   5           HE2      LYS   5  11.129  19.917  17.006
+   36    HE3  LYS   5           HE1      LYS   5   9.641  19.669  16.217
+   37    HZ1  LYS   5           HZ1      LYS   5   9.693  17.387  17.197
+   38    HZ2  LYS   5           HZ2      LYS   5   9.594  18.633  18.313
+   39    HZ3  LYS   5           HZ3      LYS   5  11.029  17.838  18.035
+   40    H    DTH   6           H        DTH   6  16.818  18.425  16.390
+   41    HA   DTH   6           HA       DTH   6  17.725  20.935  17.742
+   42    HB   DTH   6           HB       DTH   6  20.020  20.462  17.441
+   43   HG21  DTH   6          1HG2      DTH   6  19.292  18.964  14.910
+   44   HG22  DTH   6          2HG2      DTH   6  19.852  18.170  16.450
+   45   HG23  DTH   6          3HG2      DTH   6  20.852  19.370  15.562
+   46    HG1  DTH   6           HG1      DTH   6  19.033  22.105  16.135
+   47    H    DAS   7           H        DAS   7  18.349  20.607  19.816
+   48    HA   DAS   7           HA       DAS   7  19.195  19.705  21.645
+   49    HB2  DAS   7           HB1      DAS   7  20.875  18.181  19.660
+   50    HB3  DAS   7           HB2      DAS   7  21.158  18.370  21.396
+  Start of MODEL   12
+    1    H1   GLN   1           H1       GLN   1  19.834  16.522  20.471
+    2    HA   GLN   1           HA       GLN   1  19.072  14.532  21.075
+    3    HB2  GLN   1           HB2      GLN   1  17.693  15.892  23.360
+    4    HB3  GLN   1           HB1      GLN   1  18.137  14.229  23.336
+    5    HG2  GLN   1           HG2      GLN   1  20.116  16.553  23.140
+    6    HG3  GLN   1           HG1      GLN   1  19.682  15.845  24.649
+    7   HE21  GLN   1          1HE2      GLN   1  22.364  16.228  23.501
+    8   HE22  GLN   1          2HE2      GLN   1  22.881  14.541  23.255
+    9    H    ASP   2           H        ASP   2  17.525  16.154  19.304
+   10    HA   ASP   2           HA       ASP   2  15.056  14.726  19.017
+   11    HB2  ASP   2           HB2      ASP   2  14.735  16.810  20.376
+   12    HB3  ASP   2           HB1      ASP   2  15.468  17.737  19.095
+   13    HA   PRO   3           HA       PRO   3  17.855  15.298  15.426
+   14    HB2  PRO   3           HB2      PRO   3  16.337  12.851  14.509
+   15    HB3  PRO   3           HB1      PRO   3  18.022  13.174  14.299
+   16    HG2  PRO   3           HG2      PRO   3  17.126  11.459  16.204
+   17    HG3  PRO   3           HG1      PRO   3  18.412  12.639  16.713
+   18    HD2  PRO   3           HD2      PRO   3  15.455  12.904  17.144
+   19    HD3  PRO   3           HD1      PRO   3  16.749  13.320  18.329
+   20    HA   DPR   4           HA       DPR   4  15.172  16.476  11.856
+   21    HB2  DPR   4           HB1      DPR   4  17.570  18.221  11.971
+   22    HB3  DPR   4           HB2      DPR   4  16.769  17.685  10.444
+   23    HG2  DPR   4           HG1      DPR   4  18.934  16.354  11.035
+   24    HG3  DPR   4           HG2      DPR   4  17.542  15.309  10.740
+   25    HD2  DPR   4           HD1      DPR   4  18.546  16.511  13.341
+   26    HD3  DPR   4           HD2      DPR   4  18.251  14.763  13.006
+   27    H    LYS   5           H        LYS   5  15.795  17.655  14.937
+   28    HA   LYS   5           HA       LYS   5  14.736  20.380  14.279
+   29    HB2  LYS   5           HB2      LYS   5  13.865  18.788  16.615
+   30    HB3  LYS   5           HB1      LYS   5  13.050  20.167  15.764
+   31    HG2  LYS   5           HG2      LYS   5  12.884  18.388  13.809
+   32    HG3  LYS   5           HG1      LYS   5  12.904  17.268  15.120
+   33    HD2  LYS   5           HD2      LYS   5  11.022  19.517  14.690
+   34    HD3  LYS   5           HD1      LYS   5  10.696  17.729  14.662
+   35    HE2  LYS   5           HE2      LYS   5  11.246  19.294  17.232
+   36    HE3  LYS   5           HE1      LYS   5   9.715  19.064  16.419
+   37    HZ1  LYS   5           HZ1      LYS   5  10.012  16.712  16.537
+   38    HZ2  LYS   5           HZ2      LYS   5   9.776  17.312  17.956
+   39    HZ3  LYS   5           HZ3      LYS   5  11.374  16.925  17.519
+   40    H    DTH   6           H        DTH   6  16.798  18.457  16.611
+   41    HA   DTH   6           HA       DTH   6  17.458  20.880  18.033
+   42    HB   DTH   6           HB       DTH   6  19.873  20.395  17.376
+   43   HG21  DTH   6          1HG2      DTH   6  19.414  18.248  15.780
+   44   HG22  DTH   6          2HG2      DTH   6  20.449  19.597  15.306
+   45   HG23  DTH   6          3HG2      DTH   6  18.721  19.362  14.741
+   46    HG1  DTH   6           HG1      DTH   6  19.677  21.715  15.620
+   47    H    DAS   7           H        DAS   7  19.005  20.623  19.724
+   48    HA   DAS   7           HA       DAS   7  19.331  19.650  21.665
+   49    HB2  DAS   7           HB1      DAS   7  20.943  17.827  19.855
+   50    HB3  DAS   7           HB2      DAS   7  21.132  18.078  21.650
+  Start of MODEL   13
+    1    H1   GLN   1           H1       GLN   1  20.060  16.321  20.724
+    2    HA   GLN   1           HA       GLN   1  19.104  14.372  21.242
+    3    HB2  GLN   1           HB2      GLN   1  17.320  15.901  23.165
+    4    HB3  GLN   1           HB1      GLN   1  17.798  14.210  23.143
+    5    HG2  GLN   1           HG2      GLN   1  19.942  16.249  23.659
+    6    HG3  GLN   1           HG1      GLN   1  18.895  15.284  24.820
+    7   HE21  GLN   1          1HE2      GLN   1  19.499  13.276  25.516
+    8   HE22  GLN   1          2HE2      GLN   1  20.607  12.254  24.695
+    9    H    ASP   2           H        ASP   2  17.503  16.389  19.388
+   10    HA   ASP   2           HA       ASP   2  15.105  14.690  19.078
+   11    HB2  ASP   2           HB2      ASP   2  14.566  16.421  20.582
+   12    HB3  ASP   2           HB1      ASP   2  15.277  17.673  19.521
+   13    HA   PRO   3           HA       PRO   3  17.729  14.769  15.581
+   14    HB2  PRO   3           HB2      PRO   3  15.544  12.841  14.632
+   15    HB3  PRO   3           HB1      PRO   3  17.255  12.782  14.166
+   16    HG2  PRO   3           HG2      PRO   3  16.520  11.256  16.113
+   17    HG3  PRO   3           HG1      PRO   3  17.920  12.242  16.365
+   18    HD2  PRO   3           HD2      PRO   3  14.997  12.748  17.193
+   19    HD3  PRO   3           HD1      PRO   3  16.544  13.082  18.132
+   20    HA   DPR   4           HA       DPR   4  15.794  16.577  12.023
+   21    HB2  DPR   4           HB1      DPR   4  18.113  18.440  12.067
+   22    HB3  DPR   4           HB2      DPR   4  17.377  17.482  10.756
+   23    HG2  DPR   4           HG1      DPR   4  19.694  16.614  11.728
+   24    HG3  DPR   4           HG2      DPR   4  18.365  15.460  11.445
+   25    HD2  DPR   4           HD1      DPR   4  18.878  16.732  14.103
+   26    HD3  DPR   4           HD2      DPR   4  18.472  14.985  13.682
+   27    H    LYS   5           H        LYS   5  15.374  17.605  14.799
+   28    HA   LYS   5           HA       LYS   5  14.706  20.499  14.318
+   29    HB2  LYS   5           HB2      LYS   5  13.376  18.296  16.071
+   30    HB3  LYS   5           HB1      LYS   5  12.960  20.048  15.973
+   31    HG2  LYS   5           HG2      LYS   5  12.585  19.741  13.536
+   32    HG3  LYS   5           HG1      LYS   5  12.784  18.086  13.719
+   33    HD2  LYS   5           HD2      LYS   5  10.588  19.829  15.034
+   34    HD3  LYS   5           HD1      LYS   5  10.392  18.597  13.860
+   35    HE2  LYS   5           HE2      LYS   5  11.237  16.886  15.645
+   36    HE3  LYS   5           HE1      LYS   5  11.160  18.260  16.781
+   37    HZ1  LYS   5           HZ1      LYS   5   8.999  17.002  15.198
+   38    HZ2  LYS   5           HZ2      LYS   5   8.809  18.303  16.351
+   39    HZ3  LYS   5           HZ3      LYS   5   9.189  16.897  16.774
+   40    H    DTH   6           H        DTH   6  16.716  18.563  16.227
+   41    HA   DTH   6           HA       DTH   6  17.390  20.901  17.940
+   42    HB   DTH   6           HB       DTH   6  19.747  20.807  17.154
+   43   HG21  DTH   6          1HG2      DTH   6  19.644  18.553  16.004
+   44   HG22  DTH   6          2HG2      DTH   6  20.308  19.930  15.100
+   45   HG23  DTH   6          3HG2      DTH   6  18.728  19.363  14.646
+   46    HG1  DTH   6           HG1      DTH   6  18.340  22.351  16.536
+   47    H    DAS   7           H        DAS   7  18.521  20.566  19.675
+   48    HA   DAS   7           HA       DAS   7  19.501  19.593  21.437
+   49    HB2  DAS   7           HB1      DAS   7  20.790  17.749  19.535
+   50    HB3  DAS   7           HB2      DAS   7  21.511  18.259  21.041
+  Start of MODEL   14
+    1    H1   GLN   1           H1       GLN   1  19.930  16.389  20.560
+    2    HA   GLN   1           HA       GLN   1  19.053  14.486  21.088
+    3    HB2  GLN   1           HB2      GLN   1  17.622  15.920  23.314
+    4    HB3  GLN   1           HB1      GLN   1  17.857  14.157  23.011
+    5    HG2  GLN   1           HG2      GLN   1  20.159  16.219  23.344
+    6    HG3  GLN   1           HG1      GLN   1  19.474  15.485  24.648
+    7   HE21  GLN   1          1HE2      GLN   1  19.897  12.977  24.857
+    8   HE22  GLN   1          2HE2      GLN   1  21.211  12.323  23.936
+    9    H    ASP   2           H        ASP   2  17.607  16.143  19.161
+   10    HA   ASP   2           HA       ASP   2  15.060  14.685  19.098
+   11    HB2  ASP   2           HB2      ASP   2  14.758  16.870  20.373
+   12    HB3  ASP   2           HB1      ASP   2  15.259  17.703  18.912
+   13    HA   PRO   3           HA       PRO   3  17.749  14.755  15.651
+   14    HB2  PRO   3           HB2      PRO   3  15.695  12.922  14.416
+   15    HB3  PRO   3           HB1      PRO   3  17.438  12.792  14.244
+   16    HG2  PRO   3           HG2      PRO   3  15.963  11.388  16.076
+   17    HG3  PRO   3           HG1      PRO   3  17.577  11.972  16.559
+   18    HD2  PRO   3           HD2      PRO   3  15.033  13.017  17.636
+   19    HD3  PRO   3           HD1      PRO   3  16.697  13.214  18.226
+   20    HA   DPR   4           HA       DPR   4  15.918  16.480  11.845
+   21    HB2  DPR   4           HB1      DPR   4  17.644  18.849  12.537
+   22    HB3  DPR   4           HB2      DPR   4  17.472  18.159  10.998
+   23    HG2  DPR   4           HG1      DPR   4  19.593  17.792  12.917
+   24    HG3  DPR   4           HG2      DPR   4  19.344  16.539  11.709
+   25    HD2  DPR   4           HD1      DPR   4  18.776  16.391  14.517
+   26    HD3  DPR   4           HD2      DPR   4  18.708  15.154  13.235
+   27    H    LYS   5           H        LYS   5  15.953  17.785  15.059
+   28    HA   LYS   5           HA       LYS   5  14.707  20.375  14.419
+   29    HB2  LYS   5           HB2      LYS   5  13.805  18.376  16.585
+   30    HB3  LYS   5           HB1      LYS   5  13.222  19.939  16.526
+   31    HG2  LYS   5           HG2      LYS   5  12.777  17.711  14.464
+   32    HG3  LYS   5           HG1      LYS   5  11.620  18.316  15.729
+   33    HD2  LYS   5           HD2      LYS   5  11.539  20.427  14.772
+   34    HD3  LYS   5           HD1      LYS   5  12.639  19.936  13.360
+   35    HE2  LYS   5           HE2      LYS   5  10.964  18.317  12.681
+   36    HE3  LYS   5           HE1      LYS   5   9.897  18.800  13.942
+   37    HZ1  LYS   5           HZ1      LYS   5   9.377  19.749  11.782
+   38    HZ2  LYS   5           HZ2      LYS   5  10.754  20.683  11.841
+   39    HZ3  LYS   5           HZ3      LYS   5   9.499  20.864  12.886
+   40    H    DTH   6           H        DTH   6  17.003  18.511  16.387
+   41    HA   DTH   6           HA       DTH   6  17.486  20.982  17.976
+   42    HB   DTH   6           HB       DTH   6  19.604  21.086  17.381
+   43   HG21  DTH   6          1HG2      DTH   6  19.915  18.820  16.101
+   44   HG22  DTH   6          2HG2      DTH   6  20.638  20.213  15.306
+   45   HG23  DTH   6          3HG2      DTH   6  19.065  19.642  14.783
+   46    HG1  DTH   6           HG1      DTH   6  17.921  21.589  15.122
+   47    H    DAS   7           H        DAS   7  18.711  20.676  19.657
+   48    HA   DAS   7           HA       DAS   7  19.134  19.567  21.468
+   49    HB2  DAS   7           HB1      DAS   7  21.175  17.943  19.928
+   50    HB3  DAS   7           HB2      DAS   7  21.026  18.055  21.648
+  Start of MODEL   15
+    1    H1   GLN   1           H1       GLN   1  19.830  16.909  19.977
+    2    HA   GLN   1           HA       GLN   1  19.370  14.743  20.162
+    3    HB2  GLN   1           HB2      GLN   1  18.325  15.211  22.909
+    4    HB3  GLN   1           HB1      GLN   1  18.792  13.661  22.193
+    5    HG2  GLN   1           HG2      GLN   1  20.608  16.041  22.687
+    6    HG3  GLN   1           HG1      GLN   1  20.647  14.605  23.719
+    7   HE21  GLN   1          1HE2      GLN   1  22.913  15.797  22.190
+    8   HE22  GLN   1          2HE2      GLN   1  23.313  14.652  20.961
+    9    H    ASP   2           H        ASP   2  17.315  16.697  19.248
+   10    HA   ASP   2           HA       ASP   2  15.044  14.722  19.145
+   11    HB2  ASP   2           HB2      ASP   2  14.384  16.746  20.337
+   12    HB3  ASP   2           HB1      ASP   2  14.987  17.747  19.024
+   13    HA   PRO   3           HA       PRO   3  17.370  14.487  15.756
+   14    HB2  PRO   3           HB2      PRO   3  15.347  12.759  14.272
+   15    HB3  PRO   3           HB1      PRO   3  17.049  12.448  14.447
+   16    HG2  PRO   3           HG2      PRO   3  15.227  11.286  16.184
+   17    HG3  PRO   3           HG1      PRO   3  16.766  11.798  16.788
+   18    HD2  PRO   3           HD2      PRO   3  14.087  13.241  16.976
+   19    HD3  PRO   3           HD1      PRO   3  15.507  13.111  18.178
+   20    HA   DPR   4           HA       DPR   4  15.916  16.305  12.017
+   21    HB2  DPR   4           HB1      DPR   4  17.697  18.257  11.492
+   22    HB3  DPR   4           HB2      DPR   4  17.750  16.609  11.039
+   23    HG2  DPR   4           HG1      DPR   4  19.171  17.840  13.339
+   24    HG3  DPR   4           HG2      DPR   4  19.765  16.590  12.203
+   25    HD2  DPR   4           HD1      DPR   4  18.757  16.002  14.758
+   26    HD3  DPR   4           HD2      DPR   4  18.528  14.863  13.439
+   27    H    LYS   5           H        LYS   5  16.221  17.779  15.061
+   28    HA   LYS   5           HA       LYS   5  14.796  20.216  14.231
+   29    HB2  LYS   5           HB2      LYS   5  13.831  18.221  16.262
+   30    HB3  LYS   5           HB1      LYS   5  13.216  19.896  16.201
+   31    HG2  LYS   5           HG2      LYS   5  12.549  19.480  13.887
+   32    HG3  LYS   5           HG1      LYS   5  13.171  17.849  13.967
+   33    HD2  LYS   5           HD2      LYS   5  11.689  17.414  15.950
+   34    HD3  LYS   5           HD1      LYS   5  10.963  18.943  15.790
+   35    HE2  LYS   5           HE2      LYS   5   9.715  17.110  14.795
+   36    HE3  LYS   5           HE1      LYS   5  10.030  18.474  13.579
+   37    HZ1  LYS   5           HZ1      LYS   5  11.379  17.012  12.397
+   38    HZ2  LYS   5           HZ2      LYS   5  10.308  15.983  12.946
+   39    HZ3  LYS   5           HZ3      LYS   5  11.728  16.060  13.693
+   40    H    DTH   6           H        DTH   6  16.892  18.711  16.424
+   41    HA   DTH   6           HA       DTH   6  17.380  21.057  18.114
+   42    HB   DTH   6           HB       DTH   6  19.711  21.208  17.447
+   43   HG21  DTH   6          1HG2      DTH   6  19.220  19.056  15.290
+   44   HG22  DTH   6          2HG2      DTH   6  20.533  19.251  16.506
+   45   HG23  DTH   6          3HG2      DTH   6  20.386  20.399  15.175
+   46    HG1  DTH   6           HG1      DTH   6  17.915  22.283  16.410
+   47    H    DAS   7           H        DAS   7  18.301  20.702  19.932
+   48    HA   DAS   7           HA       DAS   7  18.686  19.569  21.856
+   49    HB2  DAS   7           HB1      DAS   7  21.120  18.466  20.499
+   50    HB3  DAS   7           HB2      DAS   7  20.792  19.038  22.114
+  Start of MODEL   16
+    1    H1   GLN   1           H1       GLN   1  20.145  16.495  20.680
+    2    HA   GLN   1           HA       GLN   1  19.036  14.523  20.576
+    3    HB2  GLN   1           HB2      GLN   1  18.353  15.703  23.315
+    4    HB3  GLN   1           HB1      GLN   1  18.290  14.000  22.847
+    5    HG2  GLN   1           HG2      GLN   1  20.604  14.002  22.504
+    6    HG3  GLN   1           HG1      GLN   1  20.796  15.774  22.601
+    7   HE21  GLN   1          1HE2      GLN   1  22.593  14.810  24.344
+    8   HE22  GLN   1          2HE2      GLN   1  21.816  14.377  25.874
+    9    H    ASP   2           H        ASP   2  17.599  16.145  18.985
+   10    HA   ASP   2           HA       ASP   2  14.961  14.907  19.136
+   11    HB2  ASP   2           HB2      ASP   2  14.704  17.144  20.254
+   12    HB3  ASP   2           HB1      ASP   2  15.201  17.864  18.882
+   13    HA   PRO   3           HA       PRO   3  17.523  14.393  15.458
+   14    HB2  PRO   3           HB2      PRO   3  14.956  12.925  14.736
+   15    HB3  PRO   3           HB1      PRO   3  16.700  12.509  14.258
+   16    HG2  PRO   3           HG2      PRO   3  15.676  11.337  16.482
+   17    HG3  PRO   3           HG1      PRO   3  17.293  12.080  16.502
+   18    HD2  PRO   3           HD2      PRO   3  14.583  13.067  17.382
+   19    HD3  PRO   3           HD1      PRO   3  16.077  13.192  18.314
+   20    HA   DPR   4           HA       DPR   4  15.937  16.405  11.842
+   21    HB2  DPR   4           HB1      DPR   4  18.075  18.378  12.357
+   22    HB3  DPR   4           HB2      DPR   4  17.768  17.534  10.773
+   23    HG2  DPR   4           HG1      DPR   4  19.810  16.706  12.102
+   24    HG3  DPR   4           HG2      DPR   4  18.615  15.569  11.394
+   25    HD2  DPR   4           HD1      DPR   4  18.845  16.339  14.314
+   26    HD3  DPR   4           HD2      DPR   4  18.551  14.808  13.642
+   27    H    LYS   5           H        LYS   5  15.715  17.567  14.964
+   28    HA   LYS   5           HA       LYS   5  14.716  20.241  14.387
+   29    HB2  LYS   5           HB2      LYS   5  13.520  18.154  16.182
+   30    HB3  LYS   5           HB1      LYS   5  12.950  19.829  16.079
+   31    HG2  LYS   5           HG2      LYS   5  12.712  19.664  13.630
+   32    HG3  LYS   5           HG1      LYS   5  13.048  17.862  13.804
+   33    HD2  LYS   5           HD2      LYS   5  10.801  19.303  15.243
+   34    HD3  LYS   5           HD1      LYS   5  10.650  18.648  13.616
+   35    HE2  LYS   5           HE2      LYS   5  11.520  16.413  14.530
+   36    HE3  LYS   5           HE1      LYS   5  11.409  17.203  16.114
+   37    HZ1  LYS   5           HZ1      LYS   5   9.194  17.593  15.902
+   38    HZ2  LYS   5           HZ2      LYS   5   9.415  15.992  15.790
+   39    HZ3  LYS   5           HZ3      LYS   5   9.111  16.858  14.407
+   40    H    DTH   6           H        DTH   6  16.885  18.603  16.511
+   41    HA   DTH   6           HA       DTH   6  17.215  20.935  18.189
+   42    HB   DTH   6           HB       DTH   6  19.175  21.616  17.810
+   43   HG21  DTH   6          1HG2      DTH   6  20.616  19.723  16.823
+   44   HG22  DTH   6          2HG2      DTH   6  20.658  21.055  15.792
+   45   HG23  DTH   6          3HG2      DTH   6  19.548  19.764  15.387
+   46    HG1  DTH   6           HG1      DTH   6  18.994  22.788  15.980
+   47    H    DAS   7           H        DAS   7  18.559  20.664  19.826
+   48    HA   DAS   7           HA       DAS   7  19.387  19.651  21.713
+   49    HB2  DAS   7           HB1      DAS   7  20.922  18.180  19.616
+   50    HB3  DAS   7           HB2      DAS   7  21.468  18.464  21.247
+  Start of MODEL   17
+    1    H1   GLN   1           H1       GLN   1  19.899  16.734  21.073
+    2    HA   GLN   1           HA       GLN   1  18.932  14.626  21.072
+    3    HB2  GLN   1           HB2      GLN   1  17.243  15.821  23.313
+    4    HB3  GLN   1           HB1      GLN   1  17.919  14.224  23.276
+    5    HG2  GLN   1           HG2      GLN   1  19.421  16.827  23.753
+    6    HG3  GLN   1           HG1      GLN   1  18.984  15.623  24.939
+    7   HE21  GLN   1          1HE2      GLN   1  21.431  15.490  25.471
+    8   HE22  GLN   1          2HE2      GLN   1  22.240  14.319  24.415
+    9    H    ASP   2           H        ASP   2  17.638  16.399  19.150
+   10    HA   ASP   2           HA       ASP   2  15.322  14.489  18.956
+   11    HB2  ASP   2           HB2      ASP   2  14.594  16.402  20.169
+   12    HB3  ASP   2           HB1      ASP   2  15.083  17.483  18.884
+   13    HA   PRO   3           HA       PRO   3  17.636  14.426  15.111
+   14    HB2  PRO   3           HB2      PRO   3  15.212  12.739  14.442
+   15    HB3  PRO   3           HB1      PRO   3  16.904  12.523  13.958
+   16    HG2  PRO   3           HG2      PRO   3  16.012  11.128  16.036
+   17    HG3  PRO   3           HG1      PRO   3  17.627  11.861  16.112
+   18    HD2  PRO   3           HD2      PRO   3  15.116  12.859  17.510
+   19    HD3  PRO   3           HD1      PRO   3  16.802  12.999  17.941
+   20    HA   DPR   4           HA       DPR   4  15.327  16.633  12.089
+   21    HB2  DPR   4           HB1      DPR   4  17.067  18.214  10.922
+   22    HB3  DPR   4           HB2      DPR   4  17.115  16.534  10.824
+   23    HG2  DPR   4           HG1      DPR   4  18.695  18.288  12.805
+   24    HG3  DPR   4           HG2      DPR   4  19.303  16.939  11.794
+   25    HD2  DPR   4           HD1      DPR   4  18.554  16.585  14.557
+   26    HD3  DPR   4           HD2      DPR   4  18.482  15.352  13.346
+   27    H    LYS   5           H        LYS   5  15.311  17.500  14.921
+   28    HA   LYS   5           HA       LYS   5  14.494  20.276  14.514
+   29    HB2  LYS   5           HB2      LYS   5  13.951  18.742  17.035
+   30    HB3  LYS   5           HB1      LYS   5  13.267  20.244  16.437
+   31    HG2  LYS   5           HG2      LYS   5  12.267  18.885  14.535
+   32    HG3  LYS   5           HG1      LYS   5  12.889  17.519  15.520
+   33    HD2  LYS   5           HD2      LYS   5  11.535  18.687  17.408
+   34    HD3  LYS   5           HD1      LYS   5  10.572  19.376  16.143
+   35    HE2  LYS   5           HE2      LYS   5   9.382  17.672  16.033
+   36    HE3  LYS   5           HE1      LYS   5  10.702  16.641  15.475
+   37    HZ1  LYS   5           HZ1      LYS   5  11.108  16.405  18.080
+   38    HZ2  LYS   5           HZ2      LYS   5   9.916  15.627  17.441
+   39    HZ3  LYS   5           HZ3      LYS   5   9.640  17.024  18.259
+   40    H    DTH   6           H        DTH   6  16.821  18.595  16.511
+   41    HA   DTH   6           HA       DTH   6  17.917  21.023  17.726
+   42    HB   DTH   6           HB       DTH   6  19.040  20.946  15.586
+   43   HG21  DTH   6          1HG2      DTH   6  21.019  19.627  17.495
+   44   HG22  DTH   6          2HG2      DTH   6  20.482  21.230  17.665
+   45   HG23  DTH   6          3HG2      DTH   6  21.382  20.837  16.214
+   46    HG1  DTH   6           HG1      DTH   6  20.227  18.903  15.035
+   47    H    DAS   7           H        DAS   7  18.681  20.785  19.605
+   48    HA   DAS   7           HA       DAS   7  19.047  19.860  21.705
+   49    HB2  DAS   7           HB1      DAS   7  20.792  18.065  20.110
+   50    HB3  DAS   7           HB2      DAS   7  20.950  18.281  21.804
+  Start of MODEL   18
+    1    H1   GLN   1           H1       GLN   1  20.016  16.796  20.413
+    2    HA   GLN   1           HA       GLN   1  19.456  14.717  20.525
+    3    HB2  GLN   1           HB2      GLN   1  18.142  15.277  23.165
+    4    HB3  GLN   1           HB1      GLN   1  18.527  13.706  22.580
+    5    HG2  GLN   1           HG2      GLN   1  20.935  14.118  22.361
+    6    HG3  GLN   1           HG1      GLN   1  20.630  15.598  23.269
+    7   HE21  GLN   1          1HE2      GLN   1  22.304  14.131  24.881
+    8   HE22  GLN   1          2HE2      GLN   1  21.424  13.013  25.861
+    9    H    ASP   2           H        ASP   2  17.837  16.221  18.943
+   10    HA   ASP   2           HA       ASP   2  15.255  14.880  19.108
+   11    HB2  ASP   2           HB2      ASP   2  14.985  17.189  20.079
+   12    HB3  ASP   2           HB1      ASP   2  15.692  17.845  18.573
+   13    HA   PRO   3           HA       PRO   3  17.209  13.993  15.412
+   14    HB2  PRO   3           HB2      PRO   3  14.610  12.911  14.392
+   15    HB3  PRO   3           HB1      PRO   3  16.240  12.133  14.441
+   16    HG2  PRO   3           HG2      PRO   3  14.067  11.883  16.231
+   17    HG3  PRO   3           HG1      PRO   3  15.919  11.435  16.513
+   18    HD2  PRO   3           HD2      PRO   3  14.025  13.570  17.507
+   19    HD3  PRO   3           HD1      PRO   3  15.578  13.088  18.211
+   20    HA   DPR   4           HA       DPR   4  15.634  16.606  11.965
+   21    HB2  DPR   4           HB1      DPR   4  17.815  18.042  11.311
+   22    HB3  DPR   4           HB2      DPR   4  17.803  16.269  11.271
+   23    HG2  DPR   4           HG1      DPR   4  18.717  17.966  13.660
+   24    HG3  DPR   4           HG2      DPR   4  19.733  16.774  12.717
+   25    HD2  DPR   4           HD1      DPR   4  18.325  16.236  14.958
+   26    HD3  DPR   4           HD2      DPR   4  18.506  14.962  13.709
+   27    H    LYS   5           H        LYS   5  15.718  17.655  15.046
+   28    HA   LYS   5           HA       LYS   5  14.970  20.474  14.386
+   29    HB2  LYS   5           HB2      LYS   5  13.642  18.455  16.183
+   30    HB3  LYS   5           HB1      LYS   5  13.218  20.199  16.110
+   31    HG2  LYS   5           HG2      LYS   5  12.793  20.111  13.799
+   32    HG3  LYS   5           HG1      LYS   5  13.034  18.311  13.819
+   33    HD2  LYS   5           HD2      LYS   5  10.797  19.934  15.093
+   34    HD3  LYS   5           HD1      LYS   5  10.832  18.930  13.673
+   35    HE2  LYS   5           HE2      LYS   5   9.554  17.808  15.393
+   36    HE3  LYS   5           HE1      LYS   5  10.995  16.899  15.080
+   37    HZ1  LYS   5           HZ1      LYS   5  10.434  17.138  17.414
+   38    HZ2  LYS   5           HZ2      LYS   5  10.917  18.725  17.327
+   39    HZ3  LYS   5           HZ3      LYS   5  11.952  17.591  17.140
+   40    H    DTH   6           H        DTH   6  17.163  18.640  16.426
+   41    HA   DTH   6           HA       DTH   6  17.405  21.085  17.979
+   42    HB   DTH   6           HB       DTH   6  18.643  21.700  16.086
+   43   HG21  DTH   6          1HG2      DTH   6  21.033  21.409  16.625
+   44   HG22  DTH   6          2HG2      DTH   6  20.679  20.460  18.096
+   45   HG23  DTH   6          3HG2      DTH   6  20.176  22.047  18.077
+   46    HG1  DTH   6           HG1      DTH   6  20.049  19.339  16.020
+   47    H    DAS   7           H        DAS   7  18.131  20.761  20.048
+   48    HA   DAS   7           HA       DAS   7  18.651  19.592  21.947
+   49    HB2  DAS   7           HB1      DAS   7  20.770  18.722  20.076
+   50    HB3  DAS   7           HB2      DAS   7  20.904  18.565  21.836
+  Start of MODEL   19
+    1    H1   GLN   1           H1       GLN   1  19.979  16.698  20.581
+    2    HA   GLN   1           HA       GLN   1  19.103  14.580  20.779
+    3    HB2  GLN   1           HB2      GLN   1  18.084  15.582  23.502
+    4    HB3  GLN   1           HB1      GLN   1  18.306  13.922  22.908
+    5    HG2  GLN   1           HG2      GLN   1  20.406  16.046  23.153
+    6    HG3  GLN   1           HG1      GLN   1  19.893  14.875  24.480
+    7   HE21  GLN   1          1HE2      GLN   1  20.063  12.660  23.930
+    8   HE22  GLN   1          2HE2      GLN   1  21.187  11.973  22.707
+    9    H    ASP   2           H        ASP   2  17.434  16.522  19.441
+   10    HA   ASP   2           HA       ASP   2  15.210  14.616  19.063
+   11    HB2  ASP   2           HB2      ASP   2  14.462  16.528  20.332
+   12    HB3  ASP   2           HB1      ASP   2  14.662  17.562  19.023
+   13    HA   PRO   3           HA       PRO   3  17.685  14.563  15.426
+   14    HB2  PRO   3           HB2      PRO   3  15.363  12.908  14.385
+   15    HB3  PRO   3           HB1      PRO   3  17.126  12.631  14.152
+   16    HG2  PRO   3           HG2      PRO   3  15.778  11.334  16.044
+   17    HG3  PRO   3           HG1      PRO   3  17.368  12.067  16.463
+   18    HD2  PRO   3           HD2      PRO   3  14.608  13.045  17.051
+   19    HD3  PRO   3           HD1      PRO   3  15.997  13.057  18.153
+   20    HA   DPR   4           HA       DPR   4  15.549  16.678  11.877
+   21    HB2  DPR   4           HB1      DPR   4  17.409  18.340  11.305
+   22    HB3  DPR   4           HB2      DPR   4  17.595  16.629  10.881
+   23    HG2  DPR   4           HG1      DPR   4  18.892  18.267  13.068
+   24    HG3  DPR   4           HG2      DPR   4  19.627  16.912  12.164
+   25    HD2  DPR   4           HD1      DPR   4  18.507  16.583  14.651
+   26    HD3  DPR   4           HD2      DPR   4  18.726  15.293  13.527
+   27    H    LYS   5           H        LYS   5  15.921  17.843  15.011
+   28    HA   LYS   5           HA       LYS   5  15.169  20.486  14.353
+   29    HB2  LYS   5           HB2      LYS   5  12.996  20.435  15.755
+   30    HB3  LYS   5           HB1      LYS   5  13.051  19.648  14.156
+   31    HG2  LYS   5           HG2      LYS   5  13.135  17.495  15.367
+   32    HG3  LYS   5           HG1      LYS   5  13.057  18.442  16.893
+   33    HD2  LYS   5           HD2      LYS   5  11.014  19.120  16.778
+   34    HD3  LYS   5           HD1      LYS   5  11.044  19.269  15.021
+   35    HE2  LYS   5           HE2      LYS   5   9.472  17.425  15.325
+   36    HE3  LYS   5           HE1      LYS   5  10.959  16.768  14.789
+   37    HZ1  LYS   5           HZ1      LYS   5  11.469  16.252  17.072
+   38    HZ2  LYS   5           HZ2      LYS   5   9.938  15.620  16.722
+   39    HZ3  LYS   5           HZ3      LYS   5  10.137  16.984  17.642
+   40    H    DTH   6           H        DTH   6  16.561  18.489  16.846
+   41    HA   DTH   6           HA       DTH   6  17.604  20.950  17.886
+   42    HB   DTH   6           HB       DTH   6  18.386  20.857  15.527
+   43   HG21  DTH   6          1HG2      DTH   6  20.795  21.113  16.034
+   44   HG22  DTH   6          2HG2      DTH   6  20.518  20.297  17.588
+   45   HG23  DTH   6          3HG2      DTH   6  19.781  21.891  17.314
+   46    HG1  DTH   6           HG1      DTH   6  19.800  19.403  14.835
+   47    H    DAS   7           H        DAS   7  18.777  20.679  19.591
+   48    HA   DAS   7           HA       DAS   7  19.090  19.789  21.601
+   49    HB2  DAS   7           HB1      DAS   7  21.082  18.364  19.971
+   50    HB3  DAS   7           HB2      DAS   7  21.019  18.306  21.720
+  Start of MODEL   20
+    1    H1   GLN   1           H1       GLN   1  19.751  16.631  20.269
+    2    HA   GLN   1           HA       GLN   1  19.197  14.596  20.606
+    3    HB2  GLN   1           HB2      GLN   1  18.083  15.586  23.238
+    4    HB3  GLN   1           HB1      GLN   1  18.226  13.906  22.677
+    5    HG2  GLN   1           HG2      GLN   1  20.508  13.963  22.703
+    6    HG3  GLN   1           HG1      GLN   1  20.646  15.728  22.894
+    7   HE21  GLN   1          1HE2      GLN   1  20.080  16.779  25.034
+    8   HE22  GLN   1          2HE2      GLN   1  20.394  15.729  26.453
+    9    H    ASP   2           H        ASP   2  17.337  16.655  19.506
+   10    HA   ASP   2           HA       ASP   2  15.171  14.711  19.005
+   11    HB2  ASP   2           HB2      ASP   2  15.013  17.691  18.393
+   12    HB3  ASP   2           HB1      ASP   2  13.811  16.574  18.155
+   13    HA   PRO   3           HA       PRO   3  17.778  14.557  15.345
+   14    HB2  PRO   3           HB2      PRO   3  15.648  12.846  14.273
+   15    HB3  PRO   3           HB1      PRO   3  17.441  12.733  14.258
+   16    HG2  PRO   3           HG2      PRO   3  15.621  11.443  16.013
+   17    HG3  PRO   3           HG1      PRO   3  17.378  11.641  16.387
+   18    HD2  PRO   3           HD2      PRO   3  14.942  13.107  17.418
+   19    HD3  PRO   3           HD1      PRO   3  16.632  13.029  18.113
+   20    HA   DPR   4           HA       DPR   4  15.470  16.320  12.002
+   21    HB2  DPR   4           HB1      DPR   4  17.581  18.548  12.173
+   22    HB3  DPR   4           HB2      DPR   4  17.006  17.830  10.697
+   23    HG2  DPR   4           HG1      DPR   4  19.438  16.939  11.653
+   24    HG3  DPR   4           HG2      DPR   4  18.290  15.902  10.895
+   25    HD2  DPR   4           HD1      DPR   4  18.841  16.467  13.765
+   26    HD3  DPR   4           HD2      DPR   4  18.418  14.918  13.127
+   27    H    LYS   5           H        LYS   5  15.818  17.753  14.984
+   28    HA   LYS   5           HA       LYS   5  14.765  20.465  14.427
+   29    HB2  LYS   5           HB2      LYS   5  12.885  19.318  15.173
+   30    HB3  LYS   5           HB1      LYS   5  13.898  18.291  16.260
+   31    HG2  LYS   5           HG2      LYS   5  14.139  20.246  17.722
+   32    HG3  LYS   5           HG1      LYS   5  13.048  21.133  16.740
+   33    HD2  LYS   5           HD2      LYS   5  11.167  19.380  17.271
+   34    HD3  LYS   5           HD1      LYS   5  12.408  18.589  18.217
+   35    HE2  LYS   5           HE2      LYS   5  11.454  21.461  18.667
+   36    HE3  LYS   5           HE1      LYS   5  10.849  20.024  19.565
+   37    HZ1  LYS   5           HZ1      LYS   5  12.581  20.916  20.867
+   38    HZ2  LYS   5           HZ2      LYS   5  13.663  21.198  19.732
+   39    HZ3  LYS   5           HZ3      LYS   5  13.261  19.709  20.065
+   40    H    DTH   6           H        DTH   6  16.816  18.458  16.652
+   41    HA   DTH   6           HA       DTH   6  17.788  20.953  17.702
+   42    HB   DTH   6           HB       DTH   6  19.007  20.821  15.705
+   43   HG21  DTH   6          1HG2      DTH   6  20.849  21.049  17.334
+   44   HG22  DTH   6          2HG2      DTH   6  21.375  19.912  16.075
+   45   HG23  DTH   6          3HG2      DTH   6  20.888  19.379  17.688
+   46    HG1  DTH   6           HG1      DTH   6  19.766  19.028  14.861
+   47    H    DAS   7           H        DAS   7  18.517  20.737  19.787
+   48    HA   DAS   7           HA       DAS   7  18.632  19.821  21.769
+   49    HB2  DAS   7           HB1      DAS   7  21.009  18.479  20.675
+   50    HB3  DAS   7           HB2      DAS   7  20.694  18.987  22.374

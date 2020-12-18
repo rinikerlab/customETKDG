@@ -1,0 +1,560 @@
+data_wwPDB_remediated_restraints_file_for_PDB_entry_2n7n
+
+# This wwPDB archive file contains, for PDB entry 2n7n:
+#
+# - Sequence information from the PDB mmCIF file
+# - NMR restraints from the PDB MR file
+#
+# In this file, the NMR restraints share the same atom names as in the coordinate 
+# file, and in this way can differ from the data deposited at the wwPDB. To achieve
+# this aim, the NMR restraints were parsed from their original format files, and
+# the coordinates and NMR restraints information were subsequently harmonized.
+#
+# Due to the complexity of this harmonization process, minor modifications could
+# have occurred to the NMR restraints information, or data could have been lost
+# because of parsing or conversion errors. The PDB file remains the
+# authoritative reference for the atomic coordinates and the originally deposited
+# restraints files remain the primary reference for these data.
+#
+# This file is generated as part of the wwPDB at the BioMagResBank (BMRB) in
+# collaboration with the PDBe (formerly MSD) group at the European
+# Bioinformatics Institute (EBI) and the CMBI/IMM group at the Radboud
+# University of Nijmegen.
+#
+# Several software packages were used to produce this file:
+#
+# - Wattos (BMRB and CMBI/IMM).
+# - FormatConverter and NMRStarExport (PDBe).
+# - CCPN framework (http://www.ccpn.ac.uk/).
+#
+# More information about this process can be found in the references below.
+# Please cite the original reference for this PDB entry.
+#
+# JF Doreleijers, A Nederveen, W Vranken, J Lin, AM Bonvin, R Kaptein, JL
+# Markley, and EL Ulrich (2005). BioMagResBank databases DOCR and FRED
+# containing converted and filtered sets of experimental NMR restraints and
+# coordinates from over 500 protein PDB structures. J. Biomol. NMR 32, 1-12.
+#
+# WF Vranken, W Boucher, TJ Stevens, RH Fogh, A Pajon, M Llinas, EL Ulrich, JL
+# Markley, J Ionides, ED Laue (2005). The CCPN data model for NMR spectroscopy:
+# development of a software pipeline. Proteins 59, 687-696.
+#
+# JF Doreleijers, WF Vranken, C Schulte, J Lin, JR Wedell, CJ Penkett, GW Vuister, 
+# G Vriend, JL Markley, and EL Ulrich (2009). The NMR Restraints Grid at BMRB for 
+# 5,266 Protein and Nucleic Acid PDB Entries. J Biomol. NMR 45, 389-396.
+
+#######################
+#  Entry information  #
+#######################
+
+save_entry_information
+   _Entry.Sf_category                  entry_information
+   _Entry.Sf_framecode                 entry_information
+   _Entry.ID                           rr_2n7n
+   _Entry.Title                        'wwPDB remediated NMR restraints for PDB entry 2n7n'
+   _Entry.Version_type                 original
+   _Entry.NMR_STAR_version             3.1.0.8
+   _Entry.Experimental_method          NMR
+   _Entry.Experimental_method_subtype  solution
+   _Entry.Details                      'Contains the remediated restraint lists and coordinates for PDB entry 2n7n'
+   _Entry.PDB_coordinate_file_version  3.20
+
+   loop_
+      _Related_entries.Database_name
+      _Related_entries.Database_accession_code
+      _Related_entries.Relationship
+      _Related_entries.Entry_ID
+
+     PDB   2n7n   'Master copy'   rr_2n7n    
+
+   stop_
+
+save_
+
+#############################################
+#  Molecular system (assembly) description  #
+#############################################
+
+save_assembly
+   _Assembly.Sf_category           assembly
+   _Assembly.Sf_framecode          assembly
+   _Assembly.Entry_ID              rr_2n7n
+   _Assembly.ID                    1
+   _Assembly.Name                  2n7n
+   _Assembly.Number_of_components  1
+   _Assembly.Organic_ligands       0
+   _Assembly.Metal_ions            0
+   _Assembly.Non_standard_bonds    no
+   _Assembly.Paramagnetic          no
+   _Assembly.Thiol_state           'not present'
+   _Assembly.Molecular_mass        1099.2974
+
+   loop_
+      _Entity_assembly.ID
+      _Entity_assembly.Entity_assembly_name
+      _Entity_assembly.Entity_ID
+      _Entity_assembly.Entity_label
+      _Entity_assembly.Asym_ID
+      _Entity_assembly.PDB_chain_ID
+      _Entity_assembly.Experimental_data_reported
+      _Entity_assembly.Physical_state
+      _Entity_assembly.Conformational_isomer
+      _Entity_assembly.Chemical_exchange_state
+      _Entity_assembly.Magnetic_equivalence_group_code
+      _Entity_assembly.Role
+      _Entity_assembly.Details
+      _Entity_assembly.Entry_ID
+      _Entity_assembly.Assembly_ID
+
+     1   'Peptide PG 989'   1   $Peptide_PG_989   A   .   no   .   .   .   .   .   .   rr_2n7n   1    
+
+   stop_
+
+save_
+
+    ####################################
+    #  Biological polymers and ligands #
+    ####################################
+
+save_Peptide_PG_989
+   _Entity.Sf_category                      entity
+   _Entity.Sf_framecode                     Peptide_PG_989
+   _Entity.Entry_ID                         rr_2n7n
+   _Entity.ID                               1
+   _Entity.Name                             Peptide_PG_989
+   _Entity.Type                             polymer
+   _Entity.Polymer_type                     polypeptide(L)
+   _Entity.Polymer_strand_ID                A
+   _Entity.Polymer_seq_one_letter_code      XLDPPXRWKX
+   _Entity.Ambiguous_conformational_states  no
+   _Entity.Ambiguous_chem_comp_sites        no
+   _Entity.Nstd_monomer                     yes
+   _Entity.Nstd_chirality                   yes
+   _Entity.Nstd_linkage                     yes
+   _Entity.Number_of_monomers               10
+   _Entity.Paramagnetic                     no
+   _Entity.Thiol_state                      'not present'
+   _Entity.Parent_entity_ID                 1
+   _Entity.Formula_weight                   1099.2974
+
+   loop_
+      _Entity_comp_index.ID
+      _Entity_comp_index.Auth_seq_ID
+      _Entity_comp_index.Comp_ID
+      _Entity_comp_index.Comp_label
+      _Entity_comp_index.Entry_ID
+      _Entity_comp_index.Entity_ID
+
+     1    .   ACE   .   rr_2n7n   1    
+     2    .   NLE   .   rr_2n7n   1    
+     3    .   ASP   .   rr_2n7n   1    
+     4    .   PRO   .   rr_2n7n   1    
+     5    .   PRO   .   rr_2n7n   1    
+     6    .   .     .   rr_2n7n   1    
+     7    .   ARG   .   rr_2n7n   1    
+     8    .   TRP   .   rr_2n7n   1    
+     9    .   LYS   .   rr_2n7n   1    
+     10   .   NH2   .   rr_2n7n   1    
+
+   stop_
+
+   loop_
+      _Entity_poly_seq.Hetero
+      _Entity_poly_seq.Mon_ID
+      _Entity_poly_seq.Num
+      _Entity_poly_seq.Comp_index_ID
+      _Entity_poly_seq.Entry_ID
+      _Entity_poly_seq.Entity_ID
+
+     .   ACE   1    1    rr_2n7n   1    
+     .   NLE   2    2    rr_2n7n   1    
+     .   ASP   3    3    rr_2n7n   1    
+     .   PRO   4    4    rr_2n7n   1    
+     .   PRO   5    5    rr_2n7n   1    
+     .   .     6    6    rr_2n7n   1    
+     .   ARG   7    7    rr_2n7n   1    
+     .   TRP   8    8    rr_2n7n   1    
+     .   LYS   9    9    rr_2n7n   1    
+     .   NH2   10   10   rr_2n7n   1    
+
+   stop_
+
+save_
+
+    #################################
+    #  Polymer residues and ligands #
+    #################################
+
+save_chem_comp_ACE
+   _Chem_comp.Sf_category     chem_comp
+   _Chem_comp.Sf_framecode    chem_comp_ACE
+   _Chem_comp.Entry_ID        rr_2n7n
+   _Chem_comp.ID              ACE
+   _Chem_comp.Name            'ACETYL GROUP'
+   _Chem_comp.Type            non-polymer
+   _Chem_comp.PDB_code        ACE
+   _Chem_comp.Formal_charge   0
+   _Chem_comp.Paramagnetic    no
+   _Chem_comp.Aromatic        no
+   _Chem_comp.Formula         'C2 H3 O'
+   _Chem_comp.Formula_weight  43.0451
+
+   loop_
+      _Chem_comp_common_name.Name
+      _Chem_comp_common_name.Type
+      _Chem_comp_common_name.Entry_ID
+      _Chem_comp_common_name.Comp_ID
+
+     acetaldehyde   name   rr_2n7n   ACE    
+
+   stop_
+
+save_
+
+save_chem_comp_NLE
+   _Chem_comp.Sf_category                  chem_comp
+   _Chem_comp.Sf_framecode                 chem_comp_NLE
+   _Chem_comp.Entry_ID                     rr_2n7n
+   _Chem_comp.ID                           NLE
+   _Chem_comp.Name                         NORLEUCINE
+   _Chem_comp.Type                         'L-peptide linking'
+   _Chem_comp.PDB_code                     NLE
+   _Chem_comp.Std_deriv_one_letter_code    L
+   _Chem_comp.Std_deriv_three_letter_code  Leu
+   _Chem_comp.Std_deriv_PDB_code           LEU
+   _Chem_comp.Std_deriv_chem_comp_name     LEUCINE
+   _Chem_comp.Formal_charge                0
+   _Chem_comp.Paramagnetic                 no
+   _Chem_comp.Aromatic                     no
+   _Chem_comp.Formula                      'C6 H11 N O'
+   _Chem_comp.Formula_weight               113.159
+
+   loop_
+      _Chem_comp_common_name.Name
+      _Chem_comp_common_name.Type
+      _Chem_comp_common_name.Entry_ID
+      _Chem_comp_common_name.Comp_ID
+
+     L-norleucine   name   rr_2n7n   NLE    
+
+   stop_
+
+save_
+
+save_chem_comp_DPN
+   _Chem_comp.Sf_category     chem_comp
+   _Chem_comp.Sf_framecode    chem_comp_DPN
+   _Chem_comp.Entry_ID        rr_2n7n
+   _Chem_comp.ID              1
+   _Chem_comp.Name            Dpn
+   _Chem_comp.Type            'L-peptide linking'
+   _Chem_comp.Formal_charge   0
+   _Chem_comp.Paramagnetic    no
+   _Chem_comp.Aromatic        no
+   _Chem_comp.Formula         'C9 H9 N O'
+   _Chem_comp.Formula_weight  147.1762
+
+save_
+
+save_chem_comp_NH2
+   _Chem_comp.Sf_category     chem_comp
+   _Chem_comp.Sf_framecode    chem_comp_NH2
+   _Chem_comp.Entry_ID        rr_2n7n
+   _Chem_comp.ID              NH2
+   _Chem_comp.Name            'AMINO GROUP'
+   _Chem_comp.Type            non-polymer
+   _Chem_comp.PDB_code        NH2
+   _Chem_comp.Formal_charge   0
+   _Chem_comp.Paramagnetic    no
+   _Chem_comp.Aromatic        no
+   _Chem_comp.Formula         'H2 N'
+   _Chem_comp.Formula_weight  16.0225
+
+save_
+
+
+##############################
+#  Structure determinations  #
+##############################
+
+    ##########################
+    #  Conformer statistics  #
+    ##########################
+
+save_conformer_statistics
+   _Conformer_stat_list.Sf_category                    conformer_statistics
+   _Conformer_stat_list.Sf_framecode                   conformer_statistics
+   _Conformer_stat_list.Entry_ID                       rr_2n7n
+   _Conformer_stat_list.ID                             1
+   _Conformer_stat_list.Conf_family_coord_set_ID       1
+   _Conformer_stat_list.Conf_family_coord_set_label    $Original_constraints_and_structures
+   _Conformer_stat_list.Conformer_submitted_total_num  10
+
+save_
+
+###########################
+#  Constraint Statistics  #
+###########################
+
+save_constraint_statistics
+   _Constraint_stat_list.Sf_framecode  constraint_statistics
+   _Constraint_stat_list.Sf_category   constraint_statistics
+   _Constraint_stat_list.Entry_ID      rr_2n7n
+   _Constraint_stat_list.ID            1
+
+   loop_
+      _Constraint_file.ID
+      _Constraint_file.Constraint_filename
+      _Constraint_file.Software_ID
+      _Constraint_file.Software_label
+      _Constraint_file.Software_name
+      _Constraint_file.Block_ID
+      _Constraint_file.Constraint_type
+      _Constraint_file.Constraint_subtype
+      _Constraint_file.Constraint_subsubtype
+      _Constraint_file.Constraint_number
+      _Constraint_file.Entry_ID
+      _Constraint_file.Constraint_stat_list_ID
+
+     1   2n7n.mr   .   .   'MR format'   1   comment                  'Not applicable'   'Not applicable'   0    rr_2n7n   1    
+     1   2n7n.mr   .   .   DYANA/DIANA   2   distance                 NOE                simple             99   rr_2n7n   1    
+     1   2n7n.mr   .   .   'MR format'   3   'nomenclature mapping'   'Not applicable'   'Not applicable'   0    rr_2n7n   1    
+
+   stop_
+
+save_
+
+save_DYANA/DIANA_distance_constraints_2
+   _Gen_dist_constraint_list.Sf_category         general_distance_constraints
+   _Gen_dist_constraint_list.Sf_framecode        DYANA/DIANA_distance_constraints_2
+   _Gen_dist_constraint_list.Entry_ID            rr_2n7n
+   _Gen_dist_constraint_list.ID                  1
+   _Gen_dist_constraint_list.Constraint_type     NOE
+   _Gen_dist_constraint_list.Details             'Generated by Wattos'
+   _Gen_dist_constraint_list.Constraint_file_ID  1
+   _Gen_dist_constraint_list.Block_ID            2
+
+   loop_
+      _Gen_dist_constraint_software.Software_ID
+      _Gen_dist_constraint_software.Software_label
+      _Gen_dist_constraint_software.Method_ID
+      _Gen_dist_constraint_software.Method_label
+      _Gen_dist_constraint_software.Entry_ID
+      _Gen_dist_constraint_software.Gen_dist_constraint_list_ID
+
+     .   .   .   .   rr_2n7n   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint.ID
+      _Gen_dist_constraint.Member_ID
+      _Gen_dist_constraint.Member_logic_code
+      _Gen_dist_constraint.Assembly_atom_ID_1
+      _Gen_dist_constraint.Entity_assembly_ID_1
+      _Gen_dist_constraint.Entity_ID_1
+      _Gen_dist_constraint.Comp_index_ID_1
+      _Gen_dist_constraint.Seq_ID_1
+      _Gen_dist_constraint.Comp_ID_1
+      _Gen_dist_constraint.Atom_ID_1
+      _Gen_dist_constraint.Atom_type_1
+      _Gen_dist_constraint.Atom_isotope_number_1
+      _Gen_dist_constraint.Resonance_ID_1
+      _Gen_dist_constraint.Assembly_atom_ID_2
+      _Gen_dist_constraint.Entity_assembly_ID_2
+      _Gen_dist_constraint.Entity_ID_2
+      _Gen_dist_constraint.Comp_index_ID_2
+      _Gen_dist_constraint.Seq_ID_2
+      _Gen_dist_constraint.Comp_ID_2
+      _Gen_dist_constraint.Atom_ID_2
+      _Gen_dist_constraint.Atom_type_2
+      _Gen_dist_constraint.Atom_isotope_number_2
+      _Gen_dist_constraint.Resonance_ID_2
+      _Gen_dist_constraint.Intensity_val
+      _Gen_dist_constraint.Intensity_lower_val_err
+      _Gen_dist_constraint.Intensity_upper_val_err
+      _Gen_dist_constraint.Distance_val
+      _Gen_dist_constraint.Distance_lower_bound_val
+      _Gen_dist_constraint.Distance_upper_bound_val
+      _Gen_dist_constraint.Contribution_fractional_val
+      _Gen_dist_constraint.Spectral_peak_ID
+      _Gen_dist_constraint.Spectral_peak_list_ID
+      _Gen_dist_constraint.PDB_record_ID_1
+      _Gen_dist_constraint.PDB_model_num_1
+      _Gen_dist_constraint.PDB_strand_ID_1
+      _Gen_dist_constraint.PDB_ins_code_1
+      _Gen_dist_constraint.PDB_residue_no_1
+      _Gen_dist_constraint.PDB_residue_name_1
+      _Gen_dist_constraint.PDB_atom_name_1
+      _Gen_dist_constraint.PDB_record_ID_2
+      _Gen_dist_constraint.PDB_model_num_2
+      _Gen_dist_constraint.PDB_strand_ID_2
+      _Gen_dist_constraint.PDB_ins_code_2
+      _Gen_dist_constraint.PDB_residue_no_2
+      _Gen_dist_constraint.PDB_residue_name_2
+      _Gen_dist_constraint.PDB_atom_name_2
+      _Gen_dist_constraint.Auth_entity_assembly_ID_1
+      _Gen_dist_constraint.Auth_asym_ID_1
+      _Gen_dist_constraint.Auth_chain_ID_1
+      _Gen_dist_constraint.Auth_seq_ID_1
+      _Gen_dist_constraint.Auth_comp_ID_1
+      _Gen_dist_constraint.Auth_atom_ID_1
+      _Gen_dist_constraint.Auth_alt_ID_1
+      _Gen_dist_constraint.Auth_atom_name_1
+      _Gen_dist_constraint.Auth_entity_assembly_ID_2
+      _Gen_dist_constraint.Auth_asym_ID_2
+      _Gen_dist_constraint.Auth_chain_ID_2
+      _Gen_dist_constraint.Auth_seq_ID_2
+      _Gen_dist_constraint.Auth_comp_ID_2
+      _Gen_dist_constraint.Auth_atom_ID_2
+      _Gen_dist_constraint.Auth_alt_ID_2
+      _Gen_dist_constraint.Auth_atom_name_2
+      _Gen_dist_constraint.Entry_ID
+      _Gen_dist_constraint.Gen_dist_constraint_list_ID
+
+     1    1   .    .   1   1   3   3   ASP   H     H   .   .   .   1   1   2   2   NLE   HA    H   .   .   .   .   .   .   .   2.62   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   4    NLE   HA    .   .   .   5    ASP   HN    .   .   .   .   .   4    NLE   HA    .   .   rr_2n7n   1    
+     2    1   .    .   1   1   2   2   NLE   HA    H   .   .   .   1   1   8   8   TRP   HA    H   .   .   .   .   .   .   .   3.17   .   .   .   .   .   A   .   4    NLE   HA    .   .   A   .   10   TRP   HA    .   .   .   4    NLE   HA    .   .   .   .   .   10   TRP   HA    .   .   rr_2n7n   1    
+     3    1   .    .   1   1   2   2   NLE   HA    H   .   .   .   1   1   8   8   TRP   HE3   H   .   .   .   .   .   .   .   4.38   .   .   .   .   .   A   .   4    NLE   HA    .   .   A   .   10   TRP   HE3   .   .   .   4    NLE   HA    .   .   .   .   .   10   TRP   HE3   .   .   rr_2n7n   1    
+     4    1   .    .   1   1   9   9   LYS   H     H   .   .   .   1   1   2   2   NLE   HA    H   .   .   .   .   .   .   .   3.45   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   4    NLE   HA    .   .   .   11   LYS   HN    .   .   .   .   .   4    NLE   HA    .   .   rr_2n7n   1    
+     5    1   .    .   1   1   2   2   NLE   HB2   H   .   .   .   1   1   3   3   ASP   H     H   .   .   .   .   .   .   .   3.73   .   .   .   .   .   A   .   4    NLE   HB2   .   .   A   .   5    ASP   H     .   .   .   4    NLE   HB2   .   .   .   .   .   5    ASP   HN    .   .   rr_2n7n   1    
+     6    1   .    .   1   1   2   2   NLE   HB3   H   .   .   .   1   1   3   3   ASP   H     H   .   .   .   .   .   .   .   3.73   .   .   .   .   .   A   .   4    NLE   HB3   .   .   A   .   5    ASP   H     .   .   .   4    NLE   HB3   .   .   .   .   .   5    ASP   HN    .   .   rr_2n7n   1    
+     7    1   .    .   1   1   3   3   ASP   H     H   .   .   .   1   1   3   3   ASP   HB2   H   .   .   .   .   .   .   .   3.39   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   5    ASP   HB2   .   .   .   5    ASP   HN    .   .   .   .   .   5    ASP   HB2   .   .   rr_2n7n   1    
+     8    1   .    .   1   1   3   3   ASP   H     H   .   .   .   1   1   3   3   ASP   HB3   H   .   .   .   .   .   .   .   3.39   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   5    ASP   HB3   .   .   .   5    ASP   HN    .   .   .   .   .   5    ASP   HB3   .   .   rr_2n7n   1    
+     9    1   OR   .   1   1   3   3   ASP   H     H   .   .   .   1   1   3   3   ASP   HB3   H   .   .   .   .   .   .   .   2.89   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   5    ASP   HB3   .   .   .   5    ASP   HN    .   .   .   .   .   5    ASP   QB    .   .   rr_2n7n   1    
+     9    2   OR   .   1   1   3   3   ASP   H     H   .   .   .   1   1   3   3   ASP   HB2   H   .   .   .   .   .   .   .   2.89   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   5    ASP   HB2   .   .   .   5    ASP   HN    .   .   .   .   .   5    ASP   QB    .   .   rr_2n7n   1    
+     10   1   .    .   1   1   9   9   LYS   H     H   .   .   .   1   1   3   3   ASP   H     H   .   .   .   .   .   .   .   4.23   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   5    ASP   H     .   .   .   11   LYS   HN    .   .   .   .   .   5    ASP   HN    .   .   rr_2n7n   1    
+     11   1   .    .   1   1   3   3   ASP   H     H   .   .   .   1   1   9   9   LYS   QZ    H   .   .   .   .   .   .   .   4.97   .   .   .   .   .   A   .   5    ASP   H     .   .   A   .   11   LYS   QZ    .   .   .   5    ASP   HN    .   .   .   .   .   11   LYS   HZ1   .   .   rr_2n7n   1    
+     12   1   .    .   1   1   3   3   ASP   HA    H   .   .   .   1   1   4   4   PRO   HD2   H   .   .   .   .   .   .   .   3.39   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   6    PRO   HD2   .   .   .   5    ASP   HA    .   .   .   .   .   6    PRO   HD2   .   .   rr_2n7n   1    
+     13   1   .    .   1   1   3   3   ASP   HA    H   .   .   .   1   1   4   4   PRO   HD3   H   .   .   .   .   .   .   .   3.39   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   6    PRO   HD3   .   .   .   5    ASP   HA    .   .   .   .   .   6    PRO   HD3   .   .   rr_2n7n   1    
+     14   1   OR   .   1   1   3   3   ASP   HA    H   .   .   .   1   1   4   4   PRO   HD3   H   .   .   .   .   .   .   .   2.93   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   6    PRO   HD3   .   .   .   5    ASP   HA    .   .   .   .   .   6    PRO   QD    .   .   rr_2n7n   1    
+     14   2   OR   .   1   1   3   3   ASP   HA    H   .   .   .   1   1   4   4   PRO   HD2   H   .   .   .   .   .   .   .   2.93   .   .   .   .   .   A   .   5    ASP   HA    .   .   A   .   6    PRO   HD2   .   .   .   5    ASP   HA    .   .   .   .   .   6    PRO   QD    .   .   rr_2n7n   1    
+     15   1   .    .   1   1   9   9   LYS   QZ    H   .   .   .   1   1   3   3   ASP   HA    H   .   .   .   .   .   .   .   5.13   .   .   .   .   .   A   .   11   LYS   QZ    .   .   A   .   5    ASP   HA    .   .   .   11   LYS   HZ1   .   .   .   .   .   5    ASP   HA    .   .   rr_2n7n   1    
+     16   1   .    .   1   1   3   3   ASP   HB2   H   .   .   .   1   1   9   9   LYS   QZ    H   .   .   .   .   .   .   .   3.70   .   .   .   .   .   A   .   5    ASP   HB2   .   .   A   .   11   LYS   QZ    .   .   .   5    ASP   HB2   .   .   .   .   .   11   LYS   HZ1   .   .   rr_2n7n   1    
+     17   1   .    .   1   1   9   9   LYS   QZ    H   .   .   .   1   1   3   3   ASP   HB3   H   .   .   .   .   .   .   .   3.70   .   .   .   .   .   A   .   11   LYS   QZ    .   .   A   .   5    ASP   HB3   .   .   .   11   LYS   HZ1   .   .   .   .   .   5    ASP   HB3   .   .   rr_2n7n   1    
+     18   1   OR   .   1   1   3   3   ASP   HB3   H   .   .   .   1   1   4   4   PRO   HD3   H   .   .   .   .   .   .   .   3.79   .   .   .   .   .   A   .   5    ASP   HB3   .   .   A   .   6    PRO   HD3   .   .   .   5    ASP   QB    .   .   .   .   .   6    PRO   QD    .   .   rr_2n7n   1    
+     18   2   OR   .   1   1   3   3   ASP   HB2   H   .   .   .   1   1   4   4   PRO   HD3   H   .   .   .   .   .   .   .   3.79   .   .   .   .   .   A   .   5    ASP   HB2   .   .   A   .   6    PRO   HD3   .   .   .   5    ASP   QB    .   .   .   .   .   6    PRO   QD    .   .   rr_2n7n   1    
+     18   3   OR   .   1   1   4   4   PRO   HD2   H   .   .   .   1   1   3   3   ASP   HB3   H   .   .   .   .   .   .   .   3.79   .   .   .   .   .   A   .   6    PRO   HD2   .   .   A   .   5    ASP   HB3   .   .   .   6    PRO   QD    .   .   .   .   .   5    ASP   QB    .   .   rr_2n7n   1    
+     18   4   OR   .   1   1   3   3   ASP   HB2   H   .   .   .   1   1   4   4   PRO   HD2   H   .   .   .   .   .   .   .   3.79   .   .   .   .   .   A   .   5    ASP   HB2   .   .   A   .   6    PRO   HD2   .   .   .   5    ASP   QB    .   .   .   .   .   6    PRO   QD    .   .   rr_2n7n   1    
+     19   1   OR   .   1   1   9   9   LYS   QZ    H   .   .   .   1   1   3   3   ASP   HB3   H   .   .   .   .   .   .   .   3.00   .   .   .   .   .   A   .   11   LYS   QZ    .   .   A   .   5    ASP   HB3   .   .   .   11   LYS   HZ1   .   .   .   .   .   5    ASP   QB    .   .   rr_2n7n   1    
+     19   2   OR   .   1   1   3   3   ASP   HB2   H   .   .   .   1   1   9   9   LYS   QZ    H   .   .   .   .   .   .   .   3.00   .   .   .   .   .   A   .   5    ASP   HB2   .   .   A   .   11   LYS   QZ    .   .   .   5    ASP   QB    .   .   .   .   .   11   LYS   HZ1   .   .   rr_2n7n   1    
+     20   1   .    .   1   1   4   4   PRO   HA    H   .   .   .   1   1   5   5   PRO   HA    H   .   .   .   .   .   .   .   2.49   .   .   .   .   .   A   .   6    PRO   HA    .   .   A   .   7    PRO   HA    .   .   .   6    PRO   HA    .   .   .   .   .   7    PRO   HA    .   .   rr_2n7n   1    
+     21   1   .    .   1   1   4   4   PRO   HA    H   .   .   .   1   1   7   7   ARG   H     H   .   .   .   .   .   .   .   4.17   .   .   .   .   .   A   .   6    PRO   HA    .   .   A   .   9    ARG   H     .   .   .   6    PRO   HA    .   .   .   .   .   9    ARG   HN    .   .   rr_2n7n   1    
+     22   1   .    .   1   1   7   7   ARG   H     H   .   .   .   1   1   7   7   ARG   HB2   H   .   .   .   .   .   .   .   3.58   .   .   .   .   .   A   .   9    ARG   H     .   .   A   .   9    ARG   HB2   .   .   .   9    ARG   HN    .   .   .   .   .   9    ARG   HB2   .   .   rr_2n7n   1    
+     23   1   .    .   1   1   7   7   ARG   H     H   .   .   .   1   1   7   7   ARG   HB3   H   .   .   .   .   .   .   .   3.58   .   .   .   .   .   A   .   9    ARG   H     .   .   A   .   9    ARG   HB3   .   .   .   9    ARG   HN    .   .   .   .   .   9    ARG   HB3   .   .   rr_2n7n   1    
+     24   1   OR   .   1   1   7   7   ARG   H     H   .   .   .   1   1   7   7   ARG   HB3   H   .   .   .   .   .   .   .   3.01   .   .   .   .   .   A   .   9    ARG   H     .   .   A   .   9    ARG   HB3   .   .   .   9    ARG   HN    .   .   .   .   .   9    ARG   QB    .   .   rr_2n7n   1    
+     24   2   OR   .   1   1   7   7   ARG   H     H   .   .   .   1   1   7   7   ARG   HB2   H   .   .   .   .   .   .   .   3.01   .   .   .   .   .   A   .   9    ARG   H     .   .   A   .   9    ARG   HB2   .   .   .   9    ARG   HN    .   .   .   .   .   9    ARG   QB    .   .   rr_2n7n   1    
+     25   1   .    .   1   1   7   7   ARG   H     H   .   .   .   1   1   7   7   ARG   HG2   H   .   .   .   .   .   .   .   4.88   .   .   .   .   .   A   .   9    ARG   H     .   .   A   .   9    ARG   HG2   .   .   .   9    ARG   HN    .   .   .   .   .   9    ARG   HG2   .   .   rr_2n7n   1    
+     26   1   .    .   1   1   7   7   ARG   H     H   .   .   .   1   1   7   7   ARG   HG3   H   .   .   .   .   .   .   .   4.88   .   .   .   .   .   A   .   9    ARG   H     .   .   A   .   9    ARG   HG3   .   .   .   9    ARG   HN    .   .   .   .   .   9    ARG   HG3   .   .   rr_2n7n   1    
+     27   1   .    .   1   1   7   7   ARG   H     H   .   .   .   1   1   8   8   TRP   H     H   .   .   .   .   .   .   .   4.32   .   .   .   .   .   A   .   9    ARG   H     .   .   A   .   10   TRP   H     .   .   .   9    ARG   HN    .   .   .   .   .   10   TRP   HN    .   .   rr_2n7n   1    
+     28   1   .    .   1   1   8   8   TRP   H     H   .   .   .   1   1   7   7   ARG   HA    H   .   .   .   .   .   .   .   2.62   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   9    ARG   HA    .   .   .   10   TRP   HN    .   .   .   .   .   9    ARG   HA    .   .   rr_2n7n   1    
+     29   1   .    .   1   1   7   7   ARG   HB2   H   .   .   .   1   1   8   8   TRP   H     H   .   .   .   .   .   .   .   3.95   .   .   .   .   .   A   .   9    ARG   HB2   .   .   A   .   10   TRP   H     .   .   .   9    ARG   HB2   .   .   .   .   .   10   TRP   HN    .   .   rr_2n7n   1    
+     30   1   .    .   1   1   8   8   TRP   H     H   .   .   .   1   1   7   7   ARG   HB3   H   .   .   .   .   .   .   .   3.95   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   9    ARG   HB3   .   .   .   10   TRP   HN    .   .   .   .   .   9    ARG   HB3   .   .   rr_2n7n   1    
+     31   1   OR   .   1   1   8   8   TRP   H     H   .   .   .   1   1   7   7   ARG   HB3   H   .   .   .   .   .   .   .   3.23   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   9    ARG   HB3   .   .   .   10   TRP   HN    .   .   .   .   .   9    ARG   QB    .   .   rr_2n7n   1    
+     31   2   OR   .   1   1   7   7   ARG   HB2   H   .   .   .   1   1   8   8   TRP   H     H   .   .   .   .   .   .   .   3.23   .   .   .   .   .   A   .   9    ARG   HB2   .   .   A   .   10   TRP   H     .   .   .   9    ARG   QB    .   .   .   .   .   10   TRP   HN    .   .   rr_2n7n   1    
+     32   1   .    .   1   1   8   8   TRP   H     H   .   .   .   1   1   8   8   TRP   HB2   H   .   .   .   .   .   .   .   3.08   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   10   TRP   HB2   .   .   .   10   TRP   HN    .   .   .   .   .   10   TRP   HB2   .   .   rr_2n7n   1    
+     33   1   .    .   1   1   8   8   TRP   H     H   .   .   .   1   1   8   8   TRP   HB3   H   .   .   .   .   .   .   .   3.08   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   10   TRP   HB3   .   .   .   10   TRP   HN    .   .   .   .   .   10   TRP   HB3   .   .   rr_2n7n   1    
+     34   1   .    .   1   1   8   8   TRP   H     H   .   .   .   1   1   8   8   TRP   HD1   H   .   .   .   .   .   .   .   4.32   .   .   .   .   .   A   .   10   TRP   H     .   .   A   .   10   TRP   HD1   .   .   .   10   TRP   HN    .   .   .   .   .   10   TRP   HD1   .   .   rr_2n7n   1    
+     35   1   .    .   1   1   8   8   TRP   HE3   H   .   .   .   1   1   8   8   TRP   H     H   .   .   .   .   .   .   .   5.50   .   .   .   .   .   A   .   10   TRP   HE3   .   .   A   .   10   TRP   H     .   .   .   10   TRP   HE3   .   .   .   .   .   10   TRP   HN    .   .   rr_2n7n   1    
+     36   1   .    .   1   1   9   9   LYS   H     H   .   .   .   1   1   8   8   TRP   H     H   .   .   .   .   .   .   .   4.35   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   10   TRP   H     .   .   .   11   LYS   HN    .   .   .   .   .   10   TRP   HN    .   .   rr_2n7n   1    
+     37   1   .    .   1   1   8   8   TRP   HA    H   .   .   .   1   1   8   8   TRP   HD1   H   .   .   .   .   .   .   .   4.85   .   .   .   .   .   A   .   10   TRP   HA    .   .   A   .   10   TRP   HD1   .   .   .   10   TRP   HA    .   .   .   .   .   10   TRP   HD1   .   .   rr_2n7n   1    
+     38   1   .    .   1   1   8   8   TRP   HA    H   .   .   .   1   1   8   8   TRP   HE3   H   .   .   .   .   .   .   .   2.93   .   .   .   .   .   A   .   10   TRP   HA    .   .   A   .   10   TRP   HE3   .   .   .   10   TRP   HA    .   .   .   .   .   10   TRP   HE3   .   .   rr_2n7n   1    
+     39   1   .    .   1   1   9   9   LYS   H     H   .   .   .   1   1   8   8   TRP   HA    H   .   .   .   .   .   .   .   2.65   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   10   TRP   HA    .   .   .   11   LYS   HN    .   .   .   .   .   10   TRP   HA    .   .   rr_2n7n   1    
+     40   1   .    .   1   1   8   8   TRP   HD1   H   .   .   .   1   1   8   8   TRP   HB2   H   .   .   .   .   .   .   .   3.52   .   .   .   .   .   A   .   10   TRP   HD1   .   .   A   .   10   TRP   HB2   .   .   .   10   TRP   HD1   .   .   .   .   .   10   TRP   HB2   .   .   rr_2n7n   1    
+     41   1   .    .   1   1   8   8   TRP   HE3   H   .   .   .   1   1   8   8   TRP   HB2   H   .   .   .   .   .   .   .   4.01   .   .   .   .   .   A   .   10   TRP   HE3   .   .   A   .   10   TRP   HB2   .   .   .   10   TRP   HE3   .   .   .   .   .   10   TRP   HB2   .   .   rr_2n7n   1    
+     42   1   .    .   1   1   9   9   LYS   H     H   .   .   .   1   1   8   8   TRP   HB2   H   .   .   .   .   .   .   .   4.11   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   10   TRP   HB2   .   .   .   11   LYS   HN    .   .   .   .   .   10   TRP   HB2   .   .   rr_2n7n   1    
+     43   1   .    .   1   1   8   8   TRP   HD1   H   .   .   .   1   1   8   8   TRP   HB3   H   .   .   .   .   .   .   .   3.52   .   .   .   .   .   A   .   10   TRP   HD1   .   .   A   .   10   TRP   HB3   .   .   .   10   TRP   HD1   .   .   .   .   .   10   TRP   HB3   .   .   rr_2n7n   1    
+     44   1   .    .   1   1   8   8   TRP   HE3   H   .   .   .   1   1   8   8   TRP   HB3   H   .   .   .   .   .   .   .   4.01   .   .   .   .   .   A   .   10   TRP   HE3   .   .   A   .   10   TRP   HB3   .   .   .   10   TRP   HE3   .   .   .   .   .   10   TRP   HB3   .   .   rr_2n7n   1    
+     45   1   .    .   1   1   9   9   LYS   H     H   .   .   .   1   1   8   8   TRP   HB3   H   .   .   .   .   .   .   .   4.11   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   10   TRP   HB3   .   .   .   11   LYS   HN    .   .   .   .   .   10   TRP   HB3   .   .   rr_2n7n   1    
+     46   1   OR   .   1   1   8   8   TRP   HE3   H   .   .   .   1   1   8   8   TRP   HB3   H   .   .   .   .   .   .   .   3.46   .   .   .   .   .   A   .   10   TRP   HE3   .   .   A   .   10   TRP   HB3   .   .   .   10   TRP   HE3   .   .   .   .   .   10   TRP   QB    .   .   rr_2n7n   1    
+     46   2   OR   .   1   1   8   8   TRP   HE3   H   .   .   .   1   1   8   8   TRP   HB2   H   .   .   .   .   .   .   .   3.46   .   .   .   .   .   A   .   10   TRP   HE3   .   .   A   .   10   TRP   HB2   .   .   .   10   TRP   HE3   .   .   .   .   .   10   TRP   QB    .   .   rr_2n7n   1    
+     47   1   OR   .   1   1   9   9   LYS   H     H   .   .   .   1   1   8   8   TRP   HB3   H   .   .   .   .   .   .   .   3.54   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   10   TRP   HB3   .   .   .   11   LYS   HN    .   .   .   .   .   10   TRP   QB    .   .   rr_2n7n   1    
+     47   2   OR   .   1   1   9   9   LYS   H     H   .   .   .   1   1   8   8   TRP   HB2   H   .   .   .   .   .   .   .   3.54   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   10   TRP   HB2   .   .   .   11   LYS   HN    .   .   .   .   .   10   TRP   QB    .   .   rr_2n7n   1    
+     48   1   .    .   1   1   9   9   LYS   H     H   .   .   .   1   1   8   8   TRP   HD1   H   .   .   .   .   .   .   .   5.50   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   10   TRP   HD1   .   .   .   11   LYS   HN    .   .   .   .   .   10   TRP   HD1   .   .   rr_2n7n   1    
+     49   1   .    .   1   1   9   9   LYS   H     H   .   .   .   1   1   8   8   TRP   HE3   H   .   .   .   .   .   .   .   4.11   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   10   TRP   HE3   .   .   .   11   LYS   HN    .   .   .   .   .   10   TRP   HE3   .   .   rr_2n7n   1    
+     50   1   .    .   1   1   9   9   LYS   H     H   .   .   .   1   1   9   9   LYS   HB2   H   .   .   .   .   .   .   .   3.52   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   11   LYS   HB2   .   .   .   11   LYS   HN    .   .   .   .   .   11   LYS   HB2   .   .   rr_2n7n   1    
+     51   1   .    .   1   1   9   9   LYS   H     H   .   .   .   1   1   9   9   LYS   HB3   H   .   .   .   .   .   .   .   3.52   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   11   LYS   HB3   .   .   .   11   LYS   HN    .   .   .   .   .   11   LYS   HB3   .   .   rr_2n7n   1    
+     52   1   OR   .   1   1   9   9   LYS   H     H   .   .   .   1   1   9   9   LYS   HB3   H   .   .   .   .   .   .   .   2.99   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   11   LYS   HB3   .   .   .   11   LYS   HN    .   .   .   .   .   11   LYS   QB    .   .   rr_2n7n   1    
+     52   2   OR   .   1   1   9   9   LYS   H     H   .   .   .   1   1   9   9   LYS   HB2   H   .   .   .   .   .   .   .   2.99   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   11   LYS   HB2   .   .   .   11   LYS   HN    .   .   .   .   .   11   LYS   QB    .   .   rr_2n7n   1    
+     53   1   .    .   1   1   9   9   LYS   H     H   .   .   .   1   1   9   9   LYS   HG2   H   .   .   .   .   .   .   .   4.32   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   11   LYS   HG2   .   .   .   11   LYS   HN    .   .   .   .   .   11   LYS   HG2   .   .   rr_2n7n   1    
+     54   1   .    .   1   1   9   9   LYS   H     H   .   .   .   1   1   9   9   LYS   HG3   H   .   .   .   .   .   .   .   4.32   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   11   LYS   HG3   .   .   .   11   LYS   HN    .   .   .   .   .   11   LYS   HG3   .   .   rr_2n7n   1    
+     55   1   OR   .   1   1   9   9   LYS   H     H   .   .   .   1   1   9   9   LYS   HG2   H   .   .   .   .   .   .   .   3.73   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   11   LYS   HG2   .   .   .   11   LYS   HN    .   .   .   .   .   11   LYS   QG    .   .   rr_2n7n   1    
+     55   2   OR   .   1   1   9   9   LYS   H     H   .   .   .   1   1   9   9   LYS   HG3   H   .   .   .   .   .   .   .   3.73   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   11   LYS   HG3   .   .   .   11   LYS   HN    .   .   .   .   .   11   LYS   QG    .   .   rr_2n7n   1    
+     56   1   OR   .   1   1   9   9   LYS   H     H   .   .   .   1   1   9   9   LYS   HD2   H   .   .   .   .   .   .   .   6.00   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   11   LYS   HD2   .   .   .   11   LYS   HN    .   .   .   .   .   11   LYS   QD    .   .   rr_2n7n   1    
+     56   2   OR   .   1   1   9   9   LYS   H     H   .   .   .   1   1   9   9   LYS   HD3   H   .   .   .   .   .   .   .   6.00   .   .   .   .   .   A   .   11   LYS   H     .   .   A   .   11   LYS   HD3   .   .   .   11   LYS   HN    .   .   .   .   .   11   LYS   QD    .   .   rr_2n7n   1    
+     57   1   OR   .   1   1   9   9   LYS   HA    H   .   .   .   1   1   9   9   LYS   HG2   H   .   .   .   .   .   .   .   3.66   .   .   .   .   .   A   .   11   LYS   HA    .   .   A   .   11   LYS   HG2   .   .   .   11   LYS   HA    .   .   .   .   .   11   LYS   QG    .   .   rr_2n7n   1    
+     57   2   OR   .   1   1   9   9   LYS   HG3   H   .   .   .   1   1   9   9   LYS   HA    H   .   .   .   .   .   .   .   3.66   .   .   .   .   .   A   .   11   LYS   HG3   .   .   A   .   11   LYS   HA    .   .   .   11   LYS   QG    .   .   .   .   .   11   LYS   HA    .   .   rr_2n7n   1    
+     58   1   OR   .   1   1   9   9   LYS   HA    H   .   .   .   1   1   9   9   LYS   HD2   H   .   .   .   .   .   .   .   5.07   .   .   .   .   .   A   .   11   LYS   HA    .   .   A   .   11   LYS   HD2   .   .   .   11   LYS   HA    .   .   .   .   .   11   LYS   QD    .   .   rr_2n7n   1    
+     58   2   OR   .   1   1   9   9   LYS   HD3   H   .   .   .   1   1   9   9   LYS   HA    H   .   .   .   .   .   .   .   5.07   .   .   .   .   .   A   .   11   LYS   HD3   .   .   A   .   11   LYS   HA    .   .   .   11   LYS   QD    .   .   .   .   .   11   LYS   HA    .   .   rr_2n7n   1    
+     59   1   OR   .   1   1   9   9   LYS   HB3   H   .   .   .   1   1   9   9   LYS   HG2   H   .   .   .   .   .   .   .   2.29   .   .   .   .   .   A   .   11   LYS   HB3   .   .   A   .   11   LYS   HG2   .   .   .   11   LYS   QB    .   .   .   .   .   11   LYS   QG    .   .   rr_2n7n   1    
+     59   2   OR   .   1   1   9   9   LYS   HB2   H   .   .   .   1   1   9   9   LYS   HG2   H   .   .   .   .   .   .   .   2.29   .   .   .   .   .   A   .   11   LYS   HB2   .   .   A   .   11   LYS   HG2   .   .   .   11   LYS   QB    .   .   .   .   .   11   LYS   QG    .   .   rr_2n7n   1    
+     59   3   OR   .   1   1   9   9   LYS   HG3   H   .   .   .   1   1   9   9   LYS   HB3   H   .   .   .   .   .   .   .   2.29   .   .   .   .   .   A   .   11   LYS   HG3   .   .   A   .   11   LYS   HB3   .   .   .   11   LYS   QG    .   .   .   .   .   11   LYS   QB    .   .   rr_2n7n   1    
+     59   4   OR   .   1   1   9   9   LYS   HB2   H   .   .   .   1   1   9   9   LYS   HG3   H   .   .   .   .   .   .   .   2.29   .   .   .   .   .   A   .   11   LYS   HB2   .   .   A   .   11   LYS   HG3   .   .   .   11   LYS   QB    .   .   .   .   .   11   LYS   QG    .   .   rr_2n7n   1    
+     60   1   .    .   1   1   9   9   LYS   QZ    H   .   .   .   1   1   9   9   LYS   HG2   H   .   .   .   .   .   .   .   4.66   .   .   .   .   .   A   .   11   LYS   QZ    .   .   A   .   11   LYS   HG2   .   .   .   11   LYS   HZ1   .   .   .   .   .   11   LYS   HG2   .   .   rr_2n7n   1    
+     61   1   .    .   1   1   9   9   LYS   QZ    H   .   .   .   1   1   9   9   LYS   HG3   H   .   .   .   .   .   .   .   4.66   .   .   .   .   .   A   .   11   LYS   QZ    .   .   A   .   11   LYS   HG3   .   .   .   11   LYS   HZ1   .   .   .   .   .   11   LYS   HG3   .   .   rr_2n7n   1    
+     62   1   OR   .   1   1   9   9   LYS   QZ    H   .   .   .   1   1   9   9   LYS   HG2   H   .   .   .   .   .   .   .   4.08   .   .   .   .   .   A   .   11   LYS   QZ    .   .   A   .   11   LYS   HG2   .   .   .   11   LYS   HZ1   .   .   .   .   .   11   LYS   QG    .   .   rr_2n7n   1    
+     62   2   OR   .   1   1   9   9   LYS   QZ    H   .   .   .   1   1   9   9   LYS   HG3   H   .   .   .   .   .   .   .   4.08   .   .   .   .   .   A   .   11   LYS   QZ    .   .   A   .   11   LYS   HG3   .   .   .   11   LYS   HZ1   .   .   .   .   .   11   LYS   QG    .   .   rr_2n7n   1    
+
+   stop_
+
+   loop_
+      _Gen_dist_constraint_conv_err.ID
+      _Gen_dist_constraint_conv_err.Gen_dist_constraint_parse_file_ID
+      _Gen_dist_constraint_conv_err.Parse_file_constraint_ID
+      _Gen_dist_constraint_conv_err.Conv_error_type
+      _Gen_dist_constraint_conv_err.Conv_error_note
+      _Gen_dist_constraint_conv_err.Entry_ID
+      _Gen_dist_constraint_conv_err.Gen_dist_constraint_list_ID
+
+     1    2   1    1   "Not handling restraint 1, item 1, resonance(s) ' .3.QH' (nmrStar names) not linked"                              rr_2n7n   1    
+     2    2   2    1   "Not handling restraint 2, item 1, resonance(s) ' .4.HN' (nmrStar names) not linked"                              rr_2n7n   1    
+     3    2   3    1   "Not handling restraint 3, item 1, resonance(s) ' .4.HN' (nmrStar names) not linked"                              rr_2n7n   1    
+     4    2   4    1   "Not handling restraint 4, item 1, resonance(s) ' .4.HN' (nmrStar names),' .4.QB' (nmrStar names) not linked"     rr_2n7n   1    
+     5    2   5    1   "Not handling restraint 5, item 1, resonance(s) ' .4.HN' (nmrStar names),' .4.QD' (nmrStar names) not linked"     rr_2n7n   1    
+     6    2   6    1   "Not handling restraint 6, item 1, resonance(s) ' .4.HN' (nmrStar names) not linked"                              rr_2n7n   1    
+     7    2   11   1   "Not handling restraint 11, item 1, resonance(s) ' .4.QE' (nmrStar names) not linked"                             rr_2n7n   1    
+     8    2   13   1   "Not handling restraint 13, item 1, resonance(s) ' .4.QE' (nmrStar names) not linked"                             rr_2n7n   1    
+     9    2   15   1   "Not handling restraint 15, item 1, resonance(s) ' .4.QB' (nmrStar names),' .4.QE' (nmrStar names) not linked"    rr_2n7n   1    
+     10   2   16   1   "Not handling restraint 16, item 1, resonance(s) ' .4.QG' (nmrStar names),' .8.QE' (nmrStar names) not linked"    rr_2n7n   1    
+     11   2   17   1   "Not handling restraint 17, item 1, resonance(s) ' .4.QD' (nmrStar names) not linked"                             rr_2n7n   1    
+     12   2   18   1   "Not handling restraint 18, item 1, resonance(s) ' .4.QD' (nmrStar names),' .8.QE' (nmrStar names) not linked"    rr_2n7n   1    
+     13   2   19   1   "Not handling restraint 19, item 1, resonance(s) ' .4.QD' (nmrStar names) not linked"                             rr_2n7n   1    
+     14   2   20   1   "Not handling restraint 20, item 1, resonance(s) ' .4.QE' (nmrStar names),' .8.QE' (nmrStar names) not linked"    rr_2n7n   1    
+     15   2   21   1   "Not handling restraint 21, item 1, resonance(s) ' .4.QE' (nmrStar names) not linked"                             rr_2n7n   1    
+     16   2   36   1   "Not handling restraint 36, item 1, resonance(s) ' .8.HN' (nmrStar names) not linked"                             rr_2n7n   1    
+     17   2   37   1   "Not handling restraint 37, item 1, resonance(s) ' .8.QD' (nmrStar names) not linked"                             rr_2n7n   1    
+     18   2   38   1   "Not handling restraint 38, item 1, resonance(s) ' .8.QE' (nmrStar names) not linked"                             rr_2n7n   1    
+     19   2   40   1   "Not handling restraint 40, item 1, resonance(s) ' .8.HN' (nmrStar names) not linked"                             rr_2n7n   1    
+     20   2   41   1   "Not handling restraint 41, item 1, resonance(s) ' .8.HN' (nmrStar names) not linked"                             rr_2n7n   1    
+     21   2   42   1   "Not handling restraint 42, item 1, resonance(s) ' .8.HN' (nmrStar names) not linked"                             rr_2n7n   1    
+     22   2   43   1   "Not handling restraint 43, item 1, resonance(s) ' .8.HN' (nmrStar names),' .8.HB2' (nmrStar names) not linked"   rr_2n7n   1    
+     23   2   44   1   "Not handling restraint 44, item 1, resonance(s) ' .8.HN' (nmrStar names),' .8.HB3' (nmrStar names) not linked"   rr_2n7n   1    
+     24   2   45   1   "Not handling restraint 45, item 1, resonance(s) ' .8.HN' (nmrStar names),' .8.QD' (nmrStar names) not linked"    rr_2n7n   1    
+     25   2   46   1   "Not handling restraint 46, item 1, resonance(s) ' .8.QE' (nmrStar names),' .8.HN' (nmrStar names) not linked"    rr_2n7n   1    
+     26   2   47   1   "Not handling restraint 47, item 1, resonance(s) ' .8.HN' (nmrStar names) not linked"                             rr_2n7n   1    
+     27   2   48   1   "Not handling restraint 48, item 1, resonance(s) ' .8.QD' (nmrStar names),' .8.HA' (nmrStar names) not linked"    rr_2n7n   1    
+     28   2   49   1   "Not handling restraint 49, item 1, resonance(s) ' .8.HA' (nmrStar names) not linked"                             rr_2n7n   1    
+     29   2   50   1   "Not handling restraint 50, item 1, resonance(s) ' .8.HB2' (nmrStar names) not linked"                            rr_2n7n   1    
+     30   2   51   1   "Not handling restraint 51, item 1, resonance(s) ' .8.HB3' (nmrStar names) not linked"                            rr_2n7n   1    
+     31   2   52   1   "Not handling restraint 52, item 1, resonance(s) ' .8.QD' (nmrStar names) not linked"                             rr_2n7n   1    
+     32   2   53   1   "Not handling restraint 53, item 1, resonance(s) ' .8.QE' (nmrStar names) not linked"                             rr_2n7n   1    
+     33   2   81   1   "Not handling restraint 81, item 1, resonance(s) ' .12.HN1' (nmrStar names) not linked"                           rr_2n7n   1    
+     34   2   83   1   "Not handling restraint 83, item 1, resonance(s) ' .12.HN1' (nmrStar names) not linked"                           rr_2n7n   1    
+     35   2   84   1   "Not handling restraint 84, item 1, resonance(s) ' .12.HN1' (nmrStar names) not linked"                           rr_2n7n   1    
+     36   2   92   1   "Not handling restraint 92, item 1, resonance(s) ' .12.HN1' (nmrStar names) not linked"                           rr_2n7n   1    
+     37   2   93   1   "Not handling restraint 93, item 1, resonance(s) ' .12.HN2' (nmrStar names) not linked"                           rr_2n7n   1    
+
+   stop_
+
+save_
+
+save_MR_file_comment_1
+   _Org_constr_file_comment.Sf_framecode        MR_file_comment_1
+   _Org_constr_file_comment.Sf_category         org_constr_file_comment
+   _Org_constr_file_comment.Entry_ID            rr_2n7n
+   _Org_constr_file_comment.ID                  1
+   _Org_constr_file_comment.Constraint_file_ID  1
+   _Org_constr_file_comment.Block_ID            1
+   _Org_constr_file_comment.Details             'Generated by Wattos'
+   _Org_constr_file_comment.Comment             '*HEADER DE NOVO PROTEIN 16-SEP-15 2N7N *TITLE NMR STRUCTURE OF PEPTIDE PG-989 IN DPC MICELLES *COMPND MOL_ID: 1; *COMPND 2 MOLECULE: PEPTIDE PG-989; *COMPND 3 CHAIN: A; *COMPND 4 ENGINEERED: YES *SOURCE MOL_ID: 1; *SOURCE 2 SYNTHETIC: YES *KEYWDS DE NOVO PROTEIN *EXPDTA SOLUTION NMR *NUMMDL 10 *AUTHOR A.CAROTENUTO, F.MERLINO, M.CHAI, D.BRANCACCIO, A.YOUSIF, E.NOVELLINO, *AUTHOR 2 V.HRUBY, P.GRIECO *REVDAT 1 16-DEC-15 2N7N 0'
+
+save_

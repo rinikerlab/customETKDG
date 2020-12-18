@@ -4,7 +4,7 @@ from rdkit.Chem import AllChem
 import sys
 import os
 import time
-from _utils import assign_hydrogen_pdbinfo
+from utils import assign_hydrogen_pdbinfo
 
 """
 # give NOE file as first parameter, ref.pdb and ref.smi files in same directory
@@ -14,15 +14,27 @@ from _utils import assign_hydrogen_pdbinfo
 t = time.time()
 
 try:
+    print("NOE file path: {}".format(sys.argv[1]))
+except:
+    print("Must specify path to NOE file.")
+    exit()
+
+try:
     num_conf = int(sys.argv[2])
+    print("Number of conformers: {}".format(sys.argv[2]))
 except:
     num_conf = 5400
-  
+    print("Defaulting number of conformers to {}".format(num_conf))
+
 input_path = os.path.dirname(sys.argv[1])
-with open("{}/ref.smi".format(input_path), "r") as tmp:
+
+print(input_path)
+
+with open("02_ref.smi", "r") as tmp:
     smiles = tmp.read().replace("\n", "")
 
-ref_pdb_path = "{}/ref.pdb".format(input_path)
+ref_pdb_path = "{}/01_ref.pdb".format(input_path)
+ref_pdb_path = "01_ref.pdb"
 
 smiles_mol = Chem.MolFromSmiles(smiles)
 ref_mol = Chem.MolFromPDBFile(ref_pdb_path)
@@ -41,7 +53,7 @@ params.verbose = False
 params.numThreads = 0           # use parallelism
 
 AllChem.EmbedMultipleConfs(mol, num_conf , params)
-Chem.MolToPDBFile(mol, "{}_numconf{}.pdb".format(sys.argv[1][:-4], num_conf))
+Chem.MolToPDBFile(mol, "XX_BASELINE_{}_{}.pdb".format(sys.argv[1][:-4], num_conf))
 
 runtime = time.time() - t
 print("Took {:.0f} s to generate {} conformers.".format(runtime, num_conf))

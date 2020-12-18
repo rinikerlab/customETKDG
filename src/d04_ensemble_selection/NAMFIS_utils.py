@@ -8,7 +8,7 @@ def namfis(CDM, NOE, w0 = None, tol: float = 0.1, rand: bool = False, seed: int 
     """
     Function to calculate NAMFIS weights for an ensemble of conformers wrt a set of NOE restraints.
     :param CDM: Conformer-Distance Matrix. Each of the m rows represents a NOE distance pair, each of
-    the n colums a conformer.
+    the n columns a conformer.
     :param NOE: A vector of m experimental NOE restraints. Ordering must correspond to the one in CDM.
     :param w0: Initial weight vector for optimization of length n. If left blank, it will be initialized uniformly if
     rand = False and randomly otherwise. Should be normalized.

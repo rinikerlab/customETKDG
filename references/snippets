@@ -32,6 +32,14 @@ Euler
 sshfs kkajo@euler.ethz.ch:/cluster/home/kkajo ~/Euler/
 bsub -R "rusage[scratch=2000]" -W 24:00 -n 4 -J wat_1 -e ./wat_1.err -o ./wat_1.out ./wat_1.run
 
+bsub -n 24 -W 24:00 -R "rusage[mem=512]" -J "2IFJ_v1_1" -N "python ref_0-179.py"
+bsub -n 24 -W 24:00 -R "rusage[mem=512]" -J "2IFJ_v1_2" -N "python ref_180-359.py"
+bsub -n 24 -W 24:00 -R "rusage[mem=512]" -J "2IFJ_v1_3" -N "python ref_360-539.py"
+
+bsub -n 24 -W 24:00 -R "rusage[mem=512]" -J "2IFJ_s1_3" -N "python solv_md_360-539.py"
+
+bsub -n 24 -W 24:00 -R "rusage[mem=512]" -J "0CSA_ani" -N "python ani_minimization.py"
+
 LibreOffice
 =COUNT(B2:B295)-COUNTIF(B2:B295,0)
 =COUNT(B2:B5401)-COUNTIF(B2:B5401,0)
