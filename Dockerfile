@@ -37,7 +37,7 @@ COPY . /app/
 
 WORKDIR /app/
 
-RUN git checkout api
+# RUN git checkout api
 
 RUN pip install -e .
 
