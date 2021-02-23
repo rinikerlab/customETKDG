@@ -14,10 +14,14 @@ ENV PATH /opt/conda/envs/$conda_env/bin:$PATH
 ENV CONDA_DEFAULT_ENV $conda_env
 
 
-RUN git clone https://github.com/rinikerlab/mlddec.git
-WORKDIR mlddec 
-RUN rm -r .git && rm -r mlddec/data/epsilon_78
-RUN pip install .
+# RUN git clone https://github.com/rinikerlab/mlddec.git
+RUN apt-get install unzip
+RUN wget https://github.com/rinikerlab/mlddec/archive/master.zip && unzip master.zip && rm master.zip
+WORKDIR mlddec-master 
+RUN rm -r mlddec/data/epsilon_78
+#can delete package after install?
+RUN pip install . 
+
 
 RUN echo 'conda activate noe' >> ~/.bashrc
 
@@ -37,4 +41,4 @@ RUN git checkout api
 
 RUN pip install -e .
 
-WORKDIR /app/
+WORKDIR /app/examples/

@@ -8,6 +8,7 @@ dependencies:
   - numpy
   - scipy
   - scikit-learn=0.20.0
+  - pandas=1.2.2
   - rdkit
   - pip
   - openmm
@@ -17,6 +18,10 @@ dependencies:
   - nglview
   - joblib
   - ase
+  - parmed
+  - openforcefield
   #mlddec
   #mdfptools
-  # - pip:
+  - pip:
+    - versioneer
+    - setuptools
