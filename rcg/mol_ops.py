@@ -8,7 +8,9 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 import numpy as np
 from functools import reduce
+import difflib
 import logging
+from collections.abc import Iterable
 
 logger = logging.getLogger(__name__)
 
@@ -61,7 +63,7 @@ def rename(mol, old_name, new_name, resid = "all"):
     for atm in mol.GetAtoms():
         if atm.GetPDBResidueInfo().GetResidueNumber() in selection and         atm.GetPDBResidueInfo().GetName().strip() == old_name.strip():
             atm.GetPDBResidueInfo().SetName("{: <4s}".format(new_name.strip()))
-            print(atm.GetPDBResidueInfo().GetName())
+            # print(atm.GetPDBResidueInfo().GetName())
     return mol
 
 
@@ -253,9 +255,45 @@ def _decide_indices_order(indices):
         indices.reverse()
     return [int(i) for i in indices]
 
-def get_rings(mol):
-    for ring in mol.GetRingInfo().AtomRings():
-        yield ring
+
+def _get_overlap(s1, s2):
+    """use for detecting overlap between two sequence of indices 
+    the indices are comma-separated numbers in a string
+
+    """
+    s = difflib.SequenceMatcher(None, s1, s2)
+    pos_a, pos_b, size = s.find_longest_match(0, len(s1), 0, len(s2)) 
+    overlap = s1[pos_a:pos_a+size] 
+    #partial index overlap can occur, limit to only overlap starting and ending with comma
+    overlap = overlap[overlap.find(","):]
+    overlap = overlap[:overlap.rfind(",")]
+    return overlap
+
+
+
+def get_rings(mol, accept_num_fused_atoms = 4): 
+    """
+    #shared (fused) part is always the smaller part of the ring, this way the whole ring needs to be at least 9 atoms
+    """
+    # for ring in mol.GetRingInfo().AtomRings():
+    #     yield ring
+    rings = [ring for ring in mol.GetRingInfo().AtomRings()]
+    tmp = [",".join([str(i) for i in list(r) * 3]) for r in rings]
+    tmp_inverted = [",".join([str(i) for i in (list(r) * 3)[::-1]]) for r in rings]
+    for i in range(len(tmp) - 1):
+        for j in range(i+1, len(tmp)):
+            overlap = _get_overlap(tmp[i], tmp[j]).strip(",").split(",")
+            if len(overlap) > 0: #means there is at least some overlap, check inverting a string                
+                overlap2 = _get_overlap(tmp_inverted[i], tmp[j]).strip(",").split(",") 
+                if len(overlap) < len(overlap2):
+                    overlap = overlap2
+                    tmp_inverted[i], tmp[i] = tmp[i], tmp_inverted[i] #now i and j indices are in the same direction
+
+            if len(overlap) >= accept_num_fused_atoms:
+                part_a = tmp[j].split(",".join(overlap))[1] #split yields four sequences, one of the two middle pieces is always the complete subsequence
+                part_b = tmp_inverted[i].split(",".join(overlap[1:-1][::-1]))[1]
+                rings.append(tuple([int(i) for i in part_a.strip(",").split(",")] + [int(i) for i in part_b.strip(",").split(",")]))
+    return rings
 
 def get_largest_ring(mol):
     out = []
