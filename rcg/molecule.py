@@ -3,6 +3,7 @@ import copy
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit import DistanceGeometry
+from rdkit.SimDivFilters.rdSimDivPickers import MaxMinPicker
 import pandas as pd
 from .mol_ops import *
 import collections 
@@ -33,9 +34,11 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         self._distance_upper_bounds = None
         self._distance_lower_bounds = None
         self._conformers = None  #XXX needed?
+        self._is_minimised = False #TODO same dimension as conformers, 
         self._minimised_conformers = None
+        self._is_minimised = np.empty(shape = (0,), dtype = bool)
         self._coordinates = None
-        self.picked_conformers = set({})
+        self._picked_conformers = None #cannot be set, need to perserve order
         super().__init__(mol)
 
     def load_mol(self, smiles, pdb_filename):
@@ -135,7 +138,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         is there some way to forbid EmbedMultipleConf being called on this class object?
         """
         params = AllChem.ETKDGv3() #FIXME changable 
-        params.useRandomCoords = False #TODO changeable
+        params.useRandomCoords = True #TODO changeable
         params.SetBoundsMat(self.bmat) #XXX diff to self.bmat, should be triangular smoothed bmat?
         params.verbose = False #XXX as argument?
         # params.maxAttempts = 0
@@ -143,15 +146,19 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         params.numThreads = 0 #TODO changeable
 
         AllChem.EmbedMultipleConfs(self, num_conf, params)
-        # AllChem.AlignMolConformers(mol)  #XXX align confs to first for easier visual comparison
+        AllChem.AlignMolConformers(self)  #XXX align confs to first for easier visual comparison
+        self._is_minimised = np.concatenate((self._is_minimised, np.zeros(num_conf, dtype = bool)))
     #######################################
     # Post-process
     #######################################
-    def minimise_conf(self, conf_num = -1):
+    def minimise_conf(self, conf_num = 0):#XXX keep a copy of the conformer prior to minimisation?
         """
-        cpeptools has openmm minimisation
+        - MMFF
+        - openFF
+        - xtb 
+        - ani2?
         """
-        raise NotImplementedError
+        return AllChem.MMFFOptimizeMolecule(self, maxIters = 500, confId = conf_num) #XXX should make other parameters as variable? default iter might be too small
 
     def calculate_energy(self):
         """
@@ -172,19 +179,39 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
     # Selection
     #######################################
     def pick_random(self, num_conf):
-        raise NotImplementedError
+        self._picked_conformers = np.random.choice(self.GetNumConformers(), num_conf, replace = False)
+        return self._picked_conformers
 
-    def pick_diverse(self, num_conf):
-        """ 
-        rdkit diverse picker
+    def pick_diverse(self, num_conf, indices = None, seed = -1): #XXX does not really give unique solutions
+        """rdkit diverse picker
+        https://www.rdkit.org/docs/GettingStartedInPython.html?highlight=maccs#picking-diverse-molecules-using-fingerprints
+
+        indices None means all atoms
+
         """
-        raise NotImplementedError
+        
+        def distij(i, j):
+            return AllChem.GetConformerRMS(self, i, j, atomIds = indices, prealigned = True)
+        
+        picker = MaxMinPicker()
+        out =  picker.LazyPick(distij, self.GetNumConformers(), num_conf, seed = seed)
+        self._picked_conformers = np.array(out)
+        return self._picked_conformers
+
+    def pick_energy(self, num_conf):
+        #equires calculating MMFF energies for all conformers, in the process all structures are optimised
+
+        while True: #XXX what if never converge?
+            ranks = AllChem.MMFFOptimizeMoleculeConfs(self, numThreads = 0, maxIters = 100)
+            
+            if np.all([i == 0 for i,j in ranks]):
+                self._picked_conformers  = np.argsort([j for i,j in ranks][:num_conf])
+                return self._picked_conformers
 
     def pick_namfis(self, num_conf):
+
         raise NotImplementedError
         
-    def pick_energy(self, num_conf):
-        raise NotImplementedError
 
     #######################################
     # Checks
