@@ -230,9 +230,10 @@ def mol_from_smiles_pdb(smiles, pdb_filename, infer_names = True, stereo_from_sm
         except Exception as e:
             raise ValueError("Matching to pdb without hydrogens failed: {}".format(e))
 
+        copy_stereo(ref, out_mol) if stereo_from_smiles else AllChem.AssignStereochemistryFrom3D(out_mol) #needs to copy stereo before potentially reordering atoms
+
         out_mol = reorder_atoms(assign_hydrogen_pdbinfo_blind(Chem.AddHs(out_mol, addCoords = True)))
 
-        copy_stereo(ref, out_mol) if stereo_from_smiles else AllChem.AssignStereochemistryFrom3D(out_mol)
         return out_mol
 
     
@@ -252,6 +253,8 @@ def mol_from_smiles_pdb(smiles, pdb_filename, infer_names = True, stereo_from_sm
         except Exception as e:
             raise ValueError("Matching to pdb without hydrogens failed: {}".format(e))
 
+        copy_stereo(ref, out_mol) if stereo_from_smiles else AllChem.AssignStereochemistryFrom3D(out_mol) #needs to copy stereo before potentially reordering atoms
+
         if len(hydrogen_dict) == 0:
             out_mol = reorder_atoms(assign_hydrogen_pdbinfo_blind(Chem.AddHs(out_mol, addCoords = True)))
         else:
@@ -260,7 +263,6 @@ def mol_from_smiles_pdb(smiles, pdb_filename, infer_names = True, stereo_from_sm
             except Exception as e:
                 logging.warning("\n {}. Reside to infering hydrogen names from their attached heavy atom names \n.".format(e))
                 out_mol = reorder_atoms(assign_hydrogen_pdbinfo_blind(Chem.AddHs(out_mol, addCoords = True)))
-        copy_stereo(ref, out_mol) if stereo_from_smiles else AllChem.AssignStereochemistryFrom3D(out_mol)
         return out_mol
 
 #TODO maybe better to place somewhere else?
