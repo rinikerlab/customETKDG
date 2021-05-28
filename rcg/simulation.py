@@ -1,16 +1,26 @@
 import parmed
 import mdtraj as md
 from mdtraj.reporters import HDF5Reporter
-from openforcefield.topology import Molecule, Topology
-from openforcefield.typing.engines.smirnoff import ForceField
-# from openforcefield.typing.engines.smirnoff.forcefield import PME
+
+try:
+    from openff.toolkit.topology import Molecule, Topology
+    from openff.toolkit.typing.engines.smirnoff import ForceField
+    from openff.toolkit.utils import AmberToolsToolkitWrapper
+except ModuleNotFoundError:
+    print("OpenFF not avaialble, trying OpenForceField")
+    # from openforcefield.utils.toolkits import RDKitToolkitWrapper, ToolkitRegistry
+    from openforcefield.topology import Molecule, Topology
+    from openforcefield.typing.engines.smirnoff import ForceField
+    from openforcefield.utils.toolkits import AmberToolsToolkitWrapper
+    # from openforcefield.typing.engines.smirnoff.forcefield import ME
 from simtk import unit
-from simtk.openmm import LangevinIntegrator, CustomBondForce
-from simtk.openmm.app import Simulation, HBonds, NoCutoff, AllBonds
+from simtk.openmm import LangevinIntegrator, CustomBondForce, AndersenThermostat, MonteCarloBarostat, VerletIntegrator, Platform
+from simtk.openmm.app import Simulation, HBonds, NoCutoff, AllBonds, PME
 
 import mlddec
 from rdkit.Geometry import Point3D
 from rdkit import Chem
+from rdkit.Chem import AllChem
 
 import copy
 import tqdm
@@ -20,45 +30,82 @@ import numpy as np
 from .trajectory import Trajectory
 
 
-class Simulator:
-    _MLDDEC_MODEL = collections.namedtuple("MLDDEC_MODEL", ["epsilon", "model"], defaults = [None, None])
-    MLDDEC_MODEL = _MLDDEC_MODEL()
+class Simulator: #XXX put some variable to the class, e.g. the write out frequency, force field used
+    # _MLDDEC_MODEL = collections.namedtuple("MLDDEC_MODEL", ["epsilon", "model"], defaults = [None, None])
+    # MLDDEC_MODEL = _MLDDEC_MODEL()
+    temperature = 273.15 * unit.kelvin
+    time_step = 2 * unit.femtoseconds
+    pressure = 1.013 * unit.bar
+    solvent_lookup = {
+        "WATER" : tuple(), #water has default parameters
+        "CHLOROFORM" : ("C(Cl)(Cl)Cl", 1.5 * (unit.gram/(unit.centimeters**3)), 300),
+        "DMSO" : ("CS(=O)C", 1.2 * (unit.gram/(unit.centimeters**3)), 300),
+    }
+        
 
     #================================================================
 
     @classmethod
+    def add_solvent(name, smiles, density, num_solvent):
+        cls.solvent_lookup[name.upper()] = (smiles, density, num_solvent)
+
+    @classmethod
     def load_mlddec(cls, epsilon): #XXX reload only when epsilon differ
-        model  = mlddec.load_models(epsilon = epsilon)
-        cls.MLDDEC_MODEL = cls._MLDDEC_MODEL(epsilon = epsilon, model = model)
+        cls.model  = mlddec.load_models(epsilon = epsilon)
+        cls.epsilon = epsilon
+        # cls.MLDDEC_MODEL = cls._MLDDEC_MODEL(epsilon = epsilon, model = model)
 
     @classmethod
     def unload_mlddec(cls):
-        cls.MLDDEC_MODEL = cls._MLDDEC_MODEL()
+        # cls.MLDDEC_MODEL = cls._MLDDEC_MODEL()
+        del cls.model, cls.epsilon
 
     @classmethod
     def parameterise_solute(cls, mol, which_conf = 0,
-        force_field_path = "openff_unconstrained-1.3.0.offxml"):
-
-        forcefield = ForceField(force_field_path, allow_cosmetic_attributes=True)
-
-
-        molecule = Molecule.from_rdkit(mol, allow_undefined_stereo = True)
-        topology = Topology.from_molecules(molecule)
+        force_field_path = "openff_unconstrained-1.3.0.offxml", solvent = None):
 
         # model  = mlddec.load_models(epsilon = 4) #FIXME
         try:
-            charges = mlddec.get_charges(mol, cls.MLDDEC_MODEL.model) #XXX change
+            charges = mlddec.get_charges(mol, cls.model) #XXX change
         except TypeError:
             raise TypeError("No charge model detected. Load charge model first.")
+
+        molecule = Molecule.from_rdkit(mol, allow_undefined_stereo = True) #XXX lost residue info and original atom names
+        molecule.to_file("/home/shuwang/sandbox/tmp.pdb", "pdb")
+
+        topology = Topology.from_molecules(molecule)
+
         molecule.partial_charges = unit.Quantity(np.array(charges), unit.elementary_charge)
+        molecule._conformers = [molecule._conformers[which_conf]]
 
-        openmm_system = forcefield.create_openmm_system(topology, charge_from_molecules= [molecule])
+        if solvent is None:
+            forcefield = ForceField(force_field_path, allow_cosmetic_attributes=True)
+            openmm_system = forcefield.create_openmm_system(topology, charge_from_molecules= [molecule])
 
-        structure = parmed.openmm.topsystem.load_topology(topology.to_openmm(), openmm_system)
+            structure = parmed.openmm.topsystem.load_topology(topology.to_openmm(), openmm_system)
 
-        conf = mol.GetConformer(which_conf)
-        structure.coordinates = unit.Quantity(
-            np.array([np.array(conf.GetAtomPosition(i)) for i in range(mol.GetNumAtoms())]), unit.angstroms)
+            structure.title = Chem.MolToSmiles(mol)
+            conf = mol.GetConformer(which_conf)
+            structure.coordinates = unit.Quantity(
+                np.array([np.array(conf.GetAtomPosition(i)) for i in range(mol.GetNumAtoms())]), unit.angstroms)
+            
+        elif solvent.upper() in cls.solvent_lookup:
+            from mdfptools.Parameteriser import SolutionParameteriser
+
+            if solvent.upper() == "WATER":
+                structure = SolutionParameteriser.run(smiles = Chem.MolToSmiles(mol), default_padding = 1.25*unit.nanometer, solute_molecule = molecule, backend = "off_molecule", ff_path = force_field_path)
+
+            else:
+                
+                solvent_smiles, density, num_solvent = cls.solvent_lookup[solvent.upper()]
+                tmp = Chem.AddHs(Chem.MolFromSmiles(solvent_smiles))
+                AllChem.EmbedMolecule(tmp)
+                solvent_molecule = Molecule.from_rdkit(tmp)
+                solvent_molecule.compute_partial_charges_am1bcc(toolkit_registry = AmberToolsToolkitWrapper())
+                
+                structure = SolutionParameteriser.run(smiles = Chem.MolToSmiles(mol), density = density, num_solvent = num_solvent, solvent_smiles = solvent_smiles, solvent_molecule = solvent_molecule, solute_molecule = molecule, backend = "off_molecule", ff_path = force_field_path)
+        else:
+            raise ValueError("{} is not a recognised solvent. Use `add_solvent` first to incorporate into the class.".format(solvent))
         return structure
 
     @classmethod
@@ -78,34 +125,38 @@ class Simulator:
         return flat_bottom_harmonic_force
 
     @classmethod
-    def simulate_tar(cls, mol, *, which_conf = 0,
+    def simulate_tar(cls, mol, *, solvent = None, which_conf = 0,
         force_field_path = "openff_unconstrained-1.3.0.offxml",
         num_step = 5000, 
         avg_power = 3, 
         update_every = 1, 
         write_out_every = 2500, #5 picosecond
+        platform = "CPU", #FIXME add platform
         **kwargs):
-
-        solute_pmd = cls.parameterise_solute(mol, which_conf)
-        solute_pmd.title = Chem.MolToSmiles(mol)
 
         try:
             noe_force = cls.create_noe_force(mol)
         except:
             raise ValueError("No Restraints to apply.")
 
+        platform = Platform.getPlatformByName(platform)
+        solute_pmd = cls.parameterise_solute(mol, which_conf, force_field_path, solvent)
 
+        if solvent is None:
+            system = solute_pmd.createSystem(nonbondedMethod=NoCutoff, nonbondedCutoff=1*unit.nanometer, constraints=AllBonds)
+            integrator = LangevinIntegrator(cls.temperature, 1/unit.picosecond, cls.time_step)
 
-        integrator = LangevinIntegrator(273*unit.kelvin, 1/unit.picosecond, 0.002*unit.picoseconds)
-        system = solute_pmd.createSystem(nonbondedMethod=NoCutoff, nonbondedCutoff=1*unit.nanometer, constraints=AllBonds)
+        else: #TODO does vacumm also need thermostat?
+            system = solute_pmd.createSystem(nonbondedMethod=PME, nonbondedCutoff=1*unit.nanometer, constraints=AllBonds)
+            thermostat = AndersenThermostat(cls.temperature, 1/unit.picosecond)
+            barostat = MonteCarloBarostat(cls.pressure , cls.temperature)
+            system.addForce(thermostat)
+            system.addForce(barostat)
+            integrator = VerletIntegrator(cls.time_step)
+
         system.addForce(noe_force)
-        simulation = Simulation(solute_pmd.topology, system, integrator)
+        simulation = Simulation(solute_pmd.topology, system, integrator, platform)
         simulation.context.setPositions(solute_pmd.positions)
-
-
-        # tmp_dir = tempfile.mkdtemp()
-        # h5_path = "{}/tmp.h5".format(tmp_dir)
-        # h5_path = "tmp.h5"
 
 
         coordinates = []
