@@ -110,7 +110,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
     #######################################
     # Confgen
     #######################################
-    def estimate_time(self, max_time_per_conf = 10):
+    def estimate_time(self, max_time_per_conf = 10, repeats = 3):
         """ 
         Currently rdkit confgen halts when conformers are not generated
 
@@ -118,7 +118,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         """
         #XXX keep track of how many conformers exist, if process is not finished delete the newly produced conformers?
         out = []
-        for _ in range(3):
+        for _ in range(repeats):
             start = time.time()
             p = multiprocessing.Process(target=self.generate_conformers, args = (1,))
             p.start()
@@ -127,26 +127,30 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
                 logger.error("Conformer Generation process timedout.")
                 p.terminate()
                 p.join()
-                break
+                return float("NaN")
             out.append(time.time() - start)
         if len(out):
-                logger.info('{:.1f} seconds per conformer on average.'.format(np.mean(out)))
+            logger.info('{:.1f} seconds per conformer on average.'.format(np.mean(out)))
+            return np.mean(out)
+            
 
 
-    def generate_conformers(self, num_conf): #XXX it should have option to use other version of ETKDG as this class is flexible enough to confgen any type of molecule
+    def generate_conformers(self, num_conf, params = None): #XXX it should have option to use other version of ETKDG as this class is flexible enough to confgen any type of molecule
         """
         is there some way to forbid EmbedMultipleConf being called on this class object?
         """
-        params = AllChem.ETKDGv3() #FIXME changable 
-        params.useRandomCoords = True #TODO changeable
+        if params is None:
+            params = AllChem.ETKDGv3() #FIXME changable 
+            params.useRandomCoords = True #TODO changeable
+            params.verbose = False #XXX as argument?
+            # params.maxAttempts = 0
+            params.numThreads = 0 #TODO changeable
+
+        params.clearConfs = False #XXX allow user to specify this?
         params.SetBoundsMat(self.bmat) #XXX diff to self.bmat, should be triangular smoothed bmat?
-        params.verbose = False #XXX as argument?
-        # params.maxAttempts = 0
-        params.clearConfs = False
-        params.numThreads = 0 #TODO changeable
 
         AllChem.EmbedMultipleConfs(self, num_conf, params)
-        AllChem.AlignMolConformers(self)  #XXX align confs to first for easier visual comparison
+        # AllChem.AlignMolConformers(self)  #XXX align confs to first for easier visual comparison, No! this will include align to side chain
         self._is_minimised = np.concatenate((self._is_minimised, np.zeros(num_conf, dtype = bool)))
     #######################################
     # Post-process
@@ -158,7 +162,12 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         - xtb 
         - ani2?
         """
-        return AllChem.MMFFOptimizeMolecule(self, maxIters = 500, confId = conf_num) #XXX should make other parameters as variable? default iter might be too small
+        # return AllChem.MMFFOptimizeMolecule(self, maxIters = 500, confId = conf_num) #XXX should make other parameters as variable? default iter might be too small
+        while True: #XXX what if never converge?
+            ranks = AllChem.MMFFOptimizeMoleculeConfs(self, numThreads = 0, maxIters = 100) #XXX threads number to use
+            
+            if np.all([i == 0 for i,j in ranks]):
+                return [j for i,j in ranks]
 
     def calculate_energy(self):
         """
@@ -179,39 +188,110 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
     # Selection
     #######################################
     def pick_random(self, num_conf):
-        self._picked_conformers = np.random.choice(self.GetNumConformers(), num_conf, replace = False)
+        out = np.random.choice(self.GetNumConformers(), num_conf, replace = False)
+        self._picked_conformers = list([int(i) for i in out])
         return self._picked_conformers
 
-    def pick_diverse(self, num_conf, indices = None, seed = -1): #XXX does not really give unique solutions
+    def pick_diverse(self, num_conf, indices = [], seed = -1): #XXX does not really give unique solutions
         """rdkit diverse picker
         https://www.rdkit.org/docs/GettingStartedInPython.html?highlight=maccs#picking-diverse-molecules-using-fingerprints
 
-        indices None means all atoms
+        indices [] means all atoms
 
         """
-        
+        AllChem.AlignMolConformers(self, atomIds = indices)
         def distij(i, j):
             return AllChem.GetConformerRMS(self, i, j, atomIds = indices, prealigned = True)
         
         picker = MaxMinPicker()
         out =  picker.LazyPick(distij, self.GetNumConformers(), num_conf, seed = seed)
-        self._picked_conformers = np.array(out)
+        # self._picked_conformers = np.array(out) #should not be np array as in the case of pick energy they are tuples
+        self._picked_conformers = list(out)
         return self._picked_conformers
 
     def pick_energy(self, num_conf):
         #equires calculating MMFF energies for all conformers, in the process all structures are optimised
 
-        while True: #XXX what if never converge?
-            ranks = AllChem.MMFFOptimizeMoleculeConfs(self, numThreads = 0, maxIters = 100)
-            
-            if np.all([i == 0 for i,j in ranks]):
-                self._picked_conformers  = np.argsort([j for i,j in ranks][:num_conf])
-                return self._picked_conformers
+        mp = AllChem.MMFFGetMoleculeProperties(self)
+        out = [AllChem.MMFFGetMoleculeForceField(self, mp, confId = i).CalcEnergy() for i in range(self.GetNumConformers())] #XXX show progress?
+        out = np.array(out) - min(out) #XXX otherwise Boltzmann weight does not work
 
-    def pick_namfis(self, num_conf):
+        self._picked_conformers  = list(np.argsort(out)[:num_conf])
+        return [(int(i), out[i]) for i in self._picked_conformers]
 
-        raise NotImplementedError
+    def pick_namfis(self, num_conf, pre_selection = None, tolerance = 0):
+        """does not allow some constraints in optimisation
+
+        tolerance allow some overall violation of bounds
+        """
+        from scipy.optimize import minimize
+
+
+        MAX_CONF_LIMIT = 200
+        if pre_selection is None:
+            pre_selection = range(self.GetNumConformers())
+        if len(pre_selection) > MAX_CONF_LIMIT:
+            logger.warning("Number of conformers exceed {}, NAMFIS might not converge.".format(MAX_CONF_LIMIT))
         
+
+        coord = np.array([self.GetConformer(i).GetPositions() for i in pre_selection])
+
+        weights = np.random.uniform(low = 0, high = 1, size = coord.shape[0]) #uniform weights
+        
+        comp_dist = np.linalg.norm(coord[:, self.distance_upper_bounds.idx1, :] - coord[:, self.distance_upper_bounds.idx2, :], axis = 2)
+
+        # define error scale factor for distances in different ranges
+        error = np.ones(self.distance_upper_bounds.shape[0]) * 0.4
+        error[self.distance_upper_bounds.distance < 6.0] = 0.4
+        error[self.distance_upper_bounds.distance < 3.5] = 0.3
+        error[self.distance_upper_bounds.distance < 3.0] = 0.2
+        error[self.distance_upper_bounds.distance < 2.5] = 0.1    
+        
+
+        def objective(w): #w is weights
+            deviation  = np.array(self.distance_upper_bounds.distance) - np.average(comp_dist, weights = w, axis = 0)
+            deviation /= error
+    #         deviation = np.heaviside(deviation, 0) * deviation #only penalise upper violation
+            return np.sum(deviation**2) #squared deviation
+    #         return np.linalg.norm(deviation) #square rooted
+        
+        cons = [{'type':'eq','fun': lambda w: np.sum(w) - 1}] #weights add up to 1
+        
+        
+        cons += [ #does not allow any violation
+                {'type':'ineq','fun': lambda w:  tolerance - np.absolute(np.average(comp_dist, weights = w, axis = 0) - np.array(self.distance_upper_bounds.distance))} 
+        ]
+
+    #     cons += [ #does not allow only upper violations
+    #                 {'type':'ineq','fun': lambda w: np.array(self.distance_upper_bounds.distance) - np.average(comp_dist, weights = w, axis = 0) - tolerance} 
+    #     ]
+        
+        out = minimize(
+            objective,
+            weights, 
+            constraints = tuple(cons),
+            bounds = tuple((0,1) for _ in range(len(weights))),
+            method='SLSQP')
+
+        if not out["success"]:
+            logger.error("NAMFIS failed: {}".format(out["message"]))
+            
+        weights = out["x"] 
+
+        return list(zip([int(i) for i in np.argsort(-1 * weights)[:20]], weights[np.argsort(weights * -1)[:20]]))
+
+    def pick_least_upper_violation(self, num_conf):
+        distance_matrix_for_each_conformer = np.array([Chem.Get3DDistanceMatrix(self, i) for i in range(self.GetNumConformers())])
+
+        df = self.distance_upper_bounds #FIXME
+        distances = distance_matrix_for_each_conformer[:, df.idx1, df.idx2] - np.array(df.distance)
+        sum_violations = np.copy(distances)
+        sum_violations[sum_violations < 0] = 0
+        out = np.sum(sum_violations, axis = 1)
+        self._picked_conformers  = list(np.argsort(out)[:num_conf])
+        
+        return [int(i) for i in self._picked_conformers] #should change picked_conformers to also int type
+
 
     #######################################
     # Checks
@@ -288,3 +368,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         for k, v in self.__dict__.items():
             setattr(newone, k, copy.deepcopy(v, memo))
         return newone
+
+    def load_coordinates(self, np_array):
+        #so that saved coordinates elsewhere can be put in, or here use load_conf, and add a mol_ops function to get conformer from mol obj and np_array
+        raise NotImplementedError
