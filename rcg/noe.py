@@ -77,11 +77,12 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
 
         with open(file_path, 'rt') as NOE_file:
             if xplor:
-                for line in NOE_file:
+                for idx, line in enumerate(NOE_file):
                     line = line.strip()  # remove leading whitespace
                     if line.startswith("assign"):  # data follows
+                        line = line.split("!")[0]
                         res = xpl.findall(line)
-                        assert len(res) == 7, f'Expected to get 7 entries from XPLOR line. Got {len(res)} from \"{line}\".'
+                        assert len(res) == 7, f'Expected to get 7 entries from XPLOR line. Got {len(res)} from \"{line}\" on line {idx + 1}.'
                         data.append(res)
                     if line.startswith("# Ambiguous"):  # uncertain NOEs follow, stop
                         break
@@ -224,9 +225,11 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         mol_data = [(idx, atm.GetPDBResidueInfo().GetResidueNumber() , atm.GetPDBResidueInfo().GetName().strip()) for idx, atm in enumerate(mol.GetAtoms()) if atm.GetAtomicNum() == 1] #XXX insofar only hydrogens, but in the future?
         return hydrogen_dict, pd.DataFrame.from_records(mol_data, columns = ["index", "resid", "name"])
 
-    def add_noe_to_mol(self, mol): #XXX as distance bounds, reflect this in name?
+    def add_noe_to_mol(self, mol, remember_chemical_equivalence = False): #XXX as distance bounds, reflect this in name?
         """
             can inform which NOEs are missing 
+
+            remember_chemical_equivalence keeps an list of integers equal in size to the upper bound distance dataframe, if two adjacent rows are chemically equivalent, the same integer is assigned in list. 
 
         Returns
         ---------------
@@ -239,6 +242,11 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
 
         df = []
         messages = set([])
+
+        if remember_chemical_equivalence:
+            counter = 0
+            self.chemical_equivalence_list = []
+
         for _, row in self.noe_table.iterrows():
             idx1, idx2 = self._indices_from_noe_table_row(row, mol_frame, hydrogen_dict, messages)
 
@@ -246,11 +254,17 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
                 val  = row["Upper_bound_[A]"] #TODO make this changeable
                 for a,b in product(idx1, idx2):
                     df.append((a,b,val))
+                    if remember_chemical_equivalence:
+                        self.chemical_equivalence_list.append(counter)
+                if remember_chemical_equivalence:
+                    counter += 1
         
         if len(messages):
             logger.warning("\n".join(messages))
         df = pd.DataFrame.from_records(df, columns = ["idx1", "idx2", "distance"])  #FIXME which distance specify?
-        df.sort_values(by = ["idx1", "idx2"], inplace = True, ignore_index = True)
+
+        if not remember_chemical_equivalence:
+            df.sort_values(by = ["idx1", "idx2"], inplace = True, ignore_index = True) #XXX ordering is important when tracking chemical equivalence
         mol = RestrainedMolecule(mol)
         mol.distance_upper_bounds = df
         return mol
