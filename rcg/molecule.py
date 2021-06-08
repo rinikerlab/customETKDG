@@ -219,7 +219,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         self._picked_conformers  = list(np.argsort(out)[:num_conf])
         return [(int(i), out[i]) for i in self._picked_conformers]
 
-    def pick_namfis(self, num_conf, pre_selection = None, tolerance = 0):
+    def pick_namfis(self, num_conf, noe, pre_selection = None, tolerance = 0):
         """does not allow some constraints in optimisation
 
         tolerance allow some overall violation of bounds
@@ -232,25 +232,35 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
             pre_selection = range(self.GetNumConformers())
         if len(pre_selection) > MAX_CONF_LIMIT:
             logger.warning("Number of conformers exceed {}, NAMFIS might not converge.".format(MAX_CONF_LIMIT))
-        
 
-        coord = np.array([self.GetConformer(i).GetPositions() for i in pre_selection])
+        distance_matrix_for_each_conformer = np.array([Chem.Get3DDistanceMatrix(self, i) for i in pre_selection])
 
-        weights = np.random.uniform(low = 0, high = 1, size = coord.shape[0]) #uniform weights
-        
-        comp_dist = np.linalg.norm(coord[:, self.distance_upper_bounds.idx1, :] - coord[:, self.distance_upper_bounds.idx2, :], axis = 2)
+        df = noe.add_noe_to_mol(self, remember_chemical_equivalence = True).distance_upper_bounds
+
+        distances = distance_matrix_for_each_conformer[:, df.idx1, df.idx2]
+        ref_distances = np.array(df.distance)
 
         # define error scale factor for distances in different ranges
-        error = np.ones(self.distance_upper_bounds.shape[0]) * 0.4
-        error[self.distance_upper_bounds.distance < 6.0] = 0.4
-        error[self.distance_upper_bounds.distance < 3.5] = 0.3
-        error[self.distance_upper_bounds.distance < 3.0] = 0.2
-        error[self.distance_upper_bounds.distance < 2.5] = 0.1    
-        
+        errors = np.ones(len(ref_distances)) * 0.4
+        errors[ref_distances < 6.0] = 0.4
+        errors[ref_distances < 3.5] = 0.3
+        errors[ref_distances < 3.0] = 0.2
+        errors[ref_distances < 2.5] = 0.1    
+
+        #### ce means chemical equivalent
+        distances_ce = np.split(distances, np.unique(noe.chemical_equivalence_list, return_index=True)[1][1:], axis = 1) #here I group the distances by their chemical equivalence track
+        distances_ce = np.stack([np.mean(d, axis = 1) for d in distances_ce], axis = 1)
+
+
+        ref_distances_ce = np.split(ref_distances, np.unique(noe.chemical_equivalence_list, return_index=True)[1][1:])
+        ref_distances_ce = np.stack([np.mean(d) for d in ref_distances_ce])
+
+        errors_ce = np.split(errors, np.unique(noe.chemical_equivalence_list, return_index=True)[1][1:])
+        errors_ce = np.stack([np.mean(d) for d in errors_ce])
 
         def objective(w): #w is weights
-            deviation  = np.array(self.distance_upper_bounds.distance) - np.average(comp_dist, weights = w, axis = 0)
-            deviation /= error
+            deviation  = ref_distances_ce - np.average(distances_ce, weights = w, axis = 0)
+            deviation /= errors_ce
     #         deviation = np.heaviside(deviation, 0) * deviation #only penalise upper violation
             return np.sum(deviation**2) #squared deviation
     #         return np.linalg.norm(deviation) #square rooted
@@ -259,18 +269,20 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         
         
         cons += [ #does not allow any violation
-                {'type':'ineq','fun': lambda w:  tolerance - np.absolute(np.average(comp_dist, weights = w, axis = 0) - np.array(self.distance_upper_bounds.distance))} 
+                {'type':'ineq','fun': lambda w:  (errors_ce + tolerance) - np.absolute(np.average(distances_ce, weights = w, axis = 0) - ref_distances_ce)} 
         ]
 
     #     cons += [ #does not allow only upper violations
-    #                 {'type':'ineq','fun': lambda w: np.array(self.distance_upper_bounds.distance) - np.average(comp_dist, weights = w, axis = 0) - tolerance} 
+    #                 {'type':'ineq','fun': lambda w: ref_distances_ce - np.average(distances_ce, weights = w, axis = 0) - tolerance} 
     #     ]
         
+        weights = np.random.uniform(low = 0, high = 1, size = len(pre_selection)) #uniform weights at start
+
         out = minimize(
             objective,
             weights, 
             constraints = tuple(cons),
-            bounds = tuple((0,1) for _ in range(len(weights))),
+            bounds = tuple((0,1) for _ in range(len(weights))), #each weight constraint
             method='SLSQP')
 
         if not out["success"]:
@@ -278,7 +290,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
             
         weights = out["x"] 
 
-        return list(zip([int(i) for i in np.argsort(-1 * weights)[:20]], weights[np.argsort(weights * -1)[:20]]))
+        return list(zip([int(i) for i in np.argsort(-1 * weights)[:num_conf]], weights[np.argsort(weights * -1)[:num_conf]]))
 
     def pick_least_upper_violation(self, num_conf):
         distance_matrix_for_each_conformer = np.array([Chem.Get3DDistanceMatrix(self, i) for i in range(self.GetNumConformers())])
