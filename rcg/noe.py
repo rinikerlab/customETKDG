@@ -34,13 +34,30 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         ]
         self.display_df = pd.DataFrame(columns = self.display_colnames)
 
-    def add_entry(self, ):
-        self.sanity_check()
-        raise NotImplementedError
-
     # @property
     # def _constructor(self): #for inheriting pandas
     #     return NOE
+
+    def from_dataframe(self, df, which_cols = None):
+        cols = ['Residue_index_1', 'Residue_name_1', 'Residue_index_2',
+                'Residue_name_2', 'Upper_bound_[A]']
+        
+        if which_cols is None:
+            df = df.loc[:, cols]
+        else:
+            assert len(which_cols) == 5, ValueError("5 Columns are needed from input dataframe.")
+            df = df.iloc[:, which_cols]
+            df.columns = cols
+            
+        df['Upper_bound_[A]'] = df['Upper_bound_[A]'].astype(float)
+        df['Residue_index_1'] = df['Residue_index_1'].astype(int)
+        df['Residue_index_2'] = df['Residue_index_2'].astype(int)
+        df['Residue_name_1'] = df['Residue_name_1'].astype(str)
+        df['Residue_name_2'] = df['Residue_name_2'].astype(str)
+
+        self.noe_table =  self.sanitize_xplor_noe(df)
+
+        self.sanity_check()
 
 
     # @classmethod
@@ -185,12 +202,6 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         noe_df = noe_df.append(new_rows)
 
         return noe_df
-    def manipulate_noe_table(self): #TODO better name
-        """changing, scaling values so on
-        """
-        raise NotImplementedError
-    def generate_all_noe_pairs(self): #probably no need
-        raise NotImplementedError
         
     def _indices_from_noe_table_row(self, row, mol_frame, hydrogen_dict, messages):
         if row["Residue_name_1"].endswith("@"):
@@ -284,7 +295,8 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         matched = [True] * self.noe_table.shape[0]
         dmat = Chem.GetDistanceMatrix(mol)
 
-        
+        #always zero this df upon calling
+        self.display_df = pd.DataFrame(columns = self.display_colnames)
 
         messages = set([])
         for ri, row in self.noe_table.iterrows():
@@ -371,8 +383,10 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         PandasTools.RenderImagesInAllDataFrames(images=True)
         return tmp_df
 
-    def remove_unmatched(sefl):
-        raise NotImplementedError
+    def remove_unmatched(self):
+        if "Has Match in Molecule" in self.noe_table:
+            self.noe_table = self.noe_table[self.noe_table["Has Match in Molecule"]]
+        return self.noe_table
 
     def sanity_check(self):
         """
@@ -391,10 +405,20 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         if tmp.duplicated(subset = ["Residue_name_1", "Residue_name_2", "Residue_index_1", "Residue_index_2"]).any():
             logger.warning("Duplicated Rows \n {}".format(tmp.iloc[:length][tmp.duplicated(subset = ["Residue_name_1", "Residue_name_2", "Residue_index_1", "Residue_index_2"], keep = False).iloc[:length]])) #FIXME
 
-    def show(self):
+    def show_records(self):
         return self.noe_table
     def __repr__(self):
         return self.noe_table.__repr__()
+
+    def manipulate_noe_table(self): #TODO better name
+        """changing, scaling values so on
+        """
+        raise NotImplementedError
+    def generate_all_noe_pairs(self): #probably no need
+        raise NotImplementedError
+    def add_entry(self, ):
+        self.sanity_check()
+        raise NotImplementedError
 
 
 def map_mol_with_noe(mol, df, verbose):
