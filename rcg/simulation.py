@@ -125,7 +125,7 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
         if len(spring_constant) == 1: #all the same spring constant
             spring_constant *= len(mol.distance_upper_bounds)
         
-        assert len(spring_constant) == len(mol.distance_upper_bounds), ValueError("Name of distance restraints do not match the number of spring constants")
+        assert len(spring_constant) == len(mol.distance_upper_bounds), "Name of distance restraints do not match the number of spring constants"
 
         flat_bottom_harmonic_force = CustomBondForce('step(r-r0) * (k/2) * (r-r0)^2')
         flat_bottom_harmonic_force.addPerBondParameter('r0')

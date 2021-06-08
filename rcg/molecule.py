@@ -31,14 +31,22 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
     """
     def __init__(self, mol):
         self.bounds = None
-        self._distance_upper_bounds = None
-        self._distance_lower_bounds = None
+        self.bounds_df_colnames = [
+            "idx1"
+            "idx2",
+            "distance",
+        ]
+        self._distance_upper_bounds = pd.DataFrame(columns = self.bounds_df_colnames)
+        self._distance_lower_bounds = pd.DataFrame(columns = self.bounds_df_colnames)
+
         self._conformers = None  #XXX needed?
         self._is_minimised = False #TODO same dimension as conformers, 
         self._minimised_conformers = None
         self._is_minimised = np.empty(shape = (0,), dtype = bool)
         self._coordinates = None
         self._picked_conformers = None #cannot be set, need to perserve order
+        self.upper_scaling = 1.0 #scaling constant applied to distances
+        self.lower_scaling = 1.0 #scaling constant applied to distances
         super().__init__(mol)
 
     def load_mol(self, smiles, pdb_filename):
@@ -84,6 +92,29 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
     #######################################
     # Pre-confgen
     #######################################
+    #XXX currently not being used
+    def scale_lower_distances(self, scale_value): 
+        if type(scale_value) in [int, float]:
+            scale_value = [scale_value]
+
+        if len(scale_value) == 1: #all the same scaling
+            scale_value *= len(self._distance_lower_bounds)
+        
+        assert len(scale_value) == len(self._distance_lower_bounds), "Number of distance restraints do not match number of scalings."
+
+        self.lower_scaling = scale_value
+
+    def scale_upper_distances(self, scale_value): 
+        if type(scale_value) in [int, float]:
+            scale_value = [scale_value]
+
+        if len(scale_value) == 1: #all the same scaling
+            scale_value *= len(self._distance_upper_bounds)
+        
+        assert len(scale_value) == len(self._distance_upper_bounds), "Number of distance restraints do not match number of scalings."
+
+        self.upper_scaling = scale_value
+
     def update_bmat(self):  #TODO only upperbound?
         """
         prepare the bounds matrix into the user specified state
@@ -91,8 +122,15 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         self.RemoveAllConformers() #FIXME only do it if bmat is found to change
 
         self.bmat = AllChem.GetMoleculeBoundsMatrix(self, useMacrocycle14config=True) #FIXME customisable for non-macrocycle
-        for _, row in self._distance_upper_bounds.iterrows():
+
+        self.scale_upper_distances(self.upper_scaling)
+        self.scale_lower_distances(self.lower_scaling)
+
+        for index, row in self._distance_upper_bounds.iterrows():
             a, b, dist = row
+
+            dist *= self.upper_scaling[index]
+
             a,b = int(a), int(b) #XXX awkard, even specified as int in dataframe still comes out as python floats
             self.bmat[min((a,b)), max((a,b))] = dist #XXX only change if strink the bounds?
             if self.bmat[max((a,b)), min((a,b))] > dist: 
@@ -133,8 +171,6 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
             logger.info('{:.1f} seconds per conformer on average.'.format(np.mean(out)))
             return np.mean(out)
             
-
-
     def generate_conformers(self, num_conf, params = None): #XXX it should have option to use other version of ETKDG as this class is flexible enough to confgen any type of molecule
         """
         is there some way to forbid EmbedMultipleConf being called on this class object?
@@ -176,9 +212,6 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         """
         raise NotImplementedError
 
-    def simulate(self, confId = 0):
-        raise NotImplementedError
-    
     def save_conformers(self, path, confId = -1):
         self._conformers.save(path)
 
@@ -380,7 +413,3 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         for k, v in self.__dict__.items():
             setattr(newone, k, copy.deepcopy(v, memo))
         return newone
-
-    def load_coordinates(self, np_array):
-        #so that saved coordinates elsewhere can be put in, or here use load_conf, and add a mol_ops function to get conformer from mol obj and np_array
-        raise NotImplementedError
