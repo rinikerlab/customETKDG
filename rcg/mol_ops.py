@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 # logger.setLevel(logging.INFO)
 
 def load_coordinates(mol, np_array):
-    assert mol.GetNumAtoms() == len(np_array[1]), "number of atoms do not match"
+    assert mol.GetNumAtoms() == len(np_array[1]), "number of atoms do not match: {}, {}".format(mol.GetNumAtoms(), len(np_array[1]))
     init = mol.GetNumConformers()
     for idx, coord in enumerate(np_array):
         conf = Chem.Conformer(mol.GetNumAtoms())
