@@ -384,11 +384,12 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         tmp["Residue_index_2"] = self.noe_table["Residue_index_1"]
         tmp["Residue_name_1"] = self.noe_table["Residue_name_2"]
         tmp["Residue_name_2"] = self.noe_table["Residue_name_1"]
+        length = len(tmp)
 
         tmp = tmp.append(self.noe_table)
 
-        if not tmp.duplicated().any():
-            logger.warning("Duplicated Rows {}".format(tmp[tmp.duplicated()])) #FIXME
+        if tmp.duplicated(subset = ["Residue_name_1", "Residue_name_2", "Residue_index_1", "Residue_index_2"]).any():
+            logger.warning("Duplicated Rows \n {}".format(tmp.iloc[:length][tmp.duplicated(subset = ["Residue_name_1", "Residue_name_2", "Residue_index_1", "Residue_index_2"], keep = False).iloc[:length]])) #FIXME
 
     def show(self):
         return self.noe_table
