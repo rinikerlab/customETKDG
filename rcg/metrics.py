@@ -112,6 +112,55 @@ def get_noe_pair_dist(mol, df = None): #TODO what if you want to compare against
     return distances, np.sum(sum_violations, axis = 1)
 
 
+def weighted_upper_violation(mol, which_confs, weights = None, df = None):
+    distance_matrix_for_each_conformer = np.array([Chem.Get3DDistanceMatrix(mol, i) for i in tqdm.tqdm(which_confs)])
+
+    if hasattr(mol, "distance_upper_bounds"): 
+        df = mol.distance_upper_bounds #FIXME
+
+    distances = distance_matrix_for_each_conformer[:, df.idx1, df.idx2] - np.array(df.distance)
+    # assert len(weights) == len(distances), "dimension mismatch"
+    weighted_avg_distance = np.average(distances, axis = 0, weights = weights)
+    #- df.distance #XXX more efficient calculate with only the needed pairs
+    sum_violations = np.copy(weighted_avg_distance)
+    sum_violations[sum_violations < 0] = 0
+
+    return sum(sum_violations)
+
+def _weighted_noe_violation_helper(mol, which_confs, noe, weights = None):
+
+    """account for chemcial equivalence
+
+    not only can look at summed violation, but any other
+    """
+    distance_matrix_for_each_conformer = np.array([Chem.Get3DDistanceMatrix(mol, i) for i in which_confs])
+
+    df = noe.add_noe_to_mol(mol, remember_chemical_equivalence = True).distance_upper_bounds
+    distances = distance_matrix_for_each_conformer[:, df.idx1, df.idx2] - np.array(df.distance)
+
+    distances_by_chemical_equivalence = np.split(distances, np.unique(noe.chemical_equivalence_list, return_index=True)[1][1:], axis = 1) #here I group the distances by their chemical equivalence track
+
+    distances = np.stack([np.mean(d, axis = 1) for d in distances_by_chemical_equivalence], axis = 1)
+    # print(distances[0].shape, len(distances))
+
+    weighted_avg_distance = np.average(distances, axis = 0, weights = weights) #weighted over the conformer bundle
+    sum_violations = np.copy(weighted_avg_distance)
+
+    return sum_violations
+
+def weighted_noe_violation(mol, which_confs, noe, weights = None, agg_func = np.sum):
+    sum_violations = _weighted_noe_violation_helper(mol, which_confs, noe, weights)
+    return agg_func(sum_violations)
+
+
+def weighted_noe_upper_violation(mol, which_confs, noe, weights = None, agg_func = np.sum):
+
+    sum_violations = _weighted_noe_violation_helper(mol, which_confs, noe, weights)
+    sum_violations[sum_violations < 0] = 0
+
+    return agg_func(sum_violations)
+
+
 #TODO below, new file for plots?
 def summed_noe_violation(noe_pair_dist, meth_pair_dist, dev_tol=0):
     violations = []
