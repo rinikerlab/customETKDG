@@ -158,11 +158,11 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
             system_pmd = cls.parameterise_system(mol, which_conf, force_field_path, solvent)
 
         if solvent is None:
-            system = system_pmd.createSystem(nonbondedMethod=NoCutoff, nonbondedCutoff=1*unit.nanometer, constraints=AllBonds)
+            system = system_pmd.createSystem(nonbondedMethod=NoCutoff, nonbondedCutoff=1*unit.nanometer, constraints=HBonds)
             integrator = LangevinIntegrator(cls.temperature, 1/unit.picosecond, cls.time_step)
 
         else: #TODO does vacumm also need thermostat?
-            system = system_pmd.createSystem(nonbondedMethod=PME, nonbondedCutoff=1*unit.nanometer, constraints=AllBonds)
+            system = system_pmd.createSystem(nonbondedMethod=PME, nonbondedCutoff=1*unit.nanometer, constraints=HBonds)
             thermostat = AndersenThermostat(cls.temperature, 1/unit.picosecond)
             barostat = MonteCarloBarostat(cls.pressure , cls.temperature)
             system.addForce(thermostat)
@@ -251,11 +251,11 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
             system_pmd = cls.parameterise_system(mol, which_conf, force_field_path, solvent)
 
         if solvent is None:
-            system = system_pmd.createSystem(nonbondedMethod=NoCutoff, nonbondedCutoff=1*unit.nanometer, constraints=AllBonds)
+            system = system_pmd.createSystem(nonbondedMethod=NoCutoff, nonbondedCutoff=1*unit.nanometer, constraints=HBonds)
             integrator = LangevinIntegrator(cls.temperature, 1/unit.picosecond, cls.time_step)
 
         else: #TODO does vacumm also need thermostat?
-            system = system_pmd.createSystem(nonbondedMethod=PME, nonbondedCutoff=1*unit.nanometer, constraints=AllBonds)
+            system = system_pmd.createSystem(nonbondedMethod=PME, nonbondedCutoff=1*unit.nanometer, constraints=HBonds)
             thermostat = AndersenThermostat(cls.temperature, 1/unit.picosecond)
             barostat = MonteCarloBarostat(cls.pressure , cls.temperature)
             system.addForce(thermostat)
