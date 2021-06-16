@@ -1,6 +1,8 @@
 import parmed
 import mdtraj as md
 from mdtraj.reporters import HDF5Reporter
+import multiprocessing
+from itertools import repeat
 
 try:
     from openff.toolkit.topology import Molecule, Topology
@@ -32,6 +34,14 @@ from .trajectory import Trajectory
 import logging
 logger = logging.getLogger(__name__)
 
+
+def _job_func(system, topology, coord):
+    integrator = LangevinIntegrator(273 * unit.kelvin, 1/unit.picosecond, 0.002 * unit.picosecond)
+    simulation = Simulation(topology, system, integrator)
+    simulation.context.setPositions(coord)
+    simulation.minimizeEnergy()
+    new_coord = simulation.context.getState(getPositions = True).getPositions(asNumpy = True).value_in_unit(unit.angstrom)
+    return new_coord
 class Simulator: #XXX put some variable to the class, e.g. the write out frequency, force field used
     # _MLDDEC_MODEL = collections.namedtuple("MLDDEC_MODEL", ["epsilon", "model"], defaults = [None, None])
     # MLDDEC_MODEL = _MLDDEC_MODEL()
@@ -292,3 +302,36 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
         traj.add_frames(coordinates)
         traj.copy_names_from_mol(mol, resnum = [0]) #XXX at the moment can only do this after `add_frames`
         return traj
+
+
+    @classmethod
+    def minimise_energy_all_confs(cls, mol, n_jobs = -1, force_field_path = "openff_unconstrained-1.3.0.offxml", **kwargs): #XXX have a in_place option?
+
+        system_pmd = cls.parameterise_system(mol, 0, force_field_path, None)
+
+        #the list of task to distribute
+        coord_list = []
+        for i in range(mol.GetNumConformers()):
+            conf = mol.GetConformer(i)
+            system_pmd.coordinates = unit.Quantity(np.array([np.array(conf.GetAtomPosition(j)) for j in range(mol.GetNumAtoms())]), unit.angstroms)
+            coord_list.append(system_pmd.positions)
+
+        system = system_pmd.createSystem(nonbondedMethod=NoCutoff, nonbondedCutoff=1*unit.nanometer, constraints=HBonds)
+
+
+        if n_jobs == -1:
+            cores = multiprocessing.cpu_count()
+        else:
+            cores = int(n_jobs)
+
+        with multiprocessing.Pool(processes=cores) as pool:
+            out_coord = pool.starmap(_job_func, tqdm.tqdm(zip(repeat(system), repeat(system_pmd.topology), coord_list), total = len(coord_list)))
+
+
+        out_mol = copy.deepcopy(mol)
+        for i, val in enumerate(out_coord):
+            conf = out_mol.GetConformer(i)
+            for j in range(out_mol.GetNumAtoms()):
+                conf.SetAtomPosition(j, Point3D(*val[j]))
+
+        return out_mol
