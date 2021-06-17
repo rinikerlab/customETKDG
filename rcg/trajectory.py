@@ -1,6 +1,7 @@
 import tempfile
 import mdtraj as md
 import numpy as np
+import parmed
 from rdkit import Chem
 
 class Trajectory():

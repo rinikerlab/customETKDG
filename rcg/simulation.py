@@ -154,7 +154,7 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
         num_step = 5000, 
         avg_power = 3, 
         update_every = 1, 
-        spring_constant = 2000 * unit.kilojoule_per_mole/(unit.nanometers**2),
+        spring_constant = 1000 * unit.kilojoule_per_mole/(unit.nanometers**2),
         write_out_every = 2500, #5 picosecond
         platform = "CPU", #FIXME add platform
         use_cache = False,
@@ -305,7 +305,7 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
 
 
     @classmethod
-    def minimise_energy_all_confs(cls, mol, n_jobs = -1, force_field_path = "openff_unconstrained-1.3.0.offxml", **kwargs): #XXX have a in_place option?
+    def minimise_energy_all_confs(cls, mol, n_jobs = -1, force_field_path = "openff_unconstrained-1.3.0.offxml",spring_constant = 1000 * unit.kilojoule_per_mole/(unit.nanometers**2, **kwargs): #XXX have a in_place option?
 
         system_pmd = cls.parameterise_system(mol, 0, force_field_path, None)
 
@@ -318,6 +318,12 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
 
         system = system_pmd.createSystem(nonbondedMethod=NoCutoff, nonbondedCutoff=1*unit.nanometer, constraints=HBonds)
 
+        try:
+            noe_force = cls.create_noe_force(mol, spring_constant, **kwargs)
+            system.addForce(noe_force)
+            logger.info("Setting up constrained minimisation.")
+        except Exception as e:
+            logger.info("Setting up unconstrained minimisation.")
 
         if n_jobs == -1:
             cores = multiprocessing.cpu_count()

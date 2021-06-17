@@ -397,13 +397,13 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         raise NotImplementedError
 
     def __copy__(self):
-        newone = super(Molecule, self).__copy__()
+        newone = super(RestrainedMolecule, self).__copy__()
         newone.__class = self.__class
         newone.__dict__.update(self.__dict__)
         return newone
 
     def __deepcopy__(self, memo):
-        newone = super(Molecule, self).__deepcopy__(memo)
+        newone = super(RestrainedMolecule, self).__deepcopy__(memo)
         newone.__class__ = self.__class__
         newone.__dict__.update(self.__dict__)
         # cls = self.__class__
