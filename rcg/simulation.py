@@ -305,7 +305,7 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
 
 
     @classmethod
-    def minimise_energy_all_confs(cls, mol, n_jobs = -1, force_field_path = "openff_unconstrained-1.3.0.offxml",spring_constant = 1000 * unit.kilojoule_per_mole/(unit.nanometers**2, **kwargs): #XXX have a in_place option?
+    def minimise_energy_all_confs(cls, mol, n_jobs = -1, force_field_path = "openff_unconstrained-1.3.0.offxml",spring_constant = 1000 * unit.kilojoule_per_mole/(unit.nanometers**2), **kwargs): #XXX have a in_place option?
 
         system_pmd = cls.parameterise_system(mol, 0, force_field_path, None)
 
