@@ -98,6 +98,8 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
                     line = line.strip()  # remove leading whitespace
                     if line.startswith("assign"):  # data follows
                         line = line.split("!")[0]
+                        line = line.replace("\t", " ")
+                        line = re.sub('\s+',' ',line)
                         res = xpl.findall(line)
                         assert len(res) == 7, f'Expected to get 7 entries from XPLOR line. Got {len(res)} from \"{line}\" on line {idx + 1}.'
                         data.append(res)
