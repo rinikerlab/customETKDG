@@ -35,13 +35,21 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def _job_func(system, topology, coord):
+def _enemin_func(system, topology, coord):
     integrator = LangevinIntegrator(273 * unit.kelvin, 1/unit.picosecond, 0.002 * unit.picosecond)
     simulation = Simulation(topology, system, integrator)
     simulation.context.setPositions(coord)
     simulation.minimizeEnergy()
     new_coord = simulation.context.getState(getPositions = True).getPositions(asNumpy = True).value_in_unit(unit.angstrom)
     return new_coord
+
+def _ene_func(system, topology, coord):
+    integrator = LangevinIntegrator(273 * unit.kelvin, 1/unit.picosecond, 0.002 * unit.picosecond)
+    simulation = Simulation(topology, system, integrator)
+    simulation.context.setPositions(coord)
+    energy = simulation.context.getState(getEnergy = True).getPotentialEnergy()
+    return energy
+
 class Simulator: #XXX put some variable to the class, e.g. the write out frequency, force field used
     # _MLDDEC_MODEL = collections.namedtuple("MLDDEC_MODEL", ["epsilon", "model"], defaults = [None, None])
     # MLDDEC_MODEL = _MLDDEC_MODEL()
@@ -331,7 +339,7 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
             cores = int(n_jobs)
 
         with multiprocessing.Pool(processes=cores) as pool:
-            out_coord = pool.starmap(_job_func, tqdm.tqdm(zip(repeat(system), repeat(system_pmd.topology), coord_list), total = len(coord_list)))
+            out_coord = pool.starmap(_enemin_func, tqdm.tqdm(zip(repeat(system), repeat(system_pmd.topology), coord_list), total = len(coord_list)))
 
 
         out_mol = copy.deepcopy(mol)
@@ -341,3 +349,27 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
                 conf.SetAtomPosition(j, Point3D(*val[j]))
 
         return out_mol
+
+    @classmethod
+    def calculate_energy_all_confs(cls, mol, n_jobs = -1, force_field_path = "openff_unconstrained-1.3.0.offxml",spring_constant = 1000 * unit.kilojoule_per_mole/(unit.nanometers**2), **kwargs): #XXX have a in_place option?
+
+        system_pmd = cls.parameterise_system(mol, 0, force_field_path, None)
+
+        #the list of task to distribute
+        coord_list = []
+        for i in range(mol.GetNumConformers()):
+            conf = mol.GetConformer(i)
+            system_pmd.coordinates = unit.Quantity(np.array([np.array(conf.GetAtomPosition(j)) for j in range(mol.GetNumAtoms())]), unit.angstroms)
+            coord_list.append(system_pmd.positions)
+
+        system = system_pmd.createSystem(nonbondedMethod=NoCutoff, nonbondedCutoff=1*unit.nanometer, constraints=HBonds)
+
+        if n_jobs == -1:
+            cores = multiprocessing.cpu_count()
+        else:
+            cores = int(n_jobs)
+
+        with multiprocessing.Pool(processes=cores) as pool:
+            out_ene = pool.starmap(_ene_func, tqdm.tqdm(zip(repeat(system), repeat(system_pmd.topology), coord_list), total = len(coord_list)))
+
+        return out_ene
