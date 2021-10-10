@@ -198,12 +198,16 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         - xtb 
         - ani2?
         """
-        # return AllChem.MMFFOptimizeMolecule(self, maxIters = 500, confId = conf_num) #XXX should make other parameters as variable? default iter might be too small
+        conf_num = int(conf_num)
         while True: #XXX what if never converge?
-            ranks = AllChem.MMFFOptimizeMoleculeConfs(self, numThreads = 0, maxIters = 100) #XXX threads number to use
+            rank = AllChem.MMFFOptimizeMolecule(self, confId = conf_num, maxIters = 100) #XXX threads number to use
+            if rank == 0:
+                return 
+        # while True: #XXX what if never converge?
+        #     ranks = AllChem.MMFFOptimizeMoleculeConfs(self, numThreads = 0, maxIters = 100) #XXX threads number to use
             
-            if np.all([i == 0 for i,j in ranks]):
-                return [j for i,j in ranks]
+        #     if np.all([i == 0 for i,j in ranks]):
+        #         return [j for i,j in ranks]
 
     def calculate_energy(self):
         """
@@ -413,3 +417,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         for k, v in self.__dict__.items():
             setattr(newone, k, copy.deepcopy(v, memo))
         return newone
+    
+    def __str__(self):
+        #TODO print the number of conformers!
+        raise NotImplementedError
