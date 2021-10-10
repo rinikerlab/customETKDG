@@ -113,6 +113,7 @@ def get_noe_pair_dist(mol, df = None): #TODO what if you want to compare against
 
 
 def weighted_upper_violation(mol, which_confs, weights = None, df = None):
+    which_confs = [int(i) for i in which_confs]
     distance_matrix_for_each_conformer = np.array([Chem.Get3DDistanceMatrix(mol, i) for i in tqdm.tqdm(which_confs)])
 
     if hasattr(mol, "distance_upper_bounds"): 
@@ -133,6 +134,7 @@ def _weighted_noe_violation_helper(mol, which_confs, noe, weights = None):
 
     not only can look at summed violation, but any other
     """
+    which_confs = [int(i) for i in which_confs]
     distance_matrix_for_each_conformer = np.array([Chem.Get3DDistanceMatrix(mol, i) for i in which_confs])
 
     df = noe.add_noe_to_mol(mol, remember_chemical_equivalence = True).distance_upper_bounds
