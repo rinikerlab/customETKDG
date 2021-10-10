@@ -22,6 +22,11 @@ RUN rm -r mlddec/data/epsilon_78
 #can delete package after install?
 RUN pip install . 
 
+WORKDIR /
+
+RUN wget https://github.com/rinikerlab/mdfptools/archive/master.zip && unzip master.zip && rm master.zip
+WORKDIR mdfptools-master 
+RUN pip install . 
 
 RUN echo 'conda activate noe' >> ~/.bashrc
 

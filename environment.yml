@@ -12,6 +12,7 @@ dependencies:
   - rdkit
   - pip
   - openmm
+  - pdbfixer
   - mdtraj
   - tqdm
   - notebook
