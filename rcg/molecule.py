@@ -50,6 +50,16 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         super().__init__(mol)
 
     def load_mol(self, smiles, pdb_filename):
+        """Create a RDKit molecule by matching a SMILES string (obtain correct bond orders) and a pdb file (obtain atom names)
+
+        Parameters
+        ----------
+        smiles : str
+            SMILES string
+        pdb_filename : str
+            path to pdf file
+        """
+        
         mol = mol_from_smiles_pdb(smiles, pdb_filename)
         self.__init__(mol)
 
@@ -117,7 +127,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
 
     def update_bmat(self):  #TODO only upperbound?
         """
-        prepare the bounds matrix into the user specified state
+        load the user defined bounds matrix to the RestrainedMolecule object for conformer generation
         """
         self.RemoveAllConformers() #FIXME only do it if bmat is found to change
 
@@ -149,11 +159,23 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
     # Confgen
     #######################################
     def estimate_time(self, max_time_per_conf = 10, repeats = 3):
-        """ 
-        Currently rdkit confgen halts when conformers are not generated
+        """Currently rdkit conformer generation can halt when too strict a bound matrix is provided.
+        So it is recommended practise to use this function to first estimate the time cost, as this function does not stall.
 
-        timeout is the time limit to generate each conformer in second
+
+        Parameters
+        ----------
+        max_time_per_conf : int, optional
+            upper time limit in seconds to kill the process of generating **one** conformer, by default 10
+        repeats : int, optional
+            the number of repeats for conformer generation to get average, by default 3
+
+        Returns
+        -------
+        float
+            the averaged time cost to generate a conformer. NaN is returned when time exceeds the `max_time_per_conf` supplied.
         """
+
         #XXX keep track of how many conformers exist, if process is not finished delete the newly produced conformers?
         out = []
         for _ in range(repeats):
@@ -171,10 +193,22 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
             logger.info('{:.1f} seconds per conformer on average.'.format(np.mean(out)))
             return np.mean(out)
             
-    def generate_conformers(self, num_conf, params = None): #XXX it should have option to use other version of ETKDG as this class is flexible enough to confgen any type of molecule
+    def generate_conformers(self, num_conf, params = None): 
+        """generate the required number of conformers
+
+        Parameters
+        ----------
+        num_conf : int
+            the number of conformers to generate
+        params : rdkit.EmbedParameters, optional
+            EmbedParameters object, by default None, meaning the ETKDGv3 object desgined for macrocycles is used. 
+            When a macrocycle is detected, the force scaling is set to 0.3
         """
-        is there some way to forbid EmbedMultipleConf being called on this class object?
-        """
+
+        #XXX it should have option to use other version of ETKDG as this class is flexible enough to confgen any type of molecule
+
+        #is there some way to forbid EmbedMultipleConf being called on this class object? if this is really necessary
+        
         if params is None:
             params = AllChem.ETKDGv3() #FIXME changable 
             params.useRandomCoords = True #TODO changeable
