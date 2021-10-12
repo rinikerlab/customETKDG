@@ -50,14 +50,14 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         super().__init__(mol)
 
     def load_mol(self, smiles, pdb_filename):
-        """Create a RDKit molecule by matching a SMILES string (obtain correct bond orders) and a pdb file (obtain atom names)
+        """Create a RDKit molecule by matching a SMILES string (obtain correct bond orders) and a pdb file (obtain atom names).
 
         Parameters
         ----------
         smiles : str
-            SMILES string
+            SMILES string.
         pdb_filename : str
-            path to pdf file
+            Path to pdf file.
         """
         
         mol = mol_from_smiles_pdb(smiles, pdb_filename)
@@ -114,6 +114,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
 
         self.lower_scaling = scale_value
 
+    #FIXME
     def scale_upper_distances(self, scale_value): 
         if type(scale_value) in [int, float]:
             scale_value = [scale_value]
@@ -127,7 +128,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
 
     def update_bmat(self):  #TODO only upperbound?
         """
-        load the user defined bounds matrix to the RestrainedMolecule object for conformer generation
+        Load the user defined bounds matrix to the RestrainedMolecule object for conformer generation
         """
         self.RemoveAllConformers() #FIXME only do it if bmat is found to change
 
@@ -166,14 +167,14 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         Parameters
         ----------
         max_time_per_conf : int, optional
-            upper time limit in seconds to kill the process of generating **one** conformer, by default 10
+            Upper time limit in seconds to kill the process of generating **one** conformer, by default 10.
         repeats : int, optional
-            the number of repeats for conformer generation to get average, by default 3
+            The number of repeats for conformer generation to get average, by default 3.
 
         Returns
         -------
         float
-            the averaged time cost to generate a conformer. NaN is returned when time exceeds the `max_time_per_conf` supplied.
+            The averaged time cost to generate a conformer. NaN is returned when time exceeds the `max_time_per_conf` supplied.
         """
 
         #XXX keep track of how many conformers exist, if process is not finished delete the newly produced conformers?
@@ -194,12 +195,12 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
             return np.mean(out)
             
     def generate_conformers(self, num_conf, params = None): 
-        """generate the required number of conformers
+        """Generate the required number of conformers.
 
         Parameters
         ----------
         num_conf : int
-            the number of conformers to generate
+            The number of conformers to generate
         params : rdkit.EmbedParameters, optional
             EmbedParameters object, by default None, meaning the ETKDGv3 object desgined for macrocycles is used. 
             When a macrocycle is detected, the force scaling is set to 0.3
@@ -259,17 +260,42 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
     # Selection
     #######################################
     def pick_random(self, num_conf):
+        """Randomly pick the required number of conformers.
+
+        Parameters
+        ----------
+        num_conf : int
+            Number of conformers required.
+
+        Returns
+        -------
+        list
+            List of conformer indices.
+        """
         out = np.random.choice(self.GetNumConformers(), num_conf, replace = False)
         self._picked_conformers = list([int(i) for i in out])
         return self._picked_conformers
 
     def pick_diverse(self, num_conf, indices = [], seed = -1): #XXX does not really give unique solutions
-        """rdkit diverse picker
-        https://www.rdkit.org/docs/GettingStartedInPython.html?highlight=maccs#picking-diverse-molecules-using-fingerprints
+        """ Pick a diverse set of conformers based on root mean squared deviation of 3D coordiantes of atoms, optionally only considering diversity on a subset of all atoms.
+        This is based on rdkit diverse picker: https://www.rdkit.org/docs/GettingStartedInPython.html?highlight=maccs#picking-diverse-molecules-using-fingerprints
+        No unique solution is guaranteed as the pick is stochastic contingent on a random number seed.
 
-        indices [] means all atoms
+        Parameters
+        ----------
+        num_conf : int
+            Number of conformers required.
+        indices : list, optional
+            Atom indices, by default [], meaning all atom indices are considered.
+        seed : int, optional
+            Random number seed, by default -1.
 
+        Returns
+        -------
+        list
+            A list of conformer indices.
         """
+
         AllChem.AlignMolConformers(self, atomIds = indices)
         def distij(i, j):
             return AllChem.GetConformerRMS(self, i, j, atomIds = indices, prealigned = True)
@@ -281,6 +307,18 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         return self._picked_conformers
 
     def pick_energy(self, num_conf):
+        """Pick conformers with lowest energy, currently only MMFF energies can be calculated.
+
+        Parameters
+        ----------
+        num_conf : int
+            Number of conformers required.
+
+        Returns
+        -------
+        list
+            A list of conformer indices.
+        """
         #equires calculating MMFF energies for all conformers, in the process all structures are optimised
 
         mp = AllChem.MMFFGetMoleculeProperties(self)
@@ -290,10 +328,26 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         self._picked_conformers  = list(np.argsort(out)[:num_conf])
         return [(int(i), out[i]) for i in self._picked_conformers]
 
-    def pick_namfis(self, num_conf, noe, pre_selection = None, tolerance = 0):
-        """does not allow some constraints in optimisation
+    def pick_namfis(self, num_conf, noe, pre_selection = None, tolerance = .0):
+        """Pick conformers based on NMR analysis of molecular flexibility in solution (NAMFIS). 
+        NAMFIS is a constrained optimisation scheme, starting with assigning all conformer with an equal weight factor (sum of weights for all conformer equals 1), 
+        the weights are optimised to give conformer ensemble that obey the NOE measurments (within experimental tolarence).
 
-        tolerance allow some overall violation of bounds
+        Parameters
+        ----------
+        num_conf : int
+            Number of conformers required.
+        noe : customETKDG.NOE object
+            NOE object containing chemically equivalent hydrogen information.
+        pre_selection : list, optional
+            A subset of conformer indices in a list from which NAMFIS is run in order to prevent convergence issues, by default None meaning all conformers are considered. 
+        tolerance : float, optional
+            Allow some overall violation (e.g. due to experimental uncertainty) of specified bounds in the constrained minimisation, by default 0 meaning no tolerance.
+
+        Returns
+        -------
+        list
+            A list of conformer indices that have the highest weights.
         """
         from scipy.optimize import minimize
 
@@ -364,6 +418,18 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         return list(zip([int(i) for i in np.argsort(-1 * weights)[:num_conf]], weights[np.argsort(weights * -1)[:num_conf]]))
 
     def pick_least_upper_violation(self, num_conf):
+        """Pick conformers that each least violate the NOE
+
+        Parameters
+        ----------
+        num_conf : int
+            Number of conformers required.
+
+        Returns
+        -------
+        list
+            A list of conformer indices.
+        """
         distance_matrix_for_each_conformer = np.array([Chem.Get3DDistanceMatrix(self, i) for i in range(self.GetNumConformers())])
 
         df = self.distance_upper_bounds #FIXME
@@ -430,7 +496,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
     def __eq__(self, another):
         """
         ?
-        same experimental set of information
+        what sets of information should be maintained?
         """
         raise NotImplementedError
 
