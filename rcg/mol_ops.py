@@ -18,6 +18,20 @@ logger = logging.getLogger(__name__)
 # logger.setLevel(logging.INFO)
 
 def load_coordinates(mol, np_array):
+    """Load 3D coordinates into rdmol and append them into existing conformer list.
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    np_array : 3D cooridnate
+        NxMx3 float arrays, where N is the number of conformers to add, M is the number of atoms in the molecule.
+
+    Returns
+    -------
+    RDKit Mol
+        The inputted molecule with added conformers.
+    """
     assert mol.GetNumAtoms() == len(np_array[1]), "number of atoms do not match: {}, {}".format(mol.GetNumAtoms(), len(np_array[1]))
     init = mol.GetNumConformers()
     for idx, coord in enumerate(np_array):
@@ -31,7 +45,7 @@ def load_coordinates(mol, np_array):
 
 def _select(selection_string): #XXX try to use?
     """
-    from my cpeptools package
+    from our cpeptools package, simple atom group selection semanitcs
     TODOs:
         - include chain name and chain id
     """
@@ -57,11 +71,48 @@ def _select(selection_string): #XXX try to use?
     return "{}".format(" ".join(selection_string))
 
 def select_atoms(mol, selection):
+    """Select atoms based on selection semantics.
+
+    Parameters
+    ----------
+    mol : RDKit Mol.
+        
+    selection : str
+        Selection string.
+
+    Returns
+    -------
+    List
+        List of RDKit Atoms that fit the selection criteria.
+    """
     selection = _select(selection)
     return list(eval("filter(lambda atm : {} , mol.GetAtoms())".format(selection)))
 
 
 def rename(mol, old_name, new_name, resid = "all"):
+    """Rename atoms that had a old name to a new name, potentially only for selected residues.
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    old_name : str
+        Exact atom name to be replaced.
+    new_name : str
+        Exact atom name to replace. 
+    resid : str of iterable of int, optional
+        Perform renaming only one atoms with the provided resid, by default "all", meaning renaming to occur for all residues.
+
+    Returns
+    -------
+    RDKit Mol
+        The inputted mol.
+
+    Raises
+    ------
+    ValueError
+        If the resid is a unrcognised type.
+    """
     #TODO checking for resid types
 
     selection = resid
@@ -80,16 +131,42 @@ def rename(mol, old_name, new_name, resid = "all"):
 
 
 def reorder_atoms(mol):
-    """change index of the atoms to ensure atoms are ordered by ascending residue number
+    """Change index of the atoms to ensure atoms are ordered by ascending residue number.
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+
+    Returns
+    -------
+    RDKit Mol
+        A copy of the inputted mol with new atom order.
     """
     order = [(i.GetPDBResidueInfo().GetName().strip(), i.GetPDBResidueInfo().GetResidueNumber()) for i in mol.GetAtoms()] # currently the atom name is not used in sorting
     order = [i[0] for i in sorted(enumerate(order), key  = lambda x : x[1][1])]
     return Chem.RenumberAtoms(mol, order)
 
 def assign_hydrogen_pdbinfo(mol, hydrogen_dict):
-    """
-    When there is hydrogen records in the pdb, assumes they are
-    in the same order as the heavy atoms appear in 
+    """Assign atom names for hydrogens based on the heavy atom they are bonded to.
+    When there is hydrogen records in the pdb, assumes they are in the same order as the heavy atoms appear in 
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    hydrogen_dict : dict
+        The keys are the residue number/id and the values are the list of hydrogen atoms names belonging to each residue.
+
+    Returns
+    -------
+    RDKit Mol
+        The inputted mol with hydrogen atom names.
+
+    Raises
+    ------
+    ValueError
+        If number of hydrogens do not match between the hydrogen dictionary and the molecule.
     """
 
     for idx, atm in enumerate(mol.GetAtoms()):
@@ -115,9 +192,17 @@ def assign_hydrogen_pdbinfo(mol, hydrogen_dict):
 
 def assign_hydrogen_pdbinfo_blind(mol):
     """
-    assumes all heavy atoms have complete PDB information
-
+    Assign atom names for hydrogens based on the heavy atom they are bonded to. Assumes all heavy atoms have complete PDB information
     Use this function if the pdbfile contains no records of hydrogen name
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    Returns
+    -------
+    RDKit Mol
+        The inputted mol with hydrogen atom names.
     """
     for idx, atm in enumerate(mol.GetAtoms()):
         if atm.GetPDBResidueInfo() is None and atm.GetAtomicNum() == 1:
@@ -169,8 +254,17 @@ def assign_hydrogen_pdbinfo_blind(mol):
     return mol
 
 def hydrogen_dict_from_pdbmol(mol):
-    """
-    Get the hydrogen names used in the pdb molecule
+    """Generate a dictionary where the keys are the residue numbers and values lists of hydrogen atom names in the molecule.
+    This is done by getting the hydrogen names used in the pdb molecule
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+
+    Returns
+    -------
+    dict
+        Dictionary of hydrogen atom names per each residue.
     """
     out_dict = {}
     for idx, atm in enumerate(mol.GetAtoms()):
@@ -178,7 +272,21 @@ def hydrogen_dict_from_pdbmol(mol):
             out_dict.setdefault(atm.GetPDBResidueInfo().GetResidueNumber(), []).append(atm.GetPDBResidueInfo().GetName().strip())
     return out_dict
 
-def copy_stereo(from_mol, to_mol):
+def copy_stereo(from_mol, to_mol): #TODO add assertions to check molecules are the same?
+    """Transfer the stereochemical information from one molecule to another molecule.
+
+    Parameters
+    ----------
+    from_mol : RDKit Mol
+        
+    to_mol : RDKit Mol
+        
+
+    Returns
+    -------
+    RDKit Mol
+        The inputted `to_mol` with stereo info from `from_mol`.
+    """
 
     match = to_mol.GetSubstructMatch(from_mol)
 
@@ -215,10 +323,29 @@ def copy_stereo(from_mol, to_mol):
     return to_mol
 
 def mol_from_smiles_pdb(smiles, pdb_filename, infer_names = True, stereo_from_smiles = True):
-    """
-    Create rdkit mol from smiles string and pdb file
+    """Create rdkit mol from smiles string and pdb file, where the correct connectivity and bond orders are taken from the former and the atom names, residue numbers are taken from the latter.
+    It does not care how many pdb structures in the file.
 
-    Does not care how many pdb structures in the file
+    Parameters
+    ----------
+    smiles : str
+        SMILES representation of molecule.
+    pdb_filename : str
+        PDB file path to molecule.
+    infer_names : bool, optional
+        Whether the hydrogen atom names are by inferring based on the heavy atoms the hydrogens are connected to, or taken from the PDB file, by default True.  
+    stereo_from_smiles : bool, optional
+        Whether to use stereo info from the SMILES, by default True, else the PDB needs to contain a valid 3D conformation from which the stereo info are inferred.
+
+    Returns
+    -------
+    RDKit mol
+        
+
+    Raises
+    ------
+    ValueError
+        If matching cannot be established between the SMILES and pdb.
     """
     ref = Chem.MolFromSmiles(smiles, sanitize = True)
 
@@ -266,23 +393,39 @@ def mol_from_smiles_pdb(smiles, pdb_filename, infer_names = True, stereo_from_sm
         return out_mol
 
 #TODO maybe better to place somewhere else?
-def mol_from_multiple_pdb_files(file_list, removeHs = False):
-    """
-    assumes all pdb belong to the same molecule entity
+def mol_from_multiple_pdb_files(file_list, removeHs = False): 
+    """Create a mol from multiple PDB files, i.e. having multiple conformations.
+    Assumes all pdb belong to the same molecule entity
+
+    Parameters
+    ----------
+    file_list : list
+        List of file paths to the PDBs. 
+    removeHs : bool, optional
+        Have the hydrogens in the molecuel or not, by default False.
+
+    Returns
+    -------
+    RDKit Mol   
     """
     pdb_string = reduce(lambda a, b : a + b, [open(i, "r").read()[:-4] for i in file_list]) + "END\n"
     return Chem.MolFromPDBBlock(pdb_string, removeHs = removeHs)
 
-def get_carbonyl_O(mol):
-    return [i[0] for i in get_atom_mapping(mol, "[C]=[O:1]")]
-def get_amine_H(mol):
-    return [i[0] for i in get_atom_mapping(mol, "[N]-[H:1]")]
-def get_1_4_pairs(mol, smirks_1_4 = "[O:1]=[C:2]@;-[NX3:3]-[CX4H3:4]" ):
-    return get_atom_mapping(mol, smirks_1_4)
-def get_1_5_pairs(mol, smirks_1_5 = "[O:1]=[C]@;-[CX4H1,CX4H2]-[NX3H1]-[H:5]"):
-    return get_atom_mapping(mol, smirks_1_5)
-
 def get_atom_mapping(mol, smirks):
+    """Get all atom indices that match to substructural pattern.
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    smirks : str
+        Substructural pattern for matching.
+
+    Returns
+    -------
+    list of list
+        List of matches, where each match is a list of atom indices.
+    """
     qmol = Chem.MolFromSmarts(smirks)
     ind_map = {}
     for atom in qmol.GetAtoms():
@@ -295,6 +438,59 @@ def get_atom_mapping(mol, smirks):
         mas = [match[x] for x in map_list]
         matches.append(tuple(mas))
     return matches
+
+def get_carbonyl_O(mol):
+    """Get all carbonyl oxygen indices in a molecule.
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    Returns
+    -------
+    list of list
+        List of matches, where each match is a list of atom indices.
+    """
+    return [i[0] for i in get_atom_mapping(mol, "[C]=[O:1]")]
+def get_amine_H(mol):
+    """Get all amine hydrogen indices in a molecule.
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    Returns
+    -------
+    list of list
+        List of matches, where each match is a list of atom indices.
+    """
+    return [i[0] for i in get_atom_mapping(mol, "[N]-[H:1]")]
+def get_1_4_pairs(mol, smirks_1_4 = "[O:1]=[C:2]@;-[NX3:3]-[CX4H3:4]" ):
+    """Get all amide 1-4 atom indices in a molecule.
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    Returns
+    -------
+    list of list
+        List of matches, where each match is a list of atom indices.
+    """
+    return get_atom_mapping(mol, smirks_1_4)
+def get_1_5_pairs(mol, smirks_1_5 = "[O:1]=[C]@;-[CX4H1,CX4H2]-[NX3H1]-[H:5]"):
+    """Get all amide 1-5 atom indcies indices in a molecule.
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    Returns
+    -------
+    list of list
+        List of matches, where each match is a list of atom indices.
+    """
+    return get_atom_mapping(mol, smirks_1_5)
 
 
 def _decide_indices_order(indices):
@@ -351,9 +547,21 @@ def _get_overlap(s1, s2):
 #                     part_b = tmp_inverted[i].split(",".join(overlap[1:-1][::-1]))[1]
 #                     rings.append(tuple([int(i) for i in part_a.strip(",").split(",")] + [int(i) for i in part_b.strip(",").split(",")]))
 #     return rings
-def get_rings(mol, accept_num_fused_atoms = 4): 
-    """
-    #shared (fused) part is always the smaller part of the ring, this way the whole ring needs to be at least 9 atoms
+def get_rings(mol, accept_num_fused_atoms = 4): #FIXME currently only allow one fused???
+    """Get all (atom indices of) rings in a molecule
+
+    Parameters
+    ----------
+    mol : RDKit mol
+        
+    accept_num_fused_atoms : int, optional
+        The smallest number of bridging atoms needed to allow two fused rings to be considered as one bigger ring, 
+        by default 4, as shared (fused) part is always the smaller part of the ring, this way the whole ring needs to be at least 9 atoms (the size of ring to be considered as macrocycle in our paper)
+
+    Returns
+    -------
+    list of list
+        A list with each member being a list of indices indicating a set of ring indices.
     """
     # for ring in mol.GetRingInfo().AtomRings():
     #     yield ring
@@ -376,6 +584,18 @@ def get_rings(mol, accept_num_fused_atoms = 4):
     return rings
 
 def get_largest_ring(mol):
+    """Out put the largest possible ring atom indices of a molecule.
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+
+    Returns
+    -------
+    list
+        List of atom indices of the largest ring.
+    """
     out = []
     for r in get_rings(mol):
         if len(r) > len(out):
@@ -384,6 +604,20 @@ def get_largest_ring(mol):
     return _decide_indices_order(out)
 
 def get_neighbor_indices(mol, indices):
+    """Get the indices of neighbour atoms of selected query atom (query by indices).
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    indices : iterable of int
+        The set of query atom indices.
+
+    Returns
+    -------
+    List
+        Neighbour indices of all query atoms.
+    """
     out = []
     for i in indices:
         out += [a.GetIdx() for a in mol.GetAtomWithIdx(i).GetNeighbors()]
@@ -392,10 +626,36 @@ def get_neighbor_indices(mol, indices):
     return list(set(out))
 
 def get_neighbour_indices(mol, indices):
+    """Get the indices of neighbour atoms of selected query atom (query by indices).
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    indices : iterable of int
+        The set of query atom indices.
+
+    Returns
+    -------
+    List
+        Neighbour indices of all query atoms.
+    """
     return get_neighbor_indices(mol, indices)
 
 
-def mol_with_atom_index( mol ):
+def mol_with_atom_index(mol):
+    """Put the atom index of each atom into a property named `molAtomMapNumber`
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+
+    Returns
+    -------
+    RDKit Mol
+        The inputted mol with the aditional `molAtomMapNumber` property.
+    """
     atoms = mol.GetNumAtoms()
     for idx in range( atoms ):
         mol.GetAtomWithIdx( idx ).SetProp( 'molAtomMapNumber', str( mol.GetAtomWithIdx( idx ).GetIdx() ) )
@@ -403,11 +663,12 @@ def mol_with_atom_index( mol ):
 
 
 def draw_mol_with_property( mol, property, **kwargs):
-    """
-    http://rdkit.blogspot.com/2015/02/new-drawing-code.html
+    """Draw molecule along with atomic properties next to selected atom. Adapted from http://rdkit.blogspot.com/2015/02/new-drawing-code.html
 
     Parameters
-    ---------
+    ----------
+    mol : RDKit Mol
+        Mol to draw.
     property : dict
         key atom idx, val the property (need to be stringfiable)
     """
