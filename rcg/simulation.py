@@ -36,6 +36,7 @@ logger = logging.getLogger(__name__)
 
 
 def _enemin_func(system, topology, coord):
+    """returns optimised coord of a input conformer"""
     integrator = LangevinIntegrator(273 * unit.kelvin, 1/unit.picosecond, 0.002 * unit.picosecond)
     simulation = Simulation(topology, system, integrator)
     simulation.context.setPositions(coord)
@@ -44,6 +45,7 @@ def _enemin_func(system, topology, coord):
     return new_coord
 
 def _ene_func(system, topology, coord):
+    """returns energy of a conformer"""
     integrator = LangevinIntegrator(273 * unit.kelvin, 1/unit.picosecond, 0.002 * unit.picosecond)
     simulation = Simulation(topology, system, integrator)
     simulation.context.setPositions(coord)
@@ -69,22 +71,67 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
 
     @classmethod
     def add_solvent(name, smiles, density, num_solvent):
+        """Add a new solvent to the solvent database as possible solvent for simulation. 
+
+        Parameters
+        ----------
+        name : str
+            Solvent name
+        smiles : str
+            SMILES of solvent
+        density : Quantity
+            Solvent density.
+        num_solvent : int
+            Number of solvent to add.
+        """
         cls.solvent_lookup[name.upper()] = (smiles, density, num_solvent)
 
     @classmethod
     def load_mlddec(cls, epsilon): #XXX reload only when epsilon differ
+        """Load machine learning partial charge charger.
+
+        Parameters
+        ----------
+        epsilon : int
+            Dielectric of the charger, either 4 or 80.
+        """
         cls.model  = mlddec.load_models(epsilon = epsilon)
         cls.epsilon = epsilon
         # cls.MLDDEC_MODEL = cls._MLDDEC_MODEL(epsilon = epsilon, model = model)
 
     @classmethod
     def unload_mlddec(cls):
+        """Unload machine learning partial charge charger, to save memory.
+        """
         # cls.MLDDEC_MODEL = cls._MLDDEC_MODEL()
         del cls.model, cls.epsilon
 
     @classmethod
     def parameterise_system(cls, mol, which_conf = 0,
         force_field_path = "openff_unconstrained-1.3.0.offxml", solvent = None):
+        """Parameterise the system for MD simulation.
+
+        Parameters
+        ----------
+        mol : RestrainedMolecule
+            Mol for simulation.
+        which_conf : int, optional
+            Which conformer in the mol to begin simulation, by default 0
+        force_field_path : str, optional
+            Force field file, by default "openff_unconstrained-1.3.0.offxml"
+        solvent : str, optional
+            The name of solvent for solvation, by default None
+
+        Returns
+        -------
+        ParMed Structure
+            Parameterised system.
+
+        Raises
+        ------
+        ValueError
+            Solvent not recognisable.
+        """
 
         # model  = mlddec.load_models(epsilon = 4) #FIXME
         try:
@@ -134,8 +181,21 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
 
     @classmethod
     def create_noe_force(cls, mol, spring_constant, tolerance = 0.0 * unit.angstrom, **kwargs):
-        """
-        sprint constant either a value or a list of value same in size as number of restraints
+        """Create time-averaged distance restraints to hydrogen pairs.
+
+        Parameters
+        ----------
+        mol : RestrainedMolecule
+            Mol contains the hydrogen atom pairs that require time-averaged distance restraining.
+        spring_constant : float or list of floats
+            The force constant(s) being applied to each hydrogen atom pair.
+        tolerance : Quantity, optional
+            Deviation to the reference value that can be tolerated, by default 0.0*unit.angstrom
+
+        Returns
+        -------
+        OpenMM.CustomForce
+            A flat bottom harmonic potential.
         """
         if type(spring_constant) is unit.Quantity:
             spring_constant = [spring_constant]
@@ -167,6 +227,39 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
         platform = "CPU", #FIXME add platform
         use_cache = False,
         **kwargs):
+        """Run time-averaged restraint simulation on a conformer of the molecule.
+
+        Parameters
+        ----------
+        mol : RestrainedMolecule
+            Mol containing the atom pair to be restrained info and the conformer to start simulation.
+        solvent : str, optional
+            Whether to include explicit solvent, None means no solvent, by default None
+        which_conf : int, optional
+            Conforer index for starting simulation, by default 0
+        force_field_path : str, optional
+            Path to forcefield file, by default "openff_unconstrained-1.3.0.offxml"
+        num_step : int, optional
+            Number of integration steps for MD, by default 5000
+        avg_power : int, optional
+            Exponential power to be used for averaging the forces, by default 3
+        update_every : int, optional
+            Update the simulation system with new reference distance value, by default 1
+        spring_constant : Quantity or list of Quantities, optional
+            Strength of force constant to applied, by default 1000*unit.kilojoule_per_mole/(unit.nanometers**2)
+        write_out_every : int, optional
+            Trajectory framing out frequency, by default 2500
+
+        Returns
+        -------
+        Trajectory  
+            Trajectory object containing the simulated frames.
+
+        Raises
+        ------
+        ValueError
+            If no restraining pairs can be found from the molecule object.
+        """        
 
         platform = Platform.getPlatformByName(platform)
 
@@ -262,6 +355,28 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
         platform = "CPU",
         use_cache = False,
         **kwargs):
+        """Simulation of the system without any distance restraining forces.
+
+        Parameters
+        ----------
+        mol : RestrainedMolecule
+            Mol containing the atom pair to be restrained info and the conformer to start simulation.
+        solvent : str, optional
+            Whether to include explicit solvent, None means no solvent, by default None
+        which_conf : int, optional
+            Conforer index for starting simulation, by default 0
+        force_field_path : str, optional
+            Path to forcefield file, by default "openff_unconstrained-1.3.0.offxml"
+        num_step : int, optional
+            Number of integration steps for MD, by default 5000
+        write_out_every : int, optional
+            Trajectory framing out frequency, by default 2500
+
+        Returns
+        -------
+        Trajectory  
+            Trajectory object containing the simulated frames.
+        """        
 
         if use_cache is True and cls.structure.title == Chem.MolToSmiles(mol):
             system_pmd = cls.structure
@@ -314,6 +429,24 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
 
     @classmethod
     def minimise_energy_all_confs(cls, mol, n_jobs = -1, force_field_path = "openff_unconstrained-1.3.0.offxml",spring_constant = 1000 * unit.kilojoule_per_mole/(unit.nanometers**2), **kwargs): #XXX have a in_place option?
+        """Forcefield based minimisation of all conformers in molecule object.
+
+        Parameters
+        ----------
+        mol : RestrainedMolecule
+            Mol containing all the conformers to minimise.
+        n_jobs : int, optional
+            Number of threads to run, by default -1 meaning all usable threads.
+        force_field_path : str, optional
+            Path to forcefield, by default "openff_unconstrained-1.3.0.offxml"
+        spring_constant : Quantity or list of Quantities, optional
+            Force constants for the instantaneous restraining, by default 1000*unit.kilojoule_per_mole/(unit.nanometers**2)
+
+        Returns
+        -------
+        Trajectory  
+            Trajectory object containing the simulated frames.
+        """        
 
         system_pmd = cls.parameterise_system(mol, 0, force_field_path, None)
 
@@ -352,6 +485,21 @@ class Simulator: #XXX put some variable to the class, e.g. the write out frequen
 
     @classmethod
     def calculate_energy_all_confs(cls, mol, n_jobs = -1, force_field_path = "openff_unconstrained-1.3.0.offxml",spring_constant = 1000 * unit.kilojoule_per_mole/(unit.nanometers**2), **kwargs): #XXX have a in_place option?
+        """Calculate the energies of all conformers in the molecule object using potential energy surface provided by the forcefield.
+
+        Parameters
+        ----------
+        mol : RDKit Mol
+        n_jobs : int, optional
+            Number of threads to run, by default -1 meaning all usable threads.
+        force_field_path : str, optional
+            Path to forcefield, by default "openff_unconstrained-1.3.0.offxml"
+
+        Returns
+        -------
+        list of floats
+            Energies (kJ/mol) of each conformer.
+        """
 
         system_pmd = cls.parameterise_system(mol, 0, force_field_path, None)
 

@@ -6,6 +6,25 @@ from rdkit.Chem import AllChem
 import tqdm
 
 def get_ring_rmsd(mol, ref_pdb_path, ref_compare = "all", beta_atoms = True): 
+    """The RMSD of selected conformers from the mol to a reference mol.
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    ref_pdb_path : str
+        Path to reference structure.
+    ref_compare : iterable of ints, optional
+        Conformer IDs for the RMSD comparison, by default "all"
+    beta_atoms : bool, optional
+        Include beta atoms (direct neighbours to ring atoms), by default True
+
+    Returns
+    -------
+    list of floats
+        RMSD values
+
+    """
 
     smiles_mol = Chem.MolFromSmiles(Chem.MolToSmiles(mol))
     ref_mol = Chem.MolFromPDBFile(ref_pdb_path)
@@ -20,7 +39,7 @@ def get_ring_rmsd(mol, ref_pdb_path, ref_compare = "all", beta_atoms = True):
     elif isinstance(selection, Iterable) and type(selection) is not str:
         selection = [int(i) for i in selection] #need to perserve order so cannot use set
     else:
-        raise ValueError("Unrecognized ref_compare type {}".format(type(resid)))
+        raise ValueError("Unrecognized ref_compare type {}".format(type(selection)))
 
     indices = get_largest_ring(ref_mol)
     if beta_atoms:
@@ -49,6 +68,23 @@ def get_ring_rmsd(mol, ref_pdb_path, ref_compare = "all", beta_atoms = True):
     return bb_rmsd
 
 def get_torsion_rmsd(mol, ref_pdb_path, ref_compare = "all"):
+    """The ring torsional RMSD of selected conformers from the mol to a reference mol.
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        
+    ref_pdb_path : str
+        Path to reference structure.
+    ref_compare : iterable of ints, optional
+        Conformer IDs for the RMSD comparison, by default "all"
+
+    Returns
+    -------
+    list of floats
+        Torsional RMSD values
+
+    """
     smiles_mol = Chem.MolFromSmiles(Chem.MolToSmiles(mol))
     ref_mol = Chem.MolFromPDBFile(ref_pdb_path)
 
@@ -100,6 +136,7 @@ def get_torsion_rmsd(mol, ref_pdb_path, ref_compare = "all"):
 
 
 
+#don't really need this
 def get_noe_pair_dist(mol, df = None): #TODO what if you want to compare against minimised structure? overwrite whenever a conformer is minimised?
     distance_matrix_for_each_conformer = np.array([Chem.Get3DDistanceMatrix(mol, i) for i in tqdm.tqdm(range(mol.GetNumConformers()))])
 
@@ -151,11 +188,51 @@ def _weighted_noe_violation_helper(mol, which_confs, noe, weights = None):
     return sum_violations
 
 def weighted_noe_violation(mol, which_confs, noe, weights = None, agg_func = np.sum):
+    """Weighted NOE violations of a set of conformers (a conformer ensemble/bundle).
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        Contains all the conformers.
+    which_confs : iterable of int
+        The conformer indices that form the conformer bundle.
+    noe : NOE object
+        Contains the chemical equivalence information of hydrogen atoms.
+    weights : iterable of float, optional
+        Each conformer can have a different contribution to the weighting, by default None meaning all conformer are equally weighted.
+    agg_func : func, optional
+        How the violations are aggregated, by default np.sum
+
+    Returns
+    -------
+    float
+        The weighted violation by the conformer bundle.
+    """
     sum_violations = _weighted_noe_violation_helper(mol, which_confs, noe, weights)
     return agg_func(sum_violations)
 
 
 def weighted_noe_upper_violation(mol, which_confs, noe, weights = None, agg_func = np.sum):
+    """Weighted **UPPER BOUND** NOE violations of a set of conformers (a conformer ensemble/bundle), i.e. any lower bound NOE violations are ignored.
+
+    Parameters
+    ----------
+    mol : RDKit Mol
+        Contains all the conformers.
+    which_confs : iterable of int
+        The conformer indices that form the conformer bundle.
+    noe : NOE object
+        Contains the chemical equivalence information of hydrogen atoms.
+    weights : iterable of float, optional
+        Each conformer can have a different contribution to the weighting, by default None meaning all conformer are equally weighted.
+    agg_func : func, optional
+        How the violations are aggregated, by default np.sum
+
+    Returns
+    -------
+    float
+        The weighted violation by the conformer bundle.
+    """
 
     sum_violations = _weighted_noe_violation_helper(mol, which_confs, noe, weights)
     sum_violations[sum_violations < 0] = 0

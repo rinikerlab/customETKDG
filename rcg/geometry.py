@@ -49,23 +49,41 @@ Ellipse:
 """
 
 def center_2D_points(x,y):
+    """The coordinates of the center of a set of 2D points.
+
+    Parameters
+    ----------
+    x : list
+        The x-coordinates of a list of points.
+    y : list
+        The y-coordinates of a list of points.
+
+    Returns
+    -------
+    tuple of float
+        The x,y center of these points.
+    """
     center_x, center_y = (sum(x) / len(x), sum(y) / len(y))
-    print(center_x, center_y)
+    # print(center_x, center_y)
     return x-center_x, y-center_y
 
 def get_convex_hull(coords, dim = 2, needs_at_least_n_points = 6): #FIXME restrict only for 2D?
     """
-    For fitting an ellipse, at least 6 points are needed
+    Obtain the points that form the convex hull from a set of points.
 
 
     Parameters
     ----------
-    coords : 2D np.array of points
-    dim : dimensions to keep when calculating convex hull
+    coords : 2D  or 3D np.array of points
+    dim : int
+        dimensions to keep when calculating convex hull
+    
+    needs_at_least_n_points: int
+        The least number of points. For fitting an ellipse, at least 6 points are needed.
 
     Returns
     ---------
-    coords_hull : 2D np.array of points
+    coords_hull : 2D or 3D np.array of points
             keeps original number of dimension as input coords
     """
     assert len(coords[0]) >= dim
@@ -83,6 +101,8 @@ def get_convex_hull(coords, dim = 2, needs_at_least_n_points = 6): #FIXME restri
 
 def get_pca(coords):
     """
+    Principle component decomposition of a set of points.
+
     Parameters
     -----------
     coords : 2D np.array of points
@@ -93,8 +113,6 @@ def get_pca(coords):
             keeps original number of dimension as input coords
 
     variance_ratio : tuple
-
-
     """
     pca = PCA(n_components=3)
     # pca.fit(coords)
@@ -125,16 +143,16 @@ def ellipse_radii_test(radii, eccentricity = 0, perimeter = 2*np.pi*1):
 
 def get_points_on_ellipse(a, b, numPoints, bond_length_list = None, startAngle = 0, verbose = False, increment = 0.01):
     """
-        Currently only works for ellipse centered on origin
-        the points are drawn from the +ve x axis in the order of the quardrants
+    Currently only works for ellipse centered on origin
+    the points are drawn from the +ve x axis in the order of the quardrants
 
-        Paramters:
-        ----------------
-        startAngle :  float
-            the angle the first point makes with the axis, default is 0 (i.e) first point on the x-axis
+    Paramters:
+    ----------------
+    startAngle :  float
+        the angle the first point makes with the axis, default is 0 (i.e) first point on the x-axis
 
-        one of `numPoints` and `bond_length_list` needs to be None
-        ----------------
+    one of `numPoints` and `bond_length_list` needs to be None
+    ----------------
     """
     def distance(x1,y1,x2,y2):
         return np.sqrt((x2-x1)**2 + (y2-y1)**2)
@@ -363,53 +381,53 @@ def plot_ellipse(semimaj=1,semimin=1,phi=0,x_cent=0,y_cent=0,theta_num=1e3,ax=No
                     fill=False,fill_kwargs=None,data_out=False,cov=None,mass_level=0.68):
     import matplotlib.pyplot as plt
     from scipy.stats import chi2
-    '''
-        An easy to use function for plotting ellipses in Python 2.7!
+    """
+    An easy to use function for plotting ellipses in Python 2.7!
 
-        The function creates a 2D ellipse in polar coordinates then transforms to cartesian coordinates.
-        It can take a covariance matrix and plot contours from it.
+    The function creates a 2D ellipse in polar coordinates then transforms to cartesian coordinates.
+    It can take a covariance matrix and plot contours from it.
 
-        semimaj : float
-            length of semimajor axis (always taken to be some phi (-90<phi<90 deg) from positive x-axis!)
+    semimaj : float
+        length of semimajor axis (always taken to be some phi (-90<phi<90 deg) from positive x-axis!)
 
-        semimin : float
-            length of semiminor axis
+    semimin : float
+        length of semiminor axis
 
-        phi : float
-            angle in radians of semimajor axis above positive x axis
+    phi : float
+        angle in radians of semimajor axis above positive x axis
 
-        x_cent : float
-            X coordinate center
+    x_cent : float
+        X coordinate center
 
-        y_cent : float
-            Y coordinate center
+    y_cent : float
+        Y coordinate center
 
-        theta_num : int
-            Number of points to sample along ellipse from 0-2pi
+    theta_num : int
+        Number of points to sample along ellipse from 0-2pi
 
-        ax : matplotlib axis property
-            A pre-created matplotlib axis
+    ax : matplotlib axis property
+        A pre-created matplotlib axis
 
-        plot_kwargs : dictionary
-            matplotlib.plot() keyword arguments
+    plot_kwargs : dictionary
+        matplotlib.plot() keyword arguments
 
-        fill : bool
-            A flag to fill the inside of the ellipse
+    fill : bool
+        A flag to fill the inside of the ellipse
 
-        fill_kwargs : dictionary
-            Keyword arguments for matplotlib.fill()
+    fill_kwargs : dictionary
+        Keyword arguments for matplotlib.fill()
 
-        data_out : bool
-            A flag to return the ellipse samples without plotting
+    data_out : bool
+        A flag to return the ellipse samples without plotting
 
-        cov : ndarray of shape (2,2)
-            A 2x2 covariance matrix, if given this will overwrite semimaj, semimin and phi
+    cov : ndarray of shape (2,2)
+        A 2x2 covariance matrix, if given this will overwrite semimaj, semimin and phi
 
-        mass_level : float
-            if supplied cov, mass_level is the contour defining fractional probability mass enclosed
-            for example: mass_level = 0.68 is the standard 68% mass
+    mass_level : float
+        if supplied cov, mass_level is the contour defining fractional probability mass enclosed
+        for example: mass_level = 0.68 is the standard 68% mass
 
-    '''
+    """
     # Get Ellipse Properties from cov matrix
     if cov is not None:
         eig_vec,eig_val,u = np.linalg.svd(cov)

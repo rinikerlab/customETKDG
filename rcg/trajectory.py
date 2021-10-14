@@ -23,6 +23,15 @@ class Trajectory():
         self._trajectory = None # mdtraj object
     
     def from_parmed(self, structure, smiles = None):
+        """Load structure object form ParMed
+
+        Parameters
+        ----------
+        structure : Parmed Structure
+            
+        smiles : str, optional
+            SMIMLES string to be stored for accurate connectivity, by default None
+        """
         self.structure = structure
         if self.structure.title: #XXX more valid check to see if the supplied smiles actually matches the molecule?
             self.smiles = self.structure.title
@@ -33,6 +42,15 @@ class Trajectory():
         #         self.smiles = smiles
 
     def copy_names_from_mol(self, mol, resnum = [0]): 
+        """Copy over the atom names information from rdkit molecule into the trajectory object.
+
+        Parameters
+        ----------
+        mol : RDKit Mol
+            The source of atom names.
+        resnum : list, optional
+            Which residues in the trajectory topology should have names copied over, by default [0].
+        """
         orig_top = self._trajectory.topology
 
         tmp_dir = tempfile.mkdtemp()
@@ -64,9 +82,25 @@ class Trajectory():
         self._trajectory.topology = new_top   
 
     def from_mol(self, rdmol):
+        """Load structure objec from RDKit mol.
+
+        Parameters
+        ----------
+        rdmol : RDKit mol
+            
+        """
         self.structure = parmed.rdkit.load_rdkit(rdmol)
 
     def add_frames(self, xyz, unit = "nanometers"):
+        """Add 3D coordinate arrays to trajectory object.
+
+        Parameters
+        ----------
+        xyz : np.array
+            NxMx3 float array with N being number of frames, M number of atoms in the molecule.
+        unit : str, optional
+            Unit, by default "nanometers"
+        """
         if self._trajectory is None: #no frames yet
             xyz = np.array(xyz)
             self._trajectory = md.Trajectory(xyz, md.Topology().from_openmm(self.structure.topology))
@@ -81,10 +115,22 @@ class Trajectory():
         raise NotImplementedError
     
     def to_mdtraj(self):
+        """Return MDTraj trajectory object.
+
+        Returns
+        -------
+        MDTraj Trajectory
+            
+        """
         return self._trajectory
 
     def to_xyz(self):
-        """ in angstroms
+        """Output 3D cooridnate array in unit of Angstrom.
+
+        Returns
+        -------
+        np.array
+            NxMx3 float array with N being number of frames, M number of atoms in the molecule.
         """
         return self._trajectory.xyz * 10
     

@@ -12,7 +12,7 @@ from .mol_ops import *
 
 logger = logging.getLogger(__name__)
 
-class NOE: #XXX (pd.DataFrame):?
+class NOE: 
     """
     could allow only specifying atom indices pairs, for general molecules
 
@@ -20,7 +20,7 @@ class NOE: #XXX (pd.DataFrame):?
 
     - save the distances with units
     
-ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
+    ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
 
     """
     def __init__(self):
@@ -39,6 +39,19 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
     #     return NOE
 
     def from_dataframe(self, df, which_cols = None):
+        """Create a NOE datatable from pandas DataFrame.
+        The minimum needed information to create the NOE:
+
+        cols = ['Residue_index_1', 'Residue_name_1', 'Residue_index_2',
+                'Residue_name_2', 'Upper_bound_[A]']
+
+        Parameters
+        ----------
+        df : pd.DataFrame
+            
+        which_cols : list of indices, optional
+            The columns to obtain the information, by default None
+        """
         cols = ['Residue_index_1', 'Residue_name_1', 'Residue_index_2',
                 'Residue_name_2', 'Upper_bound_[A]']
         
@@ -65,11 +78,19 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         """
         Parses an XPLOR-file and returns a dataframe with NOE values. Only considers lines starting with 'assign ('.
         Distances must be in Angstrom.
-        :param file_path: XPLOR text file path
-        :param regex: regex to extract 'Residue_index_1', 'Residue_name_1', 'Residue_index_2', 'Residue_name_2',
-        'Prob_bound_[A]', 'Low_diff_[A]', 'High_diff_[A]' from standard line format {e.g. assign (residue 2 and name HB3)
-        (residue 2 and name HB2) 2.25 0.45 0.45}. Changeable if needed.
-        :return: dataframe with distance data in Angstrom
+
+        Parameters
+        ------------
+        file_path: str
+            XPLOR text file path
+        xpl_regex: regex 
+            regex to extract 'Residue_index_1', 'Residue_name_1', 'Residue_index_2', 'Residue_name_2',
+            'Prob_bound_[A]', 'Low_diff_[A]', 'High_diff_[A]' from standard line format {e.g. assign (residue 2 and name HB3)
+            (residue 2 and name HB2) 2.25 0.45 0.45}. Changeable if needed.
+
+        Returns
+        -------------
+        dataframe with distance data in Angstrom
         """
         old_xpl_reg = r'\w[^ ][\d#\*]+|\w+(?= and)|\w\w?(?= +\))'
         xpl = re.compile(xpl_regex)
@@ -166,6 +187,18 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
 
     # @classmethod
     def sanitize_xplor_noe(self, noe_df):
+        """Sanitize the parsed XPLOR type NOE data.
+
+        Parameters
+        ----------
+        noe_df : pd.DataFrame
+            DataFrame containing the necessary NOE columns.
+
+        Returns
+        -------
+        pd.DataFrame
+            The inputted noe_df.
+        """
         isinstance(noe_df, pd.DataFrame)
 
         noe_df = noe_df.applymap(lambda s: s.upper() if type(s) == str else s)  # make strings uppercase
@@ -175,7 +208,7 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         return noe_df
 
 
-    def sanitize_noe(self, noe_df):  #XXX deprecate?
+    def sanitize_noe(self, noe_df):  #XXX deprecated
         isinstance(noe_df, pd.DataFrame)
 
         noe_df = noe_df.applymap(lambda s: s.upper() if type(s) == str else s)  # make strings uppercase
@@ -206,6 +239,7 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         return noe_df
         
     def _indices_from_noe_table_row(self, row, mol_frame, hydrogen_dict, messages):
+        """Determine the atom indices corresponding to entries in the NOE datatable."""
         if row["Residue_name_1"].endswith("@"):
             idx1 =  mol_frame[
                 (mol_frame["resid"] == row["Residue_index_1"]) &
@@ -234,19 +268,22 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         return idx1, idx2
 
     def _mol2df(self, mol):
+        """Create a mol datatable containing the atom index, residue number and atom name of all hydrogens in molecule."""
         hydrogen_dict = hydrogen_dict_from_pdbmol(mol)
         mol_data = [(idx, atm.GetPDBResidueInfo().GetResidueNumber() , atm.GetPDBResidueInfo().GetName().strip()) for idx, atm in enumerate(mol.GetAtoms()) if atm.GetAtomicNum() == 1] #XXX insofar only hydrogens, but in the future?
         return hydrogen_dict, pd.DataFrame.from_records(mol_data, columns = ["index", "resid", "name"])
 
     def add_noe_to_mol(self, mol, remember_chemical_equivalence = False): #XXX as distance bounds, reflect this in name?
+        #XXX can inform which NOEs are missing 
         """
-            can inform which NOEs are missing 
-
-            remember_chemical_equivalence keeps an list of integers equal in size to the upper bound distance dataframe, if two adjacent rows are chemically equivalent, the same integer is assigned in list. 
+        Add the NOE datatable information to the corresponding molecule object for NOE-guided conformer generation.
 
         Returns
         ---------------
         mol : RestrainedMolecule
+            Mol object containing info about which hydrogen pairs have NOE restraints.
+        remember_chemical_equivalence: bool
+            keeps an list of integers equal in size to the upper bound distance dataframe, if two adjacent rows are chemically equivalent, the same integer is assigned in list. 
         """
         # self.tolerance
         #XXX check that the atom pairs are both hydrogens (in the future can be other elements)
@@ -283,13 +320,23 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         return mol
 
     def check_match_to_mol(self, mol):  
-        """how many bonds apart
-        add columns to the NOE table
+        """Check the matching between the NOE datatable and a molecule object, record statistics about the NOEs, e.g.:
+        - how many bonds apart
+        - add columns to the NOE table
+        - num bonds away
+        - num residues away  this is per pair
 
-        num bonds away
-        num residues away  this is per pair
+        Results in a datatable highlighting the parent heavy atom as a fragment  this is per each unique parent atom appeared in NOE.
 
-        highlighting the parent heavy atom as a fragment  this is per each unique parent atom appeared in NOE
+        Parameters
+        ----------
+        mol : RDKit Mol
+            Molecule to be matched to the NOE records.
+
+        Returns
+        -------
+        pd.DataFrame    
+            A datatable highlighting all the hydrogens that have NOE record associated to them.
 
         """
         hydrogen_dict, mol_frame = self._mol2df(mol)
@@ -386,13 +433,20 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         return tmp_df
 
     def remove_unmatched(self):
+        """Remove any NOE datatable entires that cannot be matched to a molecule object.
+
+        Returns
+        -------
+        pd.DataFrame
+            NOE Datatable.
+        """
         if "Has Match in Molecule" in self.noe_table:
             self.noe_table = self.noe_table[self.noe_table["Has Match in Molecule"]]
         return self.noe_table
 
     def sanity_check(self):
         """
-        check the noe table has no duplicate entries, including when swapping order of the atom pair
+        Check the noe table has no duplicate entries, including when swapping order of the atom pair.
         """
         tmp = self.noe_table.copy()
 
@@ -408,6 +462,13 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
             logger.warning("Duplicated Rows \n {}".format(tmp.iloc[:length][tmp.duplicated(subset = ["Residue_name_1", "Residue_name_2", "Residue_index_1", "Residue_index_2"], keep = False).iloc[:length]])) #FIXME
 
     def show_records(self):
+        """Display the datatable containing the NOE information.
+
+        Returns
+        -------
+        pd.DataFrame
+            
+        """
         return self.noe_table
     def __repr__(self):
         return self.noe_table.__repr__()
@@ -423,6 +484,7 @@ ResAtm1 ResAtm2 RawLowerDistance RawUpperDistance DistanceUsed Tolerance
         raise NotImplementedError
 
 
+#deprecated
 def map_mol_with_noe(mol, df, verbose):
     """
     The goal is to make the atom names in the df to be
