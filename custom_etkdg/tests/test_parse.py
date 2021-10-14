@@ -1,8 +1,8 @@
 import pytest
 
-from rcg.utils import *
-from rcg.mol_ops import *
-from rcg.noe import NOE
+from custom_etkdg.utils import *
+from custom_etkdg.mol_ops import *
+from custom_etkdg.noe import NOE
 from rdkit import Chem
 import logging
 

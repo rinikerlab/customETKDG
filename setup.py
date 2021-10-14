@@ -17,12 +17,12 @@ setup(
     license='MIT',
 
     # Which Python importable modules should be included when your package is installed
-    packages=['rcg', "rcg.tests"],
+    packages=['custom_etkdg', "custom_etkdg.tests"],
 
     # Optional include package data to ship with your package
     # Comment out this line to prevent the files from being packaged with your software
     # Extend/modify the list to include/exclude other items as need be
-    package_data={'rcg': ["data/*.dat"]
+    package_data={'custom_etkdg': ["data/*.dat"]
                   },
 
     # Additional entries you may want simply uncomment the lines you want and fill in the data
