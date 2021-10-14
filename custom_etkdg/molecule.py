@@ -47,6 +47,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         self._picked_conformers = None #cannot be set, need to perserve order
         self.upper_scaling = 1.0 #scaling constant applied to distances
         self.lower_scaling = 1.0 #scaling constant applied to distances
+        self.MIN_MACROCYCLE_RING_SIZE = 9
         super().__init__(mol)
 
     def load_mol(self, smiles, pdb_filename):
@@ -217,10 +218,15 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
             # params.maxAttempts = 0
             params.numThreads = 0 #TODO changeable
 
+            if len(get_largest_ring(self)) >= self.MIN_MACROCYCLE_RING_SIZE:
+                logger.info("Molecule is macrocycle (largest ring contain more than 9 atoms), scaling down the bounds matrix force contribution.")
+                params.boundsMatForceScaling = 0.3  
+
         params.clearConfs = False #XXX allow user to specify this?
         params.SetBoundsMat(self.bmat) #XXX diff to self.bmat, should be triangular smoothed bmat?
 
         AllChem.EmbedMultipleConfs(self, num_conf, params)
+        self.etkdg_params = params
         # AllChem.AlignMolConformers(self)  #XXX align confs to first for easier visual comparison, No! this will include align to side chain
         self._is_minimised = np.concatenate((self._is_minimised, np.zeros(num_conf, dtype = bool)))
     #######################################
