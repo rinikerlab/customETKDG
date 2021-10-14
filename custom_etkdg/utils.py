@@ -12,7 +12,7 @@ def get_data_file_path(relative_path):
 
     from pkg_resources import resource_filename
 
-    fn = resource_filename("rcg", os.path.join("data", relative_path))
+    fn = resource_filename("custom_etkdg", os.path.join("data", relative_path))
 
     if not os.path.exists(fn):
         raise ValueError(

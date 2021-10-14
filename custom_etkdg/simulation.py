@@ -4,17 +4,6 @@ from mdtraj.reporters import HDF5Reporter
 import multiprocessing
 from itertools import repeat
 
-try:
-    from openff.toolkit.topology import Molecule, Topology
-    from openff.toolkit.typing.engines.smirnoff import ForceField
-    from openff.toolkit.utils import AmberToolsToolkitWrapper
-except ModuleNotFoundError:
-    print("OpenFF not avaialble, trying OpenForceField")
-    # from openforcefield.utils.toolkits import RDKitToolkitWrapper, ToolkitRegistry
-    from openforcefield.topology import Molecule, Topology
-    from openforcefield.typing.engines.smirnoff import ForceField
-    from openforcefield.utils.toolkits import AmberToolsToolkitWrapper
-    # from openforcefield.typing.engines.smirnoff.forcefield import ME
 from simtk import unit
 from simtk.openmm import LangevinIntegrator, CustomBondForce, AndersenThermostat, MonteCarloBarostat, VerletIntegrator, Platform
 from simtk.openmm.app import Simulation, HBonds, NoCutoff, AllBonds, PME
@@ -33,6 +22,17 @@ from .trajectory import Trajectory
 
 import logging
 logger = logging.getLogger(__name__)
+try:
+    from openff.toolkit.topology import Molecule, Topology
+    from openff.toolkit.typing.engines.smirnoff import ForceField
+    from openff.toolkit.utils import AmberToolsToolkitWrapper
+except ModuleNotFoundError:
+    logger.info("OpenFF not avaialble, trying OpenForceField")
+    # from openforcefield.utils.toolkits import RDKitToolkitWrapper, ToolkitRegistry
+    from openforcefield.topology import Molecule, Topology
+    from openforcefield.typing.engines.smirnoff import ForceField
+    from openforcefield.utils.toolkits import AmberToolsToolkitWrapper
+    # from openforcefield.typing.engines.smirnoff.forcefield import ME
 
 
 def _enemin_func(system, topology, coord):
