@@ -11,7 +11,7 @@ dependencies:
   - pandas=1.2.2
   - rdkit
   - pip
-  - openmm
+  - openmm=7.5.1
   - pdbfixer
   - mdtraj
   - tqdm
@@ -20,6 +20,8 @@ dependencies:
   - joblib
   - ase
   - parmed
+  - openmoltools
+  #- openff-toolkit
   - openforcefield
   #mlddec
   #mdfptools
