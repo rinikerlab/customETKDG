@@ -105,6 +105,15 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
     #######################################
     #XXX currently not being used
     def scale_lower_distances(self, scale_value): 
+        """Apply a scaling factor to the lower bound distances between atom pairs.
+        If scaling is one single value then the same factor is applied to all distances while if a list of values is supplied than different scaling factor can be applied to each distance. 
+        ! Currently the lower bound scaling is not being used in the conformer generation process.
+
+        Parameters
+        ----------
+        scale_value : float or list of floats
+            The factor to apply.
+        """
         if type(scale_value) in [int, float]:
             scale_value = [scale_value]
 
@@ -117,6 +126,14 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
 
     #FIXME
     def scale_upper_distances(self, scale_value): 
+        """Apply a scaling factor to the upper bound distances between atom pairs.
+        If scaling is one single value then the same factor is applied to all distances while if a list of values is supplied than different scaling factor can be applied to each distance. 
+
+        Parameters
+        ----------
+        scale_value : float or list of floats
+            The factor to apply.
+        """
         if type(scale_value) in [int, float]:
             scale_value = [scale_value]
 
@@ -125,7 +142,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
         
         assert len(scale_value) == len(self._distance_upper_bounds), "Number of distance restraints do not match number of scalings."
 
-        self.upper_scaling = scale_value
+        self.upper_scaling = copy.deepcopy(scale_value)
 
     def update_bmat(self):  #TODO only upperbound?
         """
@@ -219,14 +236,17 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
             params.numThreads = 0 #TODO changeable
 
             if len(get_largest_ring(self)) >= self.MIN_MACROCYCLE_RING_SIZE:
-                logger.info("Molecule is macrocycle (largest ring contain more than 9 atoms), scaling down the bounds matrix force contribution.")
+                logger.info("Molecule is macrocycle (largest ring >= 9 atoms), scaling down the bounds matrix force contribution.")
                 params.boundsMatForceScaling = 0.3  
 
         params.clearConfs = False #XXX allow user to specify this?
         params.SetBoundsMat(self.bmat) #XXX diff to self.bmat, should be triangular smoothed bmat?
 
         AllChem.EmbedMultipleConfs(self, num_conf, params)
+
+        #keep a record of the etkdg settings once conformers are successfully generated.
         self.etkdg_params = params
+        
         # AllChem.AlignMolConformers(self)  #XXX align confs to first for easier visual comparison, No! this will include align to side chain
         self._is_minimised = np.concatenate((self._is_minimised, np.zeros(num_conf, dtype = bool)))
     #######################################
