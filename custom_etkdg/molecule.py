@@ -544,6 +544,6 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
             setattr(newone, k, copy.deepcopy(v, memo))
         return newone
     
-    def __str__(self):
-        #TODO print the number of conformers!
-        raise NotImplementedError
+    # def __str__(self):
+    #     #TODO print the number of conformers!
+    #     raise NotImplementedError

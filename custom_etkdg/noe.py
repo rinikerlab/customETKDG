@@ -120,7 +120,7 @@ class NOE:
                     if line.startswith("assign"):  # data follows
                         line = line.split("!")[0]
                         line = line.replace("\t", " ")
-                        line = re.sub('\s+',' ',line)
+                        line = re.sub(r'\s+',' ',line)
                         res = xpl.findall(line)
                         assert len(res) == 7, f'Expected to get 7 entries from XPLOR line. Got {len(res)} from \"{line}\" on line {idx + 1}.'
                         data.append(res)
@@ -202,7 +202,7 @@ class NOE:
         isinstance(noe_df, pd.DataFrame)
 
         noe_df = noe_df.applymap(lambda s: s.upper() if type(s) == str else s)  # make strings uppercase
-        noe_df = noe_df.replace(["\*", "#"], "@", regex=True)  # convert from e.g. XPLOR format to GROMOS convention
+        noe_df = noe_df.replace([r"\*", "#"], "@", regex=True)  # convert from e.g. XPLOR format to GROMOS convention
         noe_df = noe_df.applymap(lambda s: 'H{}@'.format(s.replace('Q', '', 2)) if (type(s) == str and 'Q' in s) else s)
 
         return noe_df
@@ -212,7 +212,7 @@ class NOE:
         isinstance(noe_df, pd.DataFrame)
 
         noe_df = noe_df.applymap(lambda s: s.upper() if type(s) == str else s)  # make strings uppercase
-        noe_df = noe_df.replace(["\*", "#"], "@", regex=True)  # convert from e.g. XPLOR format to GROMOS convention
+        noe_df = noe_df.replace([r"\*", "#"], "@", regex=True)  # convert from e.g. XPLOR format to GROMOS convention
 
         # TODO: Manipulate distance restraints
         # divide @@ cases into two methyl groups
