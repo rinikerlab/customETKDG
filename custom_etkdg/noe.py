@@ -329,24 +329,17 @@ class NOE:
         if len(messages):
             logger.warning("\n".join(messages))
         
-        
-        
+        mol = RestrainedMolecule(mol)
         upper_df = pd.DataFrame.from_records(upper_df, columns = ["idx1", "idx2", "distance"])  #FIXME which distance specify?
         if not remember_chemical_equivalence:
             upper_df.sort_values(by = ["idx1", "idx2"], inplace = True, ignore_index = True) #XXX ordering is important when tracking chemical equivalence
+        mol.distance_upper_bounds = upper_df
         if lower_df:
             lower_df = pd.DataFrame.from_records(lower_df, columns = ["idx1", "idx2", "distance"])  #FIXME which distance specify?
             if not remember_chemical_equivalence:
                 lower_df.sort_values(by = ["idx1", "idx2"], inplace = True, ignore_index = True) #XXX ordering is important when tracking chemical equivalence
-        
-        mol = RestrainedMolecule(mol)
-        mol.distance_upper_bounds = upper_df
-        if lower_df is not []:
             mol.distance_lower_bounds = lower_df
-        else:
-            mol.distance_lower_bounds = None
         return mol
-
 
     def check_match_to_mol(self, mol):  
         """Check the matching between the NOE datatable and a molecule object, record statistics about the NOEs, e.g.:
