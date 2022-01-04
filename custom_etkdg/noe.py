@@ -38,27 +38,34 @@ class NOE:
     # def _constructor(self): #for inheriting pandas
     #     return NOE
 
-    def from_dataframe(self, df, which_cols = None):
-        """Create a NOE datatable from pandas DataFrame.
-        The minimum needed information to create the NOE:
+    def from_dataframe(self, df, which_cols = None, include_lower_bounds = False):
+        """Create a NOE datatable from pandas DataFrame. The minimum needed
+        information to create the NOE:
 
         cols = ['Residue_index_1', 'Residue_name_1', 'Residue_index_2',
                 'Residue_name_2', 'Upper_bound_[A]']
+
+        if include_lower_bounds is True, then the colum Lower_bound_[A] also
+        must be present
 
         Parameters
         ----------
         df : pd.DataFrame
-            
-        which_cols : list of indices, optional
-            The columns to obtain the information, by default None
+
+        which_cols : list of indices, optional The columns to obtain the
+            information, by default None
+
+        include_lower_bounds : use NOE lower bounds, by default False
         """
         cols = ['Residue_index_1', 'Residue_name_1', 'Residue_index_2',
                 'Residue_name_2', 'Upper_bound_[A]']
+        if include_lower_bounds:
+            cols.append('Lower_bound_[A]')
         
         if which_cols is None:
             df = df.loc[:, cols]
         else:
-            assert len(which_cols) == 5, ValueError("5 Columns are needed from input dataframe.")
+            assert len(which_cols) == len(cols), ValueError(f"{len(cols)} Columns are needed from input dataframe.")
             df = df.iloc[:, which_cols]
             df.columns = cols
             
@@ -67,6 +74,8 @@ class NOE:
         df['Residue_index_2'] = df['Residue_index_2'].astype(int)
         df['Residue_name_1'] = df['Residue_name_1'].astype(str)
         df['Residue_name_2'] = df['Residue_name_2'].astype(str)
+        if include_lower_bounds:
+            df['Lower_bound_[A]'] = df['Lower_bound_[A]'].astype(float)
 
         self.noe_table =  self.sanitize_xplor_noe(df)
 
@@ -120,7 +129,7 @@ class NOE:
                     if line.startswith("assign"):  # data follows
                         line = line.split("!")[0]
                         line = line.replace("\t", " ")
-                        line = re.sub('\s+',' ',line)
+                        line = re.sub(r'\s+',' ',line)
                         res = xpl.findall(line)
                         assert len(res) == 7, f'Expected to get 7 entries from XPLOR line. Got {len(res)} from \"{line}\" on line {idx + 1}.'
                         data.append(res)
@@ -202,7 +211,7 @@ class NOE:
         isinstance(noe_df, pd.DataFrame)
 
         noe_df = noe_df.applymap(lambda s: s.upper() if type(s) == str else s)  # make strings uppercase
-        noe_df = noe_df.replace(["\*", "#"], "@", regex=True)  # convert from e.g. XPLOR format to GROMOS convention
+        noe_df = noe_df.replace([r"\*", "#"], "@", regex=True)  # convert from e.g. XPLOR format to GROMOS convention
         noe_df = noe_df.applymap(lambda s: 'H{}@'.format(s.replace('Q', '', 2)) if (type(s) == str and 'Q' in s) else s)
 
         return noe_df
@@ -212,7 +221,7 @@ class NOE:
         isinstance(noe_df, pd.DataFrame)
 
         noe_df = noe_df.applymap(lambda s: s.upper() if type(s) == str else s)  # make strings uppercase
-        noe_df = noe_df.replace(["\*", "#"], "@", regex=True)  # convert from e.g. XPLOR format to GROMOS convention
+        noe_df = noe_df.replace([r"\*", "#"], "@", regex=True)  # convert from e.g. XPLOR format to GROMOS convention
 
         # TODO: Manipulate distance restraints
         # divide @@ cases into two methyl groups
@@ -290,7 +299,9 @@ class NOE:
 
         hydrogen_dict, mol_frame = self._mol2df(mol)
 
-        df = []
+        upper_df = []
+        lower_df = []
+
         messages = set([])
 
         if remember_chemical_equivalence:
@@ -302,8 +313,14 @@ class NOE:
 
             if len(idx1) > 0 and len(idx2) > 0:
                 val  = row["Upper_bound_[A]"] #TODO make this changeable
+                if "Lower_bound_[A]" in row:
+                    lower_val = row["Lower_bound_[A]"]
+                else:
+                    lower_val = None
                 for a,b in product(idx1, idx2):
-                    df.append((a,b,val))
+                    upper_df.append((a,b,val))
+                    if lower_val is not None:
+                        lower_df.append((a,b,lower_val))
                     if remember_chemical_equivalence:
                         self.chemical_equivalence_list.append(counter)
                 if remember_chemical_equivalence:
@@ -311,12 +328,17 @@ class NOE:
         
         if len(messages):
             logger.warning("\n".join(messages))
-        df = pd.DataFrame.from_records(df, columns = ["idx1", "idx2", "distance"])  #FIXME which distance specify?
-
-        if not remember_chemical_equivalence:
-            df.sort_values(by = ["idx1", "idx2"], inplace = True, ignore_index = True) #XXX ordering is important when tracking chemical equivalence
+        
         mol = RestrainedMolecule(mol)
-        mol.distance_upper_bounds = df
+        upper_df = pd.DataFrame.from_records(upper_df, columns = ["idx1", "idx2", "distance"])  #FIXME which distance specify?
+        if not remember_chemical_equivalence:
+            upper_df.sort_values(by = ["idx1", "idx2"], inplace = True, ignore_index = True) #XXX ordering is important when tracking chemical equivalence
+        mol.distance_upper_bounds = upper_df
+        if lower_df:
+            lower_df = pd.DataFrame.from_records(lower_df, columns = ["idx1", "idx2", "distance"])  #FIXME which distance specify?
+            if not remember_chemical_equivalence:
+                lower_df.sort_values(by = ["idx1", "idx2"], inplace = True, ignore_index = True) #XXX ordering is important when tracking chemical equivalence
+            mol.distance_lower_bounds = lower_df
         return mol
 
     def check_match_to_mol(self, mol):  
@@ -484,157 +506,157 @@ class NOE:
         raise NotImplementedError
 
 
-#deprecated
-def map_mol_with_noe(mol, df, verbose):
-    """
-    The goal is to make the atom names in the df to be
-    exactly the same as those in the mol naming
+# #deprecated
+# def map_mol_with_noe(mol, df, verbose):
+#     """
+#     The goal is to make the atom names in the df to be
+#     exactly the same as those in the mol naming
 
-    mol: must already have named hydrogens added!!!
-    """
-    mol_atom_names2noe_atom_names = {}
-    mol_atom_names2atom_index = {}
-    mol_resid_dict = {}
-    noe_resid_dict = {}
+#     mol: must already have named hydrogens added!!!
+#     """
+#     mol_atom_names2noe_atom_names = {}
+#     mol_atom_names2atom_index = {}
+#     mol_resid_dict = {}
+#     noe_resid_dict = {}
 
-    for idx, atm in enumerate(mol.GetAtoms()):  # find all H per residue in PDB mol
-        if atm.GetAtomicNum() == 1:  # only hydrogens are relevant for NOE mapping
-            key = atm.GetPDBResidueInfo().GetResidueNumber()
-            val = atm.GetPDBResidueInfo().GetName().strip()
-            mol_resid_dict.setdefault(key, {})[val] = 1  # no duplicate entries
+#     for idx, atm in enumerate(mol.GetAtoms()):  # find all H per residue in PDB mol
+#         if atm.GetAtomicNum() == 1:  # only hydrogens are relevant for NOE mapping
+#             key = atm.GetPDBResidueInfo().GetResidueNumber()
+#             val = atm.GetPDBResidueInfo().GetName().strip()
+#             mol_resid_dict.setdefault(key, {})[val] = 1  # no duplicate entries
 
-    for _, row in df.iterrows():  # find all H per residue in NOE representation
-        key = row["Residue_index_1"]
-        val = row["Residue_name_1"]
-        noe_resid_dict.setdefault(key, {})[val] = 1  # no duplicate entries
-        key = row["Residue_index_2"]
-        val = row["Residue_name_2"]
-        noe_resid_dict.setdefault(key, {})[val] = 1  # no duplicate entries
+#     for _, row in df.iterrows():  # find all H per residue in NOE representation
+#         key = row["Residue_index_1"]
+#         val = row["Residue_name_1"]
+#         noe_resid_dict.setdefault(key, {})[val] = 1  # no duplicate entries
+#         key = row["Residue_index_2"]
+#         val = row["Residue_name_2"]
+#         noe_resid_dict.setdefault(key, {})[val] = 1  # no duplicate entries
 
-    # matching and splitting of @ cases
-    exp_noe_names2mol_atom_names = {}
-    comb_noe_names2exp_noe_names = {}
-    print('#' * 80)
-    print('Atom mapping:')
-    print('#' * 80)
-    for resid in noe_resid_dict:
-        print(f'Residue: {resid}')
-        mol_atoms = list(mol_resid_dict.get(resid))
-        noe_atoms = list(noe_resid_dict.get(resid))
-        for atm in noe_atoms:
-            # print(atm, process.extract(atm, mol_atoms, scorer=fuzz.ratio))
-            # fit = process.extractOne(atm, mol_atoms, scorer=fuzz.ratio)
-            noe_key = (resid, atm)
-            if atm in mol_atoms:  # exact match found, just add it.
-                mol_val = (resid, atm)
-                # mol_atoms.remove(atm)  # already matched, no longer needed
-                exp_noe_names2mol_atom_names.setdefault(noe_key, {})[mol_val] = 1
-                comb_noe_names2exp_noe_names.setdefault(noe_key, {})[noe_key] = 1
-                print(f'NOE atom {atm} exactly mapped to PDB atom {atm}.')
-                added = True
-            elif '@' in atm:  # deal with multiplicities
-                strip_atm = atm.replace('@', '')
-                # print(atm, process.extract(strip_atm, mol_atoms, scorer=fuzz.ratio, limit=7))
-                fit = process.extract(strip_atm, mol_atoms, scorer=fuzz.ratio, limit=7)
-                try:
-                    best_score = fit[0][1]
-                except:
-                    continue
-                mult = 0
-                exp_noes = []
-                for score in fit:
-                    if (score[1] == best_score) and (strip_atm in score[0]):  # add all equivalently well matching names
-                        mult += 1
-                        noe_val = (resid, score[0])
-                        exp_noes.append(score[0])
-                        comb_noe_names2exp_noe_names.setdefault(noe_key, {})[noe_val] = 1
-                        exp_noe_names2mol_atom_names.setdefault(noe_val, {})[noe_val] = 1
-                        # mol_atoms.remove(score[0])
-                if mult is not 0:
-                    print(f'NOE atom {atm} expanded to {exp_noes} and mapped to corresponding PDB atoms.')
-                else:
-                    print(f'NOE atom {atm} could not be expanded and mapped to PDB atoms.')
-            else:
-                try:  # there might be no match
-                    mol_atm = process.extractOne(atm, mol_atoms, scorer=fuzz.ratio, score_cutoff=66)[0]
-                    mol_val = (resid, mol_atm)
-                    comb_noe_names2exp_noe_names.setdefault(noe_key, {})[noe_key] = 1
-                    exp_noe_names2mol_atom_names.setdefault(noe_key, {})[mol_val] = 1
-                    print(f'NOE atom {atm} approximately mapped to PDB atom {mol_atm}.')
-                except:
-                    print(f'Unaccounted NOE atom: {atm}.')
-                # print(mult)
-            # exp_noe_names2mol_atom_names
-        #print(f'Remaining PDB atoms: {mol_atoms}')
-        print('#' * 80)
+#     # matching and splitting of @ cases
+#     exp_noe_names2mol_atom_names = {}
+#     comb_noe_names2exp_noe_names = {}
+#     print('#' * 80)
+#     print('Atom mapping:')
+#     print('#' * 80)
+#     for resid in noe_resid_dict:
+#         print(f'Residue: {resid}')
+#         mol_atoms = list(mol_resid_dict.get(resid))
+#         noe_atoms = list(noe_resid_dict.get(resid))
+#         for atm in noe_atoms:
+#             # print(atm, process.extract(atm, mol_atoms, scorer=fuzz.ratio))
+#             # fit = process.extractOne(atm, mol_atoms, scorer=fuzz.ratio)
+#             noe_key = (resid, atm)
+#             if atm in mol_atoms:  # exact match found, just add it.
+#                 mol_val = (resid, atm)
+#                 # mol_atoms.remove(atm)  # already matched, no longer needed
+#                 exp_noe_names2mol_atom_names.setdefault(noe_key, {})[mol_val] = 1
+#                 comb_noe_names2exp_noe_names.setdefault(noe_key, {})[noe_key] = 1
+#                 print(f'NOE atom {atm} exactly mapped to PDB atom {atm}.')
+#                 added = True
+#             elif '@' in atm:  # deal with multiplicities
+#                 strip_atm = atm.replace('@', '')
+#                 # print(atm, process.extract(strip_atm, mol_atoms, scorer=fuzz.ratio, limit=7))
+#                 fit = process.extract(strip_atm, mol_atoms, scorer=fuzz.ratio, limit=7)
+#                 try:
+#                     best_score = fit[0][1]
+#                 except:
+#                     continue
+#                 mult = 0
+#                 exp_noes = []
+#                 for score in fit:
+#                     if (score[1] == best_score) and (strip_atm in score[0]):  # add all equivalently well matching names
+#                         mult += 1
+#                         noe_val = (resid, score[0])
+#                         exp_noes.append(score[0])
+#                         comb_noe_names2exp_noe_names.setdefault(noe_key, {})[noe_val] = 1
+#                         exp_noe_names2mol_atom_names.setdefault(noe_val, {})[noe_val] = 1
+#                         # mol_atoms.remove(score[0])
+#                 if mult is not 0:
+#                     print(f'NOE atom {atm} expanded to {exp_noes} and mapped to corresponding PDB atoms.')
+#                 else:
+#                     print(f'NOE atom {atm} could not be expanded and mapped to PDB atoms.')
+#             else:
+#                 try:  # there might be no match
+#                     mol_atm = process.extractOne(atm, mol_atoms, scorer=fuzz.ratio, score_cutoff=66)[0]
+#                     mol_val = (resid, mol_atm)
+#                     comb_noe_names2exp_noe_names.setdefault(noe_key, {})[noe_key] = 1
+#                     exp_noe_names2mol_atom_names.setdefault(noe_key, {})[mol_val] = 1
+#                     print(f'NOE atom {atm} approximately mapped to PDB atom {mol_atm}.')
+#                 except:
+#                     print(f'Unaccounted NOE atom: {atm}.')
+#                 # print(mult)
+#             # exp_noe_names2mol_atom_names
+#         #print(f'Remaining PDB atoms: {mol_atoms}')
+#         print('#' * 80)
 
-    for idx, atm in enumerate(mol.GetAtoms()):
-        if atm.GetAtomicNum() != 1:  # currently only needs the hydrogen
-            continue
-        key = (
-            int(format(atm.GetPDBResidueInfo().GetResidueNumber())),
-            "{}".format(atm.GetPDBResidueInfo().GetName().strip()))
-        mol_atom_names2noe_atom_names[key] = set()
-        mol_atom_names2atom_index.setdefault(key, []).append(idx)
+#     for idx, atm in enumerate(mol.GetAtoms()):
+#         if atm.GetAtomicNum() != 1:  # currently only needs the hydrogen
+#             continue
+#         key = (
+#             int(format(atm.GetPDBResidueInfo().GetResidueNumber())),
+#             "{}".format(atm.GetPDBResidueInfo().GetName().strip()))
+#         mol_atom_names2noe_atom_names[key] = set()
+#         mol_atom_names2atom_index.setdefault(key, []).append(idx)
 
-    noe_atom_pair2upper_distance = dict()
-    for _, row in df.iterrows():
-        # achieve canonical ordering, so each tuple only needs to be added once
-        tup1 = (int(row["Residue_index_1"]), "{}".format(row["Residue_name_1"]))
-        tup2 = (int(row["Residue_index_2"]), "{}".format(row["Residue_name_2"]))
-        key = (int(tup1[0]), key)  # add back the index
-        tup_list = [tup1, tup2]
-        tups = sorted(tup_list, key=lambda element: (element[0], element[1]))
+#     noe_atom_pair2upper_distance = dict()
+#     for _, row in df.iterrows():
+#         # achieve canonical ordering, so each tuple only needs to be added once
+#         tup1 = (int(row["Residue_index_1"]), "{}".format(row["Residue_name_1"]))
+#         tup2 = (int(row["Residue_index_2"]), "{}".format(row["Residue_name_2"]))
+#         key = (int(tup1[0]), key)  # add back the index
+#         tup_list = [tup1, tup2]
+#         tups = sorted(tup_list, key=lambda element: (element[0], element[1]))
 
-        # only keep the most restrictive value
-        try:
-            old_val = noe_atom_pair2upper_distance[(tups[0], tups[1])]
-            noe_atom_pair2upper_distance[(tups[0], tups[1])] = min(old_val, row["Upper_bound_[A]"])
-        except KeyError:
-            noe_atom_pair2upper_distance[(tups[0], tups[1])] = row["Upper_bound_[A]"]
+#         # only keep the most restrictive value
+#         try:
+#             old_val = noe_atom_pair2upper_distance[(tups[0], tups[1])]
+#             noe_atom_pair2upper_distance[(tups[0], tups[1])] = min(old_val, row["Upper_bound_[A]"])
+#         except KeyError:
+#             noe_atom_pair2upper_distance[(tups[0], tups[1])] = row["Upper_bound_[A]"]
 
-    # in this case usually go and change the NOE dataframe,
-    # because the atom names in the pdb file can actually have meaning when running MD
-    trigger = False
-    for key, val in mol_atom_names2noe_atom_names.items():
-        if len(val) > 1:
-            print("Non-unique mapping between PDB atom {} and NOE atoms {}.".format(key, val))
-            pick = query_yes_no("Pick most probable NOE atom {} (yes) or exit (no)?"
-                                .format(difflib.get_close_matches(key[1], [j[1] for j in val], 1, 0.5)[0]))
-            if pick:
-                val = difflib.get_close_matches(key[1], [j[1] for j in val], 1, 0.5)[0]
-                val = {(key[0], val)}  # add back the index
-                # mol_atom_names2noe_atom_names.pop(key, None) # remove non-unique
-                mol_atom_names2noe_atom_names[key] = val  # re-add most probable
-                print("Chosen mapping: {}   {}".format(key, val))
-                exp_noe_names2mol_atom_names[min(val)] = key
-            else:
-                raise ValueError("Non Unique Mapping(s)")
+#     # in this case usually go and change the NOE dataframe,
+#     # because the atom names in the pdb file can actually have meaning when running MD
+#     trigger = False
+#     for key, val in mol_atom_names2noe_atom_names.items():
+#         if len(val) > 1:
+#             print("Non-unique mapping between PDB atom {} and NOE atoms {}.".format(key, val))
+#             pick = query_yes_no("Pick most probable NOE atom {} (yes) or exit (no)?"
+#                                 .format(difflib.get_close_matches(key[1], [j[1] for j in val], 1, 0.5)[0]))
+#             if pick:
+#                 val = difflib.get_close_matches(key[1], [j[1] for j in val], 1, 0.5)[0]
+#                 val = {(key[0], val)}  # add back the index
+#                 # mol_atom_names2noe_atom_names.pop(key, None) # remove non-unique
+#                 mol_atom_names2noe_atom_names[key] = val  # re-add most probable
+#                 print("Chosen mapping: {}   {}".format(key, val))
+#                 exp_noe_names2mol_atom_names[min(val)] = key
+#             else:
+#                 raise ValueError("Non Unique Mapping(s)")
 
-    if trigger: raise ValueError("Non Unique Mapping(s)")
+#     if trigger: raise ValueError("Non Unique Mapping(s)")
 
-    if verbose:
-        print('#' * 80)
-        print("Summary of chosen matches:")
-        resid = 0
-        for key, val in mol_atom_names2noe_atom_names.items():
-            if int(key[0]) is not resid:
-                print('#' * 80)
-                print(f"Residue {key[0]}")
-                resid = int(key[0])
+#     if verbose:
+#         print('#' * 80)
+#         print("Summary of chosen matches:")
+#         resid = 0
+#         for key, val in mol_atom_names2noe_atom_names.items():
+#             if int(key[0]) is not resid:
+#                 print('#' * 80)
+#                 print(f"Residue {key[0]}")
+#                 resid = int(key[0])
 
-            print(f"PDB name {key} is matched to NOE name {val}.")
+#             print(f"PDB name {key} is matched to NOE name {val}.")
 
-        print('#' * 80)
-        print('#' * 80)
+#         print('#' * 80)
+#         print('#' * 80)
 
-        for key, val in mol_atom_names2noe_atom_names.items():
-            # if int(key[0]) is not resid:
-            #    print('#' * 80)
-            #    print(f"Residue {key[0]}")
-            #    resid = int(key[0])
+#         for key, val in mol_atom_names2noe_atom_names.items():
+#             # if int(key[0]) is not resid:
+#             #    print('#' * 80)
+#             #    print(f"Residue {key[0]}")
+#             #    resid = int(key[0])
 
-            print(f"NOE name {key} is matched to PDB name {val}.")
+#             print(f"NOE name {key} is matched to PDB name {val}.")
 
-    return mol_atom_names2atom_index, comb_noe_names2exp_noe_names, exp_noe_names2mol_atom_names, \
-           noe_atom_pair2upper_distance, df
+#     return mol_atom_names2atom_index, comb_noe_names2exp_noe_names, exp_noe_names2mol_atom_names, \
+#            noe_atom_pair2upper_distance, df

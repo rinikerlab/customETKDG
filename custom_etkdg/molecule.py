@@ -84,6 +84,9 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
 
     @distance_lower_bounds.setter
     def distance_lower_bounds(self, df):
+        self.RemoveAllConformers()
+        df = df.astype({"idx1" : np.uint, "idx2": np.uint, "distance" : float})
+        df.dropna(inplace = True) 
         self._distance_lower_bounds = df
 
     # def add_upper_bounds(self, df): #XXX add_bounds_equivalent_hydrogens = False):
@@ -144,7 +147,7 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
 
         self.upper_scaling = copy.deepcopy(scale_value)
 
-    def update_bmat(self):  #TODO only upperbound?
+    def update_bmat(self, include_lower_bounds=False):  #TODO only upperbound?
         """
         Load the user defined bounds matrix to the RestrainedMolecule object for conformer generation
         """
@@ -161,15 +164,24 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
             dist *= self.upper_scaling[index]
 
             a,b = int(a), int(b) #XXX awkard, even specified as int in dataframe still comes out as python floats
-            self.bmat[min((a,b)), max((a,b))] = dist #XXX only change if strink the bounds?
+            self.bmat[min((a,b)), max((a,b))] = dist #XXX only change if it shrinks the bounds?
+            # if the current lower bound is larger than the upper bound we're adding, shrink it:
             if self.bmat[max((a,b)), min((a,b))] > dist: 
                 self.bmat[max((a,b)), min((a,b))] = dist
 
-    # def triangular_smooth(self):
-    #     """
-    #     store bmat before and after smoothing 
-    #     identify max changes in distance bounds as some form of `sanity check`
-    #     """
+        if include_lower_bounds and self._distance_lower_bounds is not None:
+            for index, row in self._distance_lower_bounds.iterrows():
+                a, b, dist = row
+
+                dist *= self.lower_scaling[index]
+
+                a,b = int(a), int(b) #XXX awkard, even specified as int in dataframe still comes out as python floats
+                self.bmat[max((a,b)), min((a,b))] = dist #XXX only change if it shrinks the bounds?
+                # if the current upper bound is less than the lower bound we're adding, increase it:
+                if self.bmat[min((a,b)), max((a,b))] < dist: 
+                    self.bmat[min((a,b)), max((a,b))] = dist
+
+
         self.triangular_smoothed_bmat = copy.deepcopy(self.bmat) #FIXME split it out?
         DistanceGeometry.DoTriangleSmoothing(self.triangular_smoothed_bmat)
 
@@ -544,6 +556,6 @@ class RestrainedMolecule(Chem.Mol): #XXX name too generic? mention measurements 
             setattr(newone, k, copy.deepcopy(v, memo))
         return newone
     
-    def __str__(self):
-        #TODO print the number of conformers!
-        raise NotImplementedError
+    # def __str__(self):
+    #     #TODO print the number of conformers!
+    #     raise NotImplementedError

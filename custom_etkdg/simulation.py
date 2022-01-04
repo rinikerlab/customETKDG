@@ -1,3 +1,6 @@
+import logging
+logger = logging.getLogger(__name__)
+
 import parmed
 import mdtraj as md
 from mdtraj.reporters import HDF5Reporter
@@ -8,7 +11,11 @@ from simtk import unit
 from simtk.openmm import LangevinIntegrator, CustomBondForce, AndersenThermostat, MonteCarloBarostat, VerletIntegrator, Platform
 from simtk.openmm.app import Simulation, HBonds, NoCutoff, AllBonds, PME
 
-import mlddec
+try:
+    import mlddec
+except ImportError:
+    logger.warning("could not import mlddec package. Any calls to mlddec will fail")
+    mlddec = None
 from rdkit.Geometry import Point3D
 from rdkit import Chem
 from rdkit.Chem import AllChem
