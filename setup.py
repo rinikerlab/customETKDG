@@ -8,7 +8,7 @@ DOCLINES = __doc__.split("\n")
 
 setup(
     # Self-descriptive entries which should always be present
-    name='MacrocycleConfGenNOE',
+    name='customETKDG',
     author='shuzhe Wang',
     description=DOCLINES[0],
     long_description="\n".join(DOCLINES[2:]),
