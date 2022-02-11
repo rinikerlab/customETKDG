@@ -5,9 +5,11 @@ This repo contains code associated with our 2022 publication: [Incorporating NOE
 See the `./examples/` directory for demo notebooks showcasing the API calls.
 
 ## Installation
-Download the `environment.yml` from this repo and navigate to that directory in the terminal:
+Download the `environment.yml` from this repo. Inside a terminal, do:
 ```
-#change ENVNAME to desired environment name
+cd /PATH/TO/environment.yml
+
+# change ENVNAME to desired environment name
 # we recommend first install and use `mamba` over `conda` as it creates the environment much faster
 conda env create --name ENVNAME --file environment.yml
 
@@ -16,7 +18,7 @@ conda activate ENVNAME
 pip install git+https://github.com/rinikerlab/customETKDG
 ```
 
-In order to use the molecular dynamics functions, the [mlddec](https://github.com/rinikerlab/mlddec) and [mdfptools](https://github.com/rinikerlab/mdfptools) packages need to be additionally installed for system parameterisation (former for fast partial charge assignment of the ligand and the latter for solvated system setup).
+In order to use the molecular dynamics functions, the [mlddec](https://github.com/rinikerlab/mlddec) and [mdfptools](https://github.com/rinikerlab/mdfptools) packages need to be additionally installed for system parameterisation (former for fast partial charge assignment of the ligand and the latter for explicit solvation system setup).
 
 Once installed, one should be able to run code from start to end in the `./examples/` directory.
 
