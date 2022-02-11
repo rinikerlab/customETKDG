@@ -5,21 +5,18 @@ This repo contains code associated with our 2022 publication: [Incorporating NOE
 See the `./examples/` directory for demo notebooks showcasing the API calls.
 
 ## Installation
-
+Download the `environment.yml` from this repo and navigate to that directory in the terminal:
 ```
-git clone -b api --single-branch https://github.com/rinikerlab/customETKDG.git
-
-cd ./customETKDG
-
 #change ENVNAME to desired environment name
-conda env create --name ENVNAME --file 
+# we recommend first install and use `mamba` over `conda` as it creates the environment much faster
+conda env create --name ENVNAME --file environment.yml
 
 conda activate ENVNAME
 
-pip install .
+pip install git+https://github.com/rinikerlab/customETKDG
 ```
 
-In order to use the molecular dynamics functions, the [mlddec](https://github.com/rinikerlab/mlddec) package needs to be additionally installed for fast partial charges assignment.
+In order to use the molecular dynamics functions, the [mlddec](https://github.com/rinikerlab/mlddec) and [mdfptools](https://github.com/rinikerlab/mdfptools) packages need to be additionally installed for system parameterisation (former for fast partial charge assignment of the ligand and the latter for solvated system setup).
 
 Once installed, one should be able to run code from start to end in the `./examples/` directory.
 
@@ -49,6 +46,7 @@ docker run -p 13579:13579 custom_etkdg
   journal={Journal of Chemical Information and Modeling},
   year={2022},
   publisher={ACS Publications}
+  doi={10.1021/acs.jcim.1c01165}
 }
 ```
 
