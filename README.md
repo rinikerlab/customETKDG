@@ -1,6 +1,8 @@
 # customETKDG
 This repo contains code associated with our 2022 publication: [Incorporating NOE-Derived Distances in Conformer Generation of Cyclic Peptides with Distance Geometry
 ](https://pubs.acs.org/doi/abs/10.1021/acs.jcim.1c01165)
+The version of the code used in that papers is available as [Release v1.0.0](https://github.com/rinikerlab/customETKDG/releases/tag/v1.0.0).
+
 
 See the `./examples/` directory for demo notebooks showcasing the API calls.
 
